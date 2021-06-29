@@ -2344,7 +2344,6 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
   }</style>
   <!--/radix_placeholder_distill-->
   <script src="site_libs/header-attrs-2.9/header-attrs.js"></script>
-  <script src="site_libs/font-awesome-5.13.0/js/script.js"></script>
   <script src="site_libs/popper-2.6.0/popper.min.js"></script>
   <link href="site_libs/tippy-6.2.7/tippy.css" rel="stylesheet" />
   <link href="site_libs/tippy-6.2.7/tippy-light-border.css" rel="stylesheet" />
@@ -2410,15 +2409,20 @@ Data
 
 
 <div class="d-article">
-<div class="layout-chunk" data-layout="l-body">
-<a href="data:text/csv;base64,YTtiCjE7MwoyOzQK" download="prova.csv">
-<button class="btn btn-default" has_icon="TRUE"><i class="fa fa-save"></i> Download data as csv</button>
-</a>
-</div>
-<div class="layout-chunk" data-layout="l-body">
-<iframe src="https://fbellelli.shinyapps.io/TileMaster/?showcase=0" width="624" height="400px">
-</iframe>
-</div>
+<h2 id="tidycountry">TidyCountry</h2>
+<p>As an economist, I often work with country-level data coming from different sources. GDP series from the IMF, monetary data from central banks, trade data from WTO, CO__2 emissions from the IEA, survey data from national agencies, etc.. Pooling all this data together is often a laborious task because countries’ naming conventions are never the same.</p>
+<p>To make things easier, I am writing an R package to deal with this type of data. Ideally, the user should be able to merge country data files with a unique line of command. The package will offer functionalities to:</p>
+<ul>
+<li>Convert country names to a common nomenclature (e.g. M49 standard or ISO-3 codes)</li>
+<li>Merge country data in a unique table by recognising and matching different country nomenclatures</li>
+<li>Support the merging of data with multiple identifiers (e.g. panel data or country-sector data)</li>
+<li>Automatically generate interactive visualisations to explore country data</li>
+</ul>
+<h2 id="tile-master-a-shiny-strategy-game">Tile master: a shiny strategy game</h2>
+<p>In 2020, I decided that it would be interesting to learn how to make dashboards and interactive data visualisations. After a look at the amazing gallery of <a href="https://shiny.rstudio.com/">Shiny apps</a>, I decided that I had to explore its functionalities by trying a project on my own.</p>
+<p>Shiny is ideal for data visualisation. It is really easy to create and interactive charts and combine them in a beautiful dashboard. So why not trying to plot some interesting economic data? I should have thought about this a bit longer. For some inexplicable reason, I decided it would be fun to implement a strategy board game on a shiny app.</p>
+<p>It took some time, and a lot more coding than originally planned, but eventually I managed to implement a playable strategy game with Shiny. <strong>A link to the game is available <a href="https://fbellelli.shinyapps.io/TileMaster/">here</a>.</strong> For the moment I didn’t write the games’ rules and didn’t include a tutorial. So if enjoy figuring the rules our by trial and error, feel free to give it a try! No fun is guaranteed.</p>
+<p>Completing this project was an enriching journey. I ended up exploring all sorts of unexpected subjects from path finding algorithms and Delaunay triangulation to advanced game developing concepts. I also thoroughly enjoyed building an AI for this game. Given the strategic complexity of the game, and being the first AI I ever built, I am quite pleased with the results. The basic AI decision process is a hybrid between a finite-state machine and a utility-based system. I then improved it by training machine learning models to evaluate the AI’s moves.</p>
 <div class="sourceCode" id="cb1"><pre class="sourceCode r distill-force-highlighting-css"><code class="sourceCode r"></code></pre></div>
 <!--radix_placeholder_article_footer-->
 <!--/radix_placeholder_article_footer-->

@@ -13,7 +13,7 @@ knitr::opts_chunk$set(echo = FALSE)
 
 I am currently working on a number of research projects for the World Trade Organization (WTO). As a member of the Quantitative modelling and analysis unit, I deal with economic research and econometric modelling of trade, with a particular focus on the environment-related activities of WTO. My current research projects relate to regional trade agreements, environmental measures, fisheries subsidies, innovation and trade. 
 
-In addition to the above, I am also fascinated by recent development in AI. I am currently starting a series of papers in which I apply AI techniques to macroeconomic forecasting and issues in environmental economics.
+In addition to the above, I am also fascinated by recent developments in AI and its applications to macroeconomic forecasting. I am currently exploring potential application of these techniques to issues relating to international and environmental economics.
 
 
 

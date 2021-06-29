@@ -83,7 +83,7 @@ xaringanExtra::use_panelset()
 ::::: {.panelset}
 ::: {.panel}
 
-### Implementation period {.panel-name}
+### Implementation years {.panel-name}
 
 <div class="column-left55">
 ```{r echo=FALSE, fig.cap="Measures in force vs notified (EDB v.2018)"}
@@ -149,20 +149,16 @@ One obstacle in using this information is that ICS and HS codes are mixed togeth
 :::
 ::: {.panel}
 
-
-### Policy scores {.panel-name}
+### Policy score {.panel-name}
 
 <div class="column-left60">
 ```{r echo=FALSE, fig.cap="Policy score components"}
 knitr::include_graphics("images/EDB score diagram.png")
 ```
 </div>
-
 <div class="column-right40">
-Environmental policies may have drastically different design and stringency, especially when a large number of policies are compared or jointly studied, this heterogeneity could be problematic in producing generalisable results. Hence, it is often useful in economic research to measure the intensity of a policy in order to mitigate problems of unobserved heterogeneity. **We attempt to build an indicator of measure strength based on the information in the EDB database**.
+**We attempt to build an indicator of measure strength based on the information in the EDB database**. Our measure score is built along two conceptual dimensions: the policy *breadth* and *depth*. We consider as broad, measures that affect a larger share of the economy and tackle multiple environmental issues. On the other hand, the depth of a measure refers to the intensity of its provisions. We base our depth scoring on the type of policy instrument used in the measure and the wording of the measure description.
 </div>
-<br>
-Our measure score is built along two conceptual dimensions: the policy *breadth* and *depth*. We consider as broad, measures that affect a larger share of the economy and tackle multiple environmental issues. On the other hand, the depth of a measure refers to the intensity of its provisions. This is a concept that is harder to capture with the available information in the EDB. We base our depth scoring on the type of policy instrument used in the measure and the wording of the measure description.
 
 :::
 :::
@@ -170,13 +166,9 @@ Our measure score is built along two conceptual dimensions: the policy *breadth*
 :::
 
 
-## More information
+## EDB extension updates
 
-
-The EDB gets updated annually 
-Updated whenever a new version of the EDB is 
-
-information on the [@EDB_paper]
+The EDB notification dataset gets updated annually by the WTO secretariat. As a new version comes out, we will update the EDB extension to provide information on the latest measures in the database. We designate EDB's version by the latest notification year included in their data. For example, the latest release (EDB v.2019) includes measures notified up to 2019.
 
 
 
