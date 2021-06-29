@@ -1,7 +1,7 @@
 ---
 title: "EDB data extension"
 description: |
-  The *WTO Environemntal Database* (EDB) collects all environment-related policies that have been notified to the EDB. Here, you may find an extension to the EDB specifically developed for economic research and policy analysis.
+  The *WTO Environemntal Database* (EDB) collects all environment-related policies that have been notified to the WTO. Here, you may find an extension to the EDB specifically developed for economic research and policy analysis.
 bibliography: references.bib
 ---
 
@@ -71,7 +71,7 @@ The EDB is organised in two distinct datasets according to the sources of its in
 
 The EDB contains a wealth of information on environmental policies implemented across the world. It is one of the most comprehensive databases on this subject. However, much of its information is encoded in a textual format. This makes it hard to use it in quantitative research projects. 
 
-Our goal is to make the database more accessible for research and policy analysis by extracting and extending the set of available information using text analysis techniques. The data provided in this webpage is an extended version of the official EDB notification dataset. On top of the variables of the official EDB, our dataset includes additional columns containing information that we extract algorithmically from the EDB. A full description of our approach is available [here](papers/EDB_paper_draft.pdf).
+Our goal is to make the database more accessible for research and policy analysis by extracting and extending the set of available information using text analysis techniques. The data provided in this webpage is an extended version of the official EDB notification dataset. On top of the variables of the official EDB, our dataset includes additional columns containing information that we extract algorithmically from the EDB. A full description of our approach is available in @EDB_paper.
 
 Click on the tabs below to explore the main features of the EDB extension.
 
