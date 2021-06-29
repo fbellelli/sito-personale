@@ -2,7 +2,7 @@ name: "sito personale"
 title: "F.S.Bellelli"
 theme: my-theme.css
 description: |
-  My blog
+  This is the personal website of Francesco Saverio Bellelli
 output_dir: "docs"
 navbar:
   right:

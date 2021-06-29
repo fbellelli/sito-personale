@@ -9,34 +9,28 @@ knitr::opts_chunk$set(echo = FALSE)
 ```
 
 
-```{r}
-library(downloadthis)
+## TidyCountry
+
+As an economist, I often work with country-level data coming from different sources. GDP series from the IMF, monetary data from central banks, trade data from WTO, CO__2 emissions from the IEA, survey data from national agencies, etc.. Pooling all this data together is often a laborious task because countries' naming conventions are never the same. 
 
 
-# download_file(
-#   path = system.file("delta-fiume-harrison-candlin.jpg", package = "downloadthis"),
-#   output_name = "prova",
-#   button_label = "Download file",
-#   button_type = "danger",
-#   has_icon = TRUE,
-#   icon = "fa fa-save",
-#   self_contained = FALSE
-# )
+To make things easier, I am writing an R package to deal with this type of data. Ideally, the user should be able to merge country data files with a unique line of command. The package will offer functionalities to:
 
-download_this(
-    .data=data.frame(a=c(1,2),b=c(3,4)),
-    output_name = "prova",
-    output_extension = ".csv",
-    button_label = "Download data as csv",
-    button_type = "default",
-    has_icon = TRUE,
-    icon = "fa fa-save"
-  )
+- Convert country names to a common nomenclature (e.g. M49 standard or ISO-3 codes)
+- Merge country data in a unique table by recognising and matching different country nomenclatures
+- Support the merging of data with multiple identifiers (e.g. panel data or country-sector data)
+- Automatically generate interactive visualisations to explore country data
 
-```
+ 
+
+## Tile master: a shiny strategy game
+
+In 2020, I decided that it would be interesting to learn how to make dashboards and interactive data visualisations. After a look at the amazing gallery of [Shiny apps](https://shiny.rstudio.com/), I decided that I had to explore its functionalities by trying a project on my own.
+
+Shiny is ideal for data visualisation. It is really easy to create and  interactive charts and combine them in a beautiful dashboard. So why not trying to plot some interesting economic data? I should have thought about this a bit longer. For some inexplicable reason, I decided it would be fun to implement a strategy board game on a shiny app. 
+
+It took some time, and a lot more coding than originally planned, but eventually I managed to implement a playable strategy game with Shiny. **A link to the game is available [here](https://fbellelli.shinyapps.io/TileMaster/).** For the moment I didn't write down the games' rules and didn't include a tutorial. So if enjoy figuring the rules our by trial and error, feel free to give it a try! No fun is guaranteed.
+
+Completing this project was an enriching journey. I ended up exploring all sorts of unexpected subjects from path finding algorithms and Delaunay triangulation to advanced game developing concepts. I also thoroughly enjoyed building an AI for this game. Given the strategic complexity of the game, and being the first AI I ever built, I am quite pleased with the results. The basic AI decision process is a hybrid between a finite-state machine and a utility-based system. I then improved it by training machine learning models to evaluate the AI's moves. 
 
 
-
-```{r}
-knitr::include_app("https://fbellelli.shinyapps.io/TileMaster/")
-```

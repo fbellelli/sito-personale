@@ -106,7 +106,6 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 
   <!--/radix_placeholder_meta_tags-->
   
-  <meta name="citation_reference" content="citation_title=How do environmental policies affects green innovation and trade? Evidence from the WTO environmental database (EDB);citation_publication_date=2021;citation_author=Francesco Saverio Bellelli;citation_author=Ankai Xu"/>
   <!--radix_placeholder_rmarkdown_metadata-->
 
   <script type="text/json" id="radix-rmarkdown-metadata">
@@ -2470,8 +2469,8 @@ div.blue { background-color:#e6f0ff; border-radius: 5px; padding: 20px;}
 </div>
 <div class="l-body-outset">
 <div class="panelset">
-<section id="implementation-period" class="panel-name panel">
-<h3 class="panel-name">Implementation period</h3>
+<section id="implementation-years" class="panel-name panel">
+<h3 class="panel-name">Implementation years</h3>
 <div class="column-left55">
 <div class="layout-chunk" data-layout="l-body">
 <div class="figure"><span id="fig:unnamed-chunk-1"></span>
@@ -2514,8 +2513,8 @@ Figure 2: Number of environment-related measures by country (EDB v.2018)
 <p>About a quarter of all notified measures in the EDB report an <a href="https://en.wikipedia.org/wiki/Harmonized_System">HS</a> or <a href="https://en.wikipedia.org/wiki/International_Classification_for_Standards">ICS</a> code describing the goods to which it relates. These are two product classifications commonly used to categorise trade flows.</p>
 <p>One obstacle in using this information is that ICS and HS codes are mixed together in the original EDB dataset. To make matters worse, ICS and HS codes look very similar: they are both sequences of numbers. <strong>We address this issue by identifying and separating HS, ICS and ambiguous codes in three separate columns.</strong></p>
 </section>
-<section id="policy-scores" class="panel-name panel">
-<h3 class="panel-name">Policy scores</h3>
+<section id="policy-score" class="panel-name panel">
+<h3 class="panel-name">Policy score</h3>
 <div class="column-left60">
 <div class="layout-chunk" data-layout="l-body">
 <div class="figure"><span id="fig:unnamed-chunk-3"></span>
@@ -2527,22 +2526,15 @@ Figure 3: Policy score components
 </div>
 </div>
 <div class="column-right40">
-<p>Environmental policies may have drastically different design and stringency, especially when a large number of policies are compared or jointly studied, this heterogeneity could be problematic in producing generalisable results. Hence, it is often useful in economic research to measure the intensity of a policy in order to mitigate problems of unobserved heterogeneity. <strong>We attempt to build an indicator of measure strength based on the information in the EDB database</strong>.</p>
+<p><strong>We attempt to build an indicator of measure strength based on the information in the EDB database</strong>. Our measure score is built along two conceptual dimensions: the policy <em>breadth</em> and <em>depth</em>. We consider as broad, measures that affect a larger share of the economy and tackle multiple environmental issues. On the other hand, the depth of a measure refers to the intensity of its provisions. We base our depth scoring on the type of policy instrument used in the measure and the wording of the measure description.</p>
 </div>
-<p><br> Our measure score is built along two conceptual dimensions: the policy <em>breadth</em> and <em>depth</em>. We consider as broad, measures that affect a larger share of the economy and tackle multiple environmental issues. On the other hand, the depth of a measure refers to the intensity of its provisions. This is a concept that is harder to capture with the available information in the EDB. We base our depth scoring on the type of policy instrument used in the measure and the wording of the measure description.</p>
 </section>
 </div>
 <hr />
 </div>
-<h2 id="more-information">More information</h2>
-<p>The EDB gets updated annually Updated whenever a new version of the EDB is</p>
-<p>information on the <span class="citation" data-cites="EDB_paper">(<a href="#ref-EDB_paper" role="doc-biblioref">Bellelli and Xu 2021</a>)</span></p>
+<h2 id="edb-extension-updates">EDB extension updates</h2>
+<p>The EDB notification dataset gets updated annually by the WTO secretariat. As a new version comes out, we will update the EDB extension to provide information on the latest measures in the database. We designate EDB’s version by the latest notification year included in their data. For example, the latest release (EDB v.2019) includes measures notified up to 2019.</p>
 <div class="sourceCode" id="cb1"><pre class="sourceCode r distill-force-highlighting-css"><code class="sourceCode r"></code></pre></div>
-<div id="refs" class="references csl-bib-body hanging-indent" role="doc-bibliography">
-<div id="ref-EDB_paper" class="csl-entry" role="doc-biblioentry">
-Bellelli, Francesco Saverio, and Ankai Xu. 2021. <span>“<span class="nocase">How do environmental policies affects green innovation and trade? Evidence from the WTO environmental database (EDB)</span>.”</span> <em>WTO Staff Working Paper (Forthcoming)</em>.
-</div>
-</div>
 <!--radix_placeholder_article_footer-->
 <!--/radix_placeholder_article_footer-->
 </div>
