@@ -1,5 +1,6 @@
 name: "sito personale"
 title: "F.S.Bellelli"
+theme: my-theme.css
 description: |
   My blog
 output_dir: "docs"
