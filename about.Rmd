@@ -1,0 +1,30 @@
+---
+title: "Francesco Saverio Bellelli"
+image: "images/foto-profilo.png"
+links:
+  - label: '`r fontawesome::fa("linkedin", height = "15px")` Linkedin'
+    url: "https://www.linkedin.com/in/francesco-saverio-bellelli-025852183/"
+  - label: '`r fontawesome::fa("github", height = "15px")` Github'
+    url: "https://github.com/fbellelli"
+  - label: '`r fontawesome::fa("envelope", height = "15px")` Email'
+    url: "mailto:fsabellelli@gmail.com"
+  - label: '`r fontawesome::fa("user", height = "15px")` CV '
+    url: files/CV_FSB.pdf
+output:
+  postcards::trestles
+---
+
+```{r include=FALSE}
+library(postcards)
+```
+ 
+## A little about myself
+
+I am an applied economist, with interests ranging from climate and environmental issues, to trade, innovation policies and macroeconomic forecasting. 
+
+Born in Brazil, and grown up around the world, I have spent most of my life travelling.  After completing a PhD in economics at Durham University, I went on working in the banking industry and for international organisations in Geneva. 
+
+At the moment I work as a research economist at the World Trade Organization (WTO), where I am involved in several projects related to trade and the environment.
+
+
+

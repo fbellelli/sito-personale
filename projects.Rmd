@@ -1,0 +1,42 @@
+---
+title: "Other projects"
+description: |
+  Some other projects on which I am working
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+```
+
+
+```{r}
+library(downloadthis)
+
+
+# download_file(
+#   path = system.file("delta-fiume-harrison-candlin.jpg", package = "downloadthis"),
+#   output_name = "prova",
+#   button_label = "Download file",
+#   button_type = "danger",
+#   has_icon = TRUE,
+#   icon = "fa fa-save",
+#   self_contained = FALSE
+# )
+
+download_this(
+    .data=data.frame(a=c(1,2),b=c(3,4)),
+    output_name = "prova",
+    output_extension = ".csv",
+    button_label = "Download data as csv",
+    button_type = "default",
+    has_icon = TRUE,
+    icon = "fa fa-save"
+  )
+
+```
+
+
+
+```{r}
+knitr::include_app("https://fbellelli.shinyapps.io/TileMaster/")
+```
