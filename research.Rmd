@@ -21,9 +21,9 @@ In addition to the above, I am also fascinated by recent development in AI. I am
 ## Working papers
 
 **Bellelli, F.S.** and Xu, A. (2021) How do environmental policies affects green innovation and trade? Evidence from the WTO environmental database (EDB). (*WTO staff paper, will be published in July 2021*)
-<a href="papers/EDB_paper_draft.pdf"><button style="color:white;background-color:black">PDF</button></a>
+<a href="papers/EDB_paper_draft.pdf"><button>PDF</button></a>
 <a href="edb-data.html"><button>Data</button></a>
-<a href="EDB paper replication files.zip"><button>Replication files</button></a>
+<a href="https://drive.google.com/file/d/1sbHv8yDAyec4_CG1PPOh_RNbqLRqPNZb/view?usp=sharing"><button>Replication files</button></a>
 
 **Bellelli, F.S.**, Scarpa, R. and Aftab, A. (2021) The joining dilemma: A survey of the empirical literature on environmental treaty participation. *Review of Environmental Economics and Policy*. *(Forthcoming)*
 <a href="papers/Survey_of_empirical_ratification_literature.pdf"><button>PDF</button></a>
@@ -33,7 +33,7 @@ In addition to the above, I am also fascinated by recent development in AI. I am
 <a href="papers/Ratification_paper.pdf"><button>PDF</button></a>
 <a href="papers/ratification paper appendix.zip"><button>Appendix</button></a>
 <a href="ratification-data.html"><button>Data</button></a>
-<a href="papers/ratification data & replication files.zip"><button>Replication files</button></a>
+<a href="https://drive.google.com/file/d/1b_4h66745Hk7M_SR5JPXaB8ViJ-GMRRH/view?usp=sharing"><button>Replication files</button></a>
 
 
 **Bellelli, F.S.**, Xu, A. Why should we fish for an agreement? An economic analysis of fisheries subsidies. *(to be published as WTO discussion paper)*
