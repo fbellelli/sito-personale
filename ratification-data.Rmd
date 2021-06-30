@@ -1,7 +1,58 @@
 ---
 title: "IEA ratification dataset"
 description: |
-  This dataset collects information on the potential ratifiers and the ratification status of 268 international environmental agreements (IEA) 
+  This dataset collects information on the potential ratifiers and the ratification status of 263 international environmental agreements (IEA) 
+bibliography: references.bib
 ---
+
+
+<style>
+div.blue { background-color:#e6f0ff; border-radius: 5px; padding: 20px;}
+</style>
+<div class = "blue">
+**Data download:**
+
+A version of this data set may be downloaded [here](data files/ratification data.zip)
+
+**Please reference as:** <br>
+[Bellelli, F.S., Scarpa, R. and Aftab, A. (2021) Interest groups and participation in international environmental agreements. *Working paper. Available from https://fbellelli.com/ratification-data.html.*](papers/Ratification_paper.pdf)
+</div>
+
+
+
+## What is this dataset? 
+
+
+International environmental agreements (IEAs) --- such as the Paris agreement on climate change, the CITES agreement on the trade of endangered species, or the Montreal Protocol on ozone-depleting substances --- are our primary tools for solving transboundary environmental issues. This dataset collects information on the ratification (i.e. participation) status of countries in 263 environmental agreements. It tracks the ratifications of over 200 countries between 1950 and 2017. A particularity of this dataset is that it identifies for every agreement the countries that can potentially ratify it. This feature is very useful for  research applications. 
+
+A full description of the collection method and coding criteria is available in the data appendix of @ratification_paper, which can be found [here](papers/ratification paper appendix.zip).
+
+
+
+```{r echo=FALSE, layout="l-page", fig.cap="Number of IEA ratifications by 2017"}
+knitr::include_graphics("images/map-number-ratifications.png")
+```
+
+
+
+## Data coverage and sources
+
+We have two main sources for the date and status of ratification of treaties: The ENTRI [@entri2013] and the IEA [@treatyiea] Databases. The IEA database is our primary source of information, while the ENTRI database was used to cross-check some of the information in the IEA database.
+
+Our dataset contains only agreements and protocols to the agreements are taken into consideration, while amendments are ignored. The agreements in our sample relate to any of the following areas of interest: *1*) protection of the environment in general, *2*) species protection, *3*) pollution (air, land and water), *4*) habitat and ecosystem preservation. The dataset excludes energy agreements, nuclear non-proliferation treaties or any agreement that does not make explicit reference to environmental issues either in their title or text. Finally, the dataset covers only *multilateral* agreements with at least five potential ratifiers. That is to say, it does not cover bilateral treaties and very small multilateral agreements.
+
+
+## Potential ratifiers
+
+We define as *potential ratifier* any country that could ratify a given agreement. This includes any nation for which the treaty is open to ratification and that is affected by the environmental issues tackled by the agreement. The 
+
+Studies looking a treaty design and membership have traditionally assumed that all countries could ratify international agreements. However, this is clearly not the case. Most of the environmental agreements are regional --- they tackle localised environmental issues, such as the protection of a specific ecosystem or species, or are initiated by regional organisations (e.g. European Union, the African Uniopn, or the Caribbean and Pacific group of States). This leads to biased estimates and erroneous conclusions in studies including regional agreements in their sample. Identifying potential ratifiers can solve this problem and allow researchers to study regional agreements.
+
+Knowing which country can ratify an agreement also allows to build a ratification rate indicator, which is a better indicator of international environmental cooperation than simple count of treaty membership. As shown in the image below, not all countries have access to the same number of agreements. Hence, the number of memberships in international agreements is driven by the number of agreements they can potentially ratify.
+
+```{r echo=FALSE, layout="l-page", fig.cap="Number of potential ratifications by country"}
+knitr::include_graphics("images/map-potential-ratifications.png")
+```
+
 
 

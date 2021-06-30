@@ -88,27 +88,31 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
   <!--radix_placeholder_meta_tags-->
   <title>F.S.Bellelli: IEA ratification dataset</title>
 
-  <meta property="description" itemprop="description" content="This dataset collects information on the potential ratifiers and the ratification status of 268 international environmental agreements (IEA)"/>
+  <meta property="description" itemprop="description" content="This dataset collects information on the potential ratifiers and the ratification status of 263 international environmental agreements (IEA)"/>
 
 
 
   <!--  https://developers.facebook.com/docs/sharing/webmasters#markup -->
   <meta property="og:title" content="F.S.Bellelli: IEA ratification dataset"/>
   <meta property="og:type" content="article"/>
-  <meta property="og:description" content="This dataset collects information on the potential ratifiers and the ratification status of 268 international environmental agreements (IEA)"/>
+  <meta property="og:description" content="This dataset collects information on the potential ratifiers and the ratification status of 263 international environmental agreements (IEA)"/>
   <meta property="og:locale" content="en_US"/>
   <meta property="og:site_name" content="F.S.Bellelli"/>
 
   <!--  https://dev.twitter.com/cards/types/summary -->
   <meta property="twitter:card" content="summary"/>
   <meta property="twitter:title" content="F.S.Bellelli: IEA ratification dataset"/>
-  <meta property="twitter:description" content="This dataset collects information on the potential ratifiers and the ratification status of 268 international environmental agreements (IEA)"/>
+  <meta property="twitter:description" content="This dataset collects information on the potential ratifiers and the ratification status of 263 international environmental agreements (IEA)"/>
 
   <!--/radix_placeholder_meta_tags-->
+  
+  <meta name="citation_reference" content="citation_title=International environmental agreements (IEA) database project (version 2017.1);citation_publication_date=2017;citation_author=R. B. Mitchell"/>
+  <meta name="citation_reference" content="citation_title=Interest groups and participation in international environmental agreements;citation_publication_date=2021;citation_author=Francesco Saverio Bellelli;citation_author=Riccardo Scarpa;citation_author=Ashar Aftab"/>
+  <meta name="citation_reference" content="citation_title=Environmental Treaties and Resource Indicators (ENTRI);citation_publication_date=2013;citation_author=Environmental Treaties and Resource Indicators (ENTRI)"/>
   <!--radix_placeholder_rmarkdown_metadata-->
 
   <script type="text/json" id="radix-rmarkdown-metadata">
-  {"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["title","description"]}},"value":[{"type":"character","attributes":{},"value":["IEA ratification dataset"]},{"type":"character","attributes":{},"value":["This dataset collects information on the potential ratifiers and the ratification status of 268 international environmental agreements (IEA) "]}]}
+  {"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["title","description","bibliography"]}},"value":[{"type":"character","attributes":{},"value":["IEA ratification dataset"]},{"type":"character","attributes":{},"value":["This dataset collects information on the potential ratifiers and the ratification status of 263 international environmental agreements (IEA) \n"]},{"type":"character","attributes":{},"value":["references.bib"]}]}
   </script>
   <!--/radix_placeholder_rmarkdown_metadata-->
   <!--radix_placeholder_navigation_in_header-->
@@ -2363,7 +2367,7 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 <!--radix_placeholder_front_matter-->
 
 <script id="distill-front-matter" type="text/json">
-{"title":"IEA ratification dataset","description":"This dataset collects information on the potential ratifiers and the ratification status of 268 international environmental agreements (IEA)","authors":[]}
+{"title":"IEA ratification dataset","description":"This dataset collects information on the potential ratifiers and the ratification status of 263 international environmental agreements (IEA)","authors":[]}
 </script>
 
 <!--/radix_placeholder_front_matter-->
@@ -2404,12 +2408,57 @@ Data
 <h1>IEA ratification dataset</h1>
 <!--radix_placeholder_categories-->
 <!--/radix_placeholder_categories-->
-<p><p>This dataset collects information on the potential ratifiers and the ratification status of 268 international environmental agreements (IEA)</p></p>
+<p><p>This dataset collects information on the potential ratifiers and the ratification status of 263 international environmental agreements (IEA)</p></p>
 </div>
 
 
 <div class="d-article">
+<style>
+div.blue { background-color:#e6f0ff; border-radius: 5px; padding: 20px;}
+</style>
+<div class="blue">
+<p><strong>Data download:</strong></p>
+<p>A version of this data set may be downloaded <a href="data%20files/ratification%20data.zip">here</a></p>
+<p><strong>Please reference as:</strong> <br> <a href="papers/Ratification_paper.pdf">Bellelli, F.S., Scarpa, R. and Aftab, A. (2021) Interest groups and participation in international environmental agreements. <em>Working paper. Available from https://fbellelli.com/ratification-data.html.</em></a></p>
+</div>
+<h2 id="what-is-this-dataset">What is this dataset?</h2>
+<p>International environmental agreements (IEAs) — such as the Paris agreement on climate change, the CITES agreement on the trade of endangered species, or the Montreal Protocol on ozone-depleting substances — are our primary tools for solving transboundary environmental issues. This dataset collects information on the ratification (i.e. participation) status of countries in 263 environmental agreements. It tracks the ratifications of over 200 countries between 1950 and 2017. A particularity of this dataset is that it identifies for every agreement the countries that can potentially ratify it. This feature is very useful for research applications.</p>
+<p>A full description of the collection method and coding criteria is available in the data appendix of <span class="citation" data-cites="ratification_paper"><a href="#ref-ratification_paper" role="doc-biblioref">Bellelli, Scarpa, and Aftab</a> (<a href="#ref-ratification_paper" role="doc-biblioref">2021</a>)</span>, which can be found <a href="papers/ratification%20paper%20appendix.zip">here</a>.</p>
+<div class="layout-chunk" data-layout="l-page">
+<div class="figure"><span id="fig:unnamed-chunk-1"></span>
+<img src="images/map-number-ratifications.png" alt="Number of IEA ratifications by 2017" width="3508" />
+<p class="caption">
+Figure 1: Number of IEA ratifications by 2017
+</p>
+</div>
+</div>
+<h2 id="data-coverage-and-sources">Data coverage and sources</h2>
+<p>We have two main sources for the date and status of ratification of treaties: The ENTRI <span class="citation" data-cites="entri2013">(<a href="#ref-entri2013" role="doc-biblioref">CIESIN 2013</a>)</span> and the IEA <span class="citation" data-cites="treatyiea">(<a href="#ref-treatyiea" role="doc-biblioref">Mitchell 2017</a>)</span> Databases. The IEA database is our primary source of information, while the ENTRI database was used to cross-check some of the information in the IEA database.</p>
+<p>Our dataset contains only agreements and protocols to the agreements are taken into consideration, while amendments are ignored. The agreements in our sample relate to any of the following areas of interest: <em>1</em>) protection of the environment in general, <em>2</em>) species protection, <em>3</em>) pollution (air, land and water), <em>4</em>) habitat and ecosystem preservation. The dataset excludes energy agreements, nuclear non-proliferation treaties or any agreement that does not make explicit reference to environmental issues either in their title or text. Finally, the dataset covers only <em>multilateral</em> agreements with at least five potential ratifiers. That is to say, it does not cover bilateral treaties and very small multilateral agreements.</p>
+<h2 id="potential-ratifiers">Potential ratifiers</h2>
+<p>We define as <em>potential ratifier</em> any country that could ratify a given agreement. This includes any nation for which the treaty is open to ratification and that is affected by the environmental issues tackled by the agreement. The</p>
+<p>Studies looking a treaty design and membership have traditionally assumed that all countries could ratify international agreements. However, this is clearly not the case. Most of the environmental agreements are regional — they tackle localised environmental issues, such as the protection of a specific ecosystem or species, or are initiated by regional organisations (e.g. European Union, the African Uniopn, or the Caribbean and Pacific group of States). This leads to biased estimates and erroneous conclusions in studies including regional agreements in their sample. Identifying potential ratifiers can solve this problem and allow researchers to study regional agreements.</p>
+<p>Knowing which country can ratify an agreement also allows to build a ratification rate indicator, which is a better indicator of international environmental cooperation than simple count of treaty membership. As shown in the image below, not all countries have access to the same number of agreements. Hence, the number of memberships in international agreements is driven by the number of agreements they can potentially ratify.</p>
+<div class="layout-chunk" data-layout="l-page">
+<div class="figure"><span id="fig:unnamed-chunk-2"></span>
+<img src="images/map-potential-ratifications.png" alt="Number of potential ratifications by country" width="3508" />
+<p class="caption">
+Figure 2: Number of potential ratifications by country
+</p>
+</div>
+</div>
 <div class="sourceCode" id="cb1"><pre class="sourceCode r distill-force-highlighting-css"><code class="sourceCode r"></code></pre></div>
+<div id="refs" class="references csl-bib-body hanging-indent" role="doc-bibliography">
+<div id="ref-ratification_paper" class="csl-entry" role="doc-biblioentry">
+Bellelli, Francesco Saverio, Riccardo Scarpa, and Ashar Aftab. 2021. <span>“Interest Groups and Participation in International Environmental Agreements.”</span> <em>Working Paper</em>.
+</div>
+<div id="ref-entri2013" class="csl-entry" role="doc-biblioentry">
+CIESIN. 2013. <span>“<span class="nocase">Environmental Treaties and Resource Indicators</span> <span>(ENTRI)</span>.”</span> <em>Center for International Earth Science Information Network</em>.
+</div>
+<div id="ref-treatyiea" class="csl-entry" role="doc-biblioentry">
+Mitchell, R. B. 2017. <span>“International Environmental Agreements (<span>IEA</span>) Database Project (Version 2017.1).”</span> <em>University of Oregon</em>.
+</div>
+</div>
 <!--radix_placeholder_article_footer-->
 <!--/radix_placeholder_article_footer-->
 </div>
@@ -2421,7 +2470,10 @@ Data
 <!--radix_placeholder_site_after_body-->
 <!--/radix_placeholder_site_after_body-->
 <!--radix_placeholder_appendices-->
-<div class="appendix-bottom"></div>
+<div class="appendix-bottom">
+<h3 id="references">References</h3>
+<div id="references-listing"></div>
+</div>
 <!--/radix_placeholder_appendices-->
 <!--radix_placeholder_navigation_after_body-->
 <!--/radix_placeholder_navigation_after_body-->

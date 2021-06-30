@@ -144,7 +144,7 @@
 @Article{treatyiea,
   author  = {Mitchell, R.B.},
   journal = {University of Oregon},
-  title   = {International Environmental Agreements ({IEA}) Database Project, version 2017},
+  title   = {International Environmental Agreements ({IEA}) Database Project (version 2017.1)},
   year    = {2017},
   note    = {Available from \url{http://iea.uoregon.edu/}},
 }
