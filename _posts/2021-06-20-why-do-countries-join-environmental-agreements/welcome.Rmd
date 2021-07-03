@@ -4,9 +4,8 @@ description: |
   Understanding the determinants of participaiton in environmental agreements can help us frame more successful agreements. In this article, I discuss the economic theory and empirical evidence on this topic.
 author:
   - name: Francesco S. Bellelli
-date: 06-20-2021
+date: 03-20-2021
 categories: 
-  - international agreements
   - environment
   - economics
 output:
@@ -44,7 +43,7 @@ knitr::include_graphics("Agreements by type.png")
 
 ## Environmental agreements and economic theory
 
-These questions have been addressed in economic research, mostly using game-theoretical approaches in models that predict both the optimal emission abatement and participation levels in international agreements. In these models, countries contend with a considerable incentive to free-ride because the benefits of the agreement are usually considered non-excludable and non-rival. Hence, the conclusions of classic game-theoretical models are generally pessimistic on the capacity to solve environmental problems. In these models, wide participation in agreements can only be achieved with low abatement targets that fall short of the social optimum. This outlook originates from the core assumptions of these models, which frame treaty participation as a one-off non-cooperative choice --- just like in a prisoner's dilemma. 
+These questions have been addressed in economic research mostly using game-theoretical approaches in models that predict both the optimal emission abatement and participation levels in international agreements. In these models, countries contend with a considerable incentive to free-ride because the benefits of the agreement are usually considered non-excludable and non-rival. Hence, the conclusions of classic game-theoretical models are generally pessimistic on the capacity to solve environmental problems. In these models, wide participation in agreements can only be achieved with low abatement targets that fall short of the social optimum. This outlook originates from the core assumptions of these models, which frame treaty participation as a one-off non-cooperative choice --- just like in a prisoner's dilemma. 
 
 Later works largely confirmed the free-riding incentive existing in treaty participation, with some improvement in the participation outlook. For example, participation can be improved if participants can offer side transfers. Under the right circumstances also the inclusion of penalties, trade restriction, minimum participation rules and permit trading schemes can considerably boost participation. Moreover, in repeated games --- which allow countries to join the agreement in different moments --- the result are generally more optimistic than in one-off games.
 
@@ -71,7 +70,7 @@ Finally, participation choices are seen as a strategic moves, which do not only 
 <div class = "blue">
 **More information on this topic may be found in:**
 
-Bellelli, F.S., Scarpa, R. and Aftab, A. (2021) The joining dilemma: A survey of the empirical literature on environmental treaty participation. *Review of Environmental Economics and Policy*. Available from https://fbellelli.com/research.html. *(Forthcoming)*
+Bellelli, F.S., Scarpa, R. and Aftab, A. (2021) The joining dilemma: A survey of the empirical literature on environmental treaty participation. *Review of Environmental Economics and Policy*. *(Forthcoming)*
 <a href="../../papers/Survey_of_empirical_ratification_literature.pdf"><button>PDF</button></a>
 <a href="../../papers/Survey_of_empirical_ratification_literature_appendix.pdf"><button>Appendix</button></a>
 
