@@ -1,7 +1,7 @@
 ---
 title: "Voronoi diagrams and Delaunay triangulation"
 description: |
-  A short description of the fascinating Voronoi diagrams, Delaunay triangulation, and a few of their applications.  
+  Vornoi diagrams are amazing! In this article I explain what they are and discuss some analogies and applicications.
 author:
   - name: Francesco S. Bellelli
 date: 05-25-2021
