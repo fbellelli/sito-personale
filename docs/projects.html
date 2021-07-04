@@ -88,27 +88,24 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
   <!--radix_placeholder_meta_tags-->
   <title>F.S.Bellelli: Other projects</title>
 
-  <meta property="description" itemprop="description" content="Some other projects on which I am working"/>
 
 
 
   <!--  https://developers.facebook.com/docs/sharing/webmasters#markup -->
   <meta property="og:title" content="F.S.Bellelli: Other projects"/>
   <meta property="og:type" content="article"/>
-  <meta property="og:description" content="Some other projects on which I am working"/>
   <meta property="og:locale" content="en_US"/>
   <meta property="og:site_name" content="F.S.Bellelli"/>
 
   <!--  https://dev.twitter.com/cards/types/summary -->
   <meta property="twitter:card" content="summary"/>
   <meta property="twitter:title" content="F.S.Bellelli: Other projects"/>
-  <meta property="twitter:description" content="Some other projects on which I am working"/>
 
   <!--/radix_placeholder_meta_tags-->
   <!--radix_placeholder_rmarkdown_metadata-->
 
   <script type="text/json" id="radix-rmarkdown-metadata">
-  {"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["title","description"]}},"value":[{"type":"character","attributes":{},"value":["Other projects"]},{"type":"character","attributes":{},"value":["Some other projects on which I am working"]}]}
+  {"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["title","output"]}},"value":[{"type":"character","attributes":{},"value":["Other projects"]},{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["distill::distill_article"]}},"value":[{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["toc","css"]}},"value":[{"type":"logical","attributes":{},"value":[false]},{"type":"character","attributes":{},"value":["masonry.css"]}]}]}]}
   </script>
   <!--/radix_placeholder_rmarkdown_metadata-->
   <!--radix_placeholder_navigation_in_header-->
@@ -2355,6 +2352,7 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
   <!--radix_placeholder_site_in_header-->
   <!--/radix_placeholder_site_in_header-->
 
+  <link rel="stylesheet" href="masonry.css" type="text/css"/>
 
 </head>
 
@@ -2363,7 +2361,7 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 <!--radix_placeholder_front_matter-->
 
 <script id="distill-front-matter" type="text/json">
-{"title":"Other projects","description":"Some other projects on which I am working","authors":[]}
+{"title":"Other projects","authors":[]}
 </script>
 
 <!--/radix_placeholder_front_matter-->
@@ -2404,35 +2402,44 @@ Data
 <h1>Other projects</h1>
 <!--radix_placeholder_categories-->
 <!--/radix_placeholder_categories-->
-<p><p>Some other projects on which I am working</p></p>
+
 </div>
 
 
 <div class="d-article">
-<style>
-div.blue { background-color:#e6f0ff; border-radius: 5px; padding: 20px;}
-</style>
-<h2 id="tidycountry">TidyCountry</h2>
-<p>As an economist, I often work with country-level data coming from different sources. GDP series from the IMF, monetary data from central banks, trade data from WTO, CO__2 emissions from the IEA, survey data from national agencies, etc.. Pooling all this data together is often a laborious task because countries’ naming conventions are never the same.</p>
-<p>To make things easier, I am writing an R package to deal with this type of data. Ideally, the user should be able to merge country data files with a unique line of command. The package will offer functionalities to:</p>
-<ul>
-<li>Convert country names to a common nomenclature (e.g. M49 standard or ISO-3 codes)</li>
-<li>Merge country data in a unique table by recognising and matching different country nomenclatures</li>
-<li>Support the merging of data with multiple identifiers (e.g. panel data or country-sector data)</li>
-<li>Automatically generate interactive visualisations to explore country data</li>
-</ul>
-<h2 id="tile-master-a-shiny-strategy-game">Tile master: a Shiny strategy game</h2>
-<div class="blue">
-<center>
-A link to the game <strong>Tile master</strong> is available <a href="https://fbellelli.shinyapps.io/TileMaster/">here</a>.
-</center>
+<div class="layout-chunk" data-layout="l-page">
+<div class="masonry-wrapper">
+<div class="masonry">
+<div class="masonry-item">
+<div class="masonry-content">
+<a href="posts/2021-01-27-watercolours/index.html" class="card-hover">
+<img src="posts/2021-01-27-watercolours/paintings/portico.jpeg"/>
+</a>
+<h3 class="masonry-title">Watercolours</h3>
+<p class="masonry-description">Watercolour paintings from me and Lily</p>
 </div>
-<p><br></p>
-<p>In 2020, I decided that it would be interesting to learn how to make dashboards and interactive data visualisations. After a look at the amazing gallery of <a href="https://shiny.rstudio.com/">Shiny apps</a>, I decided that I had to explore its functionalities by trying a project on my own.</p>
-<p>Shiny is ideal for data visualisation. It is really easy to create and interactive charts and combine them in a beautiful dashboard. So why not trying to plot some interesting economic data? I should have thought about this a bit longer. For some inexplicable reason, I decided it would be interesting to implement a strategy board game on a shiny app.</p>
-<p>It was a challenging project. It took some time, and a lot more coding than originally planned, but eventually I managed to implement a playable strategy game with Shiny. For the moment I didn’t write down the games’ rules and didn’t include a tutorial. So, if enjoy figuring the rules our by trial and error, feel free to give it a try! No fun is guaranteed.</p>
-<p>Completing this project was an enriching journey. I ended up exploring all sorts of unexpected subjects: from path finding algorithms and Delaunay triangulation to advanced game developing concepts. I also thoroughly enjoyed building the AI for this game. Given the strategic complexity of the game — and being the first AI I ever built — I am quite pleased with the final result. The basic AI decision process is a hybrid between a finite-state machine and a utility-based system. I then improved it by training machine learning models to evaluate the AI’s moves.</p>
-<p>I implemented many functionalities in the app. Users can save and load games, generate random maps with customisable parameters, select AI difficulty level and even play in a shared-screen multiplayer mode. In the end, it was a great learning project!</p>
+</div>
+<div class="masonry-item">
+<div class="masonry-content">
+<a href="posts/2021-04-03-tilemaster-a-strategy-game-in-shiny/index.html" class="card-hover">
+<img src="images/tilemaster_screenshot.png"/>
+</a>
+<h3 class="masonry-title">Tilemaster</h3>
+<p class="masonry-description">Can Shiny apps be used to play? I made a strategy game in Shiny</p>
+</div>
+</div>
+<div class="masonry-item">
+<div class="masonry-content">
+<a href="posts/2021-06-20-tidycountry/index.html" class="card-hover">
+<img src="https://cdn.britannica.com/13/129613-131-30279F20/Flags-world-flags-Country-history-blog-travel-2009.jpg"/>
+</a>
+<h3 class="masonry-title">TidyCountry</h3>
+<p class="masonry-description">I am working on an R package designed to quickly wrangle, merge and explore country data</p>
+</div>
+</div>
+</div>
+</div>
+</div>
 <div class="sourceCode" id="cb1"><pre class="sourceCode r distill-force-highlighting-css"><code class="sourceCode r"></code></pre></div>
 <!--radix_placeholder_article_footer-->
 <!--/radix_placeholder_article_footer-->

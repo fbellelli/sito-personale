@@ -1,7 +1,7 @@
 ---
 title: "Why do countries join environmental agreements?"
 description: |
-  Understanding the determinants of participaiton in environmental agreements can help us frame more successful agreements. In this article, I discuss the economic theory and empirical evidence on this topic.
+  Understanding the determinants of participation in environmental agreements can help us frame more successful agreements. In this article, I discuss the economic theory and empirical evidence on this topic.
 author:
   - name: Francesco S. Bellelli
 date: 03-20-2021

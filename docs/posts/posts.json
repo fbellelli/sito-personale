@@ -1,5 +1,24 @@
 [
   {
+    "path": "posts/2021-06-20-tidycountry/",
+    "title": "TidyCountry",
+    "description": "I am working on an R package designed to quickly wrangle, merge and explore country data",
+    "author": [
+      {
+        "name": "Francesco S. Bellelli",
+        "url": {}
+      }
+    ],
+    "date": "2021-06-20",
+    "categories": [
+      "coding"
+    ],
+    "contents": "\r\nTidyCountry\r\nAs an economist, I often work with country-level data coming from different sources. GDP series from the IMF, monetary data from central banks, trade data from WTO, CO2 emissions from the IEA, survey data from national agencies, etc.. Pooling all this data together is often a laborious task because countries’ naming conventions are never the same.\r\nTo make things easier, I am writing an R package to deal with this type of data. Ideally, the user should be able to merge country data files with a unique line of command. The package will offer functionalities to:\r\nConvert country names to a common nomenclature (e.g. M49 standard or ISO-3 codes)\r\nMerge country data in a unique table by recognising and matching different country nomenclatures\r\nSupport the merging of data with multiple identifiers (e.g. panel data or country-sector data)\r\nAutomatically generate interactive visualisations to explore country data\r\n\r\n\r\n\r\n",
+    "preview": "https://cdn.britannica.com/13/129613-131-30279F20/Flags-world-flags-Country-history-blog-travel-2009.jpg",
+    "last_modified": "2021-07-05T00:05:03+02:00",
+    "input_file": {}
+  },
+  {
     "path": "posts/2021-06-25-voronoi-diagrams-and-delaunay-triangulation/",
     "title": "Voronoi diagrams and Delaunay triangulation",
     "description": "Vornoi diagrams are amazing! In this article I explain what they are and discuss some analogies and applicications.",
@@ -20,9 +39,28 @@
     "input_file": {}
   },
   {
+    "path": "posts/2021-04-03-tilemaster-a-strategy-game-in-shiny/",
+    "title": "TileMaster: a strategy game in Shiny",
+    "description": "I created a small strategy game with RStudios' Shiny platform. If it can run a data dashboard, why not a strategy game?",
+    "author": [
+      {
+        "name": "Francesco S. Bellelli",
+        "url": {}
+      }
+    ],
+    "date": "2021-04-03",
+    "categories": [
+      "coding"
+    ],
+    "contents": "\r\n\r\ndiv.blue { background-color:#e6f0ff; border-radius: 5px; padding: 20px;}\r\n\r\n\r\nA link to the game Tile master is available here.\r\n\r\n\r\n\r\nAfter a look at the amazing gallery of dashboards and interactive data visualisations from Shiny apps, I decided that I had to explore its functionalities by trying a project on my own.\r\nShiny allows R users to quickly build and share simple apps that run on browsers. They are ideal for data visualisation. It is really easy to create interactive charts and combine them in a beautiful dashboards. So why not trying to plot some interesting economic data? I should have thought about this a bit longer. For some inexplicable reason, I decided it would be interesting to implement a strategy board game on a shiny app.\r\nIt was a challenging project. It took some time, and a lot more coding than originally planned, but eventually I managed to implement a playable game with Shiny. For the moment I didn’t write down the games’ rules and didn’t include a tutorial. So, if you don’t mind figuring the rules out by trial and error, feel free to give it a try! No fun is guaranteed.\r\nThis game was an enriching journey. I ended up exploring all sorts of unexpected subjects: from path finding algorithms and Delaunay triangulation to advanced game developing concepts. I also thoroughly enjoyed building the AI for this game. Given the strategic complexity of the game — and being the first AI I ever built — I am quite pleased with the final result. I experimented with different AI approaches, programmatic, machine learning and hybrids. In its final version, the basic AI decision process is a hybrid between a finite-state machine and a utility-based system. I then improved it by training machine learning models to evaluate the AI’s moves.\r\nI implemented many functionalities in the app. Users can save and load games, generate random maps with customisable parameters, select AI difficulty level and even play in a shared-screen multiplayer mode. In the end, it was a great learning project!\r\n\r\n\r\n\r\n\r\n\r\n\r\n",
+    "preview": "posts/2021-04-03-tilemaster-a-strategy-game-in-shiny/../../images/tilemaster_screenshot.png",
+    "last_modified": "2021-07-05T00:05:20+02:00",
+    "input_file": {}
+  },
+  {
     "path": "posts/2021-06-20-why-do-countries-join-environmental-agreements/",
     "title": "Why do countries join environmental agreements?",
-    "description": "Understanding the determinants of participaiton in environmental agreements can help us frame more successful agreements. In this article, I discuss the economic theory and empirical evidence on this topic.",
+    "description": "Understanding the determinants of participation in environmental agreements can help us frame more successful agreements. In this article, I discuss the economic theory and empirical evidence on this topic.",
     "author": [
       {
         "name": "Francesco S. Bellelli",
@@ -36,7 +74,30 @@
     ],
     "contents": "\r\n\r\nContents\r\nEnvironmental agreements and economic theory\r\nEmpirical evidence\r\n\r\n\r\ndiv.blue { background-color:#e6f0ff; border-radius: 5px; padding: 20px;}\r\n\r\n\r\n\r\nFigure 1: Number of multilateral environmental agreements by year Data from Mitchell (2020)\r\n\r\n\r\n\r\nThe world is facing significant environmental challenges, most of which are transboundary. Air pollution, contamination of lakes and rivers, global warming, biodiversity loss, deforestation, desertification, or overfishing are all problems that cross national borders and require international cooperation. Currently, the primary cooperative tools at our disposal are international environmental agreements, such as the Paris agreement on climate change, the CITES agreement on the trade of endangered species, or the Montreal protocol on ozone-depleting substances.\r\nOver the last fifty years, the number of environmental agreements has exploded (Figure 1). To date, more than 3,000 environmental agreements have been identified (Mitchell 2020) embodying cooperation on the most disparate environmental issues (Figure 2). Some agreements are successful, while others fail. Some attract universal participation, while others die on the negotiation table. Now more than ever, environmental agreements play a crucial role in improving environmental protection worldwide. Hence, the following questions are of great interest to economists: What motivates participation in environmental agreements? How can participation in environmental agreements be increased? Is there any factor at the national level that systematically enhance participation rates? If so, how can policy makers intervene to improve the likelihood of solving transboundary and global environmental issues?\r\n\r\n\r\n\r\nFigure 2: Number of agreements by subject Data from Mitchell (2020)\r\n\r\n\r\n\r\nEnvironmental agreements and economic theory\r\nThese questions have been addressed in economic research mostly using game-theoretical approaches in models that predict both the optimal emission abatement and participation levels in international agreements. In these models, countries contend with a considerable incentive to free-ride because the benefits of the agreement are usually considered non-excludable and non-rival. Hence, the conclusions of classic game-theoretical models are generally pessimistic on the capacity to solve environmental problems. In these models, wide participation in agreements can only be achieved with low abatement targets that fall short of the social optimum. This outlook originates from the core assumptions of these models, which frame treaty participation as a one-off non-cooperative choice — just like in a prisoner’s dilemma.\r\nLater works largely confirmed the free-riding incentive existing in treaty participation, with some improvement in the participation outlook. For example, participation can be improved if participants can offer side transfers. Under the right circumstances also the inclusion of penalties, trade restriction, minimum participation rules and permit trading schemes can considerably boost participation. Moreover, in repeated games — which allow countries to join the agreement in different moments — the result are generally more optimistic than in one-off games.\r\nEmpirical evidence\r\nThanks to the collection of large catalogues of environmental agreements (e.g. Mitchell 2020; CIESIN 2013), scholars can now look at these questions from an empirical perspective. Several findings emerge from this line of enquiry.\r\nFirst of all, the success of an agreement depends primarily on its content. This is by far the most important factor. More stringent agreement tend to deter participation, but there are some type of clauses (e.g.monitoring and enforcement rules, minimum participation rules, technological transfers, financial assistance) which can deliver stronger environmental commitment without penalising participation. Moreover, in Bellelli, Scarpa, and Aftab (2021), I show that regional agreements attract consistently higher ratification rates — on average the probability of joining a regional agreement is 2.5 times higher than for international agreements.\r\n\r\n\r\n\r\nFigure 3: Number of IEA ratifications by 2017 Data from Bellelli, Scarpa, and Aftab (2021)\r\n\r\n\r\n\r\nSo, design of the agreement matters. But this does not tell the whole story. As shown in the map above, participation varies not only between environmental agreements, but also between countries. And these differences are not random, rather, they seem to be clustered geographically, suggesting that political and economic factors are at play. The level of income, the quality of political institutions, the trade profile of the country, electoral and constitutional rules, the economic interests of domestic agents, are all factors that may influence a countries’ participation in international agreements.\r\nFinally, participation choices are seen as a strategic moves, which do not only depend on the characteristics of the country and treaty, but also on the behaviour of foreign nations. While we would theoretically expect a free-riding attitude, empirical evidence suggests that free-riding incentives are mitigated by the presence of international linkages. Empirical findings show that ratification likelihood increases when foreign nations decide to participate in treaties. This is particularly true in the case of large nations and countries that are in the same geographical area or income bracket. The empirical literature agrees that this effect is partly explained by the existence of economic and political ties between countries, which create interdependence and reputational costs for non-participation.\r\n\r\nMore information on this topic may be found in:\r\nBellelli, F.S., Scarpa, R. and Aftab, A. (2021) The joining dilemma: A survey of the empirical literature on environmental treaty participation. Review of Environmental Economics and Policy. (Forthcoming) PDF Appendix\r\nBellelli, F.S., Scarpa, R. and Aftab, A. Interest groups and participation in international environmental agreements. Working paper. Available from https://fbellelli.com/research.html. PDF\r\n\r\n\r\n\r\n\r\nBellelli, Francesco Saverio, Riccardo Scarpa, and Ashar Aftab. 2021. “Interest Groups and Participation in International Environmental Agreements.” Working Paper.\r\n\r\n\r\nCIESIN. 2013. “Environmental Treaties and Resource Indicators (ENTRI).” Center for International Earth Science Information Network.\r\n\r\n\r\nMitchell, R. B. 2020. “International Environmental Agreements Database Project.” University of Oregon.\r\n\r\n\r\n\r\n\r\n",
     "preview": "posts/2021-06-20-why-do-countries-join-environmental-agreements/map-number-ratifications.png",
-    "last_modified": "2021-07-03T16:06:08+02:00",
+    "last_modified": "2021-07-03T17:37:53+02:00",
+    "input_file": {}
+  },
+  {
+    "path": "posts/2021-01-27-watercolours/",
+    "title": "Watercolours",
+    "description": "A gallery displaying some of the artistic creations of Francesco and Lily",
+    "author": [
+      {
+        "name": "Francesco S. Bellelli",
+        "url": {}
+      },
+      {
+        "name": "Lily Runkun Tian",
+        "url": {}
+      }
+    ],
+    "date": "2021-01-27",
+    "categories": [
+      "other"
+    ],
+    "contents": "\r\n\r\n\r\n\r\n\r\nClick on any picture to enlarge it\r\n\r\n\r\n\r\n\r\n\r\n#lightgallery > a > img:hover {\r\n   transform: scale(1.15, 1.15);\r\n   transition: 0.2s ease-in-out;\r\n   cursor: pointer;\r\n}\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n    lightGallery(document.getElementById('lightgallery'));\r\n\r\n\r\n\r\n",
+    "preview": "posts/2021-01-27-watercolours/paintings/squirrel.jpeg",
+    "last_modified": "2021-07-04T23:23:58+02:00",
     "input_file": {}
   }
 ]

@@ -1,0 +1,32 @@
+---
+title: "TidyCountry"
+description: |
+  I am working on an R package designed to quickly wrangle, merge and explore country data
+author:
+  - name: Francesco S. Bellelli
+date: 06-20-2021
+categories:
+  - coding
+preview: "https://cdn.britannica.com/13/129613-131-30279F20/Flags-world-flags-Country-history-blog-travel-2009.jpg"
+output:
+  distill::distill_article:
+    self_contained: false
+---
+
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+```
+
+
+## TidyCountry
+
+As an economist, I often work with country-level data coming from different sources. GDP series from the IMF, monetary data from central banks, trade data from WTO, CO~2~  emissions from the IEA, survey data from national agencies, etc.. Pooling all this data together is often a laborious task because countries' naming conventions are never the same. 
+
+
+To make things easier, I am writing an R package to deal with this type of data. Ideally, the user should be able to merge country data files with a unique line of command. The package will offer functionalities to:
+
+- Convert country names to a common nomenclature (e.g. M49 standard or ISO-3 codes)
+- Merge country data in a unique table by recognising and matching different country nomenclatures
+- Support the merging of data with multiple identifiers (e.g. panel data or country-sector data)
+- Automatically generate interactive visualisations to explore country data

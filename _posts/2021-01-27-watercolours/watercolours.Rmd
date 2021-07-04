@@ -1,0 +1,101 @@
+---
+title: "Watercolours"
+description: |
+  A gallery displaying some of the artistic creations of Francesco and Lily
+author:
+  - name: Francesco S. Bellelli
+  - name: Lily Runkun Tian
+date: 01-27-2021
+categories: 
+  - other
+output:
+  distill::distill_article:
+    self_contained: false
+    toc: false
+preview: paintings/squirrel.jpeg
+---
+
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+
+library(htmltools)
+```
+
+
+```{r}
+# to add pictures
+#   1 - add picture to paintings folder
+#   2 - run code below to generate thumbnails
+
+#make thumbnails:
+# resize_image <- function(image, folder_pictures="_posts/2021-01-27-watercolours/paintings/", folder_output="_posts/2021-01-27-watercolours/thumbnails/"){
+#    imFile <- image_read(paste0(folder_pictures, image))
+#    imFile_resized <- magick::image_resize(imFile, "8%")
+#    magick::image_write(imFile_resized,path=paste0(folder_output, image))
+#  }
+#  
+#  list_pictures <- list.files("_posts/2021-01-27-watercolours/paintings/")
+#  lapply(list_pictures, resize_image)
+```
+
+
+<center><font color="grey">Click on any picture to enlarge it</center>
+</font><br>
+
+
+<head>
+
+<link type="text/css" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightgallery/1.6.0/css/lightgallery.min.css" />
+<script src="https://cdnjs.cloudflare.com/ajax/libs/lightgallery-js/1.4.1-beta.0/js/lightgallery.min.js"></script>
+
+<!-- lightgallery plugins -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/lg-fullscreen/1.2.1/lg-fullscreen.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/lg-thumbnail/1.2.1/lg-thumbnail.min.js"></script>
+
+</head>
+
+```{css}
+#lightgallery > a > img:hover {
+   transform: scale(1.15, 1.15);
+   transition: 0.2s ease-in-out;
+   cursor: pointer;
+}
+```
+
+
+```{r}
+#function for creating links from images
+make_gallery_layout <- function() {
+
+  # Get the names of all images
+  images <- list.files("paintings/")
+
+
+  # Create the HTML structure for each image
+  tagList(lapply(images, function(x) {
+      tags$a(
+        href = paste0("paintings/", x),
+        tags$img(src = paste0("thumbnails/", x))
+      )
+  }))
+
+}
+
+# Create layout
+withTags(
+  div(
+    class = "row",
+    id = "lightgallery",
+    tagList(
+      make_gallery_layout()
+    ),
+    align="center"
+  )
+)
+
+```
+
+<script type="text/javascript">
+    lightGallery(document.getElementById('lightgallery'));
+</script>
