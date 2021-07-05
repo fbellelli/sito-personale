@@ -12,8 +12,14 @@ output:
     self_contained: false
 ---
 
+
+```{r, echo=FALSE, preview=TRUE, fig.width=3, fig.height=3}
+knitr::include_graphics("../../images/tilemaster_screenshot.png")
+```
+
+
 <style>
-div.blue { background-color:#e6f0ff; border-radius: 5px; padding: 20px;}
+div.blue { background-color:#e6f0ff; border-radius: 5px; padding: 20px}
 </style>
 
 
@@ -30,8 +36,4 @@ This game was an enriching journey. I ended up exploring all sorts of unexpected
 
 I implemented many functionalities in the app. Users can save and load games, generate random maps with customisable parameters, select AI difficulty level and even play in a shared-screen multiplayer mode. In the end, it was a great learning project! 
 
-
-```{r, echo=FALSE, preview=TRUE}
-knitr::include_graphics("../../images/tilemaster_screenshot.png")
-```
 
