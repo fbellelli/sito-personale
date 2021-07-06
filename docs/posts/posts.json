@@ -21,7 +21,7 @@
   {
     "path": "posts/2021-06-25-voronoi-diagrams-and-delaunay-triangulation/",
     "title": "Voronoi diagrams and Delaunay triangulation",
-    "description": "Vornoi diagrams are amazing! In this article I explain what they are and discuss some analogies and applicications.",
+    "description": "In this article I explain what is a Vornoi diagram and why they are amazing",
     "author": [
       {
         "name": "Francesco S. Bellelli",
@@ -33,10 +33,10 @@
       "maths",
       "other"
     ],
-    "contents": "\r\nWriting in progress\r\n\r\n\r\n\r\n",
-    "preview": {},
-    "last_modified": "2021-07-03T17:32:31+02:00",
-    "input_file": {}
+    "contents": "\r\n\r\n\r\n\r\nWriting in progress\r\n\r\n\r\n\r\n",
+    "preview": "posts/2021-06-25-voronoi-diagrams-and-delaunay-triangulation/voronoi_colour_square.png",
+    "last_modified": "2021-07-05T18:39:00+02:00",
+    "input_file": "voronoi-diagrams-and-delaunay-tesselation.knit.md"
   },
   {
     "path": "posts/2021-04-03-tilemaster-a-strategy-game-in-shiny/",
