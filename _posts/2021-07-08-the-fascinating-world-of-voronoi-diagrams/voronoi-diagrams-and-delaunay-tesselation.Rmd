@@ -28,7 +28,7 @@ knitr::include_graphics("voronoi_colour.png")
 
 
 
-**Vornoi diagrams** (also known as *Dirichlet tesselation* or *Thiessen polygons*) are everywhere in nature. You have encountered them thousands of times, but maybe did not call it this way. Voronoi diagram are simple, yet they have incredible properties which have found applications in fields ranging from cartography, biology, computer graphics, all way to architecture and arts. 
+**Vornoi diagrams** (also known as *Dirichlet tesselation* or *Thiessen polygons*) are everywhere in nature. You have encountered them thousands of times, but maybe did not call it this way. Voronoi diagram are simple, yet they have incredible properties which have found applications in fields ranging from cartography, biology, computer science, statistics, all way to architecture and arts. 
 
 ## What is a Voronoi diagram?
 
@@ -92,14 +92,14 @@ Perhaps because of their spontaneous "natural" look, or simply because of their 
 knitr::include_graphics("water cube2.png")
 ```
 
-But Chinese appreciation of Vornoi pattern is surely older than this building. [Guan](https://en.wikipedia.org/wiki/Guan_ware)  [Ge](https://en.wikipedia.org/wiki/Ge_ware) ware from the Song dynasty have a distinctive crackled glaze. Ceramics can easily crack during the cooling process, however the crackles from the Guan and Ge ware are different. They are intentional. They are sought after because of their aesthetic qualities. Thanks to the Vornoi-like patterns on their surface, each piece is unique. To date, this type of crackled porcelain is one of the most imitates (Figure 5).  
+But Chinese appreciation of Vornoi pattern is surely older than this building. [Guan](https://en.wikipedia.org/wiki/Guan_ware) and  [Ge](https://en.wikipedia.org/wiki/Ge_ware) ware from the Song dynasty have a distinctive crackled glaze. Ceramics can easily crack during the cooling process, however the crackles from the Guan and Ge ware are different --- they are intentional. They are sought after because of their aesthetic qualities. Thanks to the Vornoi-like patterns on their surface, each piece is unique. To date, this is one of the most imitated styles of porcelain (Figure 5).  
 
 
 ```{r, fig.cap="Guan and Ge wares", fig.align='center'}
 knitr::include_graphics("Guan Ge ware2.png")
 ```
 
-Vornoi diagrams are also common in graphic arts. I think they make excellent backgrounds. For example, I created the thumbnail of this post by generating random points and constructing a Voronoi diagram. Then, I coloured each cell based on the distance of its point from a randomly selected spot in the box (Figure 6). Endless "abstract" computer backgrounds could be generated this way.
+Vornoi diagrams are also common in graphic arts for creating "abstract" patterns. I think they make excellent backgrounds. For example, I created the thumbnail of this post by generating random points and constructing a Voronoi diagram. Then, I coloured each cell based on the distance of its point from a randomly selected spot in the box (Figure 6). Endless "abstract" computer backgrounds could be generated this way.
 
 
 ```{r, fig.cap="Constructing a gradient background with Vornoi diagrams", fig.align='center'}
