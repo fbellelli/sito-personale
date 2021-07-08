@@ -29,7 +29,7 @@ In addition to the above, I am also fascinated by recent developments in AI and 
 <a href="papers/Survey_of_empirical_ratification_literature.pdf"><button>PDF</button></a>
 <a href="papers/Survey_of_empirical_ratification_literature_appendix.pdf"><button>Appendix</button></a>
 
-**Bellelli, F.S.**, Scarpa, R. and Aftab, A. Interest groups and participation in international environmental agreements. *Working paper*.
+**Bellelli, F.S.**, Scarpa, R. and Aftab, A. Interest groups and participation in international environmental agreements. *Working paper*. (*Under review at the Review of Economic Studies*)
 <a href="papers/Ratification_paper.pdf"><button>PDF</button></a>
 <a href="papers/ratification paper appendix.zip"><button>Appendix</button></a>
 <a href="ratification-data.html"><button>Data</button></a>

@@ -1,0 +1,159 @@
+---
+title: "The fascinating world of Voronoi diagrams"
+description: |
+  In this article I explain what is a Vornoi diagram and why they are amazing
+author:
+  - name: Francesco S. Bellelli
+date: 07-08-2021
+categories: 
+  - maths
+  - other
+preview: "voronoi_colour_square.png"
+output:
+  distill::distill_article:
+    toc: true
+    toc_depth: 3
+    self_contained: false
+---
+
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+```
+
+
+```{r, layout="l-body"}
+knitr::include_graphics("voronoi_colour.png")
+```
+
+
+
+**Vornoi diagrams** (also known as *Dirichlet tesselation* or *Thiessen polygons*) are everywhere in nature. You have encountered them thousands of times, but maybe did not call it this way. Voronoi diagram are simple, yet they have incredible properties which have found applications in fields ranging from cartography, biology, computer graphics, all way to architecture and arts. 
+
+## What is a Voronoi diagram?
+
+
+Suppose you have $n$ points scattered on a plane, the Voronoi diagram of those points subdivides the plane in exactly $n$ cells enclosing the portion of the plane that is the closest to the each point. This produces a tessellation that completely covers the plane. As an illustration, in Figure 1, I plotted 100 random points and their corresponding Voronoi diagram. As you can see, every point is enclosed in a cell, whose boundaries are exactly equidistant between two or more points. In other words, the cells shows 
+
+
+```{r, fig.cap="Voronoi diagram from 100 random points in a plane", fig.align='center',fig.height=3, fig.width=6}
+
+library(tidyverse)
+library(ggvoronoi)
+
+set.seed(123321)
+x <- sample(0:1000,100)
+set.seed(321123)
+y <- sample(0:500,100)
+
+points <- data.frame(x,y)
+
+ggplot(points,aes(x,y)) +  
+  stat_voronoi(geom="path") +
+  theme_void() +                 #remove axis
+  theme(axis.text=element_blank(),  #remove axis text and title
+        axis.title=element_blank(),
+        legend.position = "none")+
+  scale_x_continuous(expand = c(0,0))+
+  scale_y_continuous(expand = c(0,0))+
+  geom_point(aes(x,y))
+
+```
+
+
+
+## Vornoi patterns are ubiquitous
+
+### Voronoi patterns in nature
+
+The pattern created by Vornoi diagrams is a common one in nature. In Figure 2, I made a small collage of some naturally occuring Vornoi-like patterns. From microscopic cells in onion skins, to the shell of jackfruits and the coat of giraffes. These patterns are everywhere! 
+
+
+A first reason for their omnipresence is that they form efficient shapes. As we mentioned earlier, Vornoi diagram completely tesselates the plan: hence, all space is used. This is very convenient if you are trying to squeeze as much as possible in a limited space --- such as in muscle fibers or bee hives. Secondly, Vornoi diagrams are a spontaneous pattern whenever something is growing at uniform growth rates from separate points (see Figure 3). For instance, this explains giraffe exhibit such patterns. Giraffe embryos have a scattered distribution of melanin-secreting cells, which is responsible for the dark pigmentation of the giraffe's spots. Over the course of the gestation these cells release melanin --- hence spots radiate outward. Interested reader may refer to [this paper](https://www.iro.umontreal.ca/~poulin/fournier/papers/Walter-2001-ISP/Walter-2001-ISP.pdf), in which the authors use Vornoi diagrams to model computer rendering of spots on animals coats.
+
+
+
+```{r, fig.cap="Voronoi patterns are everywhere in nature. <br>(From top-left to bottom right: microscope view of onion skin cells, cross-section of a muscle, garlic bulb, wings of a dragonfly, soap bubbles, close-up of a leaf, giraffes coat patterns, corns, jackfruits hanging from a tree.)"}
+knitr::include_graphics("collage voronoi.png")
+```
+
+
+```{r, fig.cap="A Vornoi diagram is obtained from constant outward growth from dispered points<br>Source: Wikipedia", out.width = "200px", fig.align='center'}
+knitr::include_graphics("Voronoi_growth_euclidean.gif")
+```
+
+
+
+### Voronoi pattern in arts and architecture
+
+Perhaps because of their spontaneous "natural" look, or simply because of their mesmerising randomness, Vornoi patterns have intentionally been implemented in human-made structures. An architectural example is the "Water cube" built to house the water sports during the 2008 Beijing Olympics. It features Voronoi diagrams on its ceiling and façades (Figure 4). The Vornoi diagrams were chosen because they recall bubbles. This analogy is very clear at night, when the entire façade is illumanated in blue and comes alive. 
+
+```{r, fig.cap="Water cube in Beijing", fig.align='center'}
+knitr::include_graphics("water cube2.png")
+```
+
+But Chinese appreciation of Vornoi pattern is surely older than this building. [Guan](https://en.wikipedia.org/wiki/Guan_ware)  [Ge](https://en.wikipedia.org/wiki/Ge_ware) ware from the Song dynasty have a distinctive crackled glaze. Ceramics can easily crack during the cooling process, however the crackles from the Guan and Ge ware are different. They are intentional. They are sought after because of their aesthetic qualities. Thanks to the Vornoi-like patterns on their surface, each piece is unique. To date, this type of crackled porcelain is one of the most imitates (Figure 5).  
+
+
+```{r, fig.cap="Guan and Ge wares", fig.align='center'}
+knitr::include_graphics("Guan Ge ware2.png")
+```
+
+Vornoi diagrams are also common in graphic arts. I think they make excellent backgrounds. For example, I created the thumbnail of this post by generating random points and constructing a Voronoi diagram. Then, I coloured each cell based on the distance of its point from a randomly selected spot in the box (Figure 6). Endless "abstract" computer backgrounds could be generated this way.
+
+
+```{r, fig.cap="Constructing a gradient background with Vornoi diagrams", fig.align='center'}
+knitr::include_graphics("voronoi_animation2.gif")
+```
+
+
+
+
+## The maths behind Vornoi diagrams
+
+WRITING IN PROGRESS
+
+<!-- 
+
+https://cklixx.people.wm.edu/teaching/math400/Voronoi-paper.pdf
+https://encyclopediaofmath.org/wiki/Voronoi_diagram
+
+### How are they constructed?
+
+https://www.math.ucla.edu/~tom/papers/tesselations.pdf
+
+### Some mathematical properties
+
+convex
+
+### L-1 and L-2 norms
+
+manhattan distance instead of euclidean distance
+
+### Delaunay triangulation
+
+https://encyclopediaofmath.org/wiki/Delaunay_triangulation
+
+### Analogy 2ith k-neighrest neighbour
+
+### Llyods algorithm
+fare gif iterations
+energy minimisation
+spacing points
+analogy with knn clustering
+
+
+
+## Some applications
+
+https://en.wikipedia.org/wiki/Voronoi_diagram
+
+cartography: https://www.pacha-cartographe.fr/le-blog-du-cartographe/voronoi/
+John Snow cholera outbreak: Golden Square outbreak, 1854
+
+random map generation:  https://simblob.blogspot.com/search/label/voronoi
+
+Delaunay triangulation -> finite element method
+
+-->
+
