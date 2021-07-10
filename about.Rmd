@@ -1,6 +1,7 @@
 ---
 title: "Francesco Saverio Bellelli"
 image: "images/foto-profilo.png"
+favicon: images/favicon.ico
 links:
   - label: '`r fontawesome::fa("linkedin", height = "15px")` Linkedin'
     url: "https://www.linkedin.com/in/francesco-saverio-bellelli-025852183/"

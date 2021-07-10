@@ -1,5 +1,5 @@
 ---
-title: "Why do countries join environmental agreements?"
+title: "How to increase participation in environmental agreements?"
 description: |
   Understanding the determinants of participation in environmental agreements can help us frame more successful agreements. In this article, I discuss the economic theory and empirical evidence on this topic.
 author:

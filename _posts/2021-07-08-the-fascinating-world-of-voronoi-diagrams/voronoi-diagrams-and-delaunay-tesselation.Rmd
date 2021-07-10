@@ -84,7 +84,7 @@ knitr::include_graphics("Voronoi_growth_euclidean.gif")
 
 
 
-### Voronoi pattern in arts and architecture
+### Voronoi pattern in architecture and arts
 
 Perhaps because of their spontaneous "natural" look, or simply because of their mesmerising randomness, Vornoi patterns have intentionally been implemented in human-made structures. An architectural example is the "Water cube" built to house the water sports during the 2008 Beijing Olympics. It features Voronoi diagrams on its ceiling and façades (Figure 4). The Vornoi diagrams were chosen because they recall bubbles. This analogy is very clear at night, when the entire façade is illumanated in blue and comes alive. 
 
@@ -99,17 +99,17 @@ But Chinese appreciation of Vornoi pattern is surely older than this building. [
 knitr::include_graphics("Guan Ge ware2.png")
 ```
 
-Vornoi diagrams are also common in graphic arts for creating "abstract" patterns. I think they make excellent backgrounds. For example, I created the thumbnail of this post by generating random points and constructing a Voronoi diagram. Then, I coloured each cell based on the distance of its point from a randomly selected spot in the box (Figure 6). Endless "abstract" computer backgrounds could be generated this way.
+Vornoi diagrams are also common in graphic arts for creating "abstract" patterns. I think they make excellent background images. For example, I created the thumbnail of this post by generating random points and constructing a Voronoi diagram. Then, I coloured each cell based on the distance of its point from a randomly selected spot in the box (Figure 6). Endless "abstract" backgrounds images could be generated this way.
 
 
-```{r, fig.cap="Constructing a gradient background with Vornoi diagrams", fig.align='center'}
+```{r, fig.cap="Coloured Vornoi diagram", fig.align='center'}
 knitr::include_graphics("voronoi_animation2.gif")
 ```
 
 
 
 
-## The maths behind Vornoi diagrams
+## A bit more about Vornoi diagrams
 
 WRITING IN PROGRESS
 
