@@ -4,7 +4,7 @@ theme: my-theme.css
 description: |
   This is the personal website of Francesco Saverio Bellelli
 output_dir: "docs"
-favicon: images/favicon.ico
+favicon: images/favicon feather.ico
 navbar:
   right:
     - icon: fa fa-home
