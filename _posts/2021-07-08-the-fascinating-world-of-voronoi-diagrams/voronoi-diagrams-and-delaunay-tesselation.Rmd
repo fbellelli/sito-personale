@@ -138,37 +138,67 @@ knitr::include_graphics("manhattan-voronoi2.png")
 
 Euclidean distance is the most common distance measure in scientific applications of the Voronoi diagram. It also has the advantage of generating Vornoi cells that are **convex**. That is to say, if you take any two points within a cell, the line that connects the two points will lie entirely within the cell.  
 
+Finally, it should also be noted that Vornoi diagrams are tightly linked with the k-nearest neighbours algorithm (k-NN) --- a very popular algorithm in classification, regression and clustering problems. The algorithm uses the $k$ closest examples in the training dataset to make value predictions. Since the Vornoi diagrams partitions the space in polygons containing the closest points to each seed, the edges of Vornoi cells correspond exactly to the decision boundaries of a simple 1-nearest neighbour problem.  
+
+
+
 ## Delaunay triangulation
 
+If you take each of the points from a Vornoi diagram and link it with the points in its neighbouring cells, you will obtain a graph called **Delaunay triangulation**. In mathematical terms, the Delaunay triangulation is the [dual graph](https://www.wikiwand.com/en/Dual_graph) of the Vornoi diagram. In the Figure below, a Vornoi diagram (black) and Delaunay triangulation (grey) is plotted from a set of points. By moving the mouse over the image, one can explore how they are affected by a new point.
 
-```{r, layout="l-body-outset", fig.align='center'}
+
+```{r, layout="l-body-outset", fig.align='center', fig.cap="Vornoi diagram and Delaunay triangulation<br>Source: [r2d3](https://rstudio.github.io/r2d3/articles/gallery/voronoi/)"}
 library(r2d3)
 r2d3(d3_version = 4, script = "d3/voronoi.js", css="d3/voronoi.css")
 ```
 
+
+Delaunay as just as amazing as Vornoi diagrams. As the name suggests, it produces a set of triangles linking our points. These triangles are suc that if one were to draw a circle across the vertices of these triangles, there would be no other point inside the circle (See Figure 10). Moreover, Delaunay triangulation also has the property of maximising the smallest angle of all the angles of the triangles in the triangulation. Hence, Delaunay triangulation tends to avoid triangles with acute angles. 
+
+```{r, fig.align='center',fig.cap="Delaunay triangles are constructed such that no point falls inside the circle circumscribing each triangle<br>Source: [Wikipedia](https://en.wikipedia.org/wiki/File:Delaunay_circumcircles_vectorial.svg)"}
+
+library(magick)
+prova<-magick::image_read("https://upload.wikimedia.org/wikipedia/commons/d/db/Delaunay_circumcircles_vectorial.svg")
+magick::image_resize(prova,geometry_size_pixels(width = 700, preserve_aspect = TRUE))
+```
+
+
+
+These properties make it very useful in modelling surfaces and objects from a set of points. For instance, the Delaunay triangulation is used to generate meshes for the [finite element method](https://people.eecs.berkeley.edu/~jrs/meshpapers/delnotes.pdf) and in facial recognition, construct 3D models for computer animations and model terrain in GIS analysis. 
+
+
+```{r, fig.align='center',fig.cap="Delaunay triangulation is used to produce meshes for facial recognition<br>Source: [Learn OpenCV](https://learnopencv.com/delaunay-triangulation-and-voronoi-diagram-using-opencv-c-python/)"}
+knitr::include_graphics("https://learnopencv.com/wp-content/uploads/2015/11/opencv-delaunay-vornoi-subdiv-example.jpg")
+```
+
+
+
+## Lloyds relaxation algorithm
+
+
+<br><br>
+<font color=”#CC0000”>
 <center>
 **WRITING IN PROGRESS**
 </center>
+</font>
+
+
 
 <!-- 
 
-https://encyclopediaofmath.org/wiki/Delaunay_triangulation
+spiegare llyods algorithm
+fare immagini step 1-2-3 da mettere uno accanto all'altro
+fare gif con 30 iterazioni
+
+analogia k-means clustering
+
+dire come esempio uso: spacing points BBBB
+data compression and quantization (e.g. dithering)
+smooth meshes generated for from delaunay triangulation. more regular triangles
 
 
 
-https://cklixx.people.wm.edu/teaching/math400/Voronoi-paper.pdf
-https://encyclopediaofmath.org/wiki/Voronoi_diagram
-
-## Analogy 2ith k-neighrest neighbour
-
-1-nearest boundaries
-k-nearest neighbour generalisation 
-
-Llyods algorithm
-fare gif iterations
-energy minimisation
-spacing points
-analogy with knn clustering
 
 
 ## How are they constructed?
@@ -179,14 +209,14 @@ https://www.math.ucla.edu/~tom/papers/tesselations.pdf
 
 ## Some applications
 
+https://cklixx.people.wm.edu/teaching/math400/Voronoi-paper.pdf
+
 https://en.wikipedia.org/wiki/Voronoi_diagram
 
 cartography: https://www.pacha-cartographe.fr/le-blog-du-cartographe/voronoi/
 John Snow cholera outbreak: Golden Square outbreak, 1854
 
 random map generation:  https://simblob.blogspot.com/search/label/voronoi
-
-Delaunay triangulation -> finite element method
 
 
 
