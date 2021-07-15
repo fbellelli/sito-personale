@@ -176,6 +176,17 @@ knitr::include_graphics("https://learnopencv.com/wp-content/uploads/2015/11/open
 ## Lloyds relaxation algorithm
 
 
+```{r layout="l-body-outset", fig.align='center'}
+knitr::include_graphics("lloyds.png")
+```
+
+```{r layout="l-body-outset", fig.align='center'}
+knitr::include_graphics("lloyds.gif")
+```
+
+
+
+
 <br><br>
 <font color=”#CC0000”>
 <center>
