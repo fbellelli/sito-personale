@@ -181,7 +181,7 @@ knitr::include_graphics("lloyds.png")
 ```
 
 ```{r layout="l-body-outset", fig.align='center'}
-knitr::include_graphics("lloyds.gif")
+knitr::include_graphics("lloyds-line.gif")
 ```
 
 
