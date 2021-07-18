@@ -87,7 +87,7 @@ knitr::include_graphics("collage voronoi.png")
 
 ### Voronoi pattern in architecture and arts
 
-Perhaps because of their spontaneous "natural" look, or simply because of their mesmerising randomness, Vornoi patterns have intentionally been implemented in human-made structures. An architectural example is the "Water cube" built to house the water sports during the 2008 Beijing Olympics. It features Voronoi diagrams on its ceiling and façades (Figure 4). The Vornoi diagrams were chosen because they recall bubbles. This analogy is very clear at night, when the entire façade is illumanated in blue and comes alive. 
+Perhaps because of their spontaneous "natural" look, or simply because of their mesmerising randomness, Vornoi patterns have intentionally been implemented in human-made structures. An architectural example is the "Water cube" built to house the water sports during the 2008 Beijing Olympics. It features Voronoi diagrams on its ceiling and façades (Figure 4). The Vornoi diagrams were chosen because they recall bubbles^[To be more precise, the "Water cube" patterns are inspired from [Weaire-Phelan](https://en.wikipedia.org/wiki/Weaire%E2%80%93Phelan_structure) bubbles. However, these are directly obtainable as Vornoi diagram.]. This analogy is very clear at night, when the entire façade is illuminated in blue and comes alive. 
 
 ```{r, fig.cap="Water cube in Beijing", fig.align='center'}
 knitr::include_graphics("water cube2.png")
@@ -173,67 +173,99 @@ knitr::include_graphics("https://learnopencv.com/wp-content/uploads/2015/11/open
 
 
 
-## Lloyds relaxation algorithm
+## Lloyd's relaxation algorithm
+
+**Llyod's algorithm** is a useful algorithm related to Vornoi diagrams. The algorithm consists in repeatedly alternating between constructing Vornoi diagrams and finding the centroids (i.e. center of mass) of each cell (See Figure 12). At each iteration, the algorithm spaces the points apart and produces more homogeneous Vornoi cells. 
 
 
-```{r layout="l-body-outset", fig.align='center'}
+```{r layout="l-body-outset", fig.align='center', fig.cap="Steps in Lloyd's relaxation algorithm"}
 knitr::include_graphics("lloyds.png")
 ```
 
-```{r layout="l-body-outset", fig.align='center'}
+After a few iterations, the cells will already have a "rounder" aspect and points will be more evenly distributed. This is illustrated in the figure below, in which I have plotted the first 30 iterations of the Lloyd's algorithm for a random set of points. For each point, I also record their starting position (grey hollow circle) to better trace the movement of each cell. For high number of iterations, the diagram tends to converge towards a stable Vornoi diagram in which every seed is also the centroid of the cell --- also known as the [centroidal Vornoi diagram](https://en.wikipedia.org/wiki/Centroidal_Voronoi_tessellation). Interestingly, in 2D, Voronoi cells will tend to turn into hexagons because they provide the most efficient way of of packing shapes in a plane.  As any bee building their hive can certify, hexagonal cells have two big advantages: 1) they ensure no empty space is left between cells (i.e. tessellates the plane), and 2) hexagons offer the highest ratio between surface and perimeter of the cell. This so-called **[Honeycomb conjecture](https://en.wikipedia.org/wiki/Honeycomb_conjecture)**, took mathematicians two-thousand years to prove.
+
+
+
+```{r layout="l-body-outset", fig.align='center', fig.cap="30 iterations of the Lloyd's algorithm"}
 knitr::include_graphics("lloyds-line.gif")
 ```
 
 
+In data science, Lloyd's algorithm is at the basis of **k-means clustering** --- one of the most popular clustering algorithms. k-means clustering is typically initiated by taking $k$ random "centroids" in space. Then, data points are grouped in $k$ clusters by alternating between 1) assigning data points to the closest "centroid" (this is equivalent to building a Voronoi diagram for the centroid and checking which point are inside the cell) and 2) updating the centroid by calculating the mean of the points inside each cell (See Figure 14).
 
 
-<br><br>
-<font color=”#CC0000”>
-<center>
-**WRITING IN PROGRESS**
-</center>
-</font>
+```{r layout="l-body", fig.align='center', fig.cap="k-means clustering<br>Soruce: [Wikipedia](https://en.wikipedia.org/wiki/File:K-means_convergence.gif)"}
+knitr::include_graphics("K-means_convergence.gif")
+```
 
-
-
-<!-- 
-
-spiegare llyods algorithm
-fare immagini step 1-2-3 da mettere uno accanto all'altro
-fare gif con 30 iterazioni
-
-analogia k-means clustering
-
-dire come esempio uso: spacing points BBBB
-data compression and quantization (e.g. dithering)
-smooth meshes generated for from delaunay triangulation. more regular triangles
+Besides data science, Lloyd's algorithm is used in a variety of applications. For instance, it is very common in quantization and lossy data compression algorithms (e.g. [Lloyd-Max algorithm](http://helmut.knaust.info/presentations/2011/20110106_JMM_DWT.pdf)). It is also very useful whenever one wants random points that are nicely spaced. For instance, it could be used to smooth meshes generated from the Delaunay triangulation, for [dithering](https://en.wikipedia.org/wiki/Dither) images, or as a basis for [procedural maps generation](https://en.wikipedia.org/wiki/Procedural_generation) in video games.
 
 
 
+## How to construct Voronoi diagrams?
 
 
-## How are they constructed?
-
-https://www.math.ucla.edu/~tom/papers/tesselations.pdf
+One could construct Voronoi diagrams by building each cell one by one. If one extends the bisector of the segments linking every combination of points, it is possible to obtain the outline of Voronoi cells (Figure 15). However, this technique is quite inefficient. Considering there are $\frac{1}{2}(1-n)n$ combinations of points, the complexity of such algorithm would increase quadratically with the number of points.
 
 
-
-## Some applications
-
-https://cklixx.people.wm.edu/teaching/math400/Voronoi-paper.pdf
-
-https://en.wikipedia.org/wiki/Voronoi_diagram
-
-cartography: https://www.pacha-cartographe.fr/le-blog-du-cartographe/voronoi/
-John Snow cholera outbreak: Golden Square outbreak, 1854
-
-random map generation:  https://simblob.blogspot.com/search/label/voronoi
+```{r layout="l-body", fig.align='center', fig.cap="Construction of Voronoi cells<br>Source: [Roberto Tamassia](http://cs.brown.edu/courses/cs252/misc/resources/lectures/pdf/notes09.pdf)"}
+knitr::include_graphics("construct-voronoi2.jpg")
+```
 
 
+More efficient alternatives have been proposed. For example, the [Sweep line algorithm](https://en.wikipedia.org/wiki/Fortune%27s_algorithm) builds Voronoi cells progressively by sequentially using binary search tree and priority queue operations (Figure 16). A good description of this algorithm can be found [here](https://www.ams.org/publicoutreach/feature-column/fcarc-voronoi). Another way of constructing Voronoi diagrams, is to first build Delaunay triangulations. Once the triangulation is obtained, extending the bisectors of the triangle edges leads to the Voronoi diagram (Figure 17). Delaunay triangulation can be obtained without the need of considering every pair of points. For instance, an efficient technique consists in projecting the points on a paraboloid in a higher dimension. Re-projecting back the convex hull onto the original space gives the Delaunay triangulation (Figure 18)
 
-PER FINIRE FARE BOX CON LINK A QUALCHE RISORSA
+<aside>
+```{r layout="l-body", fig.align='center', fig.cap="Sweep line algorithm<br>Source: [Wikipedia](https://en.wikipedia.org/wiki/Fortune%27s_algorithm)"}
+knitr::include_graphics("Fortunes-algorithm-slowed.gif")
+```
+</aside>
 
--->
+
+
+```{r layout="l-body", fig.align='center', fig.cap="Construction of Voronoi diagrams<br>Source: [Giulia Andreucci](https://www.frontiersin.org/articles/10.3389/fbuil.2018.00078/full)"}
+knitr::include_graphics("construct-voronoi.jpg")
+```
+
+
+
+```{r layout="l-body", fig.align='center', fig.cap="Using the convex hull method for constructing Delaunay triangulation<br>Source: [Danny Sleator](https://www.cs.cmu.edu/~15451-s15/LectureNotes/lecture17/voronoi.pdf)"}
+knitr::include_graphics("construct-voronoi-convex.jpg")
+```
+
+
+A discussion of different algorithms for computing Voronoi diagram and their complexity is available [here](http://www.cs.tufts.edu/comp/163/notes05/voronoi_handout.pdf), [here](https://www.ic.unicamp.br/~rezende/ensino/mo619/Sacristan,%20Voronoi%20Diagrams.pdf), and [here](https://www.codeproject.com/articles/882739/simple-approach-to-voronoi-diagrams). New algorithms are continuously being proposed to improve computation efficiency in different circumstances (e.g. [Yan et al. 2011](https://www.microsoft.com/en-us/research/wp-content/uploads/2016/12/Efficient-Computation-of-Clipped-Voronoi-Diagram-and-Applications.pdf), [Qin et al. 2017](https://onlinelibrary.wiley.com/doi/abs/10.1111/cgf.13248)). There are also techniques requiring constant time that generate approximate Voronoi diagrams (e.g. [Jump flooding algorithm](Jump Flooding Algorithm)).
+
+
+
+## Some interesting links
+
+
+- [This article](https://plus.maths.org/content/uncovering-cause-cholera) tells the story of how Voronoi diagrams were used by John Snow to show the link between water pumps and the transmission of Cholera. 
+
+
+- [Amil Patel](https://simblob.blogspot.com/search/label/voronoi) has a phenomenal blog on game development. Hi highly recommend his posts on procedural map generation with Voronoi diagrams.
+
+- [This post by David Austin](https://www.ams.org/publicoutreach/feature-column/fcarc-voronoi)  gives a great explanation of the Sweep line algorithm for computing Voronoi diagrams
+
+- [This nice looking map](https://www.jasondavies.com/maps/voronoi/airports/) by Jason Davies is a Voronoi diagram of the location of airports around the world.
+
+- *[Spatial Tessellations: Concepts and Applications of Voronoi Diagrams](https://onlinelibrary.wiley.com/doi/book/10.1002/9780470317013)* is a bible on Voronoi diagrams. If you have any doubt about Voronoi diagrams, you will certainly find an answer here.
+
+- [These slides](https://perso.uclouvain.be/vincent.legat/documents/meca2170/meca2170-cours7-Voronoi.pdf) from Vincent Legat have some beautiful drawings for different construction algorithms  
+
+- Voronoi diagrams are commonly used to model trees in forests (e.g. [Abellanas et al. 2016](https://pommerening.org/wiki/images/a/a4/Vorest.pdf), [Bohler et al. 2018](https://www.sciencedirect.com/science/article/abs/pii/S0925772117300652))
+
+- Voronoi diagrams can also be used to determine robot's paths. Check these articles: [article 1](http://www.cs.columbia.edu/~pblaer/projects/path_planner/), [article 2](https://gamedevelopment.tutsplus.com/tutorials/how-to-use-voronoi-diagrams-to-control-ai--gamedev-11778).
+
+
+- Voronoi diagrams have thousand of applications. From modelling trees in a forest to planning robot paths. In this article I barely scratched the surface. These links contain lists of interesting applications: [link 1](https://www.ics.uci.edu/~eppstein/gina/voronoi.html), [link 2](https://www.ics.uci.edu/~eppstein/gina/scot.drysdale.html), [link3](https://en.cnki.com.cn/Article_en/CJFDTotal-GCTX200402022.htm), [link4](https://ratt.ced.berkeley.edu/readings/read_online/Aurenhammer.%20%20Voronoi%20diagrams.%20%20A%20survey%20of%20a%20fundamental%20geometric%20data%20structure.pdf), [link 5](https://www.sciencedirect.com/topics/physics-and-astronomy/voronoi-diagrams). 
+
+
+
+
+
+
 
 
 
