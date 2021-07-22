@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:media="http://search.yahoo.com/mrss/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:dc="http://purl.org/dc/elements/1.1/" version="2.0">
+  <channel>
+    <title>F.S.Bellelli</title>
+    <link>https://fbellelli.com/</link>
+    <atom:link href="https://fbellelli.com/index.xml" rel="self" type="application/rss+xml"/>
+    <description>This is the personal website of Francesco. S. Bellelli. From time to time, I post about things that I find interesting or about some recent work I have been doing. 
+</description>
+    <image>
+      <title>F.S.Bellelli</title>
+      <url>https://fbellelli.com/images/favicon feather.ico</url>
+      <link>https://fbellelli.com/</link>
+    </image>
+    <generator>Distill</generator>
+    <lastBuildDate>Thu, 08 Jul 2021 00:00:00 +0000</lastBuildDate>
+    <item>
+      <title>The fascinating world of Voronoi diagrams</title>
+      <dc:creator>Francesco S. Bellelli</dc:creator>
+      <link>https://fbellelli.com/posts/2021-07-08-the-fascinating-world-of-voronoi-diagrams</link>
+      <description>In this article I explain what is a Vornoi diagram and why they are amazing</description>
+      <category>maths</category>
+      <category>other</category>
+      <guid>https://fbellelli.com/posts/2021-07-08-the-fascinating-world-of-voronoi-diagrams</guid>
+      <pubDate>Thu, 08 Jul 2021 00:00:00 +0000</pubDate>
+      <media:content url="https://fbellelli.com/posts/2021-07-08-the-fascinating-world-of-voronoi-diagrams/voronoi_colour_square.png" medium="image" type="image/png" width="1181" height="1181"/>
+    </item>
+    <item>
+      <title>TidyCountry</title>
+      <dc:creator>Francesco S. Bellelli</dc:creator>
+      <link>https://fbellelli.com/posts/2021-06-20-tidycountry</link>
+      <description>I am working on an R package designed to quickly wrangle, merge and explore country data</description>
+      <category>coding</category>
+      <guid>https://fbellelli.com/posts/2021-06-20-tidycountry</guid>
+      <pubDate>Sun, 20 Jun 2021 00:00:00 +0000</pubDate>
+      <media:content url="https://cdn.britannica.com/13/129613-131-30279F20/Flags-world-flags-Country-history-blog-travel-2009.jpg" medium="image" type="image/jpeg"/>
+    </item>
+    <item>
+      <title>TileMaster: a strategy game in Shiny</title>
+      <dc:creator>Francesco S. Bellelli</dc:creator>
+      <link>https://fbellelli.com/posts/2021-04-03-tilemaster-a-strategy-game-in-shiny</link>
+      <description>I created a small strategy game with RStudios' Shiny platform. If it can run a data dashboard, why not a strategy game?</description>
+      <category>coding</category>
+      <guid>https://fbellelli.com/posts/2021-04-03-tilemaster-a-strategy-game-in-shiny</guid>
+      <pubDate>Sat, 03 Apr 2021 00:00:00 +0000</pubDate>
+      <media:content url="https://fbellelli.com/posts/2021-04-03-tilemaster-a-strategy-game-in-shiny/../../images/tilemaster_screenshot.png" medium="image" type="image/png" width="1599" height="1531"/>
+    </item>
+    <item>
+      <title>How to increase participation in environmental agreements?</title>
+      <dc:creator>Francesco S. Bellelli</dc:creator>
+      <link>https://fbellelli.com/posts/2021-03-20-how-to-increase-participation-in-environmental-agreements</link>
+      <description>Understanding the determinants of participation in environmental agreements can help us frame more successful agreements. In this article, I discuss the economic theory and empirical evidence on this topic.</description>
+      <category>environment</category>
+      <category>economics</category>
+      <guid>https://fbellelli.com/posts/2021-03-20-how-to-increase-participation-in-environmental-agreements</guid>
+      <pubDate>Sat, 20 Mar 2021 00:00:00 +0000</pubDate>
+      <media:content url="https://fbellelli.com/posts/2021-03-20-how-to-increase-participation-in-environmental-agreements/map-number-ratifications.png" medium="image" type="image/png" width="7017" height="4209"/>
+    </item>
+    <item>
+      <title>Watercolours</title>
+      <dc:creator>Francesco S. Bellelli</dc:creator>
+      <dc:creator>Lily Runkun Tian</dc:creator>
+      <link>https://fbellelli.com/posts/2021-01-27-watercolours</link>
+      <description>A gallery displaying some of the artistic creations of Francesco and Lily</description>
+      <category>other</category>
+      <guid>https://fbellelli.com/posts/2021-01-27-watercolours</guid>
+      <pubDate>Wed, 27 Jan 2021 00:00:00 +0000</pubDate>
+      <media:content url="https://fbellelli.com/posts/2021-01-27-watercolours/paintings/squirrel.jpeg" medium="image" type="image/jpeg"/>
+    </item>
+    <item>
+      <title>Mappa licita naturale</title>
+      <dc:creator>Francesco S. Bellelli</dc:creator>
+      <link>https://fbellelli.com/posts/2021-01-20-mappa-licita-naturale</link>
+      <description>Mappa di un sistema di licita naturale lungo-corto a bridge</description>
+      <category>other</category>
+      <guid>https://fbellelli.com/posts/2021-01-20-mappa-licita-naturale</guid>
+      <pubDate>Wed, 20 Jan 2021 00:00:00 +0000</pubDate>
+      <media:content url="https://fbellelli.com/posts/2021-01-20-mappa-licita-naturale/BRIDGE sistema naturale.svg" medium="image" type="image/svg+xml"/>
+    </item>
+  </channel>
+</rss>
