@@ -1,5 +1,5 @@
 ---
-title: "TidyCountry"
+title: "CountryJuggleR"
 description: |
   I am working on an R package designed to quickly wrangle, merge and explore country data
 author:
@@ -19,7 +19,7 @@ knitr::opts_chunk$set(echo = FALSE)
 ```
 
 
-## TidyCountry
+## CountryJuggleR
 
 As an economist, I often work with country-level data coming from different sources. GDP series from the IMF, monetary data from central banks, trade data from WTO, CO~2~  emissions from the IEA, survey data from national agencies, etc.. Pooling all this data together is often a laborious task because countries' naming conventions are never the same. 
 
@@ -29,4 +29,4 @@ To make things easier, I am writing an R package to deal with this type of data.
 - Convert country names to a common nomenclature (e.g. M49 standard or ISO-3 codes)
 - Merge country data in a unique table by recognising and matching different country nomenclatures
 - Support the merging of data with multiple identifiers (e.g. panel data or country-sector data)
-- Automatically generate interactive visualisations to explore country data
+- Automatically generate interactive visualisations to explore country data 
