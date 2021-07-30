@@ -22,8 +22,8 @@
     "preview_height": 1181
   },
   {
-    "path": "posts/2021-06-20-countryjuggler/",
-    "title": "world.data",
+    "path": "posts/2021-06-20-worldata/",
+    "title": "Worldata",
     "description": "I am working on an R package designed to quickly wrangle, merge and explore country data",
     "author": [
       {
@@ -35,9 +35,9 @@
     "categories": [
       "coding"
     ],
-    "contents": "\r\nworld.data\r\nAs an economist, I often work with country-level data coming from different sources. GDP series from the IMF, monetary data from central banks, trade data from WTO, CO2 emissions from the IEA, survey data from national agencies, etc.. Pooling all this data together is often a laborious task because countries’ naming conventions are never the same.\r\nTo make things easier, I am writing an R package to deal with this type of data. Ideally, the user should be able to merge country data files with a unique line of command. The package will offer functionalities to:\r\nConvert country names to a common nomenclature (e.g. M49 standard or ISO-3 codes)\r\nTranslate country names to different languages\r\nMerge country data in a unique table by recognising and matching different country nomenclatures\r\nSupport the merging of country data with multiple identifiers (e.g. panel data or country-sector data)\r\nEasily download and merge data from online public data (e.g. World Bank data, FRED, etc.)\r\nAutomatically generate interactive visualisations to explore country data\r\n\r\n\r\n\r\n",
+    "contents": "\r\nWorldata\r\nAs an economist, I often work with country-level data coming from different sources. GDP series from the IMF, monetary data from central banks, trade data from WTO, CO2 emissions from the IEA, survey data from national agencies, etc.. Pooling all this data together is often a laborious task because countries’ naming conventions are never the same.\r\nTo make things easier, I am writing an R package to deal with this type of data. Ideally, the user should be able to merge country data files with a unique line of command. The package will offer functionalities to:\r\nConvert country names to a common nomenclature (e.g. M49 standard or ISO-3 codes)\r\nTranslate country names to different languages\r\nMerge country data in a unique table by recognising and matching different country nomenclatures\r\nSupport the merging of country data with multiple identifiers (e.g. panel data or country-sector data)\r\nEasily download and merge data from online public data (e.g. World Bank data, FRED, etc.)\r\nAutomatically generate interactive visualisations to explore country data\r\n\r\n\r\n\r\n",
     "preview": "https://cdn.britannica.com/13/129613-131-30279F20/Flags-world-flags-Country-history-blog-travel-2009.jpg",
-    "last_modified": "2021-07-30T12:33:32+02:00",
+    "last_modified": "2021-07-30T12:57:07+02:00",
     "input_file": {}
   },
   {

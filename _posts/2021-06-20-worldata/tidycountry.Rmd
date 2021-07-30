@@ -1,5 +1,5 @@
 ---
-title: "world.data"
+title: "Worldata"
 description: |
   I am working on an R package designed to quickly wrangle, merge and explore country data
 author:
@@ -19,7 +19,7 @@ knitr::opts_chunk$set(echo = FALSE)
 ```
 
 
-## world.data
+## Worldata
 
 As an economist, I often work with country-level data coming from different sources. GDP series from the IMF, monetary data from central banks, trade data from WTO, CO~2~  emissions from the IEA, survey data from national agencies, etc.. Pooling all this data together is often a laborious task because countries' naming conventions are never the same. 
 
