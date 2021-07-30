@@ -1,5 +1,5 @@
 ---
-title: "CountryJuggleR"
+title: "world.data"
 description: |
   I am working on an R package designed to quickly wrangle, merge and explore country data
 author:
@@ -19,7 +19,7 @@ knitr::opts_chunk$set(echo = FALSE)
 ```
 
 
-## CountryJuggleR
+## world.data
 
 As an economist, I often work with country-level data coming from different sources. GDP series from the IMF, monetary data from central banks, trade data from WTO, CO~2~  emissions from the IEA, survey data from national agencies, etc.. Pooling all this data together is often a laborious task because countries' naming conventions are never the same. 
 
@@ -27,6 +27,8 @@ As an economist, I often work with country-level data coming from different sour
 To make things easier, I am writing an R package to deal with this type of data. Ideally, the user should be able to merge country data files with a unique line of command. The package will offer functionalities to:
 
 - Convert country names to a common nomenclature (e.g. M49 standard or ISO-3 codes)
+- Translate country names to different languages
 - Merge country data in a unique table by recognising and matching different country nomenclatures
-- Support the merging of data with multiple identifiers (e.g. panel data or country-sector data)
+- Support the merging of country data with multiple identifiers (e.g. panel data or country-sector data)
+- Easily download and merge data from online public data (e.g. World Bank data, FRED, etc.) 
 - Automatically generate interactive visualisations to explore country data 
