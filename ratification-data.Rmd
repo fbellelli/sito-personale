@@ -12,7 +12,7 @@ div.blue { background-color:#e6f0ff; border-radius: 5px; padding: 20px;}
 <div class = "blue">
 **Data download:**
 
-A version of this data set is available for downloaded [here](data files/ratification data.zip)
+A version of this data set is available for download [here](data files/ratification data.zip)
 
 **Please reference as:** <br>
 [Bellelli, F.S., Scarpa, R. and Aftab, A. (2021) Interest groups and participation in international environmental agreements. *Working paper. Available from https://fbellelli.com/ratification-data.html.*](papers/Ratification_paper.pdf)
