@@ -14,9 +14,9 @@
       "economics"
     ],
     "contents": "\r\n\r\n\r\n\r\n\r\ndiv.blue { background-color:#e6f0ff; border-radius: 5px; padding: 20px}\r\n\r\n\r\nClick here to open the data dashboard.\r\n\r\n\r\n\r\n\r\n\r\n\r\n",
-    "preview": "posts/2021-08-15-pandemic-and-the-office-space-market/city2.jpg",
-    "last_modified": "2021-09-09T20:00:08+02:00",
-    "input_file": {}
+    "preview": "posts/2021-08-15-pandemic-and-the-office-space-market/city2_preview.jpg",
+    "last_modified": "2021-09-09T20:17:48+02:00",
+    "input_file": "pandemic-and-the-office-space-market.knit.md"
   },
   {
     "path": "posts/2021-07-08-the-fascinating-world-of-voronoi-diagrams/",

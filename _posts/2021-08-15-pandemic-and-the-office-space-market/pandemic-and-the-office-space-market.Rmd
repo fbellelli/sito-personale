@@ -5,7 +5,7 @@ description: |
 author:
   - name: Francesco S. Bellelli
 date: 2021-08-15
-preview: "city2.jpg"
+preview: "city2_preview.jpg"
 categories:
   - economics
 output:
