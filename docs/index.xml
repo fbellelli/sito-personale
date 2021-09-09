@@ -12,7 +12,17 @@
       <link>https://fbellelli.com/</link>
     </image>
     <generator>Distill</generator>
-    <lastBuildDate>Thu, 08 Jul 2021 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sun, 15 Aug 2021 00:00:00 +0000</lastBuildDate>
+    <item>
+      <title>Has the pandemic ruined the office space market?</title>
+      <dc:creator>Francesco S. Bellelli</dc:creator>
+      <link>https://fbellelli.com/posts/2021-08-15-pandemic-and-the-office-space-market</link>
+      <description>In this post I have a look at data from the City of London to understand how the pandemic has impacted the office market.</description>
+      <category>economics</category>
+      <guid>https://fbellelli.com/posts/2021-08-15-pandemic-and-the-office-space-market</guid>
+      <pubDate>Sun, 15 Aug 2021 00:00:00 +0000</pubDate>
+      <media:content url="https://fbellelli.com/posts/2021-08-15-pandemic-and-the-office-space-market/city2.jpg" medium="image" type="image/jpeg"/>
+    </item>
     <item>
       <title>The fascinating world of Voronoi diagrams</title>
       <dc:creator>Francesco S. Bellelli</dc:creator>
