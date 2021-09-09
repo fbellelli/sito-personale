@@ -1,5 +1,5 @@
 ---
-title: "Has the pandemic ruined the office space market?"
+title: "How has the pandemic affected the office space market?"
 description: |
  In this post I have a look at data from the City of London to understand how the pandemic has impacted the office market.
 author:

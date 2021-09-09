@@ -1,7 +1,7 @@
 [
   {
     "path": "posts/2021-08-15-pandemic-and-the-office-space-market/",
-    "title": "Has the pandemic ruined the office space market?",
+    "title": "How has the pandemic affected the office space market?",
     "description": "In this post I have a look at data from the City of London to understand how the pandemic has impacted the office market.",
     "author": [
       {
@@ -15,7 +15,7 @@
     ],
     "contents": "\r\n\r\n\r\n\r\n\r\ndiv.blue { background-color:#e6f0ff; border-radius: 5px; padding: 20px}\r\n\r\n\r\nClick here to open the data dashboard.\r\n\r\n\r\n\r\n\r\n\r\n\r\n",
     "preview": "posts/2021-08-15-pandemic-and-the-office-space-market/city2_preview.jpg",
-    "last_modified": "2021-09-09T20:17:48+02:00",
+    "last_modified": "2021-09-09T23:41:43+02:00",
     "input_file": "pandemic-and-the-office-space-market.knit.md"
   },
   {
