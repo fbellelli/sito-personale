@@ -8,7 +8,7 @@ date: 07-08-2021
 categories: 
   - maths
   - other
-preview: "voronoi_colour_square.png"
+preview: "voronoi_animation2.gif"
 output:
   distill::distill_article:
     toc: true
