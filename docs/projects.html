@@ -2185,7 +2185,26 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 
   /*-- Additional custom styles --*/
   /* Add any additional CSS rules below                      */
-  </style>
+
+
+
+  html a {
+      text-decoration: none;
+      background-image: linear-gradient(currentColor, currentColor);
+      background-position: 0% 100%;
+      background-repeat: no-repeat;
+      background-size: 0% 2px;
+      transition: background-size .3s;
+  }
+
+  html a:hover, html a:focus {
+    background-size: 100% 2px;
+    color: #107dac;
+  }
+
+  a:hover {
+      text-decoration: none;
+  }</style>
   <style type="text/css">
   /* base style */
 
