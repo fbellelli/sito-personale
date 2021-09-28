@@ -95,3 +95,9 @@ html a:hover, html a:focus {
 a:hover {
     text-decoration: none;
 }
+
+.plainlink {
+    transition: none;
+}
+
+

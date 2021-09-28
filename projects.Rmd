@@ -47,6 +47,18 @@ masonry_item <- function(
 }
 
 masonry_grid(
+    masonry_item(
+    src = "images/environmental_policy_small.jpg",
+    title = "WTO environmental database",
+    description = "A link to the original WTO environmental database (EDB)",
+    url = "https://www.wto.org/english/news_e/news21_e/fish_30aug21_e.htm"
+  ),
+  masonry_item(
+    src = "images/stop_funding_overfishing.jpg",
+    title = "Fisheries subsidies agreement",
+    description = "In 2020, I have been following closely negotiations of the WTO agreement on fisheries subsidies. This is our best shot at ending overfishing, overcapacity and IUU fishing!",
+    url = "https://www.wto.org/english/news_e/news21_e/fish_30aug21_e.htm"
+  ),
   masonry_item(
     src = "posts/2021-01-27-watercolours/paintings/portico.jpeg",
     title = "Watercolours",
