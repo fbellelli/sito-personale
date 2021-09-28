@@ -1,7 +1,7 @@
 ---
 title: "Research"
 description: |
-  Check out some of my research projects
+  Find out more about my research projects
 ---
 
 
@@ -9,7 +9,7 @@ description: |
 knitr::opts_chunk$set(echo = FALSE)
 ```
 
-## Research interests & Ongoing projects
+## Research interests & ongoing projects
 
 I am currently working on a number of research projects for the World Trade Organization (WTO). As a member of the Quantitative modelling and analysis unit, I deal with economic research and econometric modelling of trade, with a particular focus on the environment-related activities of WTO. My current research projects relate to regional trade agreements, environmental measures, fisheries subsidies, innovation and trade. 
 
