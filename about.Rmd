@@ -21,11 +21,11 @@ library(postcards)
  
 ## A little about myself
 
-I am an applied economist, with interests ranging from climate and environmental issues, to trade, innovation policies and macroeconomic forecasting. 
+I am an applied economist, with interests ranging from macroeconomic and financial forecasting, to trade, machine learning, climate and environmental issues. 
 
-Born in Brazil, and grown up around the world, I have spent most of my life travelling.  After completing a PhD in economics at Durham University, I went on working in the banking industry and for international organisations in Geneva. 
+After completing a PhD in economics at Durham University, I went on working in the banking industry and for international organisations in Geneva. In the last two years, I worked as a research economist at the World Trade Organization (WTO), where I got involved in several projects related to trade and the environment.
 
-At the moment I work as a research economist at the World Trade Organization (WTO), where I am involved in several projects related to trade and the environment.
+I worked in different settings and with a variety of tools; I analysed and wrote about macroeconomic issues, developed economic forecasting models, created new datasets on environmental policies, applied advanced text analysis and machine learning techniques, developed programming libraries, and even served as economic expert in international trade disputes.  
 
 
 
