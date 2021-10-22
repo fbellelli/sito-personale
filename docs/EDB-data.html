@@ -458,7 +458,7 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 
   </style>
 
-  <script src="site_libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+  <script src="site_libs/jquery-1.11.3/jquery.min.js"></script>
   <link href="site_libs/font-awesome-5.1.0/css/all.css" rel="stylesheet"/>
   <link href="site_libs/font-awesome-5.1.0/css/v4-shims.css" rel="stylesheet"/>
   <script src="site_libs/headroom-0.9.4/headroom.min.js"></script>
@@ -2211,6 +2211,9 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
       text-decoration: none;
   }
 
+  .plainlink {
+      transition: none;
+  }
 
   </style>
   <style type="text/css">
@@ -2368,7 +2371,7 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
     color: var(--hover-color, white);
   }</style>
   <!--/radix_placeholder_distill-->
-  <script src="site_libs/header-attrs-2.11/header-attrs.js"></script>
+  <script src="site_libs/header-attrs-2.9/header-attrs.js"></script>
   <link href="site_libs/panelset-0.2.6/panelset.css" rel="stylesheet" />
   <script src="site_libs/panelset-0.2.6/panelset.js"></script>
   <script src="site_libs/popper-2.6.0/popper.min.js"></script>
@@ -2497,7 +2500,7 @@ div.blue { background-color:#e6f0ff; border-radius: 5px; padding: 20px;}
 <h3 class="panel-name">Implementation years</h3>
 <div class="column-left55">
 <div class="layout-chunk" data-layout="l-body">
-<div class="figure"><span style="display:block;" id="fig:unnamed-chunk-1"></span>
+<div class="figure"><span id="fig:unnamed-chunk-1"></span>
 <img src="images/detected%20active%20measures.png" alt="Measures in force vs notified (EDB v.2018)" width="1181" />
 <p class="caption">
 Figure 1: Measures in force vs notified (EDB v.2018)
@@ -2520,7 +2523,7 @@ Figure 1: Measures in force vs notified (EDB v.2018)
 <p><strong>For multi-state Members (e.g. European Union), we identify all countries affected by the policy measure.</strong> This should make it easier to merge the database with country-level economic data or plot maps.</p>
 <p>Moreover, our data extension is available in three formats: measure, country-measure, country-measure-HS chapter. In the first, each line of the dataset corresponds to a notified environment-related policy (just like the original EDB). In the second one, entries are also split according to the countries they affect: Every line corresponds to a country-measure combination. Finally, the last format is also split for the <a href="https://en.wikipedia.org/wiki/Harmonized_System">2-digits HS codes</a> affected by the policy.</p>
 <div class="layout-chunk" data-layout="l-body">
-<div class="figure"><span style="display:block;" id="fig:unnamed-chunk-2"></span>
+<div class="figure"><span id="fig:unnamed-chunk-2"></span>
 <img src="images/map%20EDB%20measures.png" alt="Number of environment-related measures by country (EDB v.2018)" width="1328" />
 <p class="caption">
 Figure 2: Number of environment-related measures by country (EDB v.2018)
@@ -2541,7 +2544,7 @@ Figure 2: Number of environment-related measures by country (EDB v.2018)
 <h3 class="panel-name">Policy score</h3>
 <div class="column-left60">
 <div class="layout-chunk" data-layout="l-body">
-<div class="figure"><span style="display:block;" id="fig:unnamed-chunk-3"></span>
+<div class="figure"><span id="fig:unnamed-chunk-3"></span>
 <img src="images/EDB%20score%20diagram.png" alt="Policy score components" width="680" />
 <p class="caption">
 Figure 3: Policy score components

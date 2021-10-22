@@ -460,7 +460,7 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 
   </style>
 
-  <script src="site_libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+  <script src="site_libs/jquery-1.11.3/jquery.min.js"></script>
   <link href="site_libs/font-awesome-5.1.0/css/all.css" rel="stylesheet"/>
   <link href="site_libs/font-awesome-5.1.0/css/v4-shims.css" rel="stylesheet"/>
   <script src="site_libs/headroom-0.9.4/headroom.min.js"></script>
@@ -2213,6 +2213,9 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
       text-decoration: none;
   }
 
+  .plainlink {
+      transition: none;
+  }
 
   </style>
   <style type="text/css">
@@ -2370,7 +2373,7 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
     color: var(--hover-color, white);
   }</style>
   <!--/radix_placeholder_distill-->
-  <script src="site_libs/header-attrs-2.11/header-attrs.js"></script>
+  <script src="site_libs/header-attrs-2.9/header-attrs.js"></script>
   <script src="site_libs/popper-2.6.0/popper.min.js"></script>
   <link href="site_libs/tippy-6.2.7/tippy.css" rel="stylesheet" />
   <link href="site_libs/tippy-6.2.7/tippy-light-border.css" rel="stylesheet" />
@@ -2448,7 +2451,7 @@ div.blue { background-color:#e6f0ff; border-radius: 5px; padding: 20px;}
 <p>International environmental agreements (IEAs) — such as the Paris agreement on climate change, the CITES agreement on the trade of endangered species, or the Montreal Protocol on ozone-depleting substances — are our primary tools for solving transboundary environmental issues. This dataset collects information on the ratification (i.e. participation) status of countries in 263 environmental agreements. It tracks the ratifications of over 200 countries between 1950 and 2017. A particularity of this dataset is that it identifies for every agreement the countries that can potentially ratify it. This feature is very useful for research applications.</p>
 <p>A full description of the collection method and coding criteria is available in the data appendix of <span class="citation" data-cites="ratification_paper"><a href="#ref-ratification_paper" role="doc-biblioref">Bellelli, Scarpa, and Aftab</a> (<a href="#ref-ratification_paper" role="doc-biblioref">2021</a>)</span>, which can be found <a href="papers/ratification%20paper%20appendix.zip">here</a>.</p>
 <div class="layout-chunk" data-layout="l-page">
-<div class="figure"><span style="display:block;" id="fig:unnamed-chunk-1"></span>
+<div class="figure"><span id="fig:unnamed-chunk-1"></span>
 <img src="images/map-number-ratifications.png" alt="Number of IEA ratifications by 2017" width="3508" />
 <p class="caption">
 Figure 1: Number of IEA ratifications by 2017
@@ -2463,7 +2466,7 @@ Figure 1: Number of IEA ratifications by 2017
 <p>Studies looking a treaty design and membership have traditionally assumed that all countries could ratify international agreements. However, this is clearly not the case. Most of the environmental agreements are regional — they tackle localised environmental issues, such as the protection of a specific ecosystem or species, or are initiated by regional organisations (e.g. European Union, the African Uniopn, or the Caribbean and Pacific group of States). This leads to biased estimates and erroneous conclusions in studies including regional agreements in their sample. Identifying potential ratifiers can solve this problem and allow researchers to study regional agreements.</p>
 <p>Knowing which country can ratify an agreement also allows to build a ratification rate indicator, which is a better indicator of international environmental cooperation than simple count of treaty membership. As shown in the image below, not all countries have access to the same number of agreements. Hence, the number of memberships in international agreements is driven by the number of agreements they can potentially ratify.</p>
 <div class="layout-chunk" data-layout="l-page">
-<div class="figure"><span style="display:block;" id="fig:unnamed-chunk-2"></span>
+<div class="figure"><span id="fig:unnamed-chunk-2"></span>
 <img src="images/map-potential-ratifications.png" alt="Number of potential ratifications by country" width="3508" />
 <p class="caption">
 Figure 2: Number of potential ratifications by country

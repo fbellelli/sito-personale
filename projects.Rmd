@@ -56,8 +56,8 @@ masonry_grid(
   masonry_item(
     src = "images/stop_funding_overfishing.jpg",
     title = "Fisheries subsidies agreement",
-    description = "I have been following closely negotiations of the WTO agreement on fisheries subsidies. This is our chance to save the oceans. Let’s stop overfishing!",
-    url = "https://www.wto.org/english/tratop_e/rulesneg_e/fish_e/fish_e.htm"
+    description = "In 2020, I have been following closely negotiations of the WTO agreement on fisheries subsidies. This is our best shot at ending overfishing, overcapacity and IUU fishing!",
+    url = "https://www.wto.org/english/news_e/news21_e/fish_30aug21_e.htm"
   ),
   masonry_item(
     src = "posts/2021-01-27-watercolours/paintings/portico.jpeg",
