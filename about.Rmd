@@ -19,7 +19,7 @@ output:
 library(postcards)
 ```
  
-## A little about myself
+## A little bit about myself
 
 I am an applied economist, with interests ranging from macroeconomic and financial forecasting, to trade, machine learning, climate and environmental issues. 
 
