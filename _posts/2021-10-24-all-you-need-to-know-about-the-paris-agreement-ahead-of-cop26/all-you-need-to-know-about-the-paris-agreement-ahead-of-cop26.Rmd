@@ -39,15 +39,17 @@ knitr::include_graphics("figure-1.2.png")
 
 ## Great! We got an agreement. Everything is fine then?
 
-Alas, it's too early to celebrate. We already had two big agreements on climate change: the 1992 UN Framework Convention on Climate Change (UNFCCC), which established the institutions and principles for cooperation on climate change, and the 1997 Kyoto Protocol, which imposed binding emission reduction targets for a handful of developed nations. Yet, judging from the current and projected GHG emission trends in the figure below, they were not terribly effective at stopping climate change. If they had, we would not be writing about a third agreement on the same issue. 
+Alas, it's too early to celebrate. We already had two big agreements on climate change: the 1992 UN Framework Convention on Climate Change (UNFCCC), which established the institutions and principles for cooperation on climate change, and the 1997 Kyoto Protocol, which imposed binding emission reduction targets for a handful of developed nations. Yet, judging from the trend in CO$_2$ concentration in the figure below, they were not terribly effective at stopping climate change. If they had, we would not be writing about a third agreement on the same issue. 
 
-```{r, fig.cap="GHG concentration and global warming <br>Source: IPCC 2019 special report on Global warming of 1.5°C"}
-knitr::include_graphics("figure-2.3.jpg")
+```{r, fig.cap="CO2 concentration in the atmosphere <br>Source: Global Carbon Budget 2020"}
+knitr::include_graphics("s08_2020_AtmosConc.png")
 ```
+
+
 
 Admittedly, our track record is not exceptional. However, this time might be different. The Paris agreement started very well. The international community signalled a strong political engagement by allowing the Paris agreement to enter into force in 2016, just 30 days after it was open for signature --- this is impressive given that it took eight years for the ratification and entry into force of the Kyoto Protocol. A crucial role in its early adoption was played by the prompt ratification of the United States --- which later decided to pull-out of the agreement, and then again to rejoin it --- and China during a joint ceremony. These are the two biggest GHG emitters in the world. To date, 197 countries have signed the agreement, and 190 ratified it. What's more, the Paris agreements asks **all** its participants to contribute to reducing emissions by making pledges (more on this in a minute). This is essential because successful climate action requires global engagement and most of GHG emissions growth will take place in developing countries. 
 
-We can call it a good start, but the truth is that all the work still lies ahead. The figure below shows the projected global warming in a scenario in which we reach net zero emissions by 2030 (resulting in 1.5°C warming) and by 2055 (2°C warming). Reaching net zero emissions means that, on balance, the amount of GHG released in the atmosphere needs to be no larger than the GHG removed from the atmosphere. Considering that we emit over 50bn tonnes of CO2-equivalent GHG, this is no small task! And achieving neutrality before 2030 (or even 2055) is definitively a challenge. One thing is certain: the earlier we act, the more likely we are to succeed.
+We can call it a good start, but the truth is that all the work still lies ahead. The figure below shows the projected global warming in a scenario in which we reach net zero emissions by 2030 (resulting in 1.5°C warming) and by 2055 (2°C warming). Reaching net zero emissions means that, on balance, the amount of GHG released in the atmosphere needs to be no larger than the GHG removed from the atmosphere. Considering that we emit about 50bn tonnes of CO$_2$-equivalent GHG, this is no small task! And achieving neutrality before 2030 (or even 2055) is definitively a challenge. One thing is certain: the earlier we act, the more likely we are to succeed.
 
 
 ```{r, fig.cap="Paths towards Paris agreement's goal <br>Source: IPCC 2019 special report on Global warming of 1.5°C"}
@@ -65,7 +67,7 @@ Overall the experience of the Kyoto Protocol was rather negative. Negotiations w
 The agreement sets no binding emission targets for the participants and the ratifiers incur no sanction if they do not fulfil their NDC. However, the monitoring and reporting process is binding. In addition, every five years the parties must update their NCDs objectives, which must represent a progress toward the target of the agreement and reflect the “highest possible ambition” (Article 4, Paris Agreement). As of now, the reduction in emissions implied by the sum of all pledges is unable to ensure that the objective of “well below 2°C”is met (see Figure below). However, 2021 marks the fifth year from the entry into force of the agreement. Hence, it's now time to submit new, more ambitious pledges. Many of these new pledges have already been submitted in the past weeks. You can check out the [Climate action tracker](https://climateactiontracker.org/climate-target-update-tracker/) website for an overview of NDC submissions.
 
 ```{r, fig.cap="Current pledges fall short of Paris agreeement's target <br>Source: Our World in Data"}
-knitr::include_graphics("SPM1_figure-final.png")
+knitr::include_graphics("Greenhouse-gas-emission-scenarios-01.png")
 ```
 
 
