@@ -1,7 +1,7 @@
 ---
 title: "All you need to know about the Paris Agreement ahead of COP26"
 description: |
-  Only one week left to the official start of the COP26 in Glasgow, where global leaders will meet to take crucial decisions on climate change. Scientific evidence shows that we are running out of time. If we wish to avoid the worst scenario, it's now or never. What will come out of the summit? Will it be a flop or a success? We don't know yet, but this article will quickly get you up to speed with climate talks.
+  Only one week left to the official start of the COP26 in Glasgow, in which global leaders will meet to take crucial decisions on climate change. Scientific evidence shows that we are running out of time. If we wish to avoid the worst scenario, it's now or never. What will come out of the summit? Will it be a flop or a success? We don't know yet, but this article will quickly get you up to speed with climate talks.
 author:
   - name: Francesco S. Bellelli
 date: 10-24-2021
@@ -29,7 +29,7 @@ During your absence, country delegates gathered in Paris to sign a new agreement
 
 ## Wait … what is climate change?
 
-If you haven't heard of this one, you might have been away longer than you think. Although I think you might have more pressing questions to attend, I won't leave a question unanswered: Climate change refers to a lasting change in the temperature and weather patterns around the world. A lot of human activities generate greenhouse gases (GHG), such as carbon dioxide or methane, which trap heat in the atmosphere. An increase as small as 2°C in global average temperature is enough to create disruptive changes around the world. Torrential rainfalls, severe droughts, food insecurity, melting glaciers, biodiversity loss, flooding and rise of sea levels are just some of the unpleasant events that scientists have associated with climate change. In short: climate change effects are bad, and the risks and costs associated with it are not fully understood. We should definitively try to avoid it! And that's what the Paris agreement is meant for. The idea is to avoid these catastrophic events by limit GHG emissions as much as possible and adapting to these changes. 
+If you haven't heard of this one, you might have been away longer than you think. Although I think you might have more pressing questions to attend, I won't leave a question unanswered: Climate change refers to a lasting change in the temperature and weather patterns around the world. Most of human activities directly or indirectly generate greenhouse gases (GHG), such as carbon dioxide or methane, which trap heat in the atmosphere. An increase as small as 2°C in global average temperature is enough to create disruptive changes around the world. Torrential rainfalls, severe droughts, food insecurity, melting glaciers, biodiversity loss, flooding and rise of sea levels are just some of the unpleasant events that scientists have associated with climate change. In short: climate change effects are bad, and the risks and costs associated with it are not fully understood. We should definitively try to avoid it! And that's what the Paris agreement is meant for. The idea is to avoid these catastrophic events by limit GHG emissions as much as possible and adapting to these changes. 
 
 
 ```{r, fig.cap="Temperature trend over the last 160 years <br>Source: IPCC 2019 special report on Global warming of 1.5°C"}
@@ -39,7 +39,7 @@ knitr::include_graphics("figure-1.2.png")
 
 ## Great! We got an agreement. Everything is fine then?
 
-Alas, it's too early to celebrate. We already had two big agreements on climate change: the 1992 UN Framework Convention on Climate Change (UNFCCC), which established the institutions and principles for cooperation on climate change, and the 1997 Kyoto Protocol, which imposed binding emission reduction targets for a handful of developed nations. Yet, judging from the trend in CO$_2$ concentration in the figure below, they were not terribly effective at stopping climate change. If they had, we would not be writing about a third agreement on the same issue. 
+Alas, it's too early to celebrate. We already had two big agreements on climate change: the 1992 UN Framework Convention on Climate Change (UNFCCC), which established the institutions and principles for cooperation on climate change, and the 1997 Kyoto Protocol, which imposed binding emission reduction targets on a handful of developed nations. Yet, judging from the trend in CO$_2$ concentration in the figure below, they were not terribly effective at stopping climate change. If they had, we would not be writing about a third agreement on the same issue. 
 
 ```{r, fig.cap="CO2 concentration in the atmosphere <br>Source: Global Carbon Budget 2020"}
 knitr::include_graphics("s08_2020_AtmosConc.png")
@@ -59,10 +59,10 @@ knitr::include_graphics("SPM1_figure-final.png")
 
 ## How does the Paris agreement work?
 
-Overall the experience of the Kyoto Protocol was rather negative. Negotiations were arduous, the protocol engaged only a small number of countries, the entry into force was extremely slow, and its effectiveness in curbing emissions is debatable. Therefore, negotiators decided to opt for a totally different approach for the Paris Agreement. The system introduced by the Paris agreement consists of a structure divided in two layers:
+Overall the experience of the Kyoto Protocol was rather negative. Negotiations were arduous, the protocol engaged only a small number of countries, the entry into force was extremely slow, and its effectiveness in curbing emissions is debatable. Therefore, negotiators decided to opt for a totally different approach for the Paris Agreement. The system introduced by the Paris agreement has a two-layer structure:
 
 1. A common binding ground that regulates the assessment process and basic formal requirements on accounting and communication of GHG emissions;
-2. A flexible target setting for participants, in which each country is free to establish its objectives and the way it proposes to achieve them. The goals are called Nationally Determined Contribution (NDC). 
+2. A flexible target setting for participants, in which each country is free to establish its objectives and the way it proposes to achieve them. The self-determined goals are called Nationally Determined Contribution (NDC). 
 
 The agreement sets no binding emission targets for the participants and the ratifiers incur no sanction if they do not fulfil their NDC. However, the monitoring and reporting process is binding. In addition, every five years the parties must update their NCDs objectives, which must represent a progress toward the target of the agreement and reflect the “highest possible ambition” (Article 4, Paris Agreement). As of now, the reduction in emissions implied by the sum of all pledges is unable to ensure that the objective of “well below 2°C”is met (see Figure below). However, 2021 marks the fifth year from the entry into force of the agreement. Hence, it's now time to submit new, more ambitious pledges. Many of these new pledges have already been submitted in the past weeks. You can check out the [Climate action tracker](https://climateactiontracker.org/climate-target-update-tracker/) website for an overview of NDC submissions.
 
@@ -72,11 +72,11 @@ knitr::include_graphics("Greenhouse-gas-emission-scenarios-01.png")
 
 
 
-Another feature of the Paris agreement is that it allows countries to pay for carbon emissions to be reduced abroad, the first country can count those reductions towards its own national targets. This should allow to cut the costs of climate action by curbing emissions where it is most efficient. Finally, the agreement also creates financial mechanisms to support developing countries in meeting their goals. In particular, developed nations promised to provide 100 billion dollars annually from 2020 to 2025 to support the agreement. 
+Another feature of the Paris agreement is that it allows countries to pay for carbon emissions to be reduced abroad and counting these reductions towards its own national targets. This should allow to cut the costs of climate action by curbing emissions where it is most efficient. Finally, the agreement also creates financial mechanisms to support developing countries in meeting their goals. In particular, developed nations promised to provide 100 billion dollars annually from 2020 to 2025 to support the agreement. 
 
 
 ## What is COP26 and why is it important?
 
-Every year, the members to the UN Framework Convention on Climate Change and of the Paris agreement meet to assess their progress and take decisions regarding the implementation of the agreement. The fancy name of these meetings is "Conference of the Parties"  --- COP for short. This year's COP will take place in Glasgow and it is the 26th edition of COP (hence COP26).
+Every year, countries that are members to the UN Framework Convention on Climate Change and the Paris agreement meet to assess their progress and take decisions regarding the implementation of the agreement. The fancy name of these meetings is "Conference of the Parties"  --- COP for short. This year's COP will take place in Glasgow and it is the 26th edition of COP (hence COP26).
 
-This edition is important for multiple reasons. First, this edition marks five years from the entry into force of the agreement. Hence, we should expect new pledges and big announcements, which will provide a guidance for the next five years of implementation. Secondly, there are still some sticking points which need to be discussed.  For example, we are still a bit short of the 100bn rich countries had promised to provide by 2020 and members still need to define the highly contentious issue of how the carbon trading mechanisms will work in practice.
+This edition is important for multiple reasons. First, this edition marks five years from the entry into force of the agreement. Hence, we should expect new pledges and big announcements, which will provide a guidance for the next five years of implementation. For example, we might expect joint pledges on deforestation, renewable energy and electric cars. Secondly, there are still some sticking points in the implementation rules which need to be negotiated.  For example, members still need to define the highly contentious issue of how the carbon trading mechanisms will work in practice. Finally, we also need to find the money for climate action. At the moment, we are still a bit short of the 100bn rich countries had promised to provide by 2020.

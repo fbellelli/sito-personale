@@ -25,11 +25,9 @@ In addition to the above, I am also fascinated by recent developments in AI and 
 <a href="EDB-data.html"><button>Data</button></a>
 <a href="https://drive.google.com/file/d/1sbHv8yDAyec4_CG1PPOh_RNbqLRqPNZb/view?usp=sharing"><button>Replication files</button></a>
 
-**Bellelli, F.S.**, Scarpa, R. and Aftab, A. (2021) The joining dilemma: A survey of the empirical literature on environmental treaty participation. *Review of Environmental Economics and Policy*. *(Forthcoming)*
-<a href="papers/Survey_of_empirical_ratification_literature.pdf"><button>PDF</button></a>
-<a href="papers/Survey_of_empirical_ratification_literature_appendix.pdf"><button>Appendix</button></a>
+Xu, A., Tresa, E., **Bellelli, F.S.**, Bacchetta, M., Monteiro, J.A. (2021) Trade and the transfer of climate-related technologies. *World Trade Organization, Trade and climate change information brief* (*Under internal review*).
 
-**Bellelli, F.S.**, Scarpa, R. and Aftab, A. Interest groups and participation in Economic Journal. *Working paper*. (*Under review at the Review of Economic Studies*)
+**Bellelli, F.S.**, Scarpa, R. and Aftab, A. Interest groups and participation in international environmental agreements. *Working paper*. (*Under review at the Economic Journal*)
 <a href="papers/Ratification_paper.pdf"><button>PDF</button></a>
 <a href="papers/ratification paper appendix.zip"><button>Appendix</button></a>
 <a href="ratification-data.html"><button>Data</button></a>
@@ -41,13 +39,25 @@ In addition to the above, I am also fascinated by recent developments in AI and 
 **Bellelli, F.S.**, Monteiro, J.A. and Xu, A. Assessing the environmental effectiveness of environmental provisions in Regional Trade Agreements. *(Drafting in progress)*
 
 
+## Peer-reviewed journals
+
+**Bellelli, F.S.**, Scarpa, R. and Aftab, A. (2021) The joining dilemma: A survey of the empirical literature on environmental treaty participation. *Review of Environmental Economics and Policy*. *(Forthcoming)*
+<a href="papers/Survey_of_empirical_ratification_literature.pdf"><button>PDF</button></a>
+<a href="papers/Survey_of_empirical_ratification_literature_appendix.pdf"><button>Appendix</button></a>
+
+
 ## Contribution to books and reports
 
 WTO (*Forthcoming*) World Trade Report 2021
 
+WTO (2020) *World Trade Report 2020; Government policies to promote innovation in the digital age*. World Trade organization. Available at: https://www.wto.org/english/res_e/publications_e/wtr20_e.htm.
+
+Pictet (2020)  *Horizon 2020: Long-term investing in a world marked by pandemic*. Pictet WM, AA\&MR. Geneva, Switzerland.
 
 
 ## Other publications
+
+Xu, A., **Bellelli, F.S.**, Tresa, E., Bacchetta, M., Monteiro, J.A. (2021) Carbon content of international trade. *World Trade Organization, Trade and climate change information brief*, n°4. Available online at: https://www.wto.org/english/news_e/news21_e/clim_03nov21-4_e.pdf. <a href="papers/WTO note trade carbon content.pdf"><button>PDF</button></a>
 
 **Bellelli, F.S.** (2019) An overview of the main climate change agreements and the process that led to their formation. *The Foundation Journal*, Vol.XI, pp 1–15.
 <a href="papers/articolo foundation published.pdf"><button>PDF</button></a>
