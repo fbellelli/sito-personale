@@ -27,7 +27,7 @@ In addition to the above, I am also fascinated by recent developments in AI and 
 
 Xu, A., Tresa, E., **Bellelli, F.S.**, Bacchetta, M., Monteiro, J.A. (2021) Trade and the transfer of climate-related technologies. *World Trade Organization, Trade and climate change information brief* (*Under internal review*).
 
-**Bellelli, F.S.**, Scarpa, R. and Aftab, A. Interest groups and participation in international environmental agreements. *Working paper*. (*Under review at the Economic Journal*)
+**Bellelli, F.S.**, Scarpa, R. and Aftab, A. An empirical analysis of participation in environemntal agreements. *Working paper*. (*Under review at the Journal of Political Economy*)
 <a href="papers/Ratification_paper.pdf"><button>PDF</button></a>
 <a href="papers/ratification paper appendix.zip"><button>Appendix</button></a>
 <a href="ratification-data.html"><button>Data</button></a>
@@ -48,16 +48,17 @@ Xu, A., Tresa, E., **Bellelli, F.S.**, Bacchetta, M., Monteiro, J.A. (2021) Trad
 
 ## Contribution to books and reports
 
-WTO (*Forthcoming*) World Trade Report 2021
+WTO (*Forthcoming*) World Trade Report 2022
 
-WTO (2020) *World Trade Report 2020; Government policies to promote innovation in the digital age*. World Trade organization. Available at: https://www.wto.org/english/res_e/publications_e/wtr20_e.htm.
+WTO (2021) *World Trade Report 2021; Economic resilience and trade*. World Trade organization. Available at: https://www.wto.org/english/res_e/publications_e/wtr21_e.htm.
+<a href="https://www.wto.org/english/res_e/booksp_e/wtr21_e/00_wtr21_e.pdf"><button>PDF</button></a>
 
 Pictet (2020)  *Horizon 2020: Long-term investing in a world marked by pandemic*. Pictet WM, AA\&MR. Geneva, Switzerland.
 
 
 ## Other publications
 
-Xu, A., **Bellelli, F.S.**, Tresa, E., Bacchetta, M., Monteiro, J.A. (2021) Carbon content of international trade. *World Trade Organization, Trade and climate change information brief*, n°4. Available online at: https://www.wto.org/english/news_e/news21_e/clim_03nov21-4_e.pdf. <a href="papers/WTO note trade carbon content.pdf"><button>PDF</button></a>
+Xu, A.,  Tresa, E., Bacchetta, **Bellelli, F.S.**, M., Monteiro, J.A. (2021) Carbon content of international trade. *World Trade Organization, Trade and climate change information brief*, n°4. Available online at: https://www.wto.org/english/news_e/news21_e/clim_03nov21-4_e.pdf. <a href="papers/WTO note trade carbon content.pdf"><button>PDF</button></a>
 
 **Bellelli, F.S.** (2019) An overview of the main climate change agreements and the process that led to their formation. *The Foundation Journal*, Vol.XI, pp 1–15.
 <a href="papers/articolo foundation published.pdf"><button>PDF</button></a>

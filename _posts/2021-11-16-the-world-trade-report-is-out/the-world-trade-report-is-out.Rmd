@@ -1,0 +1,40 @@
+---
+title: "The 2021 World Trade Report is out"
+description: |
+  I had the honour to contribute to the writing of this year's edition of the World Trade Report, the flagship economic publication of the World Trade Organization.  The report explores the role of trade, trade policy and international cooperation in building economic resilience in a world marked by increasing risks.
+  
+author:
+  - name: Francesco S. Bellelli
+date: 11-16-2021
+categories:
+  - economics
+  - trade
+preview: "https://www.wto.org/images/img_bkshop/wtr21_e.jpg"
+output:
+  distill::distill_article:
+    toc: true
+    self_contained: false
+---
+
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+```
+
+
+<style>
+div.blue { background-color:#e6f0ff; border-radius: 5px; padding: 20px}
+</style>
+
+
+<div class = "blue"><center> The full 2021 World Trade Report is available **[here](https://www.wto.org/english/res_e/publications_e/wtr21_e.htm)**. </center></div>
+<br>
+
+
+
+
+
+
+<iframe width="560" height="315" src="https://www.youtube.com/watch?v=bC97EJQQP6Q" frameborder="0" allowfullscreen>
+</iframe>
+

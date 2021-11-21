@@ -1,5 +1,25 @@
 [
   {
+    "path": "posts/2021-11-16-the-world-trade-report-is-out/",
+    "title": "The 2021 World Trade Report is out",
+    "description": "I had the honour to contribute to the writing of this year's edition of the World Trade Report, the flagship economic publication of the World Trade Organization.  The report explores the role of trade, trade policy and international cooperation in building economic resilience in a world marked by increasing risks.",
+    "author": [
+      {
+        "name": "Francesco S. Bellelli",
+        "url": {}
+      }
+    ],
+    "date": "2021-11-16",
+    "categories": [
+      "economics",
+      "trade"
+    ],
+    "contents": "\r\n\r\ndiv.blue { background-color:#e6f0ff; border-radius: 5px; padding: 20px}\r\n\r\n\r\nThe full 2021 World Trade Report is available here.\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n",
+    "preview": "https://www.wto.org/images/img_bkshop/wtr21_e.jpg",
+    "last_modified": "2021-11-21T21:08:27+01:00",
+    "input_file": "the-world-trade-report-is-out.knit.md"
+  },
+  {
     "path": "posts/2021-10-24-all-you-need-to-know-about-the-paris-agreement-ahead-of-cop26/",
     "title": "All you need to know about the Paris Agreement ahead of COP26",
     "description": "Only one week left to the official start of the COP26 in Glasgow, in which global leaders will meet to take crucial decisions on climate change. Scientific evidence shows that we are running out of time. If we wish to avoid the worst scenario, it's now or never. What will come out of the summit? Will it be a flop or a success? We don't know yet, but this article will quickly get you up to speed with climate talks.",
