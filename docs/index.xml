@@ -12,6 +12,7 @@
       <link>https://fbellelli.com/</link>
     </image>
     <generator>Distill</generator>
+<<<<<<< HEAD
     <lastBuildDate>Fri, 17 Dec 2021 00:00:00 +0000</lastBuildDate>
     <item>
       <title>Mishmash of charts</title>
@@ -24,6 +25,9 @@
       <pubDate>Fri, 17 Dec 2021 00:00:00 +0000</pubDate>
       <media:content url="https://fbellelli.com/posts/2021-07-25-chart-mishmash/../../papers/map pictet.gif" medium="image" type="image/gif"/>
     </item>
+=======
+    <lastBuildDate>Tue, 16 Nov 2021 00:00:00 +0000</lastBuildDate>
+>>>>>>> 60a1b6875eebee1f71c4a68588d861801c071655
     <item>
       <title>The 2021 World Trade Report is out</title>
       <dc:creator>Francesco S. Bellelli</dc:creator>
@@ -54,6 +58,17 @@
       <guid>https://fbellelli.com/posts/2021-08-15-pandemic-and-the-office-space-market</guid>
       <pubDate>Sun, 15 Aug 2021 00:00:00 +0000</pubDate>
       <media:content url="https://fbellelli.com/posts/2021-08-15-pandemic-and-the-office-space-market/city2_preview.jpg" medium="image" type="image/jpeg"/>
+    </item>
+    <item>
+      <title>Mishmash of charts</title>
+      <dc:creator>Francesco S. Bellelli</dc:creator>
+      <link>https://fbellelli.com/posts/2021-07-25-chart-mishmash</link>
+      <description>This article is a selected collection of charts that I prepared over the last three years.</description>
+      <category>economics</category>
+      <category>other</category>
+      <guid>https://fbellelli.com/posts/2021-07-25-chart-mishmash</guid>
+      <pubDate>Sat, 24 Jul 2021 00:00:00 +0000</pubDate>
+      <media:content url="https://fbellelli.com/posts/2021-07-25-chart-mishmash/../../papers/map pictet.gif" medium="image" type="image/gif"/>
     </item>
     <item>
       <title>The fascinating world of Voronoi diagrams</title>
