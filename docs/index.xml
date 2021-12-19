@@ -12,8 +12,18 @@
       <link>https://fbellelli.com/</link>
     </image>
     <generator>Distill</generator>
-<<<<<<< HEAD
-    <lastBuildDate>Fri, 17 Dec 2021 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sat, 18 Dec 2021 00:00:00 +0000</lastBuildDate>
+    <item>
+      <title>Mishmash of charts</title>
+      <dc:creator>Francesco S. Bellelli</dc:creator>
+      <link>https://fbellelli.com/posts/2021-12-18-mishmash-of-charts</link>
+      <description>This article is a selected collection of charts that I prepared over the last three years.</description>
+      <category>economics</category>
+      <category>other</category>
+      <guid>https://fbellelli.com/posts/2021-12-18-mishmash-of-charts</guid>
+      <pubDate>Sat, 18 Dec 2021 00:00:00 +0000</pubDate>
+      <media:content url="https://fbellelli.com/posts/2021-12-18-mishmash-of-charts/../../papers/map pictet.gif" medium="image" type="image/gif"/>
+    </item>
     <item>
       <title>Mishmash of charts</title>
       <dc:creator>Francesco S. Bellelli</dc:creator>
@@ -25,9 +35,6 @@
       <pubDate>Fri, 17 Dec 2021 00:00:00 +0000</pubDate>
       <media:content url="https://fbellelli.com/posts/2021-07-25-chart-mishmash/../../papers/map pictet.gif" medium="image" type="image/gif"/>
     </item>
-=======
-    <lastBuildDate>Tue, 16 Nov 2021 00:00:00 +0000</lastBuildDate>
->>>>>>> 60a1b6875eebee1f71c4a68588d861801c071655
     <item>
       <title>The 2021 World Trade Report is out</title>
       <dc:creator>Francesco S. Bellelli</dc:creator>
@@ -60,17 +67,6 @@
       <media:content url="https://fbellelli.com/posts/2021-08-15-pandemic-and-the-office-space-market/city2_preview.jpg" medium="image" type="image/jpeg"/>
     </item>
     <item>
-      <title>Mishmash of charts</title>
-      <dc:creator>Francesco S. Bellelli</dc:creator>
-      <link>https://fbellelli.com/posts/2021-07-25-chart-mishmash</link>
-      <description>This article is a selected collection of charts that I prepared over the last three years.</description>
-      <category>economics</category>
-      <category>other</category>
-      <guid>https://fbellelli.com/posts/2021-07-25-chart-mishmash</guid>
-      <pubDate>Sat, 24 Jul 2021 00:00:00 +0000</pubDate>
-      <media:content url="https://fbellelli.com/posts/2021-07-25-chart-mishmash/../../papers/map pictet.gif" medium="image" type="image/gif"/>
-    </item>
-    <item>
       <title>The fascinating world of Voronoi diagrams</title>
       <dc:creator>Francesco S. Bellelli</dc:creator>
       <link>https://fbellelli.com/posts/2021-07-08-the-fascinating-world-of-voronoi-diagrams</link>
@@ -82,12 +78,12 @@
       <media:content url="https://fbellelli.com/posts/2021-07-08-the-fascinating-world-of-voronoi-diagrams/voronoi_animation2.gif" medium="image" type="image/gif"/>
     </item>
     <item>
-      <title>Worldata</title>
+      <title>A package for country data</title>
       <dc:creator>Francesco S. Bellelli</dc:creator>
-      <link>https://fbellelli.com/posts/2021-06-20-worldata</link>
+      <link>https://fbellelli.com/posts/2021-06-20-a-package-for-country-data</link>
       <description>I am working on an R package designed to quickly wrangle, merge and explore country data</description>
       <category>coding</category>
-      <guid>https://fbellelli.com/posts/2021-06-20-worldata</guid>
+      <guid>https://fbellelli.com/posts/2021-06-20-a-package-for-country-data</guid>
       <pubDate>Sun, 20 Jun 2021 00:00:00 +0000</pubDate>
       <media:content url="https://cdn.britannica.com/13/129613-131-30279F20/Flags-world-flags-Country-history-blog-travel-2009.jpg" medium="image" type="image/jpeg"/>
     </item>
