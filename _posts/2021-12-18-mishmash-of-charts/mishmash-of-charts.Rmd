@@ -1,7 +1,7 @@
 ---
 title: "Mishmash of charts"
 description: |
-  This article is a selected collection of charts that I prepared over the last three years. 
+  This article is a selection of charts that I prepared over the last three years. 
 
 author:
   - name: Francesco S. Bellelli
