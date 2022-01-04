@@ -822,7 +822,7 @@
 @Article{EDB_paper,
   author  = {Bellelli, Francesco Saverio and Xu, Ankai},
   journal = {WTO Staff Working Paper (Forthcoming)},
-  title   = {{How do environmental policies affects green innovation and trade? Evidence from the WTO environmental database (EDB)}},
+  title   = {{How do environmental policies affect green innovation and trade? Evidence from the WTO environmental database (EDB)}},
   year    = {2021},
 }
 
@@ -832,6 +832,14 @@
   title   = {Interest groups and participation in international environmental agreements},
   year    = {2021},
   note    = {Available from \url{https://fbellelli.com/research.html}},
+}
+
+@Article{entri2013,
+  author  = {{CIESIN}},
+  journal = {Center for International Earth Science Information Network},
+  title   = {{Environmental Treaties and Resource Indicators} {(ENTRI)}},
+  year    = {2013},
+  note    = {(Available at: \url{http://sedac.ciesin.org/entri/metadata.jsp})},
 }
 
 @Comment{jabref-meta: databaseType:bibtex;}

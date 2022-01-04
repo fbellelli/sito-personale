@@ -20,12 +20,12 @@ In addition to the above, I am also fascinated by recent developments in AI and 
 
 ## Working papers
 
-**Bellelli, F.S.** and Xu, A. (2021) How do environmental policies affects green innovation and trade? Evidence from the WTO environmental database (EDB). (*WTO staff paper, soon to be published*)
+**Bellelli, F.S.** and Xu, A. (2022) How do environmental policies affects green innovation and trade? Evidence from the WTO environmental database (EDB). (*WTO staff paper, Forthcoming*)
 <a href="papers/EDB_paper_draft.pdf"><button>PDF</button></a>
 <a href="EDB-data.html"><button>Data</button></a>
 <a href="https://drive.google.com/file/d/1sbHv8yDAyec4_CG1PPOh_RNbqLRqPNZb/view?usp=sharing"><button>Replication files</button></a>
 
-Xu, A., Tresa, E., **Bellelli, F.S.**, Bacchetta, M., Monteiro, J.A. (2021) Trade and the transfer of climate-related technologies. *World Trade Organization, Trade and climate change information brief* (*Under internal review*).
+Xu, A., Tresa, E., **Bellelli, F.S.**, Bacchetta, M., Monteiro, J.A.. Trade and the transfer of climate-related technologies. *World Trade Organization, Trade and climate change information brief* (*Under internal review*).
 
 **Bellelli, F.S.**, Scarpa, R. and Aftab, A. An empirical analysis of participation in environemntal agreements. *Working paper*. (*Under review at the Journal of Political Economy*)
 <a href="papers/Ratification_paper.pdf"><button>PDF</button></a>
