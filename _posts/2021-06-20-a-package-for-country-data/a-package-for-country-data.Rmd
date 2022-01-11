@@ -19,6 +19,17 @@ knitr::opts_chunk$set(echo = FALSE)
 ```
 
 
+<style>
+div.blue { background-color:#e6f0ff; border-radius: 5px; padding: 20px;}
+</style>
+
+<div class = "blue">
+<center>
+The development version of the package is available [here](https://github.com/fbellelli/Countries).
+</center>
+</div>
+
+<br>
 
 As an economist, I often work with country-level data coming from different sources. GDP series from the IMF, monetary data from central banks, trade data from WTO, CO~2~  emissions from the IEA, survey data from national agencies, etc.. Pooling all this data together is often a laborious task because countries' naming conventions are never the same. 
 

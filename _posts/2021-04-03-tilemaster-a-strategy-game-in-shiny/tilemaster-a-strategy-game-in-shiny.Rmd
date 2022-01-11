@@ -23,7 +23,7 @@ div.blue { background-color:#e6f0ff; border-radius: 5px; padding: 20px}
 </style>
 
 
-<div class = "blue"><center>A link to the game **Tile master** is available [here](https://fbellelli.shinyapps.io/TileMaster/). </center></div>
+<div class = "blue"><center>Click [here](https://fbellelli.shinyapps.io/TileMaster/) to open the game **Tile master** in your browser. The complete code of the shiny app is available [on Github](https://github.com/fbellelli/TileMaster). </center></div>
 <br>
 
 After a look at the amazing gallery of dashboards and interactive data visualisations from [Shiny apps](https://shiny.rstudio.com/), I decided that I had to explore its functionalities by trying a project on my own.
