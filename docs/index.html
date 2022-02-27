@@ -2212,6 +2212,29 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
   }
 
 
+
+
+  /* Chunk output */
+
+  d-article pre { 
+    overflow: auto !important;
+    border-radius: 5px; /* Rounded edges */
+    font-size: 12px;
+    color: white;
+    background-color: #0f2a3d;
+    padding: 5px 5px 5px 18px;
+  }
+
+  /* Chunk code */
+
+  d-article div.sourceCode pre { 
+    overflow: auto !important;
+    border-radius: 5px; /* Rounded edges */
+    background-color: #e6f0ff;
+    color: black;
+    padding: 5px 5px 5px 18px;
+  }
+
   </style>
   <style type="text/css">
   /* base style */
@@ -2560,6 +2583,23 @@ function init_posts_list() {
 <div class="posts-container posts-with-sidebar posts-apply-limit l-screen-inset">
 <div class="posts-list">
 <h1 class="posts-list-caption" data-caption="Blog">Blog</h1>
+<a href="posts/2022-02-27-first-version-of-countries/" class="post-preview">
+<script class="post-metadata" type="text/json">{"categories":[]}</script>
+<div class="metadata">
+<div class="publishedDate">Feb. 27, 2022</div>
+<div class="dt-authors">
+<div class="dt-author">Francesco S. Bellelli</div>
+</div>
+</div>
+<div class="thumbnail">
+<img src="images/Countries_logo.png"/>
+</div>
+<div class="description">
+<h2>First version of Countries</h2>
+<div class="dt-tags"></div>
+<p>The first development version of the package Countries is now available on Github. This post looks at how the package can be used to work with country names.</p>
+</div>
+</a>
 <a href="posts/2021-12-18-mishmash-of-charts/" class="post-preview">
 <script class="post-metadata" type="text/json">{"categories":["economics","other"]}</script>
 <div class="metadata">
@@ -2647,7 +2687,7 @@ function init_posts_list() {
 </div>
 </div>
 <div class="thumbnail">
-<img src="posts/2021-07-08-the-fascinating-world-of-voronoi-diagrams/voronoi_animation2.gif"/>
+<img data-src="posts/2021-07-08-the-fascinating-world-of-voronoi-diagrams/voronoi_animation2.gif"/>
 </div>
 <div class="description">
 <h2>The fascinating world of Voronoi diagrams</h2>
@@ -2767,7 +2807,7 @@ function init_posts_list() {
 <ul>
 <li>
 <a href="#category:articles">articles</a>
-<span class="category-count">(10)</span>
+<span class="category-count">(11)</span>
 </li>
 <li>
 <a href="#category:coding">coding</a>

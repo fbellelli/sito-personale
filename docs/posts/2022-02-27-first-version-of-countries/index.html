@@ -85,81 +85,56 @@ code span.vs { color: #20794d; } /* VerbatimString */
 code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 </style>
 
-<style>
-  div.csl-bib-body { }
-  div.csl-entry {
-    clear: both;
-    }
-  .hanging div.csl-entry {
-    margin-left:2em;
-    text-indent:-2em;
-  }
-  div.csl-left-margin {
-    min-width:2em;
-    float:left;
-  }
-  div.csl-right-inline {
-    margin-left:2em;
-    padding-left:1em;
-  }
-  div.csl-indent {
-    margin-left: 2em;
-  }
-</style>
 
   <!--radix_placeholder_meta_tags-->
-<title>F.S.Bellelli: How to increase participation in environmental agreements?</title>
+<title>F.S.Bellelli: First version of Countries</title>
 
-<meta property="description" itemprop="description" content="Understanding the determinants of participation in environmental agreements can help us frame more successful agreements. In this article, I discuss the economic theory and empirical evidence on this topic."/>
+<meta property="description" itemprop="description" content="The first development version of the package Countries is now available on Github. This post looks at how the package can be used to work with country names."/>
 
-<link rel="canonical" href="https://fbellelli.com/posts/2021-03-20-how-to-increase-participation-in-environmental-agreements/"/>
+<link rel="canonical" href="https://fbellelli.com/posts/2022-02-27-first-version-of-countries/"/>
 <link rel="icon" type="image/vnd.microsoft.icon" href="../../images/favicon feather.ico"/>
 
 <!--  https://schema.org/Article -->
-<meta property="article:published" itemprop="datePublished" content="2021-03-20"/>
-<meta property="article:created" itemprop="dateCreated" content="2021-03-20"/>
+<meta property="article:published" itemprop="datePublished" content="2022-02-27"/>
+<meta property="article:created" itemprop="dateCreated" content="2022-02-27"/>
 <meta name="article:author" content="Francesco S. Bellelli"/>
 
 <!--  https://developers.facebook.com/docs/sharing/webmasters#markup -->
-<meta property="og:title" content="F.S.Bellelli: How to increase participation in environmental agreements?"/>
+<meta property="og:title" content="F.S.Bellelli: First version of Countries"/>
 <meta property="og:type" content="article"/>
-<meta property="og:description" content="Understanding the determinants of participation in environmental agreements can help us frame more successful agreements. In this article, I discuss the economic theory and empirical evidence on this topic."/>
-<meta property="og:url" content="https://fbellelli.com/posts/2021-03-20-how-to-increase-participation-in-environmental-agreements/"/>
-<meta property="og:image" content="https://fbellelli.com/posts/2021-03-20-how-to-increase-participation-in-environmental-agreements/map-number-ratifications.png"/>
-<meta property="og:image:width" content="7017"/>
-<meta property="og:image:height" content="4209"/>
+<meta property="og:description" content="The first development version of the package Countries is now available on Github. This post looks at how the package can be used to work with country names."/>
+<meta property="og:url" content="https://fbellelli.com/posts/2022-02-27-first-version-of-countries/"/>
+<meta property="og:image" content="https://fbellelli.com/posts/2022-02-27-first-version-of-countries/../../images/Countries_logo.png"/>
+<meta property="og:image:width" content="864"/>
+<meta property="og:image:height" content="1000"/>
 <meta property="og:locale" content="en_US"/>
 <meta property="og:site_name" content="F.S.Bellelli"/>
 
 <!--  https://dev.twitter.com/cards/types/summary -->
 <meta property="twitter:card" content="summary_large_image"/>
-<meta property="twitter:title" content="F.S.Bellelli: How to increase participation in environmental agreements?"/>
-<meta property="twitter:description" content="Understanding the determinants of participation in environmental agreements can help us frame more successful agreements. In this article, I discuss the economic theory and empirical evidence on this topic."/>
-<meta property="twitter:url" content="https://fbellelli.com/posts/2021-03-20-how-to-increase-participation-in-environmental-agreements/"/>
-<meta property="twitter:image" content="https://fbellelli.com/posts/2021-03-20-how-to-increase-participation-in-environmental-agreements/map-number-ratifications.png"/>
-<meta property="twitter:image:width" content="7017"/>
-<meta property="twitter:image:height" content="4209"/>
+<meta property="twitter:title" content="F.S.Bellelli: First version of Countries"/>
+<meta property="twitter:description" content="The first development version of the package Countries is now available on Github. This post looks at how the package can be used to work with country names."/>
+<meta property="twitter:url" content="https://fbellelli.com/posts/2022-02-27-first-version-of-countries/"/>
+<meta property="twitter:image" content="https://fbellelli.com/posts/2022-02-27-first-version-of-countries/../../images/Countries_logo.png"/>
+<meta property="twitter:image:width" content="864"/>
+<meta property="twitter:image:height" content="1000"/>
 
 <!--  https://scholar.google.com/intl/en/scholar/inclusion.html#indexing -->
-<meta name="citation_title" content="F.S.Bellelli: How to increase participation in environmental agreements?"/>
-<meta name="citation_fulltext_html_url" content="https://fbellelli.com/posts/2021-03-20-how-to-increase-participation-in-environmental-agreements/"/>
-<meta name="citation_online_date" content="2021/03/20"/>
-<meta name="citation_publication_date" content="2021/03/20"/>
+<meta name="citation_title" content="F.S.Bellelli: First version of Countries"/>
+<meta name="citation_fulltext_html_url" content="https://fbellelli.com/posts/2022-02-27-first-version-of-countries/"/>
+<meta name="citation_online_date" content="2022/02/27"/>
+<meta name="citation_publication_date" content="2022/02/27"/>
 <meta name="citation_author" content="Francesco S. Bellelli"/>
 <!--/radix_placeholder_meta_tags-->
-  
-  <meta name="citation_reference" content="citation_title=International environmental agreements database project;citation_publication_date=2020;citation_author=R. B. Mitchell"/>
-  <meta name="citation_reference" content="citation_title=Environmental Treaties and Resource Indicators (ENTRI);citation_publication_date=2013;citation_author=Environmental Treaties and Resource Indicators (ENTRI)"/>
-  <meta name="citation_reference" content="citation_title=Interest groups and participation in international environmental agreements;citation_publication_date=2021;citation_author=Francesco Saverio Bellelli;citation_author=Riccardo Scarpa;citation_author=Ashar Aftab"/>
   <!--radix_placeholder_rmarkdown_metadata-->
 
 <script type="text/json" id="radix-rmarkdown-metadata">
-{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["title","description","author","date","categories","output","bibliography","citation_url","canonical_url"]}},"value":[{"type":"character","attributes":{},"value":["How to increase participation in environmental agreements?"]},{"type":"character","attributes":{},"value":["Understanding the determinants of participation in environmental agreements can help us frame more successful agreements. In this article, I discuss the economic theory and empirical evidence on this topic."]},{"type":"list","attributes":{},"value":[{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["name"]}},"value":[{"type":"character","attributes":{},"value":["Francesco S. Bellelli"]}]}]},{"type":"character","attributes":{},"value":["03-20-2021"]},{"type":"character","attributes":{},"value":["environment","economics"]},{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["distill::distill_article"]}},"value":[{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["toc","toc_depth","self_contained"]}},"value":[{"type":"logical","attributes":{},"value":[true]},{"type":"integer","attributes":{},"value":[2]},{"type":"logical","attributes":{},"value":[false]}]}]},{"type":"character","attributes":{},"value":["references.bib"]},{"type":"character","attributes":{},"value":["https://fbellelli.com/posts/2021-03-20-how-to-increase-participation-in-environmental-agreements/"]},{"type":"character","attributes":{},"value":["https://fbellelli.com/posts/2021-03-20-how-to-increase-participation-in-environmental-agreements/"]}]}
+{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["title","description","author","date","preview","output","citation_url","canonical_url"]}},"value":[{"type":"character","attributes":{},"value":["First version of Countries"]},{"type":"character","attributes":{},"value":["The first development version of the package Countries is now available on Github. This post looks at how the package can be used to work with country names."]},{"type":"list","attributes":{},"value":[{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["name"]}},"value":[{"type":"character","attributes":{},"value":["Francesco S. Bellelli"]}]}]},{"type":"character","attributes":{},"value":["2022-02-27"]},{"type":"character","attributes":{},"value":["../../images/Countries_logo.png"]},{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["distill::distill_article"]}},"value":[{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["self_contained"]}},"value":[{"type":"logical","attributes":{},"value":[false]}]}]},{"type":"character","attributes":{},"value":["https://fbellelli.com/posts/2022-02-27-first-version-of-countries/"]},{"type":"character","attributes":{},"value":["https://fbellelli.com/posts/2022-02-27-first-version-of-countries/"]}]}
 </script>
 <!--/radix_placeholder_rmarkdown_metadata-->
   
   <script type="text/json" id="radix-resource-manifest">
-  {"type":"character","attributes":{},"value":["Agreements by type.png","Agreements per year.png","how-to-increase-participation-in-environmental-agreements_files/anchor-4.2.2/anchor.min.js","how-to-increase-participation-in-environmental-agreements_files/bowser-1.9.3/bowser.min.js","how-to-increase-participation-in-environmental-agreements_files/distill-2.2.21/template.v2.js","how-to-increase-participation-in-environmental-agreements_files/header-attrs-2.11/header-attrs.js","how-to-increase-participation-in-environmental-agreements_files/jquery-3.6.0/jquery-3.6.0.js","how-to-increase-participation-in-environmental-agreements_files/jquery-3.6.0/jquery-3.6.0.min.js","how-to-increase-participation-in-environmental-agreements_files/jquery-3.6.0/jquery-3.6.0.min.map","how-to-increase-participation-in-environmental-agreements_files/popper-2.6.0/popper.min.js","how-to-increase-participation-in-environmental-agreements_files/tippy-6.2.7/tippy-bundle.umd.min.js","how-to-increase-participation-in-environmental-agreements_files/tippy-6.2.7/tippy-light-border.css","how-to-increase-participation-in-environmental-agreements_files/tippy-6.2.7/tippy.css","how-to-increase-participation-in-environmental-agreements_files/tippy-6.2.7/tippy.umd.min.js","how-to-increase-participation-in-environmental-agreements_files/webcomponents-2.0.0/webcomponents.js","map-number-ratifications.png","references.bib"]}
+  {"type":"character","attributes":{},"value":["first-version-of-countries_files/anchor-4.2.2/anchor.min.js","first-version-of-countries_files/bowser-1.9.3/bowser.min.js","first-version-of-countries_files/distill-2.2.21/template.v2.js","first-version-of-countries_files/header-attrs-2.11/header-attrs.js","first-version-of-countries_files/jquery-3.6.0/jquery-3.6.0.js","first-version-of-countries_files/jquery-3.6.0/jquery-3.6.0.min.js","first-version-of-countries_files/jquery-3.6.0/jquery-3.6.0.min.map","first-version-of-countries_files/popper-2.6.0/popper.min.js","first-version-of-countries_files/tippy-6.2.7/tippy-bundle.umd.min.js","first-version-of-countries_files/tippy-6.2.7/tippy-light-border.css","first-version-of-countries_files/tippy-6.2.7/tippy.css","first-version-of-countries_files/tippy-6.2.7/tippy.umd.min.js","first-version-of-countries_files/webcomponents-2.0.0/webcomponents.js"]}
   </script>
   <!--radix_placeholder_navigation_in_header-->
 <meta name="distill:offset" content="../.."/>
@@ -2462,7 +2437,7 @@ d-appendix d-footnote-list a.footnote-backlink {
 <!--radix_placeholder_front_matter-->
 
 <script id="distill-front-matter" type="text/json">
-{"title":"How to increase participation in environmental agreements?","description":"Understanding the determinants of participation in environmental agreements can help us frame more successful agreements. In this article, I discuss the economic theory and empirical evidence on this topic.","authors":[{"author":"Francesco S. Bellelli","authorURL":"#","affiliation":"&nbsp;","affiliationURL":"#","orcidID":""}],"publishedDate":"2021-03-20T00:00:00.000+01:00","citationText":"Bellelli, 2021"}
+{"title":"First version of Countries","description":"The first development version of the package Countries is now available on Github. This post looks at how the package can be used to work with country names.","authors":[{"author":"Francesco S. Bellelli","authorURL":"#","affiliation":"&nbsp;","affiliationURL":"#","orcidID":""}],"publishedDate":"2022-02-27T00:00:00.000+01:00","citationText":"Bellelli, 2022"}
 </script>
 
 <!--/radix_placeholder_front_matter-->
@@ -2500,98 +2475,263 @@ Data
 <!--/radix_placeholder_site_before_body-->
 
 <div class="d-title">
-<h1>How to increase participation in environmental agreements?</h1>
+<h1>First version of Countries</h1>
 <!--radix_placeholder_categories-->
-<div class="dt-tags">
-  <a href="../../index.html#category:environment" class="dt-tag">environment</a>
-  <a href="../../index.html#category:economics" class="dt-tag">economics</a>
-</div>
 <!--/radix_placeholder_categories-->
-<p><p>Understanding the determinants of participation in environmental agreements can help us frame more successful agreements. In this article, I discuss the economic theory and empirical evidence on this topic.</p></p>
+<p><p>The first development version of the package Countries is now available on Github. This post looks at how the package can be used to work with country names.</p></p>
 </div>
 
 <div class="d-byline">
   Francesco S. Bellelli  
   
-<br/>03-20-2021
+<br/>2022-02-27
 </div>
 
 <div class="d-article">
-<div class="d-contents d-contents-float">
-<nav class="l-text toc figcaption" id="TOC">
-<h3>Contents</h3>
+<div class="floatting">
+<div class="layout-chunk" data-layout="l-body">
+<p><img src="../../images/Countries_logo.png" width="30%" style="float:right; padding:10px" /></p>
+</div>
+<p><code>Countries</code> is an R package designed to quickly wrangle, merge and explore country data. This package will contain functions to easily identify and convert country names, pull country info and datasets, merge country data from different sources, and make quick world maps.</p>
+<p>I recently released the first development version of the package, which is now available on my <a href="https://github.com/fbellelli/Countries">Github page</a>. The package also has a <a href="https://fbellelli.github.io/Countries/">website</a> containing information on the package’s usage.</p>
+<p>In this article, we will have a look at how <code>Countries</code> can be used to work with country name. In particular, we will look in detail at the function <code>country_name()</code>, which can be used to convert country names to different naming conventions or to translate them to different languages. <code>country_name()</code> can identify countries even when they are provided in mixed formats or in different languages. It is robust to small misspellings and recognises many alternative country names and disused official names.</p>
+</div>
+<h2 id="installing-and-loading-the-package">Installing and loading the package</h2>
+<p>Since the package is not yet on CRAN, the development version needs to be downloaded directly from the Github repository. This can be done with the <code>devtools</code> package.</p>
+<div class="layout-chunk" data-layout="l-body">
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span class='co'># Install and load devtools</span>
+<span class='fu'><a href='https://rdrr.io/r/utils/install.packages.html'>install.packages</a></span><span class='op'>(</span><span class='st'>"devtools"</span><span class='op'>)</span>
+<span class='kw'><a href='https://rdrr.io/r/base/library.html'>library</a></span><span class='op'>(</span><span class='va'><a href='https://devtools.r-lib.org/'>devtools</a></span><span class='op'>)</span>
+
+<span class='co'># Install Countries</span>
+<span class='fu'>devtools</span><span class='fu'>::</span><span class='fu'><a href='https://devtools.r-lib.org/reference/remote-reexports.html'>install_github</a></span><span class='op'>(</span><span class='st'>"fbellelli/countries"</span>, build_vignettes <span class='op'>=</span> <span class='cn'>TRUE</span><span class='op'>)</span>
+</code></pre>
+</div>
+</div>
+<p>The package can then be loaded normally</p>
+<div class="layout-chunk" data-layout="l-body">
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span class='kw'><a href='https://rdrr.io/r/base/library.html'>library</a></span><span class='op'>(</span><span class='va'><a href='https://fbellelli.github.io/Countries/'>Countries</a></span><span class='op'>)</span>
+</code></pre>
+</div>
+</div>
+<h2 id="dealing-with-country-names">Dealing with country names</h2>
+<p>The function <code>country_name()</code> can be used to convert country names to different naming conventions or to translate them to different languages.</p>
+<div class="layout-chunk" data-layout="l-body">
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span class='va'>example</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='st'>"United States"</span>,<span class='st'>"DR Congo"</span>, <span class='st'>"Morocco"</span><span class='op'>)</span>
+
+<span class='co'># Getting 3-letters ISO code</span>
+<span class='fu'><a href='https://fbellelli.github.io/Countries/reference/country_name.html'>country_name</a></span><span class='op'>(</span>x<span class='op'>=</span> <span class='va'>example</span>, to<span class='op'>=</span><span class='st'>"ISO3"</span><span class='op'>)</span>
+</code></pre>
+</div>
+<pre><code>[1] &quot;USA&quot; &quot;COD&quot; &quot;MAR&quot;</code></pre>
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span class='co'># Translating to spanish</span>
+<span class='fu'><a href='https://fbellelli.github.io/Countries/reference/country_name.html'>country_name</a></span><span class='op'>(</span>x<span class='op'>=</span> <span class='va'>example</span>, to<span class='op'>=</span><span class='st'>"name_es"</span><span class='op'>)</span>
+</code></pre>
+</div>
+<pre><code>[1] &quot;Estados Unidos&quot;                 
+[2] &quot;República Democrática del Congo&quot;
+[3] &quot;Marruecos&quot;                      </code></pre>
+</div>
+<p>If multiple arguments are passed to the argument <code>to</code>, the function will output a <code>data.frame</code> object, with one column corresponding to every naming convention.</p>
+<div class="layout-chunk" data-layout="l-body">
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span class='co'># Requesting translation to French and 2-letter and 3-letter ISO codes</span>
+<span class='fu'><a href='https://fbellelli.github.io/Countries/reference/country_name.html'>country_name</a></span><span class='op'>(</span>x<span class='op'>=</span> <span class='va'>example</span>, to<span class='op'>=</span><span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='st'>"name_fr"</span>,<span class='st'>"ISO2"</span>,<span class='st'>"ISO3"</span><span class='op'>)</span><span class='op'>)</span>
+</code></pre>
+</div>
+<pre><code>                           name_fr ISO2 ISO3
+1                       États-Unis   US  USA
+2 République démocratique du Congo   CD  COD
+3                            Maroc   MA  MAR</code></pre>
+</div>
+<p>The <code>to</code> argument supports all the following naming conventions:</p>
+<div class="layout-chunk" data-layout="l-body">
+<table>
+<colgroup>
+<col style="width: 1%" />
+<col style="width: 98%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">CODE</th>
+<th style="text-align: left;">DESCRIPTION</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;"><strong>simple</strong></td>
+<td style="text-align: left;">This is a simple english version of the name containing only ASCII characters. This nomenclature is available for all countries.</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><strong>ISO3</strong></td>
+<td style="text-align: left;">3-letter country codes as defined in ISO standard <code>3166-1 alpha-3</code>. This nomenclature is available only for the territories in the standard (currently 249 territories).</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><strong>ISO2</strong></td>
+<td style="text-align: left;">2-letter country codes as defined in ISO standard <code>3166-1 alpha-2</code>. This nomenclature is available only for the territories in the standard (currently 249 territories).</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><strong>ISO_code</strong></td>
+<td style="text-align: left;">Numeric country codes as defined in ISO standard <code>3166-1 numeric</code>. This country code is the same as the UN’s country number (M49 standard). This nomenclature is available for the territories in the ISO standard (currently 249 countries).</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><strong>UN_</strong>xx</td>
+<td style="text-align: left;">Official UN name in 6 official UN languages. Arabic (<code>UN_ar</code>), Chinese (<code>UN_zh</code>), English (<code>UN_en</code>), French (<code>UN_fr</code>), Spanish (<code>UN_es</code>), Russian (<code>UN_ru</code>). This nomenclature is only available for countries in the M49 standard (currently 249 territories).</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><strong>WTO_</strong>xx</td>
+<td style="text-align: left;">Official WTO name in 3 official WTO languages: English (<code>WTO_en</code>), French (<code>WTO_fr</code>), Spanish (<code>WTO_es</code>). This nomenclature is only available for WTO members and observers (currently 189 entities).</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><strong>name_</strong>xx</td>
+<td style="text-align: left;">Translation of ISO country names in 28 different languages: Arabic (<code>name_ar</code>), Bulgarian (<code>name_bg</code>), Czech (<code>name_cs</code>), Danish (<code>name_da</code>), German (<code>name_de</code>), Greek (<code>name_el</code>), English (<code>name_en</code>), Spanish (<code>name_es</code>), Estonian (<code>name_et</code>), Basque (<code>name_eu</code>), Finnish (<code>name_fi</code>), French (<code>name_fr</code>), Hungarian (<code>name_hu</code>), Italian (<code>name_it</code>), Japponease (<code>name_ja</code>), Korean (<code>name_ko</code>), Lithuanian (<code>name_lt</code>), Dutch (<code>name_nl</code>), Norwegian (<code>name_no</code>), Polish (<code>name_po</code>), Portuguese (<code>name_pt</code>), Romenian (<code>name_ro</code>), Russian (<code>name_ru</code>), Slovak (<code>name_sk</code>), Swedish (<code>name_sv</code>), Thai (<code>name_th</code>), Ukranian (<code>name_uk</code>), Chinese simplified (<code>name_zh</code>), Chinese traditional (<code>name_zh-tw</code>)</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><strong>GTAP</strong></td>
+<td style="text-align: left;">GTAP country and region codes.</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><strong>all</strong></td>
+<td style="text-align: left;">Converts to all the nomenclatures and languages in this table</td>
+</tr>
+</tbody>
+</table>
+</div>
+<h2 id="further-options-and-warning-messages">Further options and warning messages</h2>
+<p><code>country_name()</code> can identify countries even when they are provided in mixed formats or in different languages. It is robust to small misspellings and recognises many alternative country names and old nomenclatures.</p>
+<div class="layout-chunk" data-layout="l-body">
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span class='va'>fuzzy_example</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='st'>"US"</span>,<span class='st'>"C@ète d^Ivoire"</span>,<span class='st'>"Zaire"</span>,<span class='st'>"FYROM"</span>,<span class='st'>"Estados Unidos"</span>,<span class='st'>"ITA"</span><span class='op'>)</span>
+
+<span class='fu'><a href='https://fbellelli.github.io/Countries/reference/country_name.html'>country_name</a></span><span class='op'>(</span>x<span class='op'>=</span> <span class='va'>fuzzy_example</span>, to<span class='op'>=</span><span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='st'>"UN_en"</span><span class='op'>)</span><span class='op'>)</span>
+</code></pre>
+</div>
+<pre><code>Multiple country IDs have been matched to the same country name</code></pre>
+<pre><code>Set - verbose - to TRUE for more details</code></pre>
+<pre><code>[1] &quot;United States of America&quot;        
+[2] &quot;Côte d’Ivoire&quot;                   
+[3] &quot;Democratic Republic of the Congo&quot;
+[4] &quot;North Macedonia&quot;                 
+[5] &quot;United States of America&quot;        
+[6] &quot;Italy&quot;                           </code></pre>
+</div>
+<p>More information on the country matching process can be obtained by setting <code>verbose=TRUE</code>. The function will print information on:</p>
 <ul>
-<li><a href="#environmental-agreements-and-economic-theory">Environmental agreements and economic theory</a></li>
-<li><a href="#empirical-evidence">Empirical evidence</a></li>
+<li>The number of unique values provided by the user. In the example below 6 distinct strings have been provided.</li>
+<li>How many country names correspond exactly to the ones in the function’s reference list and how many have been recognised with fuzzy matching. In the example below, <code>"C@ète d^Ivoire"</code> is the only name recognised with fuzzy matching. The function’s reference table can be accessed with the command <code>data(country_reference_list)</code>.</li>
+<li>The function prints summary statistics on fuzzy matching. The DISTANCE metric refers to the number of insertions, deletions or substitutions necessary to go from the provided string (<code>"C@ète d^Ivoire"</code>) to the closest reference (<code>"Côte d'Ivoire"</code>). Lower DISTANCE statistics indicate more reliable fuzzy matching.</li>
 </ul>
-</nav>
-</div>
-<style>
-div.blue { background-color:#e6f0ff; border-radius: 5px; padding: 20px;}
-</style>
 <div class="layout-chunk" data-layout="l-body">
-<div class="figure"><span style="display:block;" id="fig:unnamed-chunk-1"></span>
-<img src="Agreements%20per%20year.png" alt="Number of multilateral environmental agreements by year &lt;br&gt;Data from @treatyiea" width="1968" />
-<p class="caption">
-Figure 1: Number of multilateral environmental agreements by year <br>Data from <span class="citation" data-cites="treatyiea"><a href="#ref-treatyiea" role="doc-biblioref">Mitchell</a> (<a href="#ref-treatyiea" role="doc-biblioref">2020</a>)</span>
-</p>
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span class='fu'><a href='https://fbellelli.github.io/Countries/reference/country_name.html'>country_name</a></span><span class='op'>(</span>x<span class='op'>=</span> <span class='va'>fuzzy_example</span>, to<span class='op'>=</span><span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='st'>"UN_en"</span><span class='op'>)</span>, verbose<span class='op'>=</span><span class='cn'>TRUE</span><span class='op'>)</span>
+</code></pre>
 </div>
+<pre><code>
+In total 6 unique country identifiers have been found
+5/6 have been matched with EXACT matching
+1/6 have been matched with FUZZY matching
+
+Fuzzy matching DISTANCE summary:
+ | Average:  3
+ | Min: 3 
+ | Q1: 3 
+ | Median: 3 
+ | Q3: 3 
+ | Max: 3
+
+Multiple arguments have been matched to the same country name:
+  - Estados Unidos : United States of America 
+  - US : United States of America</code></pre>
+<pre><code>[1] &quot;United States of America&quot;        
+[2] &quot;Côte d’Ivoire&quot;                   
+[3] &quot;Democratic Republic of the Congo&quot;
+[4] &quot;North Macedonia&quot;                 
+[5] &quot;United States of America&quot;        
+[6] &quot;Italy&quot;                           </code></pre>
 </div>
-<p>The world is facing significant environmental challenges, most of which are transboundary. Air pollution, contamination of lakes and rivers, global warming, biodiversity loss, deforestation, desertification, or overfishing are all problems that cross national borders and require international cooperation. Currently, the primary cooperative tools at our disposal are international environmental agreements, such as the Paris agreement on climate change, the CITES agreement on the trade of endangered species, or the Montreal protocol on ozone-depleting substances.</p>
-<p>Over the last fifty years, the number of environmental agreements has exploded (Figure 1). To date, more than 3,000 environmental agreements have been identified <span class="citation" data-cites="treatyiea">(<a href="#ref-treatyiea" role="doc-biblioref">Mitchell 2020</a>)</span> embodying cooperation on the most disparate environmental issues (Figure 2). Some agreements are successful, while others fail. Some attract universal participation, while others die on the negotiation table. Now more than ever, environmental agreements play a crucial role in improving environmental protection worldwide. Hence, the following questions are of great interest to economists: What motivates participation in environmental agreements? How can participation in environmental agreements be increased? Is there any factor at the national level that systematically enhance participation rates? If so, how can policy makers intervene to improve the likelihood of solving transboundary and global environmental issues?</p>
+<p>In addition, setting <code>verbose=TRUE</code> will also print additional informations relating to specific warnings that are normally given by the function:</p>
+<ul>
+<li><code>Multiple country IDs have been matched to the same country name</code>: This warning is issued if multiple strings have been matched to the same country. In verbose mode, the strings and corresponding countries will be listed. In the example above, both <code>"US"</code> and <code>"Estados Unidos"</code> are matched to the same country. If the vector of country names is a unique identifier, this could indicate that some country name was not recognised correctly. The user might consider using custom tables (refer to the next section).</li>
+<li><code>Some country IDs have no match in one or more country naming conventions</code>: indicates that it is impossible to find an exact match for one or more country names with <code>fuzzy_match=TRUE</code>. The user might consider using <code>fuzzy_match=TRUE</code> or custom tables (refer to the next section).</li>
+<li><code>There is low confidence on the matching of some country names</code>: This warning indicates that some strings have been matched poorly. Thus indicating that the country might have been mididentified. In verbose mode the function will provide a list of problematic strings (see the example below). The user might consider using custom tables to solve this type of issues (refer to the next section).</li>
+<li><code>Some country IDs have no match in one or more country naming conventions</code>: Conversion is requested to a nomenclature for which there is no information on the country. For instance, in the example below “Taiwan” has no correspondence in the <a href="https://unstats.un.org/unsd/methodology/m49/">UN M49 standard</a>. In verbose mode, the function will print all the country names affected by this problem. The user might consider using custom tables to solve this type of issues (refer to the next section).</li>
+</ul>
 <div class="layout-chunk" data-layout="l-body">
-<div class="figure"><span style="display:block;" id="fig:unnamed-chunk-2"></span>
-<img src="Agreements%20by%20type.png" alt="Number of agreements by subject &lt;br&gt;Data from @treatyiea" width="1968" />
-<p class="caption">
-Figure 2: Number of agreements by subject <br>Data from <span class="citation" data-cites="treatyiea"><a href="#ref-treatyiea" role="doc-biblioref">Mitchell</a> (<a href="#ref-treatyiea" role="doc-biblioref">2020</a>)</span>
-</p>
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span class='fu'><a href='https://fbellelli.github.io/Countries/reference/country_name.html'>country_name</a></span><span class='op'>(</span>x<span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='st'>"Taiwan"</span>,<span class='st'>"lsajdèd"</span><span class='op'>)</span>, to<span class='op'>=</span><span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='st'>"UN_en"</span><span class='op'>)</span>, verbose<span class='op'>=</span><span class='cn'>FALSE</span><span class='op'>)</span>
+</code></pre>
 </div>
+<pre><code>Some country IDs have no match in one or more country naming conventions</code></pre>
+<pre><code>There is low confidence on the matching of some country names</code></pre>
+<pre><code>Set - verbose - to TRUE for more details</code></pre>
+<pre><code>[1] NA                                
+[2] &quot;Lao People&#39;s Democratic Republic&quot;</code></pre>
 </div>
-<h2 id="environmental-agreements-and-economic-theory">Environmental agreements and economic theory</h2>
-<p>These questions have been addressed in economic research mostly using game-theoretical approaches in models that predict both the optimal emission abatement and participation levels in international agreements. In these models, countries contend with a considerable incentive to free-ride because the benefits of the agreement are usually considered non-excludable and non-rival. Hence, the conclusions of classic game-theoretical models are generally pessimistic on the capacity to solve environmental problems. In these models, wide participation in agreements can only be achieved with low abatement targets that fall short of the social optimum. This outlook originates from the core assumptions of these models, which frame treaty participation as a one-off non-cooperative choice — just like in a prisoner’s dilemma.</p>
-<p>Later works largely confirmed the free-riding incentive existing in treaty participation, with some improvement in the participation outlook. For example, participation can be improved if participants can offer side transfers. Under the right circumstances also the inclusion of penalties, trade restriction, minimum participation rules and permit trading schemes can considerably boost participation. Moreover, in repeated games — which allow countries to join the agreement in different moments — the result are generally more optimistic than in one-off games.</p>
-<h2 id="empirical-evidence">Empirical evidence</h2>
-<p>Thanks to the collection of large catalogues of environmental agreements <span class="citation" data-cites="treatyiea entri2013">(e.g. <a href="#ref-treatyiea" role="doc-biblioref">Mitchell 2020</a>; <a href="#ref-entri2013" role="doc-biblioref">CIESIN 2013</a>)</span>, scholars can now look at these questions from an empirical perspective. Several findings emerge from this line of enquiry.</p>
-<p>First of all, the success of an agreement depends primarily on its content. This is by far the most important factor. More stringent agreement tend to deter participation, but there are some type of clauses (e.g.monitoring and enforcement rules, minimum participation rules, technological transfers, financial assistance) which can deliver stronger environmental commitment without penalising participation. Moreover, in <span class="citation" data-cites="ratification"><a href="#ref-ratification" role="doc-biblioref">Bellelli, Scarpa, and Aftab</a> (<a href="#ref-ratification" role="doc-biblioref">2021</a>)</span>, I show that regional agreements attract consistently higher ratification rates — on average the probability of joining a regional agreement is 2.5 times higher than for international agreements.</p>
+<p>All the information from verbose mode can be accessed by setting ´simplify=FALSE´. This will return a list object containing:</p>
+<ul>
+<li>´converted_data´: the normal output of the function</li>
+<li>´match_table´: the conversion table with information on the closest match for each country name and distance metrics.</li>
+<li>´summary´: summary values for the distance metrics</li>
+<li>´warning´: logical value indicating whether a warning is issued by the function</li>
+<li>´call´: the arguments passed by the user</li>
+</ul>
+<h2 id="using-custom-conversion-tables">Using custom conversion tables</h2>
+<p>In some cases, the user might be unhappy with the naming conversion or no valid conversion might exist for the provided territory. In these cases, it might be useful to tweak the conversion table. The package contains a utility function called ´match_table()´, which can be used to generate conversion tables for small adjustments.</p>
 <div class="layout-chunk" data-layout="l-body">
-<div class="figure"><span style="display:block;" id="fig:unnamed-chunk-3"></span>
-<img src="map-number-ratifications.png" alt="Number of IEA ratifications by 2017 &lt;br&gt;Data from @ratification" width="3508" data-distill-preview=1 />
-<p class="caption">
-Figure 3: Number of IEA ratifications by 2017 <br>Data from <span class="citation" data-cites="ratification"><a href="#ref-ratification" role="doc-biblioref">Bellelli, Scarpa, and Aftab</a> (<a href="#ref-ratification" role="doc-biblioref">2021</a>)</span>
-</p>
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span class='va'>example_custom</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='st'>"Siam"</span>,<span class='st'>"Burma"</span>,<span class='st'>"H#@°)Koe2"</span><span class='op'>)</span>
+
+<span class='co'>#suppose we are unhappy with how "H#@°)Koe2" is interpreted by the function</span>
+<span class='fu'><a href='https://fbellelli.github.io/Countries/reference/country_name.html'>country_name</a></span><span class='op'>(</span>x <span class='op'>=</span> <span class='va'>example_custom</span>, to <span class='op'>=</span> <span class='st'>"name_en"</span><span class='op'>)</span>
+</code></pre>
 </div>
+<pre><code>There is low confidence on the matching of some country names</code></pre>
+<pre><code>Set - verbose - to TRUE for more details</code></pre>
+<pre><code>[1] &quot;Thailand&quot;           &quot;Myanmar&quot;            &quot;Korea, Republic of&quot;</code></pre>
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span class='co'>#match_table can be used to generate a table for small adjustments</span>
+<span class='va'>tab</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://fbellelli.github.io/Countries/reference/match_table.html'>match_table</a></span><span class='op'>(</span>x <span class='op'>=</span> <span class='va'>example_custom</span>, to <span class='op'>=</span> <span class='st'>"name_en"</span><span class='op'>)</span>
+</code></pre>
 </div>
-<p>So, design of the agreement matters. But this does not tell the whole story. As shown in the map above, participation varies not only between environmental agreements, but also between countries. And these differences are not random, rather, they seem to be clustered geographically, suggesting that political and economic factors are at play. The level of income, the quality of political institutions, the trade profile of the country, electoral and constitutional rules, the economic interests of domestic agents, are all factors that may influence a countries’ participation in international agreements.</p>
-<p>Finally, participation choices are seen as a strategic moves, which do not only depend on the characteristics of the country and treaty, but also on the behaviour of foreign nations. While we would theoretically expect a free-riding attitude, empirical evidence suggests that free-riding incentives are mitigated by the presence of international linkages. Empirical findings show that ratification likelihood increases when foreign nations decide to participate in treaties. This is particularly true in the case of large nations and countries that are in the same geographical area or income bracket. The empirical literature agrees that this effect is partly explained by the existence of economic and political ties between countries, which create interdependence and reputational costs for non-participation.</p>
-<div class="blue">
-<p><strong>More information on this topic may be found in:</strong></p>
-<p>Bellelli, F.S., Scarpa, R. and Aftab, A. (2021) The joining dilemma: A survey of the empirical literature on environmental treaty participation. <em>Review of Environmental Economics and Policy</em>. <em>(Forthcoming)</em> <a href="../../papers/Survey_of_empirical_ratification_literature.pdf"><button>PDF</button></a> <a href="../../papers/Survey_of_empirical_ratification_literature_appendix.pdf"><button>Appendix</button></a></p>
-<p>Bellelli, F.S., Scarpa, R. and Aftab, A. Interest groups and participation in international environmental agreements. <em>Working paper</em>. Available from <a href="https://fbellelli.com/research.html" class="uri">https://fbellelli.com/research.html</a>. <a href="../../papers/Ratification_paper.pdf"><button>PDF</button></a></p>
+<pre><code>There is low confidence on the matching of some country names</code></pre>
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span class='va'>tab</span><span class='op'>$</span><span class='va'>name_en</span><span class='op'>[</span><span class='fl'>2</span><span class='op'>]</span> <span class='op'>&lt;-</span> <span class='st'>"Hong Kong"</span>
+
+<span class='co'>#which can then be used for conversion</span>
+<span class='fu'><a href='https://fbellelli.github.io/Countries/reference/country_name.html'>country_name</a></span><span class='op'>(</span>x <span class='op'>=</span> <span class='va'>example_custom</span>, to <span class='op'>=</span> <span class='st'>"name_en"</span>, custom_table <span class='op'>=</span> <span class='va'>tab</span><span class='op'>)</span>
+</code></pre>
 </div>
-<div class="sourceCode" id="cb1"><pre class="sourceCode r distill-force-highlighting-css"><code class="sourceCode r"></code></pre></div>
-<div id="refs" class="references csl-bib-body hanging-indent" role="doc-bibliography">
-<div id="ref-ratification" class="csl-entry" role="doc-biblioentry">
-Bellelli, Francesco Saverio, Riccardo Scarpa, and Ashar Aftab. 2021. <span>“Interest Groups and Participation in International Environmental Agreements.”</span> <em>Working Paper</em>.
+<pre><code>[1] &quot;Thailand&quot;  &quot;Myanmar&quot;   &quot;Hong Kong&quot;</code></pre>
 </div>
-<div id="ref-entri2013" class="csl-entry" role="doc-biblioentry">
-CIESIN. 2013. <span>“<span class="nocase">Environmental Treaties and Resource Indicators</span> <span>(ENTRI)</span>.”</span> <em>Center for International Earth Science Information Network</em>.
-</div>
-<div id="ref-treatyiea" class="csl-entry" role="doc-biblioentry">
-Mitchell, R. B. 2020. <span>“International Environmental Agreements Database Project.”</span> <em>University of Oregon</em>.
-</div>
-</div>
+<h2 id="work-in-progress">Work in progress</h2>
+<p>I am still working on the package. In the near future, the following items will be added to the package:</p>
+<ul>
+<li>function to test strings on whether they are country names</li>
+<li>functions to identify columns in dataframes containing country names and date information</li>
+<li>function for downloading up-to-date information on countries (e.g. currency, language, population, etc.)</li>
+<li>function for downloading country data for analysis from different sources (e.g. UN, World Bank, FRED, etc.)</li>
+<li>function to quickly merge country data from different sources</li>
+<li>function to tag countries based on common criteria (e.g. developing status, World bank income group, geographic region, etc.)</li>
+<li>function to easily plot chloropleth maps</li>
+<li>publish on CRAN</li>
+</ul>
+<div class="sourceCode" id="cb18"><pre class="sourceCode r distill-force-highlighting-css"><code class="sourceCode r"></code></pre></div>
 <!--radix_placeholder_article_footer-->
 <div class="article-footer">
   <p class="social_footer">
     <span class="article-sharing">
       Share: &nbsp;
-      <a href="https://twitter.com/share?text=How%20to%20increase%20participation%20in%20environmental%20agreements%3F&amp;url=https%3A%2F%2Ffbellelli.com%2Fposts%2F2021-03-20-how-to-increase-participation-in-environmental-agreements%2F">
+      <a href="https://twitter.com/share?text=First%20version%20of%20Countries&amp;url=https%3A%2F%2Ffbellelli.com%2Fposts%2F2022-02-27-first-version-of-countries%2F">
         <i class="fab fa-twitter"></i>
       </a>
-      <a href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https%3A%2F%2Ffbellelli.com%2Fposts%2F2021-03-20-how-to-increase-participation-in-environmental-agreements%2F&amp;title=How%20to%20increase%20participation%20in%20environmental%20agreements%3F">
+      <a href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https%3A%2F%2Ffbellelli.com%2Fposts%2F2022-02-27-first-version-of-countries%2F&amp;title=First%20version%20of%20Countries">
         <i class="fab fa-linkedin"></i>
       </a>
-      <a href="https://www.facebook.com/sharer/sharer.php?s=100&amp;p[url]=https%3A%2F%2Ffbellelli.com%2Fposts%2F2021-03-20-how-to-increase-participation-in-environmental-agreements%2F">
+      <a href="https://www.facebook.com/sharer/sharer.php?s=100&amp;p[url]=https%3A%2F%2Ffbellelli.com%2Fposts%2F2022-02-27-first-version-of-countries%2F">
         <i class="fab fa-facebook"></i>
       </a>
     </span>
@@ -2608,17 +2748,15 @@ Mitchell, R. B. 2020. <span>“International Environmental Agreements Database P
 <!--/radix_placeholder_site_after_body-->
 <!--radix_placeholder_appendices-->
 <div class="appendix-bottom">
-  <h3 id="references">References</h3>
-  <div id="references-listing"></div>
   <h3 id="citation">Citation</h3>
   <p>For attribution, please cite this work as</p>
-  <pre class="citation-appendix short">Bellelli (2021, March 20). F.S.Bellelli: How to increase participation in environmental agreements?. Retrieved from https://fbellelli.com/posts/2021-03-20-how-to-increase-participation-in-environmental-agreements/</pre>
+  <pre class="citation-appendix short">Bellelli (2022, Feb. 27). F.S.Bellelli: First version of Countries. Retrieved from https://fbellelli.com/posts/2022-02-27-first-version-of-countries/</pre>
   <p>BibTeX citation</p>
-  <pre class="citation-appendix long">@misc{bellelli2021how,
+  <pre class="citation-appendix long">@misc{bellelli2022first,
   author = {Bellelli, Francesco S.},
-  title = {F.S.Bellelli: How to increase participation in environmental agreements?},
-  url = {https://fbellelli.com/posts/2021-03-20-how-to-increase-participation-in-environmental-agreements/},
-  year = {2021}
+  title = {F.S.Bellelli: First version of Countries},
+  url = {https://fbellelli.com/posts/2022-02-27-first-version-of-countries/},
+  year = {2022}
 }</pre>
 </div>
 <!--/radix_placeholder_appendices-->

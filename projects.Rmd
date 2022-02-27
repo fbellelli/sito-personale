@@ -75,7 +75,7 @@ masonry_grid(
     src = "https://cdn.britannica.com/13/129613-131-30279F20/Flags-world-flags-Country-history-blog-travel-2009.jpg",
     title = "Countries",
     description = 'I am working on an R package designed to quickly wrangle, merge and explore country data',
-    url = "https://github.com/fbellelli/countries"
+    url = "https://github.com/fbellelli/Countries"
   )
 )
 ```
