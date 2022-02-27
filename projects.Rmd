@@ -72,7 +72,7 @@ masonry_grid(
     url = "posts/2021-04-03-tilemaster-a-strategy-game-in-shiny/index.html"
   ),
   masonry_item(
-    src = "https://cdn.britannica.com/13/129613-131-30279F20/Flags-world-flags-Country-history-blog-travel-2009.jpg",
+    src = "images/Countries_logo.png",
     title = "Countries",
     description = 'I am working on an R package designed to quickly wrangle, merge and explore country data',
     url = "https://github.com/fbellelli/Countries"
