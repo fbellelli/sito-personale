@@ -11,23 +11,24 @@ knitr::opts_chunk$set(echo = FALSE)
 
 ## Research interests & ongoing projects
 
-I am currently working on a number of research projects for the World Trade Organization (WTO). As a member of the Quantitative modelling and analysis unit, I deal with economic research and econometric modelling of trade, with a particular focus on the environment-related activities of WTO. My current research projects relate to regional trade agreements, environmental measures, fisheries subsidies, innovation and trade. 
+I am currently working in the credit risk methodology team of UBS as a specialist for climate change risk. As such, I am investigating approaches to quantify and incorporate cliamte-related risks in the banks' models. 
 
 In addition to the above, I am also fascinated by recent developments in AI and its applications to macroeconomic forecasting and issues in international and environmental economics.
 
 
 
-
-## Working papers
+## Notes and scientific papers
 
 **Bellelli, F.S.** and Xu, A. (2022) How do environmental policies affects green innovation and trade? Evidence from the WTO environmental database (EDB). (*WTO staff paper, Forthcoming*)
 <a href="papers/EDB_paper_draft.pdf"><button>PDF</button></a>
 <a href="EDB-data.html"><button>Data</button></a>
 <a href="https://drive.google.com/file/d/1sbHv8yDAyec4_CG1PPOh_RNbqLRqPNZb/view?usp=sharing"><button>Replication files</button></a>
 
+Xu, A.,  Tresa, E., Bacchetta, **Bellelli, F.S.**, M., Monteiro, J.A. (2021) Carbon content of international trade. *World Trade Organization, Trade and climate change information brief*, n°4. Available online at: https://www.wto.org/english/news_e/news21_e/clim_03nov21-4_e.pdf. <a href="papers/WTO note trade carbon content.pdf"><button>PDF</button></a>
+
 Xu, A., Tresa, E., **Bellelli, F.S.**, Bacchetta, M., Monteiro, J.A.. Trade and the transfer of climate-related technologies. *World Trade Organization, Trade and climate change information brief* (*Under internal review*).
 
-**Bellelli, F.S.**, Scarpa, R. and Aftab, A. An empirical analysis of participation in environemntal agreements. *Working paper*. (*Under review at the Journal of Political Economy*)
+**Bellelli, F.S.**, Scarpa, R. and Aftab, A. An empirical analysis of participation in environemntal agreements. *Working paper*. (*Under review at the Journal of Environemntal Economics and Management*)
 <a href="papers/Ratification_paper.pdf"><button>PDF</button></a>
 <a href="papers/ratification paper appendix.zip"><button>Appendix</button></a>
 <a href="ratification-data.html"><button>Data</button></a>
@@ -38,12 +39,17 @@ Xu, A., Tresa, E., **Bellelli, F.S.**, Bacchetta, M., Monteiro, J.A.. Trade and 
 
 **Bellelli, F.S.**, Monteiro, J.A. and Xu, A. Assessing the environmental effectiveness of environmental provisions in Regional Trade Agreements. *(Drafting in progress)*
 
-
-## Peer-reviewed journals
-
 **Bellelli, F.S.**, Scarpa, R. and Aftab, A. (2021) The joining dilemma: A survey of the empirical literature on environmental treaty participation. *Review of Environmental Economics and Policy*. *(Forthcoming)*
 <a href="papers/Survey_of_empirical_ratification_literature.pdf"><button>PDF</button></a>
 <a href="papers/Survey_of_empirical_ratification_literature_appendix.pdf"><button>Appendix</button></a>
+
+**Bellelli, F.S.** (2019) An overview of the main climate change agreements and the process that led to their formation. *The Foundation Journal*, Vol.XI, pp 1–15.
+<a href="papers/articolo foundation published.pdf"><button>PDF</button></a>
+
+
+**Bellelli, F.S.** (2019) Understanding climate change. *New Vision*. April 11. Available online at: https://www.newvision.co.ug/new_vision/news/1498270/understanding-climate-change.
+<a href="papers/climate change article new vision.pdf"><button>PDF</button></a>
+
 
 
 ## Contribution to books and reports
@@ -53,15 +59,11 @@ WTO (*Forthcoming*) World Trade Report 2022
 WTO (2021) *World Trade Report 2021; Economic resilience and trade*. World Trade organization. Available at: https://www.wto.org/english/res_e/publications_e/wtr21_e.htm.
 <a href="https://www.wto.org/english/res_e/booksp_e/wtr21_e/00_wtr21_e.pdf"><button>PDF</button></a>
 
-Pictet (2020)  *Horizon 2020: Long-term investing in a world marked by pandemic*. Pictet WM, AA\&MR. Geneva, Switzerland.
+<!-- Pictet (2020)  *Horizon 2020: Long-term investing in a world marked by pandemic*. Pictet WM, AA\&MR. Geneva, Switzerland. -->
 
 
 ## Other publications
 
-Xu, A.,  Tresa, E., Bacchetta, **Bellelli, F.S.**, M., Monteiro, J.A. (2021) Carbon content of international trade. *World Trade Organization, Trade and climate change information brief*, n°4. Available online at: https://www.wto.org/english/news_e/news21_e/clim_03nov21-4_e.pdf. <a href="papers/WTO note trade carbon content.pdf"><button>PDF</button></a>
-
-**Bellelli, F.S.** (2019) An overview of the main climate change agreements and the process that led to their formation. *The Foundation Journal*, Vol.XI, pp 1–15.
-<a href="papers/articolo foundation published.pdf"><button>PDF</button></a>
 
 *Data visualisation selected for:* Smith, A. (2019) Ten charts that tell the story of 2019. *Financial Times*. December 29. Available at: https://www.ft.com/content/62fbf660-2651-11ea-9a4f-963f0ec7e134.
 <a href="papers/The great haul of China.pdf"><button>PDF</button></a>
@@ -70,9 +72,6 @@ Xu, A.,  Tresa, E., Bacchetta, **Bellelli, F.S.**, M., Monteiro, J.A. (2021) Car
 *Data visualisation for:* Johnson, S. (2019) The great haul of China, illustrated. *Financial Times*. November 19. Available online at: https://www.ft.com/content/4975eb8a-0ab6-11ea-bb52-34c8d9dc6d84.
 <a href="papers/Ten charts that tell the story of 2019.pdf"><button>PDF</button></a>
 <a href="papers/map pictet.gif"><button>GIF</button></a>
-
-**Bellelli, F.S.** (2019) Understanding climate change. *New Vision*. April 11. Available online at: https://www.newvision.co.ug/new_vision/news/1498270/understanding-climate-change.
-<a href="papers/climate change article new vision.pdf"><button>PDF</button></a>
 
 **Bellelli, F.S.** (2019) The determinants of environmental policy and diplomacy; An empirical investigation of participation in environmental treaties and the influence of domestic groups. *Doctoral thesis, Durham University*. Available at: http://etheses.dur.ac.uk/13328/. 
 <a href="papers/PhD thesis - Francesco S Bellelli.pdf"><button>PDF</button></a>
