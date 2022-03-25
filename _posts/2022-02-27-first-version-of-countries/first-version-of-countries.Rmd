@@ -1,7 +1,7 @@
 ---
-title: "First version of Countries"
+title: "First version of countries"
 description: |
-  The first development version of the package Countries is now available on Github. This post looks at how the package can be used to work with country names.
+  The first development version of the package countries is now available on Github. This post looks at how the package can be used to work with country names.
   
 author:
   - name: Francesco S. Bellelli
@@ -30,11 +30,11 @@ knitr::include_graphics("../../images/Countries_logo.png")
 ```
 
 
-`Countries` is an R package designed to quickly wrangle, merge and explore country data. This package will contain functions to easily identify and convert country names, pull country info and datasets, merge country data from different sources, and make quick world maps.
+`countries` is an R package designed to quickly wrangle, merge and explore country data. This package will contain functions to easily identify and convert country names, pull country info and datasets, merge country data from different sources, and make quick world maps.
 
-I recently released the first development version of the package, which is now available on my [Github page](https://github.com/fbellelli/Countries). The package also has a [website](https://fbellelli.github.io/Countries/) containing information on the package's usage.
+I recently released the first development version of the package, which is now available on my [Github page](https://github.com/fbellelli/countries). The package also has a [website](https://fbellelli.github.io/countries/) containing information on the package's usage.
 
-In this article, we will have a look at how `Countries` can be used to work with country name. In particular, we will look in detail at the function `country_name()`, which can be used to convert country names to different naming conventions or to translate them to different languages. `country_name()` can identify countries even when they are provided in mixed formats or in different languages. It is robust to small misspellings and recognises many alternative country names and disused official names.  
+In this article, we will have a look at how `countries` can be used to work with country name. In particular, we will look in detail at the function `country_name()`, which can be used to convert country names to different naming conventions or to translate them to different languages. `country_name()` can identify countries even when they are provided in mixed formats or in different languages. It is robust to small misspellings and recognises many alternative country names and disused official names.  
 
 :::
 
@@ -49,14 +49,14 @@ Since the package is not yet on CRAN, the development version needs to be downlo
 install.packages("devtools")
 library(devtools)
 
-# Install Countries
+# Install countries
 devtools::install_github("fbellelli/countries", build_vignettes = TRUE)
 ```
 
 The package can then be loaded normally
 
 ```{r}
-library(Countries)
+library(countries)
 ```
 
 ## Dealing with country names

@@ -14,10 +14,10 @@
     <generator>Distill</generator>
     <lastBuildDate>Sat, 26 Feb 2022 00:00:00 +0000</lastBuildDate>
     <item>
-      <title>First version of Countries</title>
+      <title>First version of countries</title>
       <dc:creator>Francesco S. Bellelli</dc:creator>
       <link>https://fbellelli.com/posts/2022-02-27-first-version-of-countries</link>
-      <description>The first development version of the package Countries is now available on Github. This post looks at how the package can be used to work with country names.</description>
+      <description>The first development version of the package countries is now available on Github. This post looks at how the package can be used to work with country names.</description>
       <category>coding</category>
       <guid>https://fbellelli.com/posts/2022-02-27-first-version-of-countries</guid>
       <pubDate>Sat, 26 Feb 2022 00:00:00 +0000</pubDate>
