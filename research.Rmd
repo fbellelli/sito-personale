@@ -64,6 +64,7 @@ WTO (2021) *World Trade Report 2021; Economic resilience and trade*. World Trade
 
 ## Other publications
 
+**Bellelli, F.S.** (2022) The fascinating world of Voronoi diagrams. *Medium*. April 2. Available at: https://medium.com/@fsabellelli/the-fascinating-world-of-voronoi-diagrams-da8fc700fa1b
 
 *Data visualisation selected for:* Smith, A. (2019) Ten charts that tell the story of 2019. *Financial Times*. December 29. Available at: https://www.ft.com/content/62fbf660-2651-11ea-9a4f-963f0ec7e134.
 <a href="papers/The great haul of China.pdf"><button>PDF</button></a>
