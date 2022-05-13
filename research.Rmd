@@ -19,8 +19,8 @@ In addition to the above, I am also fascinated by recent developments in AI and 
 
 ## Notes and scientific papers
 
-**Bellelli, F.S.** and Xu, A. (2022) How do environmental policies affects green innovation and trade? Evidence from the WTO environmental database (EDB). (*WTO staff paper, Forthcoming*)
-<a href="papers/EDB_paper_draft.pdf"><button>PDF</button></a>
+**Bellelli, F.S.** and Xu, A. (2022) How do environmental policies affects green innovation and trade? Evidence from the WTO environmental database (EDB), *WTO Staff Working Paper, ERSD-2022-23*.
+<a href="https://www.wto.org/english/res_e/reser_e/ersd202203_e.pdf"><button>PDF</button></a>
 <a href="EDB-data.html"><button>Data</button></a>
 <a href="https://drive.google.com/file/d/1sbHv8yDAyec4_CG1PPOh_RNbqLRqPNZb/view?usp=sharing"><button>Replication files</button></a>
 

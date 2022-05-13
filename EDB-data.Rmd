@@ -52,7 +52,7 @@ div.blue { background-color:#e6f0ff; border-radius: 5px; padding: 20px;}
 *Last update: 04.01.2022 --- EDB version 2020*
 
 **Please reference as:** <br>
-[Bellelli, F.S. and Xu, A. (2022) How do environmental policies affects green innovation and trade? Evidence from the WTO environmental database (EDB). (*WTO staff paper, Forthcoming*)](papers/EDB_paper_draft.pdf)
+[Bellelli, F.S. and Xu, A. (2022) How do environmental policies affects green innovation and trade? Evidence from the WTO environmental database (EDB). *WTO Staff Working Paper, ERSD-2022-23*.](https://www.wto.org/english/res_e/reser_e/ersd202203_e.pdf)
 </div>
 
 
