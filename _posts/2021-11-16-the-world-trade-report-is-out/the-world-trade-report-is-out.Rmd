@@ -9,6 +9,7 @@ date: 11-16-2021
 categories:
   - economics
   - trade
+  - risk
 preview: "https://www.wto.org/images/img_bkshop/wtr21_e.jpg"
 output:
   distill::distill_article:

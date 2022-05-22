@@ -1,0 +1,3037 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1"/>
+  <meta name="generator" content="distill" />
+
+  <style type="text/css">
+  /* Hide doc at startup (prevent jankiness while JS renders/transforms) */
+  body {
+    visibility: hidden;
+  }
+  </style>
+
+ <!--radix_placeholder_import_source-->
+ <!--/radix_placeholder_import_source-->
+
+<style type="text/css">code{white-space: pre;}</style>
+<style type="text/css" data-origin="pandoc">
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ad0000; } /* Alert */
+code span.an { color: #5e5e5e; } /* Annotation */
+code span.at { } /* Attribute */
+code span.bn { color: #ad0000; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007ba5; } /* ControlFlow */
+code span.ch { color: #20794d; } /* Char */
+code span.cn { color: #8f5902; } /* Constant */
+code span.co { color: #5e5e5e; } /* Comment */
+code span.cv { color: #5e5e5e; font-style: italic; } /* CommentVar */
+code span.do { color: #5e5e5e; font-style: italic; } /* Documentation */
+code span.dt { color: #ad0000; } /* DataType */
+code span.dv { color: #ad0000; } /* DecVal */
+code span.er { color: #ad0000; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #ad0000; } /* Float */
+code span.fu { color: #4758ab; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #5e5e5e; } /* Information */
+code span.kw { color: #007ba5; } /* Keyword */
+code span.op { color: #5e5e5e; } /* Operator */
+code span.ot { color: #007ba5; } /* Other */
+code span.pp { color: #ad0000; } /* Preprocessor */
+code span.sc { color: #5e5e5e; } /* SpecialChar */
+code span.ss { color: #20794d; } /* SpecialString */
+code span.st { color: #20794d; } /* String */
+code span.va { color: #111111; } /* Variable */
+code span.vs { color: #20794d; } /* VerbatimString */
+code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
+</style>
+
+
+  <!--radix_placeholder_meta_tags-->
+<title>F.S.Bellelli: A brief introduction to natural hazard risk analysis</title>
+
+<meta property="description" itemprop="description" content="This article is a quick guide on the basic steps involved in natural hazard risk analysis. It briefly touches on some of the most common steps:  geocoding, hazard maps, damage curves and climate projections. I demonstrate how R can be used to assess exposure of assets with a simple example on flood risk for presidential palaces around the world."/>
+
+<link rel="canonical" href="https://fbellelli.com/posts/2022-05-22-a-brief-introduction-to-natural-hazard-risk-analysis/"/>
+<link rel="icon" type="image/vnd.microsoft.icon" href="../../images/favicon feather.ico"/>
+
+<!--  https://schema.org/Article -->
+<meta property="article:published" itemprop="datePublished" content="2022-05-22"/>
+<meta property="article:created" itemprop="dateCreated" content="2022-05-22"/>
+<meta name="article:author" content="Francesco S. Bellelli"/>
+
+<!--  https://developers.facebook.com/docs/sharing/webmasters#markup -->
+<meta property="og:title" content="F.S.Bellelli: A brief introduction to natural hazard risk analysis"/>
+<meta property="og:type" content="article"/>
+<meta property="og:description" content="This article is a quick guide on the basic steps involved in natural hazard risk analysis. It briefly touches on some of the most common steps:  geocoding, hazard maps, damage curves and climate projections. I demonstrate how R can be used to assess exposure of assets with a simple example on flood risk for presidential palaces around the world."/>
+<meta property="og:url" content="https://fbellelli.com/posts/2022-05-22-a-brief-introduction-to-natural-hazard-risk-analysis/"/>
+<meta property="og:image" content="https://fbellelli.com/posts/2022-05-22-a-brief-introduction-to-natural-hazard-risk-analysis/flood.jpg"/>
+<meta property="og:locale" content="en_US"/>
+<meta property="og:site_name" content="F.S.Bellelli"/>
+
+<!--  https://dev.twitter.com/cards/types/summary -->
+<meta property="twitter:card" content="summary_large_image"/>
+<meta property="twitter:title" content="F.S.Bellelli: A brief introduction to natural hazard risk analysis"/>
+<meta property="twitter:description" content="This article is a quick guide on the basic steps involved in natural hazard risk analysis. It briefly touches on some of the most common steps:  geocoding, hazard maps, damage curves and climate projections. I demonstrate how R can be used to assess exposure of assets with a simple example on flood risk for presidential palaces around the world."/>
+<meta property="twitter:url" content="https://fbellelli.com/posts/2022-05-22-a-brief-introduction-to-natural-hazard-risk-analysis/"/>
+<meta property="twitter:image" content="https://fbellelli.com/posts/2022-05-22-a-brief-introduction-to-natural-hazard-risk-analysis/flood.jpg"/>
+
+<!--  https://scholar.google.com/intl/en/scholar/inclusion.html#indexing -->
+<meta name="citation_title" content="F.S.Bellelli: A brief introduction to natural hazard risk analysis"/>
+<meta name="citation_fulltext_html_url" content="https://fbellelli.com/posts/2022-05-22-a-brief-introduction-to-natural-hazard-risk-analysis/"/>
+<meta name="citation_online_date" content="2022/05/22"/>
+<meta name="citation_publication_date" content="2022/05/22"/>
+<meta name="citation_author" content="Francesco S. Bellelli"/>
+<!--/radix_placeholder_meta_tags-->
+  <!--radix_placeholder_rmarkdown_metadata-->
+
+<script type="text/json" id="radix-rmarkdown-metadata">
+{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["title","description","author","date","categories","output","citation_url","canonical_url"]}},"value":[{"type":"character","attributes":{},"value":["A brief introduction to natural hazard risk analysis"]},{"type":"character","attributes":{},"value":["This article is a quick guide on the basic steps involved in natural hazard risk analysis. It briefly touches on some of the most common steps:  geocoding, hazard maps, damage curves and climate projections. I demonstrate how R can be used to assess exposure of assets with a simple example on flood risk for presidential palaces around the world."]},{"type":"list","attributes":{},"value":[{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["name","url"]}},"value":[{"type":"character","attributes":{},"value":["Francesco S. Bellelli"]},{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["https://fbellelli.com/"]}},"value":[{"type":"NULL"}]}]}]},{"type":"character","attributes":{},"value":["2022-05-22"]},{"type":"character","attributes":{},"value":["risk","coding","environment","other"]},{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["distill::distill_article"]}},"value":[{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["toc","toc_depth","self_contained"]}},"value":[{"type":"logical","attributes":{},"value":[true]},{"type":"integer","attributes":{},"value":[3]},{"type":"logical","attributes":{},"value":[false]}]}]},{"type":"character","attributes":{},"value":["https://fbellelli.com/posts/2022-05-22-a-brief-introduction-to-natural-hazard-risk-analysis/"]},{"type":"character","attributes":{},"value":["https://fbellelli.com/posts/2022-05-22-a-brief-introduction-to-natural-hazard-risk-analysis/"]}]}
+</script>
+<!--/radix_placeholder_rmarkdown_metadata-->
+  
+  <script type="text/json" id="radix-resource-manifest">
+  {"type":"character","attributes":{},"value":["flood.jpg","flood_damage_curve_residential_buildings.csv","natural-hazard-risk-analysis-in-r_files/anchor-4.2.2/anchor.min.js","natural-hazard-risk-analysis-in-r_files/bowser-1.9.3/bowser.min.js","natural-hazard-risk-analysis-in-r_files/crosstalk-1.2.0/css/crosstalk.min.css","natural-hazard-risk-analysis-in-r_files/crosstalk-1.2.0/js/crosstalk.js","natural-hazard-risk-analysis-in-r_files/crosstalk-1.2.0/js/crosstalk.js.map","natural-hazard-risk-analysis-in-r_files/crosstalk-1.2.0/js/crosstalk.min.js","natural-hazard-risk-analysis-in-r_files/crosstalk-1.2.0/js/crosstalk.min.js.map","natural-hazard-risk-analysis-in-r_files/crosstalk-1.2.0/scss/crosstalk.scss","natural-hazard-risk-analysis-in-r_files/distill-2.2.21/template.v2.js","natural-hazard-risk-analysis-in-r_files/figure-html5/unnamed-chunk-10-1.png","natural-hazard-risk-analysis-in-r_files/figure-html5/unnamed-chunk-11-1.png","natural-hazard-risk-analysis-in-r_files/figure-html5/unnamed-chunk-15-1.png","natural-hazard-risk-analysis-in-r_files/figure-html5/unnamed-chunk-16-1.png","natural-hazard-risk-analysis-in-r_files/header-attrs-2.11/header-attrs.js","natural-hazard-risk-analysis-in-r_files/htmlwidgets-1.5.4/htmlwidgets.js","natural-hazard-risk-analysis-in-r_files/jquery-3.6.0/jquery-3.6.0.js","natural-hazard-risk-analysis-in-r_files/jquery-3.6.0/jquery-3.6.0.min.js","natural-hazard-risk-analysis-in-r_files/jquery-3.6.0/jquery-3.6.0.min.map","natural-hazard-risk-analysis-in-r_files/leaflet-1.3.1/images/layers-2x.png","natural-hazard-risk-analysis-in-r_files/leaflet-1.3.1/images/layers.png","natural-hazard-risk-analysis-in-r_files/leaflet-1.3.1/images/marker-icon-2x.png","natural-hazard-risk-analysis-in-r_files/leaflet-1.3.1/images/marker-icon.png","natural-hazard-risk-analysis-in-r_files/leaflet-1.3.1/images/marker-shadow.png","natural-hazard-risk-analysis-in-r_files/leaflet-1.3.1/leaflet.css","natural-hazard-risk-analysis-in-r_files/leaflet-1.3.1/leaflet.js","natural-hazard-risk-analysis-in-r_files/leaflet-binding-2.1.1/leaflet.js","natural-hazard-risk-analysis-in-r_files/leafletfix-1.0.0/leafletfix.css","natural-hazard-risk-analysis-in-r_files/plotly-binding-4.10.0/plotly.js","natural-hazard-risk-analysis-in-r_files/plotly-htmlwidgets-css-2.5.1/plotly-htmlwidgets.css","natural-hazard-risk-analysis-in-r_files/plotly-main-2.5.1/plotly-latest.min.js","natural-hazard-risk-analysis-in-r_files/popper-2.6.0/popper.min.js","natural-hazard-risk-analysis-in-r_files/proj4-2.6.2/proj4.min.js","natural-hazard-risk-analysis-in-r_files/Proj4Leaflet-1.0.1/proj4leaflet.js","natural-hazard-risk-analysis-in-r_files/rstudio_leaflet-1.3.1/images/1px.png","natural-hazard-risk-analysis-in-r_files/rstudio_leaflet-1.3.1/rstudio_leaflet.css","natural-hazard-risk-analysis-in-r_files/tippy-6.2.7/tippy-bundle.umd.min.js","natural-hazard-risk-analysis-in-r_files/tippy-6.2.7/tippy-light-border.css","natural-hazard-risk-analysis-in-r_files/tippy-6.2.7/tippy.css","natural-hazard-risk-analysis-in-r_files/tippy-6.2.7/tippy.umd.min.js","natural-hazard-risk-analysis-in-r_files/typedarray-0.1/typedarray.min.js","natural-hazard-risk-analysis-in-r_files/webcomponents-2.0.0/webcomponents.js","presidential_palaces_geocoded_with_risk.csv","rflood500.png"]}
+  </script>
+  <!--radix_placeholder_navigation_in_header-->
+<meta name="distill:offset" content="../.."/>
+
+<script type="application/javascript">
+
+  window.headroom_prevent_pin = false;
+
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+
+    // initialize headroom for banner
+    var header = $('header').get(0);
+    var headerHeight = header.offsetHeight;
+    var headroom = new Headroom(header, {
+      tolerance: 5,
+      onPin : function() {
+        if (window.headroom_prevent_pin) {
+          window.headroom_prevent_pin = false;
+          headroom.unpin();
+        }
+      }
+    });
+    headroom.init();
+    if(window.location.hash)
+      headroom.unpin();
+    $(header).addClass('headroom--transition');
+
+    // offset scroll location for banner on hash change
+    // (see: https://github.com/WickyNilliams/headroom.js/issues/38)
+    window.addEventListener("hashchange", function(event) {
+      window.scrollTo(0, window.pageYOffset - (headerHeight + 25));
+    });
+
+    // responsive menu
+    $('.distill-site-header').each(function(i, val) {
+      var topnav = $(this);
+      var toggle = topnav.find('.nav-toggle');
+      toggle.on('click', function() {
+        topnav.toggleClass('responsive');
+      });
+    });
+
+    // nav dropdowns
+    $('.nav-dropbtn').click(function(e) {
+      $(this).next('.nav-dropdown-content').toggleClass('nav-dropdown-active');
+      $(this).parent().siblings('.nav-dropdown')
+         .children('.nav-dropdown-content').removeClass('nav-dropdown-active');
+    });
+    $("body").click(function(e){
+      $('.nav-dropdown-content').removeClass('nav-dropdown-active');
+    });
+    $(".nav-dropdown").click(function(e){
+      e.stopPropagation();
+    });
+  });
+</script>
+
+<style type="text/css">
+
+/* Theme (user-documented overrideables for nav appearance) */
+
+.distill-site-nav {
+  color: rgba(255, 255, 255, 0.8);
+  background-color: #0F2E3D;
+  font-size: 15px;
+  font-weight: 300;
+}
+
+.distill-site-nav a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.distill-site-nav a:hover {
+  color: white;
+}
+
+@media print {
+  .distill-site-nav {
+    display: none;
+  }
+}
+
+.distill-site-header {
+
+}
+
+.distill-site-footer {
+
+}
+
+
+/* Site Header */
+
+.distill-site-header {
+  width: 100%;
+  box-sizing: border-box;
+  z-index: 3;
+}
+
+.distill-site-header .nav-left {
+  display: inline-block;
+  margin-left: 8px;
+}
+
+@media screen and (max-width: 768px) {
+  .distill-site-header .nav-left {
+    margin-left: 0;
+  }
+}
+
+
+.distill-site-header .nav-right {
+  float: right;
+  margin-right: 8px;
+}
+
+.distill-site-header a,
+.distill-site-header .title {
+  display: inline-block;
+  text-align: center;
+  padding: 14px 10px 14px 10px;
+}
+
+.distill-site-header .title {
+  font-size: 18px;
+  min-width: 150px;
+}
+
+.distill-site-header .logo {
+  padding: 0;
+}
+
+.distill-site-header .logo img {
+  display: none;
+  max-height: 20px;
+  width: auto;
+  margin-bottom: -4px;
+}
+
+.distill-site-header .nav-image img {
+  max-height: 18px;
+  width: auto;
+  display: inline-block;
+  margin-bottom: -3px;
+}
+
+
+
+@media screen and (min-width: 1000px) {
+  .distill-site-header .logo img {
+    display: inline-block;
+  }
+  .distill-site-header .nav-left {
+    margin-left: 20px;
+  }
+  .distill-site-header .nav-right {
+    margin-right: 20px;
+  }
+  .distill-site-header .title {
+    padding-left: 12px;
+  }
+}
+
+
+.distill-site-header .nav-toggle {
+  display: none;
+}
+
+.nav-dropdown {
+  display: inline-block;
+  position: relative;
+}
+
+.nav-dropdown .nav-dropbtn {
+  border: none;
+  outline: none;
+  color: rgba(255, 255, 255, 0.8);
+  padding: 16px 10px;
+  background-color: transparent;
+  font-family: inherit;
+  font-size: inherit;
+  font-weight: inherit;
+  margin: 0;
+  margin-top: 1px;
+  z-index: 2;
+}
+
+.nav-dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: white;
+  min-width: 200px;
+  border: 1px solid rgba(0,0,0,0.15);
+  border-radius: 4px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.1);
+  z-index: 1;
+  margin-top: 2px;
+  white-space: nowrap;
+  padding-top: 4px;
+  padding-bottom: 4px;
+}
+
+.nav-dropdown-content hr {
+  margin-top: 4px;
+  margin-bottom: 4px;
+  border: none;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.nav-dropdown-active {
+  display: block;
+}
+
+.nav-dropdown-content a, .nav-dropdown-content .nav-dropdown-header {
+  color: black;
+  padding: 6px 24px;
+  text-decoration: none;
+  display: block;
+  text-align: left;
+}
+
+.nav-dropdown-content .nav-dropdown-header {
+  display: block;
+  padding: 5px 24px;
+  padding-bottom: 0;
+  text-transform: uppercase;
+  font-size: 14px;
+  color: #999999;
+  white-space: nowrap;
+}
+
+.nav-dropdown:hover .nav-dropbtn {
+  color: white;
+}
+
+.nav-dropdown-content a:hover {
+  background-color: #ddd;
+  color: black;
+}
+
+.nav-right .nav-dropdown-content {
+  margin-left: -45%;
+  right: 0;
+}
+
+@media screen and (max-width: 768px) {
+  .distill-site-header a, .distill-site-header .nav-dropdown  {display: none;}
+  .distill-site-header a.nav-toggle {
+    float: right;
+    display: block;
+  }
+  .distill-site-header .title {
+    margin-left: 0;
+  }
+  .distill-site-header .nav-right {
+    margin-right: 0;
+  }
+  .distill-site-header {
+    overflow: hidden;
+  }
+  .nav-right .nav-dropdown-content {
+    margin-left: 0;
+  }
+}
+
+
+@media screen and (max-width: 768px) {
+  .distill-site-header.responsive {position: relative; min-height: 500px; }
+  .distill-site-header.responsive a.nav-toggle {
+    position: absolute;
+    right: 0;
+    top: 0;
+  }
+  .distill-site-header.responsive a,
+  .distill-site-header.responsive .nav-dropdown {
+    display: block;
+    text-align: left;
+  }
+  .distill-site-header.responsive .nav-left,
+  .distill-site-header.responsive .nav-right {
+    width: 100%;
+  }
+  .distill-site-header.responsive .nav-dropdown {float: none;}
+  .distill-site-header.responsive .nav-dropdown-content {position: relative;}
+  .distill-site-header.responsive .nav-dropdown .nav-dropbtn {
+    display: block;
+    width: 100%;
+    text-align: left;
+  }
+}
+
+/* Site Footer */
+
+.distill-site-footer {
+  width: 100%;
+  overflow: hidden;
+  box-sizing: border-box;
+  z-index: 3;
+  margin-top: 30px;
+  padding-top: 30px;
+  padding-bottom: 30px;
+  text-align: center;
+}
+
+/* Headroom */
+
+d-title {
+  padding-top: 6rem;
+}
+
+@media print {
+  d-title {
+    padding-top: 4rem;
+  }
+}
+
+.headroom {
+  z-index: 1000;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+}
+
+.headroom--transition {
+  transition: all .4s ease-in-out;
+}
+
+.headroom--unpinned {
+  top: -100px;
+}
+
+.headroom--pinned {
+  top: 0;
+}
+
+/* adjust viewport for navbar height */
+/* helps vertically center bootstrap (non-distill) content */
+.min-vh-100 {
+  min-height: calc(100vh - 100px) !important;
+}
+
+</style>
+
+<script src="../../site_libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<link href="../../site_libs/font-awesome-5.1.0/css/all.css" rel="stylesheet"/>
+<link href="../../site_libs/font-awesome-5.1.0/css/v4-shims.css" rel="stylesheet"/>
+<script src="../../site_libs/headroom-0.9.4/headroom.min.js"></script>
+<script src="../../site_libs/autocomplete-0.37.1/autocomplete.min.js"></script>
+<script src="../../site_libs/fuse-6.4.1/fuse.min.js"></script>
+
+<script type="application/javascript">
+
+function getMeta(metaName) {
+  var metas = document.getElementsByTagName('meta');
+  for (let i = 0; i < metas.length; i++) {
+    if (metas[i].getAttribute('name') === metaName) {
+      return metas[i].getAttribute('content');
+    }
+  }
+  return '';
+}
+
+function offsetURL(url) {
+  var offset = getMeta('distill:offset');
+  return offset ? offset + '/' + url : url;
+}
+
+function createFuseIndex() {
+
+  // create fuse index
+  var options = {
+    keys: [
+      { name: 'title', weight: 20 },
+      { name: 'categories', weight: 15 },
+      { name: 'description', weight: 10 },
+      { name: 'contents', weight: 5 },
+    ],
+    ignoreLocation: true,
+    threshold: 0
+  };
+  var fuse = new window.Fuse([], options);
+
+  // fetch the main search.json
+  return fetch(offsetURL('search.json'))
+    .then(function(response) {
+      if (response.status == 200) {
+        return response.json().then(function(json) {
+          // index main articles
+          json.articles.forEach(function(article) {
+            fuse.add(article);
+          });
+          // download collections and index their articles
+          return Promise.all(json.collections.map(function(collection) {
+            return fetch(offsetURL(collection)).then(function(response) {
+              if (response.status === 200) {
+                return response.json().then(function(articles) {
+                  articles.forEach(function(article) {
+                    fuse.add(article);
+                  });
+                })
+              } else {
+                return Promise.reject(
+                  new Error('Unexpected status from search index request: ' +
+                            response.status)
+                );
+              }
+            });
+          })).then(function() {
+            return fuse;
+          });
+        });
+
+      } else {
+        return Promise.reject(
+          new Error('Unexpected status from search index request: ' +
+                      response.status)
+        );
+      }
+    });
+}
+
+window.document.addEventListener("DOMContentLoaded", function (event) {
+
+  // get search element (bail if we don't have one)
+  var searchEl = window.document.getElementById('distill-search');
+  if (!searchEl)
+    return;
+
+  createFuseIndex()
+    .then(function(fuse) {
+
+      // make search box visible
+      searchEl.classList.remove('hidden');
+
+      // initialize autocomplete
+      var options = {
+        autoselect: true,
+        hint: false,
+        minLength: 2,
+      };
+      window.autocomplete(searchEl, options, [{
+        source: function(query, callback) {
+          const searchOptions = {
+            isCaseSensitive: false,
+            shouldSort: true,
+            minMatchCharLength: 2,
+            limit: 10,
+          };
+          var results = fuse.search(query, searchOptions);
+          callback(results
+            .map(function(result) { return result.item; })
+          );
+        },
+        templates: {
+          suggestion: function(suggestion) {
+            var img = suggestion.preview && Object.keys(suggestion.preview).length > 0
+              ? `<img src="${offsetURL(suggestion.preview)}"</img>`
+              : '';
+            var html = `
+              <div class="search-item">
+                <h3>${suggestion.title}</h3>
+                <div class="search-item-description">
+                  ${suggestion.description || ''}
+                </div>
+                <div class="search-item-preview">
+                  ${img}
+                </div>
+              </div>
+            `;
+            return html;
+          }
+        }
+      }]).on('autocomplete:selected', function(event, suggestion) {
+        window.location.href = offsetURL(suggestion.path);
+      });
+      // remove inline display style on autocompleter (we want to
+      // manage responsive display via css)
+      $('.algolia-autocomplete').css("display", "");
+    })
+    .catch(function(error) {
+      console.log(error);
+    });
+
+});
+
+</script>
+
+<style type="text/css">
+
+.nav-search {
+  font-size: x-small;
+}
+
+/* Algolioa Autocomplete */
+
+.algolia-autocomplete {
+  display: inline-block;
+  margin-left: 10px;
+  vertical-align: sub;
+  background-color: white;
+  color: black;
+  padding: 6px;
+  padding-top: 8px;
+  padding-bottom: 0;
+  border-radius: 6px;
+  border: 1px #0F2E3D solid;
+  width: 180px;
+}
+
+
+@media screen and (max-width: 768px) {
+  .distill-site-nav .algolia-autocomplete {
+    display: none;
+    visibility: hidden;
+  }
+  .distill-site-nav.responsive .algolia-autocomplete {
+    display: inline-block;
+    visibility: visible;
+  }
+  .distill-site-nav.responsive .algolia-autocomplete .aa-dropdown-menu {
+    margin-left: 0;
+    width: 400px;
+    max-height: 400px;
+  }
+}
+
+.algolia-autocomplete .aa-input, .algolia-autocomplete .aa-hint {
+  width: 90%;
+  outline: none;
+  border: none;
+}
+
+.algolia-autocomplete .aa-hint {
+  color: #999;
+}
+.algolia-autocomplete .aa-dropdown-menu {
+  width: 550px;
+  max-height: 70vh;
+  overflow-x: visible;
+  overflow-y: scroll;
+  padding: 5px;
+  margin-top: 3px;
+  margin-left: -150px;
+  background-color: #fff;
+  border-radius: 5px;
+  border: 1px solid #999;
+  border-top: none;
+}
+
+.algolia-autocomplete .aa-dropdown-menu .aa-suggestion {
+  cursor: pointer;
+  padding: 5px 4px;
+  border-bottom: 1px solid #eee;
+}
+
+.algolia-autocomplete .aa-dropdown-menu .aa-suggestion:last-of-type {
+  border-bottom: none;
+  margin-bottom: 2px;
+}
+
+.algolia-autocomplete .aa-dropdown-menu .aa-suggestion .search-item {
+  overflow: hidden;
+  font-size: 0.8em;
+  line-height: 1.4em;
+}
+
+.algolia-autocomplete .aa-dropdown-menu .aa-suggestion .search-item h3 {
+  font-size: 1rem;
+  margin-block-start: 0;
+  margin-block-end: 5px;
+}
+
+.algolia-autocomplete .aa-dropdown-menu .aa-suggestion .search-item-description {
+  display: inline-block;
+  overflow: hidden;
+  height: 2.8em;
+  width: 80%;
+  margin-right: 4%;
+}
+
+.algolia-autocomplete .aa-dropdown-menu .aa-suggestion .search-item-preview {
+  display: inline-block;
+  width: 15%;
+}
+
+.algolia-autocomplete .aa-dropdown-menu .aa-suggestion .search-item-preview img {
+  height: 3em;
+  width: auto;
+  display: none;
+}
+
+.algolia-autocomplete .aa-dropdown-menu .aa-suggestion .search-item-preview img[src] {
+  display: initial;
+}
+
+.algolia-autocomplete .aa-dropdown-menu .aa-suggestion.aa-cursor {
+  background-color: #eee;
+}
+.algolia-autocomplete .aa-dropdown-menu .aa-suggestion em {
+  font-weight: bold;
+  font-style: normal;
+}
+
+</style>
+
+
+<!--/radix_placeholder_navigation_in_header-->
+  <!--radix_placeholder_distill-->
+
+<style type="text/css">
+
+body {
+  background-color: white;
+}
+
+.pandoc-table {
+  width: 100%;
+}
+
+.pandoc-table>caption {
+  margin-bottom: 10px;
+}
+
+.pandoc-table th:not([align]) {
+  text-align: left;
+}
+
+.pagedtable-footer {
+  font-size: 15px;
+}
+
+d-byline .byline {
+  grid-template-columns: 2fr 2fr;
+}
+
+d-byline .byline h3 {
+  margin-block-start: 1.5em;
+}
+
+d-byline .byline .authors-affiliations h3 {
+  margin-block-start: 0.5em;
+}
+
+.authors-affiliations .orcid-id {
+  width: 16px;
+  height:16px;
+  margin-left: 4px;
+  margin-right: 4px;
+  vertical-align: middle;
+  padding-bottom: 2px;
+}
+
+d-title .dt-tags {
+  margin-top: 1em;
+  grid-column: text;
+}
+
+.dt-tags .dt-tag {
+  text-decoration: none;
+  display: inline-block;
+  color: rgba(0,0,0,0.6);
+  padding: 0em 0.4em;
+  margin-right: 0.5em;
+  margin-bottom: 0.4em;
+  font-size: 70%;
+  border: 1px solid rgba(0,0,0,0.2);
+  border-radius: 3px;
+  text-transform: uppercase;
+  font-weight: 500;
+}
+
+d-article table.gt_table td,
+d-article table.gt_table th {
+  border-bottom: none;
+}
+
+.html-widget {
+  margin-bottom: 2.0em;
+}
+
+.l-screen-inset {
+  padding-right: 16px;
+}
+
+.l-screen .caption {
+  margin-left: 10px;
+}
+
+.shaded {
+  background: rgb(247, 247, 247);
+  padding-top: 20px;
+  padding-bottom: 20px;
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.shaded .html-widget {
+  margin-bottom: 0;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.shaded .shaded-content {
+  background: white;
+}
+
+.text-output {
+  margin-top: 0;
+  line-height: 1.5em;
+}
+
+.hidden {
+  display: none !important;
+}
+
+d-article {
+  padding-top: 2.5rem;
+  padding-bottom: 30px;
+}
+
+d-appendix {
+  padding-top: 30px;
+}
+
+d-article>p>img {
+  width: 100%;
+}
+
+d-article h2 {
+  margin: 1rem 0 1.5rem 0;
+}
+
+d-article h3 {
+  margin-top: 1.5rem;
+}
+
+d-article iframe {
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  margin-bottom: 2.0em;
+  width: 100%;
+}
+
+/* Tweak code blocks */
+
+d-article div.sourceCode code,
+d-article pre code {
+  font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
+}
+
+d-article pre,
+d-article div.sourceCode,
+d-article div.sourceCode pre {
+  overflow: auto;
+}
+
+d-article div.sourceCode {
+  background-color: white;
+}
+
+d-article div.sourceCode pre {
+  padding-left: 10px;
+  font-size: 12px;
+  border-left: 2px solid rgba(0,0,0,0.1);
+}
+
+d-article pre {
+  font-size: 12px;
+  color: black;
+  background: none;
+  margin-top: 0;
+  text-align: left;
+  white-space: pre;
+  word-spacing: normal;
+  word-break: normal;
+  word-wrap: normal;
+  line-height: 1.5;
+
+  -moz-tab-size: 4;
+  -o-tab-size: 4;
+  tab-size: 4;
+
+  -webkit-hyphens: none;
+  -moz-hyphens: none;
+  -ms-hyphens: none;
+  hyphens: none;
+}
+
+d-article pre a {
+  border-bottom: none;
+}
+
+d-article pre a:hover {
+  border-bottom: none;
+  text-decoration: underline;
+}
+
+d-article details {
+  grid-column: text;
+  margin-bottom: 0.8em;
+}
+
+@media(min-width: 768px) {
+
+d-article pre,
+d-article div.sourceCode,
+d-article div.sourceCode pre {
+  overflow: visible !important;
+}
+
+d-article div.sourceCode pre {
+  padding-left: 18px;
+  font-size: 14px;
+}
+
+d-article pre {
+  font-size: 14px;
+}
+
+}
+
+figure img.external {
+  background: white;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  box-shadow: 0 1px 8px rgba(0, 0, 0, 0.1);
+  padding: 18px;
+  box-sizing: border-box;
+}
+
+/* CSS for d-contents */
+
+.d-contents {
+  grid-column: text;
+  color: rgba(0,0,0,0.8);
+  font-size: 0.9em;
+  padding-bottom: 1em;
+  margin-bottom: 1em;
+  padding-bottom: 0.5em;
+  margin-bottom: 1em;
+  padding-left: 0.25em;
+  justify-self: start;
+}
+
+@media(min-width: 1000px) {
+  .d-contents.d-contents-float {
+    height: 0;
+    grid-column-start: 1;
+    grid-column-end: 4;
+    justify-self: center;
+    padding-right: 3em;
+    padding-left: 2em;
+  }
+}
+
+.d-contents nav h3 {
+  font-size: 18px;
+  margin-top: 0;
+  margin-bottom: 1em;
+}
+
+.d-contents li {
+  list-style-type: none
+}
+
+.d-contents nav > ul {
+  padding-left: 0;
+}
+
+.d-contents ul {
+  padding-left: 1em
+}
+
+.d-contents nav ul li {
+  margin-top: 0.6em;
+  margin-bottom: 0.2em;
+}
+
+.d-contents nav a {
+  font-size: 13px;
+  border-bottom: none;
+  text-decoration: none
+  color: rgba(0, 0, 0, 0.8);
+}
+
+.d-contents nav a:hover {
+  text-decoration: underline solid rgba(0, 0, 0, 0.6)
+}
+
+.d-contents nav > ul > li > a {
+  font-weight: 600;
+}
+
+.d-contents nav > ul > li > ul {
+  font-weight: inherit;
+}
+
+.d-contents nav > ul > li > ul > li {
+  margin-top: 0.2em;
+}
+
+
+.d-contents nav ul {
+  margin-top: 0;
+  margin-bottom: 0.25em;
+}
+
+.d-article-with-toc h2:nth-child(2) {
+  margin-top: 0;
+}
+
+
+/* Figure */
+
+.figure {
+  position: relative;
+  margin-bottom: 2.5em;
+  margin-top: 1.5em;
+}
+
+.figure img {
+  width: 100%;
+}
+
+.figure .caption {
+  color: rgba(0, 0, 0, 0.6);
+  font-size: 12px;
+  line-height: 1.5em;
+}
+
+.figure img.external {
+  background: white;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  box-shadow: 0 1px 8px rgba(0, 0, 0, 0.1);
+  padding: 18px;
+  box-sizing: border-box;
+}
+
+.figure .caption a {
+  color: rgba(0, 0, 0, 0.6);
+}
+
+.figure .caption b,
+.figure .caption strong, {
+  font-weight: 600;
+  color: rgba(0, 0, 0, 1.0);
+}
+
+/* Citations */
+
+d-article .citation {
+  color: inherit;
+  cursor: inherit;
+}
+
+div.hanging-indent{
+  margin-left: 1em; text-indent: -1em;
+}
+
+/* Citation hover box */
+
+.tippy-box[data-theme~=light-border] {
+  background-color: rgba(250, 250, 250, 0.95);
+}
+
+.tippy-content > p {
+  margin-bottom: 0;
+  padding: 2px;
+}
+
+
+/* Tweak 1000px media break to show more text */
+
+@media(min-width: 1000px) {
+  .base-grid,
+  distill-header,
+  d-title,
+  d-abstract,
+  d-article,
+  d-appendix,
+  distill-appendix,
+  d-byline,
+  d-footnote-list,
+  d-citation-list,
+  distill-footer {
+    grid-template-columns: [screen-start] 1fr [page-start kicker-start] 80px [middle-start] 50px [text-start kicker-end] 65px 65px 65px 65px 65px 65px 65px 65px [text-end gutter-start] 65px [middle-end] 65px [page-end gutter-end] 1fr [screen-end];
+    grid-column-gap: 16px;
+  }
+
+  .grid {
+    grid-column-gap: 16px;
+  }
+
+  d-article {
+    font-size: 1.06rem;
+    line-height: 1.7em;
+  }
+  figure .caption, .figure .caption, figure figcaption {
+    font-size: 13px;
+  }
+}
+
+@media(min-width: 1180px) {
+  .base-grid,
+  distill-header,
+  d-title,
+  d-abstract,
+  d-article,
+  d-appendix,
+  distill-appendix,
+  d-byline,
+  d-footnote-list,
+  d-citation-list,
+  distill-footer {
+    grid-template-columns: [screen-start] 1fr [page-start kicker-start] 60px [middle-start] 60px [text-start kicker-end] 60px 60px 60px 60px 60px 60px 60px 60px [text-end gutter-start] 60px [middle-end] 60px [page-end gutter-end] 1fr [screen-end];
+    grid-column-gap: 32px;
+  }
+
+  .grid {
+    grid-column-gap: 32px;
+  }
+}
+
+
+/* Get the citation styles for the appendix (not auto-injected on render since
+   we do our own rendering of the citation appendix) */
+
+d-appendix .citation-appendix,
+.d-appendix .citation-appendix {
+  font-size: 11px;
+  line-height: 15px;
+  border-left: 1px solid rgba(0, 0, 0, 0.1);
+  padding-left: 18px;
+  border: 1px solid rgba(0,0,0,0.1);
+  background: rgba(0, 0, 0, 0.02);
+  padding: 10px 18px;
+  border-radius: 3px;
+  color: rgba(150, 150, 150, 1);
+  overflow: hidden;
+  margin-top: -12px;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+}
+
+/* Include appendix styles here so they can be overridden */
+
+d-appendix {
+  contain: layout style;
+  font-size: 0.8em;
+  line-height: 1.7em;
+  margin-top: 60px;
+  margin-bottom: 0;
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
+  color: rgba(0,0,0,0.5);
+  padding-top: 60px;
+  padding-bottom: 48px;
+}
+
+d-appendix h3 {
+  grid-column: page-start / text-start;
+  font-size: 15px;
+  font-weight: 500;
+  margin-top: 1em;
+  margin-bottom: 0;
+  color: rgba(0,0,0,0.65);
+}
+
+d-appendix h3 + * {
+  margin-top: 1em;
+}
+
+d-appendix ol {
+  padding: 0 0 0 15px;
+}
+
+@media (min-width: 768px) {
+  d-appendix ol {
+    padding: 0 0 0 30px;
+    margin-left: -30px;
+  }
+}
+
+d-appendix li {
+  margin-bottom: 1em;
+}
+
+d-appendix a {
+  color: rgba(0, 0, 0, 0.6);
+}
+
+d-appendix > * {
+  grid-column: text;
+}
+
+d-appendix > d-footnote-list,
+d-appendix > d-citation-list,
+d-appendix > distill-appendix {
+  grid-column: screen;
+}
+
+/* Include footnote styles here so they can be overridden */
+
+d-footnote-list {
+  contain: layout style;
+}
+
+d-footnote-list > * {
+  grid-column: text;
+}
+
+d-footnote-list a.footnote-backlink {
+  color: rgba(0,0,0,0.3);
+  padding-left: 0.5em;
+}
+
+
+
+/* Anchor.js */
+
+.anchorjs-link {
+  /*transition: all .25s linear; */
+  text-decoration: none;
+  border-bottom: none;
+}
+*:hover > .anchorjs-link {
+  margin-left: -1.125em !important;
+  text-decoration: none;
+  border-bottom: none;
+}
+
+/* Social footer */
+
+.social_footer {
+  margin-top: 30px;
+  margin-bottom: 0;
+  color: rgba(0,0,0,0.67);
+}
+
+.disqus-comments {
+  margin-right: 30px;
+}
+
+.disqus-comment-count {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.4);
+  cursor: pointer;
+}
+
+#disqus_thread {
+  margin-top: 30px;
+}
+
+.article-sharing a {
+  border-bottom: none;
+  margin-right: 8px;
+}
+
+.article-sharing a:hover {
+  border-bottom: none;
+}
+
+.sidebar-section.subscribe {
+  font-size: 12px;
+  line-height: 1.6em;
+}
+
+.subscribe p {
+  margin-bottom: 0.5em;
+}
+
+
+.article-footer .subscribe {
+  font-size: 15px;
+  margin-top: 45px;
+}
+
+
+.sidebar-section.custom {
+  font-size: 12px;
+  line-height: 1.6em;
+}
+
+.custom p {
+  margin-bottom: 0.5em;
+}
+
+/* Styles for listing layout (hide title) */
+.layout-listing d-title, .layout-listing .d-title {
+  display: none;
+}
+
+/* Styles for posts lists (not auto-injected) */
+
+
+.posts-with-sidebar {
+  padding-left: 45px;
+  padding-right: 45px;
+}
+
+.posts-list .description h2,
+.posts-list .description p {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", Arial, sans-serif;
+}
+
+.posts-list .description h2 {
+  font-weight: 700;
+  border-bottom: none;
+  padding-bottom: 0;
+}
+
+.posts-list h2.post-tag {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+  padding-bottom: 12px;
+}
+.posts-list {
+  margin-top: 60px;
+  margin-bottom: 24px;
+}
+
+.posts-list .post-preview {
+  text-decoration: none;
+  overflow: hidden;
+  display: block;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  padding: 24px 0;
+}
+
+.post-preview-last {
+  border-bottom: none !important;
+}
+
+.posts-list .posts-list-caption {
+  grid-column: screen;
+  font-weight: 400;
+}
+
+.posts-list .post-preview h2 {
+  margin: 0 0 6px 0;
+  line-height: 1.2em;
+  font-style: normal;
+  font-size: 24px;
+}
+
+.posts-list .post-preview p {
+  margin: 0 0 12px 0;
+  line-height: 1.4em;
+  font-size: 16px;
+}
+
+.posts-list .post-preview .thumbnail {
+  box-sizing: border-box;
+  margin-bottom: 24px;
+  position: relative;
+  max-width: 500px;
+}
+.posts-list .post-preview img {
+  width: 100%;
+  display: block;
+}
+
+.posts-list .metadata {
+  font-size: 12px;
+  line-height: 1.4em;
+  margin-bottom: 18px;
+}
+
+.posts-list .metadata > * {
+  display: inline-block;
+}
+
+.posts-list .metadata .publishedDate {
+  margin-right: 2em;
+}
+
+.posts-list .metadata .dt-authors {
+  display: block;
+  margin-top: 0.3em;
+  margin-right: 2em;
+}
+
+.posts-list .dt-tags {
+  display: block;
+  line-height: 1em;
+}
+
+.posts-list .dt-tags .dt-tag {
+  display: inline-block;
+  color: rgba(0,0,0,0.6);
+  padding: 0.3em 0.4em;
+  margin-right: 0.2em;
+  margin-bottom: 0.4em;
+  font-size: 60%;
+  border: 1px solid rgba(0,0,0,0.2);
+  border-radius: 3px;
+  text-transform: uppercase;
+  font-weight: 500;
+}
+
+.posts-list img {
+  opacity: 1;
+}
+
+.posts-list img[data-src] {
+  opacity: 0;
+}
+
+.posts-more {
+  clear: both;
+}
+
+
+.posts-sidebar {
+  font-size: 16px;
+}
+
+.posts-sidebar h3 {
+  font-size: 16px;
+  margin-top: 0;
+  margin-bottom: 0.5em;
+  font-weight: 400;
+  text-transform: uppercase;
+}
+
+.sidebar-section {
+  margin-bottom: 30px;
+}
+
+.categories ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+.categories li {
+  color: rgba(0, 0, 0, 0.8);
+  margin-bottom: 0;
+}
+
+.categories li>a {
+  border-bottom: none;
+}
+
+.categories li>a:hover {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.4);
+}
+
+.categories .active {
+  font-weight: 600;
+}
+
+.categories .category-count {
+  color: rgba(0, 0, 0, 0.4);
+}
+
+
+@media(min-width: 768px) {
+  .posts-list .post-preview h2 {
+    font-size: 26px;
+  }
+  .posts-list .post-preview .thumbnail {
+    float: right;
+    width: 30%;
+    margin-bottom: 0;
+  }
+  .posts-list .post-preview .description {
+    float: left;
+    width: 45%;
+  }
+  .posts-list .post-preview .metadata {
+    float: left;
+    width: 20%;
+    margin-top: 8px;
+  }
+  .posts-list .post-preview p {
+    margin: 0 0 12px 0;
+    line-height: 1.5em;
+    font-size: 16px;
+  }
+  .posts-with-sidebar .posts-list {
+    float: left;
+    width: 75%;
+  }
+  .posts-with-sidebar .posts-sidebar {
+    float: right;
+    width: 20%;
+    margin-top: 60px;
+    padding-top: 24px;
+    padding-bottom: 24px;
+  }
+}
+
+
+/* Improve display for browsers without grid (IE/Edge <= 15) */
+
+.downlevel {
+  line-height: 1.6em;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", Arial, sans-serif;
+  margin: 0;
+}
+
+.downlevel .d-title {
+  padding-top: 6rem;
+  padding-bottom: 1.5rem;
+}
+
+.downlevel .d-title h1 {
+  font-size: 50px;
+  font-weight: 700;
+  line-height: 1.1em;
+  margin: 0 0 0.5rem;
+}
+
+.downlevel .d-title p {
+  font-weight: 300;
+  font-size: 1.2rem;
+  line-height: 1.55em;
+  margin-top: 0;
+}
+
+.downlevel .d-byline {
+  padding-top: 0.8em;
+  padding-bottom: 0.8em;
+  font-size: 0.8rem;
+  line-height: 1.8em;
+}
+
+.downlevel .section-separator {
+  border: none;
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.downlevel .d-article {
+  font-size: 1.06rem;
+  line-height: 1.7em;
+  padding-top: 1rem;
+  padding-bottom: 2rem;
+}
+
+
+.downlevel .d-appendix {
+  padding-left: 0;
+  padding-right: 0;
+  max-width: none;
+  font-size: 0.8em;
+  line-height: 1.7em;
+  margin-bottom: 0;
+  color: rgba(0,0,0,0.5);
+  padding-top: 40px;
+  padding-bottom: 48px;
+}
+
+.downlevel .footnotes ol {
+  padding-left: 13px;
+}
+
+.downlevel .base-grid,
+.downlevel .distill-header,
+.downlevel .d-title,
+.downlevel .d-abstract,
+.downlevel .d-article,
+.downlevel .d-appendix,
+.downlevel .distill-appendix,
+.downlevel .d-byline,
+.downlevel .d-footnote-list,
+.downlevel .d-citation-list,
+.downlevel .distill-footer,
+.downlevel .appendix-bottom,
+.downlevel .posts-container {
+  padding-left: 40px;
+  padding-right: 40px;
+}
+
+@media(min-width: 768px) {
+  .downlevel .base-grid,
+  .downlevel .distill-header,
+  .downlevel .d-title,
+  .downlevel .d-abstract,
+  .downlevel .d-article,
+  .downlevel .d-appendix,
+  .downlevel .distill-appendix,
+  .downlevel .d-byline,
+  .downlevel .d-footnote-list,
+  .downlevel .d-citation-list,
+  .downlevel .distill-footer,
+  .downlevel .appendix-bottom,
+  .downlevel .posts-container {
+  padding-left: 150px;
+  padding-right: 150px;
+  max-width: 900px;
+}
+}
+
+.downlevel pre code {
+  display: block;
+  border-left: 2px solid rgba(0, 0, 0, .1);
+  padding: 0 0 0 20px;
+  font-size: 14px;
+}
+
+.downlevel code, .downlevel pre {
+  color: black;
+  background: none;
+  font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
+  text-align: left;
+  white-space: pre;
+  word-spacing: normal;
+  word-break: normal;
+  word-wrap: normal;
+  line-height: 1.5;
+
+  -moz-tab-size: 4;
+  -o-tab-size: 4;
+  tab-size: 4;
+
+  -webkit-hyphens: none;
+  -moz-hyphens: none;
+  -ms-hyphens: none;
+  hyphens: none;
+}
+
+.downlevel .posts-list .post-preview {
+  color: inherit;
+}
+
+
+
+</style>
+
+<script type="application/javascript">
+
+function is_downlevel_browser() {
+  if (bowser.isUnsupportedBrowser({ msie: "12", msedge: "16"},
+                                 window.navigator.userAgent)) {
+    return true;
+  } else {
+    return window.load_distill_framework === undefined;
+  }
+}
+
+// show body when load is complete
+function on_load_complete() {
+
+  // add anchors
+  if (window.anchors) {
+    window.anchors.options.placement = 'left';
+    window.anchors.add('d-article > h2, d-article > h3, d-article > h4, d-article > h5');
+  }
+
+
+  // set body to visible
+  document.body.style.visibility = 'visible';
+
+  // force redraw for leaflet widgets
+  if (window.HTMLWidgets) {
+    var maps = window.HTMLWidgets.findAll(".leaflet");
+    $.each(maps, function(i, el) {
+      var map = this.getMap();
+      map.invalidateSize();
+      map.eachLayer(function(layer) {
+        if (layer instanceof L.TileLayer)
+          layer.redraw();
+      });
+    });
+  }
+
+  // trigger 'shown' so htmlwidgets resize
+  $('d-article').trigger('shown');
+}
+
+function init_distill() {
+
+  init_common();
+
+  // create front matter
+  var front_matter = $('<d-front-matter></d-front-matter>');
+  $('#distill-front-matter').wrap(front_matter);
+
+  // create d-title
+  $('.d-title').changeElementType('d-title');
+
+  // create d-byline
+  var byline = $('<d-byline></d-byline>');
+  $('.d-byline').replaceWith(byline);
+
+  // create d-article
+  var article = $('<d-article></d-article>');
+  $('.d-article').wrap(article).children().unwrap();
+
+  // move posts container into article
+  $('.posts-container').appendTo($('d-article'));
+
+  // create d-appendix
+  $('.d-appendix').changeElementType('d-appendix');
+
+  // flag indicating that we have appendix items
+  var appendix = $('.appendix-bottom').children('h3').length > 0;
+
+  // replace footnotes with <d-footnote>
+  $('.footnote-ref').each(function(i, val) {
+    appendix = true;
+    var href = $(this).attr('href');
+    var id = href.replace('#', '');
+    var fn = $('#' + id);
+    var fn_p = $('#' + id + '>p');
+    fn_p.find('.footnote-back').remove();
+    var text = fn_p.html();
+    var dtfn = $('<d-footnote></d-footnote>');
+    dtfn.html(text);
+    $(this).replaceWith(dtfn);
+  });
+  // remove footnotes
+  $('.footnotes').remove();
+
+  // move refs into #references-listing
+  $('#references-listing').replaceWith($('#refs'));
+
+  $('h1.appendix, h2.appendix').each(function(i, val) {
+    $(this).changeElementType('h3');
+  });
+  $('h3.appendix').each(function(i, val) {
+    var id = $(this).attr('id');
+    $('.d-contents a[href="#' + id + '"]').parent().remove();
+    appendix = true;
+    $(this).nextUntil($('h1, h2, h3')).addBack().appendTo($('d-appendix'));
+  });
+
+  // show d-appendix if we have appendix content
+  $("d-appendix").css('display', appendix ? 'grid' : 'none');
+
+  // localize layout chunks to just output
+  $('.layout-chunk').each(function(i, val) {
+
+    // capture layout
+    var layout = $(this).attr('data-layout');
+
+    // apply layout to markdown level block elements
+    var elements = $(this).children().not('details, div.sourceCode, pre, script');
+    elements.each(function(i, el) {
+      var layout_div = $('<div class="' + layout + '"></div>');
+      if (layout_div.hasClass('shaded')) {
+        var shaded_content = $('<div class="shaded-content"></div>');
+        $(this).wrap(shaded_content);
+        $(this).parent().wrap(layout_div);
+      } else {
+        $(this).wrap(layout_div);
+      }
+    });
+
+
+    // unwrap the layout-chunk div
+    $(this).children().unwrap();
+  });
+
+  // remove code block used to force  highlighting css
+  $('.distill-force-highlighting-css').parent().remove();
+
+  // remove empty line numbers inserted by pandoc when using a
+  // custom syntax highlighting theme
+  $('code.sourceCode a:empty').remove();
+
+  // load distill framework
+  load_distill_framework();
+
+  // wait for window.distillRunlevel == 4 to do post processing
+  function distill_post_process() {
+
+    if (!window.distillRunlevel || window.distillRunlevel < 4)
+      return;
+
+    // hide author/affiliations entirely if we have no authors
+    var front_matter = JSON.parse($("#distill-front-matter").html());
+    var have_authors = front_matter.authors && front_matter.authors.length > 0;
+    if (!have_authors)
+      $('d-byline').addClass('hidden');
+
+    // article with toc class
+    $('.d-contents').parent().addClass('d-article-with-toc');
+
+    // strip links that point to #
+    $('.authors-affiliations').find('a[href="#"]').removeAttr('href');
+
+    // add orcid ids
+    $('.authors-affiliations').find('.author').each(function(i, el) {
+      var orcid_id = front_matter.authors[i].orcidID;
+      if (orcid_id) {
+        var a = $('<a></a>');
+        a.attr('href', 'https://orcid.org/' + orcid_id);
+        var img = $('<img></img>');
+        img.addClass('orcid-id');
+        img.attr('alt', 'ORCID ID');
+        img.attr('src','data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAA2ZpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMC1jMDYwIDYxLjEzNDc3NywgMjAxMC8wMi8xMi0xNzozMjowMCAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wTU09Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9tbS8iIHhtbG5zOnN0UmVmPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvc1R5cGUvUmVzb3VyY2VSZWYjIiB4bWxuczp4bXA9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC8iIHhtcE1NOk9yaWdpbmFsRG9jdW1lbnRJRD0ieG1wLmRpZDo1N0NEMjA4MDI1MjA2ODExOTk0QzkzNTEzRjZEQTg1NyIgeG1wTU06RG9jdW1lbnRJRD0ieG1wLmRpZDozM0NDOEJGNEZGNTcxMUUxODdBOEVCODg2RjdCQ0QwOSIgeG1wTU06SW5zdGFuY2VJRD0ieG1wLmlpZDozM0NDOEJGM0ZGNTcxMUUxODdBOEVCODg2RjdCQ0QwOSIgeG1wOkNyZWF0b3JUb29sPSJBZG9iZSBQaG90b3Nob3AgQ1M1IE1hY2ludG9zaCI+IDx4bXBNTTpEZXJpdmVkRnJvbSBzdFJlZjppbnN0YW5jZUlEPSJ4bXAuaWlkOkZDN0YxMTc0MDcyMDY4MTE5NUZFRDc5MUM2MUUwNEREIiBzdFJlZjpkb2N1bWVudElEPSJ4bXAuZGlkOjU3Q0QyMDgwMjUyMDY4MTE5OTRDOTM1MTNGNkRBODU3Ii8+IDwvcmRmOkRlc2NyaXB0aW9uPiA8L3JkZjpSREY+IDwveDp4bXBtZXRhPiA8P3hwYWNrZXQgZW5kPSJyIj8+84NovQAAAR1JREFUeNpiZEADy85ZJgCpeCB2QJM6AMQLo4yOL0AWZETSqACk1gOxAQN+cAGIA4EGPQBxmJA0nwdpjjQ8xqArmczw5tMHXAaALDgP1QMxAGqzAAPxQACqh4ER6uf5MBlkm0X4EGayMfMw/Pr7Bd2gRBZogMFBrv01hisv5jLsv9nLAPIOMnjy8RDDyYctyAbFM2EJbRQw+aAWw/LzVgx7b+cwCHKqMhjJFCBLOzAR6+lXX84xnHjYyqAo5IUizkRCwIENQQckGSDGY4TVgAPEaraQr2a4/24bSuoExcJCfAEJihXkWDj3ZAKy9EJGaEo8T0QSxkjSwORsCAuDQCD+QILmD1A9kECEZgxDaEZhICIzGcIyEyOl2RkgwAAhkmC+eAm0TAAAAABJRU5ErkJggg==');
+        a.append(img);
+        $(this).append(a);
+      }
+    });
+
+    // hide elements of author/affiliations grid that have no value
+    function hide_byline_column(caption) {
+      $('d-byline').find('h3:contains("' + caption + '")').parent().css('visibility', 'hidden');
+    }
+
+    // affiliations
+    var have_affiliations = false;
+    for (var i = 0; i<front_matter.authors.length; ++i) {
+      var author = front_matter.authors[i];
+      if (author.affiliation !== "&nbsp;") {
+        have_affiliations = true;
+        break;
+      }
+    }
+    if (!have_affiliations)
+      $('d-byline').find('h3:contains("Affiliations")').css('visibility', 'hidden');
+
+    // published date
+    if (!front_matter.publishedDate)
+      hide_byline_column("Published");
+
+    // document object identifier
+    var doi = $('d-byline').find('h3:contains("DOI")');
+    var doi_p = doi.next().empty();
+    if (!front_matter.doi) {
+      // if we have a citation and valid citationText then link to that
+      if ($('#citation').length > 0 && front_matter.citationText) {
+        doi.html('Citation');
+        $('<a href="#citation"></a>')
+          .text(front_matter.citationText)
+          .appendTo(doi_p);
+      } else {
+        hide_byline_column("DOI");
+      }
+    } else {
+      $('<a></a>')
+         .attr('href', "https://doi.org/" + front_matter.doi)
+         .html(front_matter.doi)
+         .appendTo(doi_p);
+    }
+
+     // change plural form of authors/affiliations
+    if (front_matter.authors.length === 1) {
+      var grid = $('.authors-affiliations');
+      grid.children('h3:contains("Authors")').text('Author');
+      grid.children('h3:contains("Affiliations")').text('Affiliation');
+    }
+
+    // remove d-appendix and d-footnote-list local styles
+    $('d-appendix > style:first-child').remove();
+    $('d-footnote-list > style:first-child').remove();
+
+    // move appendix-bottom entries to the bottom
+    $('.appendix-bottom').appendTo('d-appendix').children().unwrap();
+    $('.appendix-bottom').remove();
+
+    // hoverable references
+    $('span.citation[data-cites]').each(function() {
+      var refs = $(this).attr('data-cites').split(" ");
+      var refHtml = refs.map(function(ref) {
+        return "<p>" + $('#ref-' + ref).html() + "</p>";
+      }).join("\n");
+      window.tippy(this, {
+        allowHTML: true,
+        content: refHtml,
+        maxWidth: 500,
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'light-border',
+        placement: 'bottom-start'
+      });
+    });
+
+    // clear polling timer
+    clearInterval(tid);
+
+    // show body now that everything is ready
+    on_load_complete();
+  }
+
+  var tid = setInterval(distill_post_process, 50);
+  distill_post_process();
+
+}
+
+function init_downlevel() {
+
+  init_common();
+
+   // insert hr after d-title
+  $('.d-title').after($('<hr class="section-separator"/>'));
+
+  // check if we have authors
+  var front_matter = JSON.parse($("#distill-front-matter").html());
+  var have_authors = front_matter.authors && front_matter.authors.length > 0;
+
+  // manage byline/border
+  if (!have_authors)
+    $('.d-byline').remove();
+  $('.d-byline').after($('<hr class="section-separator"/>'));
+  $('.d-byline a').remove();
+
+  // remove toc
+  $('.d-contents').remove();
+
+  // move appendix elements
+  $('h1.appendix, h2.appendix').each(function(i, val) {
+    $(this).changeElementType('h3');
+  });
+  $('h3.appendix').each(function(i, val) {
+    $(this).nextUntil($('h1, h2, h3')).addBack().appendTo($('.d-appendix'));
+  });
+
+
+  // inject headers into references and footnotes
+  var refs_header = $('<h3></h3>');
+  refs_header.text('References');
+  $('#refs').prepend(refs_header);
+
+  var footnotes_header = $('<h3></h3');
+  footnotes_header.text('Footnotes');
+  $('.footnotes').children('hr').first().replaceWith(footnotes_header);
+
+  // move appendix-bottom entries to the bottom
+  $('.appendix-bottom').appendTo('.d-appendix').children().unwrap();
+  $('.appendix-bottom').remove();
+
+  // remove appendix if it's empty
+  if ($('.d-appendix').children().length === 0)
+    $('.d-appendix').remove();
+
+  // prepend separator above appendix
+  $('.d-appendix').before($('<hr class="section-separator" style="clear: both"/>'));
+
+  // trim code
+  $('pre>code').each(function(i, val) {
+    $(this).html($.trim($(this).html()));
+  });
+
+  // move posts-container right before article
+  $('.posts-container').insertBefore($('.d-article'));
+
+  $('body').addClass('downlevel');
+
+  on_load_complete();
+}
+
+
+function init_common() {
+
+  // jquery plugin to change element types
+  (function($) {
+    $.fn.changeElementType = function(newType) {
+      var attrs = {};
+
+      $.each(this[0].attributes, function(idx, attr) {
+        attrs[attr.nodeName] = attr.nodeValue;
+      });
+
+      this.replaceWith(function() {
+        return $("<" + newType + "/>", attrs).append($(this).contents());
+      });
+    };
+  })(jQuery);
+
+  // prevent underline for linked images
+  $('a > img').parent().css({'border-bottom' : 'none'});
+
+  // mark non-body figures created by knitr chunks as 100% width
+  $('.layout-chunk').each(function(i, val) {
+    var figures = $(this).find('img, .html-widget');
+    if ($(this).attr('data-layout') !== "l-body") {
+      figures.css('width', '100%');
+    } else {
+      figures.css('max-width', '100%');
+      figures.filter("[width]").each(function(i, val) {
+        var fig = $(this);
+        fig.css('width', fig.attr('width') + 'px');
+      });
+
+    }
+  });
+
+  // auto-append index.html to post-preview links in file: protocol
+  // and in rstudio ide preview
+  $('.post-preview').each(function(i, val) {
+    if (window.location.protocol === "file:")
+      $(this).attr('href', $(this).attr('href') + "index.html");
+  });
+
+  // get rid of index.html references in header
+  if (window.location.protocol !== "file:") {
+    $('.distill-site-header a[href]').each(function(i,val) {
+      $(this).attr('href', $(this).attr('href').replace("index.html", "./"));
+    });
+  }
+
+  // add class to pandoc style tables
+  $('tr.header').parent('thead').parent('table').addClass('pandoc-table');
+  $('.kable-table').children('table').addClass('pandoc-table');
+
+  // add figcaption style to table captions
+  $('caption').parent('table').addClass("figcaption");
+
+  // initialize posts list
+  if (window.init_posts_list)
+    window.init_posts_list();
+
+  // implmement disqus comment link
+  $('.disqus-comment-count').click(function() {
+    window.headroom_prevent_pin = true;
+    $('#disqus_thread').toggleClass('hidden');
+    if (!$('#disqus_thread').hasClass('hidden')) {
+      var offset = $(this).offset();
+      $(window).resize();
+      $('html, body').animate({
+        scrollTop: offset.top - 35
+      });
+    }
+  });
+}
+
+document.addEventListener('DOMContentLoaded', function() {
+  if (is_downlevel_browser())
+    init_downlevel();
+  else
+    window.addEventListener('WebComponentsReady', init_distill);
+});
+
+</script>
+
+<style type="text/css">
+/* base variables */
+
+/* Edit the CSS properties in this file to create a custom
+   Distill theme. Only edit values in the right column
+   for each row; values shown are the CSS defaults.
+   To return any property to the default,
+   you may set its value to: unset
+   All rows must end with a semi-colon.                      */
+
+/* Optional: embed custom fonts here with `@import`          */
+/* This must remain at the top of this file.                 */
+
+
+
+html {
+  /*-- Main font sizes --*/
+  --title-size:      50px;
+  --body-size:       1.06rem;
+  --code-size:       14px;
+  --aside-size:      12px;
+  --fig-cap-size:    13px;
+  /*-- Main font colors --*/
+  --title-color:     #000000;
+  --header-color:    rgba(0, 0, 0, 0.8);
+  --body-color:      rgba(0, 0, 0, 0.8);
+  --aside-color:     rgba(0, 0, 0, 0.6);
+  --fig-cap-color:   rgba(0, 0, 0, 0.6);
+  /*-- Specify custom fonts ~~~ must be imported above   --*/
+  --heading-font:    sans-serif;
+  --mono-font:       monospace;
+  --body-font:       sans-serif;
+  --navbar-font:     sans-serif;  /* websites + blogs only */
+}
+
+/*-- ARTICLE METADATA --*/
+d-byline {
+  --heading-size:    0.6rem;
+  --heading-color:   rgba(0, 0, 0, 0.5);
+  --body-size:       0.8rem;
+  --body-color:      rgba(0, 0, 0, 0.8);
+}
+
+/*-- ARTICLE TABLE OF CONTENTS --*/
+.d-contents {
+  --heading-size:    18px;
+  --contents-size:   13px;
+}
+
+/*-- ARTICLE APPENDIX --*/
+d-appendix {
+  --heading-size:    15px;
+  --heading-color:   rgba(0, 0, 0, 0.65);
+  --text-size:       0.8em;
+  --text-color:      rgba(0, 0, 0, 0.5);
+}
+
+/*-- WEBSITE HEADER + FOOTER --*/
+/* These properties only apply to Distill sites and blogs  */
+
+.distill-site-header {
+  --title-size:       18px;
+  --text-color:       rgba(255, 255, 255, 0.8);
+  --text-size:        15px;
+  --hover-color:      white;
+  --bkgd-color:       #0F2E3D;
+}
+
+.distill-site-footer {
+  --text-color:       rgba(255, 255, 255, 0.8);
+  --text-size:        15px;
+  --hover-color:      white;
+  --bkgd-color:       #0F2E3D;
+}
+
+/*-- Additional custom styles --*/
+/* Add any additional CSS rules below                      */
+</style>
+<style type="text/css">
+/* base variables */
+
+/* Edit the CSS properties in this file to create a custom
+   Distill theme. Only edit values in the right column
+   for each row; values shown are the CSS defaults.
+   To return any property to the default,
+   you may set its value to: unset
+   All rows must end with a semi-colon.                      */
+
+/* Optional: embed custom fonts here with `@import`          */
+/* This must remain at the top of this file.                 */
+
+
+
+html {
+  /*-- Main font sizes --*/
+  --title-size:      50px;
+  --body-size:       1.06rem;
+  --code-size:       14px;
+  --aside-size:      12px;
+  --fig-cap-size:    13px;
+  /*-- Main font colors --*/
+  --title-color:     #000000;
+  --header-color:    rgba(0, 0, 0, 0.8);
+  --body-color:      rgba(0, 0, 0, 0.8);
+  --aside-color:     rgba(0, 0, 0, 0.6);
+  --fig-cap-color:   rgba(0, 0, 0, 0.6);
+  /*-- Specify custom fonts ~~~ must be imported above   --*/
+  --heading-font:    sans-serif;
+  --mono-font:       monospace;
+  --body-font:       sans-serif;
+  --navbar-font:     sans-serif;  /* websites + blogs only */
+}
+
+/*-- ARTICLE METADATA --*/
+d-byline {
+  --heading-size:    0.6rem;
+  --heading-color:   rgba(0, 0, 0, 0.5);
+  --body-size:       0.8rem;
+  --body-color:      rgba(0, 0, 0, 0.8);
+}
+
+/*-- ARTICLE TABLE OF CONTENTS --*/
+.d-contents {
+  --heading-size:    18px;
+  --contents-size:   13px;
+}
+
+/*-- ARTICLE APPENDIX --*/
+d-appendix {
+  --heading-size:    15px;
+  --heading-color:   rgba(0, 0, 0, 0.65);
+  --text-size:       0.8em;
+  --text-color:      rgba(0, 0, 0, 0.5);
+}
+
+/*-- WEBSITE HEADER + FOOTER --*/
+/* These properties only apply to Distill sites and blogs  */
+
+.distill-site-header {
+  --title-size:       18px;
+  --text-color:       rgba(255, 255, 255, 0.8);
+  --text-size:        15px;
+  --hover-color:      white;
+  --bkgd-color:       #0F2E3D;
+}
+
+.distill-site-footer {
+  --text-color:       rgba(255, 255, 255, 0.8);
+  --text-size:        15px;
+  --hover-color:      white;
+  --bkgd-color:       #0F2E3D;
+}
+
+/*-- Additional custom styles --*/
+/* Add any additional CSS rules below                      */
+
+
+
+html a {
+    text-decoration: none;
+    background-image: linear-gradient(currentColor, currentColor);
+    background-position: 0% 100%;
+    background-repeat: no-repeat;
+    background-size: 0% 2px;
+    transition: background-size .3s;
+}
+
+html a:hover, html a:focus {
+  background-size: 100% 2px;
+  color: #107dac;
+}
+
+a:hover {
+    text-decoration: none;
+}
+
+
+
+
+/* Chunk output */
+
+d-article pre { 
+  overflow: auto !important;
+  border-radius: 5px; /* Rounded edges */
+  font-size: 12px;
+  color: white;
+  background-color: #0f2a3d;
+  padding: 5px 5px 5px 18px;
+}
+
+/* Chunk code */
+
+d-article div.sourceCode pre { 
+  overflow: auto !important;
+  border-radius: 5px; /* Rounded edges */
+  background-color: #e6f0ff;
+  color: black;
+  padding: 5px 5px 5px 18px;
+}
+
+</style>
+<style type="text/css">
+/* base style */
+
+/* FONT FAMILIES */
+
+:root {
+  --heading-default: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", Arial, sans-serif;
+  --mono-default: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
+  --body-default: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", Arial, sans-serif;
+}
+
+body,
+.posts-list .post-preview p,
+.posts-list .description p {
+  font-family: var(--body-font), var(--body-default);
+}
+
+h1, h2, h3, h4, h5, h6,
+.posts-list .post-preview h2,
+.posts-list .description h2 {
+  font-family: var(--heading-font), var(--heading-default);
+}
+
+d-article div.sourceCode code,
+d-article pre code {
+  font-family: var(--mono-font), var(--mono-default);
+}
+
+
+/*-- TITLE --*/
+d-title h1,
+.posts-list > h1 {
+  color: var(--title-color, black);
+}
+
+d-title h1 {
+  font-size: var(--title-size, 50px);
+}
+
+/*-- HEADERS --*/
+d-article h1,
+d-article h2,
+d-article h3,
+d-article h4,
+d-article h5,
+d-article h6 {
+  color: var(--header-color, rgba(0, 0, 0, 0.8));
+}
+
+/*-- BODY --*/
+d-article > p,  /* only text inside of <p> tags */
+d-article > ul, /* lists */
+d-article > ol {
+  color: var(--body-color, rgba(0, 0, 0, 0.8));
+  font-size: var(--body-size, 1.06rem);
+}
+
+
+/*-- CODE --*/
+d-article div.sourceCode code,
+d-article pre code {
+  font-size: var(--code-size, 14px);
+}
+
+/*-- ASIDE --*/
+d-article aside {
+  font-size: var(--aside-size, 12px);
+  color: var(--aside-color, rgba(0, 0, 0, 0.6));
+}
+
+/*-- FIGURE CAPTIONS --*/
+figure .caption,
+figure figcaption,
+.figure .caption {
+  font-size: var(--fig-cap-size, 13px);
+  color: var(--fig-cap-color, rgba(0, 0, 0, 0.6));
+}
+
+/*-- METADATA --*/
+d-byline h3 {
+  font-size: var(--heading-size, 0.6rem);
+  color: var(--heading-color, rgba(0, 0, 0, 0.5));
+}
+
+d-byline {
+  font-size: var(--body-size, 0.8rem);
+  color: var(--body-color, rgba(0, 0, 0, 0.8));
+}
+
+d-byline a,
+d-article d-byline a {
+  color: var(--body-color, rgba(0, 0, 0, 0.8));
+}
+
+/*-- TABLE OF CONTENTS --*/
+.d-contents nav h3 {
+  font-size: var(--heading-size, 18px);
+}
+
+.d-contents nav a {
+  font-size: var(--contents-size, 13px);
+}
+
+/*-- APPENDIX --*/
+d-appendix h3 {
+  font-size: var(--heading-size, 15px);
+  color: var(--heading-color, rgba(0, 0, 0, 0.65));
+}
+
+d-appendix {
+  font-size: var(--text-size, 0.8em);
+  color: var(--text-color, rgba(0, 0, 0, 0.5));
+}
+
+d-appendix d-footnote-list a.footnote-backlink {
+  color: var(--text-color, rgba(0, 0, 0, 0.5));
+}
+
+/*-- WEBSITE HEADER + FOOTER --*/
+.distill-site-header .title {
+  font-size: var(--title-size, 18px);
+  font-family: var(--navbar-font), var(--heading-default);
+}
+
+.distill-site-header a,
+.nav-dropdown .nav-dropbtn {
+  font-family: var(--navbar-font), var(--heading-default);
+}
+
+.nav-dropdown .nav-dropbtn {
+  color: var(--text-color, rgba(255, 255, 255, 0.8));
+  font-size: var(--text-size, 15px);
+}
+
+.distill-site-header a:hover,
+.nav-dropdown:hover .nav-dropbtn {
+  color: var(--hover-color, white);
+}
+
+.distill-site-header {
+  font-size: var(--text-size, 15px);
+  color: var(--text-color, rgba(255, 255, 255, 0.8));
+  background-color: var(--bkgd-color, #0F2E3D);
+}
+
+.distill-site-footer {
+  font-size: var(--text-size, 15px);
+  color: var(--text-color, rgba(255, 255, 255, 0.8));
+  background-color: var(--bkgd-color, #0F2E3D);
+}
+
+.distill-site-footer a:hover {
+  color: var(--hover-color, white);
+}</style>
+<!--/radix_placeholder_distill-->
+  <script src="../../site_libs/header-attrs-2.11/header-attrs.js"></script>
+  <script src="../../site_libs/htmlwidgets-1.5.4/htmlwidgets.js"></script>
+  <script src="../../site_libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+  <link href="../../site_libs/leaflet-1.3.1/leaflet.css" rel="stylesheet" />
+  <script src="../../site_libs/leaflet-1.3.1/leaflet.js"></script>
+  <link href="../../site_libs/leafletfix-1.0.0/leafletfix.css" rel="stylesheet" />
+  <script src="../../site_libs/proj4-2.6.2/proj4.min.js"></script>
+  <script src="../../site_libs/Proj4Leaflet-1.0.1/proj4leaflet.js"></script>
+  <link href="../../site_libs/rstudio_leaflet-1.3.1/rstudio_leaflet.css" rel="stylesheet" />
+  <script src="../../site_libs/leaflet-binding-2.1.1/leaflet.js"></script>
+  <script src="../../site_libs/popper-2.6.0/popper.min.js"></script>
+  <link href="../../site_libs/tippy-6.2.7/tippy.css" rel="stylesheet" />
+  <link href="../../site_libs/tippy-6.2.7/tippy-light-border.css" rel="stylesheet" />
+  <script src="../../site_libs/tippy-6.2.7/tippy.umd.min.js"></script>
+  <script src="../../site_libs/anchor-4.2.2/anchor.min.js"></script>
+  <script src="../../site_libs/bowser-1.9.3/bowser.min.js"></script>
+  <script src="../../site_libs/webcomponents-2.0.0/webcomponents.js"></script>
+  <script src="../../site_libs/distill-2.2.21/template.v2.js"></script>
+  <!--radix_placeholder_site_in_header-->
+<!--/radix_placeholder_site_in_header-->
+
+
+</head>
+
+<body>
+
+<!--radix_placeholder_front_matter-->
+
+<script id="distill-front-matter" type="text/json">
+{"title":"A brief introduction to natural hazard risk analysis","description":"This article is a quick guide on the basic steps involved in natural hazard risk analysis. It briefly touches on some of the most common steps:  geocoding, hazard maps, damage curves and climate projections. I demonstrate how R can be used to assess exposure of assets with a simple example on flood risk for presidential palaces around the world.","authors":[{"author":"Francesco S. Bellelli","authorURL":{"https://fbellelli.com/":{}},"affiliation":"&nbsp;","affiliationURL":"#","orcidID":""}],"publishedDate":"2022-05-22T00:00:00.000+02:00","citationText":"Bellelli, 2022"}
+</script>
+
+<!--/radix_placeholder_front_matter-->
+<!--radix_placeholder_navigation_before_body-->
+<header class="header header--fixed" role="banner">
+<nav class="distill-site-nav distill-site-header">
+<div class="nav-left">
+<a href="../../index.html" class="title">F.S.Bellelli</a>
+<input id="distill-search" class="nav-search hidden" type="text" placeholder="Search..."/>
+</div>
+<div class="nav-right">
+<a href="../../index.html">
+<i class="fa fa-home" aria-hidden="true"></i>
+</a>
+<a href="../../about.html">About</a>
+<a href="../../research.html">Research</a>
+<div class="nav-dropdown">
+<button class="nav-dropbtn">
+Data
+ 
+<span class="down-arrow">&#x25BE;</span>
+</button>
+<div class="nav-dropdown-content">
+<a href="../../EDB-data.html">EDB extension</a>
+<a href="../../ratification-data.html">IEA ratification</a>
+</div>
+</div>
+<a href="../../projects.html">Other projects</a>
+<a href="javascript:void(0);" class="nav-toggle">&#9776;</a>
+</div>
+</nav>
+</header>
+<!--/radix_placeholder_navigation_before_body-->
+<!--radix_placeholder_site_before_body-->
+<!--/radix_placeholder_site_before_body-->
+
+<div class="d-title">
+<h1>A brief introduction to natural hazard risk analysis</h1>
+<!--radix_placeholder_categories-->
+<div class="dt-tags">
+  <a href="../../index.html#category:risk" class="dt-tag">risk</a>
+  <a href="../../index.html#category:coding" class="dt-tag">coding</a>
+  <a href="../../index.html#category:environment" class="dt-tag">environment</a>
+  <a href="../../index.html#category:other" class="dt-tag">other</a>
+</div>
+<!--/radix_placeholder_categories-->
+<p><p>This article is a quick guide on the basic steps involved in natural hazard risk analysis. It briefly touches on some of the most common steps: geocoding, hazard maps, damage curves and climate projections. I demonstrate how R can be used to assess exposure of assets with a simple example on flood risk for presidential palaces around the world.</p></p>
+</div>
+
+<div class="d-byline">
+  Francesco S. Bellelli true 
+  
+<br/>2022-05-22
+</div>
+
+<div class="d-article">
+<div class="d-contents d-contents-float">
+<nav class="l-text toc figcaption" id="TOC">
+<h3>Contents</h3>
+<ul>
+<li><a href="#first-things-first">First things first</a></li>
+<li><a href="#geocoding">Geocoding</a></li>
+<li><a href="#how-to-find-out-information-on-flood-risk">How to find out information on flood risk</a>
+<ul>
+<li><a href="#loading-hazard-maps">Loading hazard maps</a></li>
+<li><a href="#a-brief-note-on-coordinate-systems">A brief note on coordinate systems</a></li>
+</ul></li>
+<li><a href="#extracting-flood-risk-information">Extracting flood risk information</a>
+<ul>
+<li><a href="#intersecting-asset-location-with-hazard-maps">Intersecting asset location with hazard maps</a></li>
+<li><a href="#extracting-flood-depth-for-multiple-return-periods">Extracting flood depth for multiple return periods</a></li>
+<li><a href="#expected-flooding-levels">Expected flooding levels</a></li>
+</ul></li>
+<li><a href="#converting-hazard-distributions-into-expected-damages">Converting hazard distributions into expected damages</a>
+<ul>
+<li><a href="#damage-curves">Damage curves</a></li>
+<li><a href="#calculating-expected-damages">Calculating expected damages</a></li>
+</ul></li>
+<li><a href="#climate-change-the-elephant-in-the-room">Climate change: the elephant in the room</a></li>
+</ul>
+</nav>
+</div>
+<div class="layout-chunk" data-layout="l-body">
+<p><img src="flood.jpg" width="960" /></p>
+</div>
+<h2 id="first-things-first">First things first</h2>
+<p>The fundamental prerequisite for any risk exposure assessment is to have a list of assets for which we wish to conduct the analysis. As an illustrative purpose, we can imagine we have been tasked to analyse flood risk for presidential palaces around the world. This <a href="https://en.wikipedia.org/wiki/Presidential_palace">Wikipedia</a> page provides a list of palaces names with the name of the city and country in which they are located. I extracted, cleaned and saved the information of 143 presidential palaces in a <code>csv</code> file, which can be downloaded <a href="https://fbellelli.com/posts/natural-hazard-risk-analysis-in-r/presidential-palaces_geocoded_with_risk.csv">here</a> to follow along with the example.</p>
+<div class="layout-chunk" data-layout="l-body">
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span class='co'>#load list of palaces</span>
+<span class='va'>palaces</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/utils/read.table.html'>read.csv</a></span><span class='op'>(</span><span class='st'>"presidential_palaces_geocoded_with_risk.csv"</span>, encoding<span class='op'>=</span><span class='st'>"UTF-8"</span><span class='op'>)</span>
+</code></pre>
+</div>
+</div>
+<h2 id="geocoding">Geocoding</h2>
+<p>Once we have a collection of asset, the first step is to convert addresses into latitude and longitude coordinates — this operation is known as <strong>geocoding</strong>. Geocoding is important because it gives geographic coordinates that are easily interpretable by a computer. This will allow to place our assets on a map and extract information on flood risks.</p>
+<p>Geocoding is usually performed with an API (e.g. Google maps, OpenStreetMap, …) that takes <em>in</em> addresses and spits <em>out</em> coordinates. Nowadays, these APIs require the user to provide keys in order to limit the number of requests. Here is a list of the most common packages for doing this in R:</p>
+<ul>
+<li><code>ggmap</code></li>
+<li><code>nominatimlite</code></li>
+<li><code>osmdata</code></li>
+<li><code>tidygeocoder</code></li>
+</ul>
+<p>Attentive readers, might have noticed that we already provided longitude and latitudes in the example file. We got these coordinates with the following code.</p>
+<div class="layout-chunk" data-layout="l-body">
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span class='kw'><a href='https://rdrr.io/r/base/library.html'>library</a></span><span class='op'>(</span><span class='va'><a href='https://github.com/dkahle/ggmap'>ggmap</a></span><span class='op'>)</span>
+
+<span class='co'># insert personal google API key - this requires registration </span>
+<span class='fu'><a href='https://rdrr.io/pkg/ggmap/man/register_google.html'>register_google</a></span><span class='op'>(</span>key<span class='op'>=</span><span class='st'>"WRITE YOUR KEY HERE"</span><span class='op'>)</span>
+
+<span class='co'>#geocode addresses</span>
+<span class='va'>geo</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/pkg/ggmap/man/geocode.html'>geocode</a></span><span class='op'>(</span><span class='fu'><a href='https://rdrr.io/r/base/paste.html'>paste0</a></span><span class='op'>(</span><span class='va'>palaces</span><span class='op'>$</span><span class='va'>Building</span>,<span class='st'>", "</span>,<span class='va'>palaces</span><span class='op'>$</span><span class='va'>Country</span><span class='op'>)</span><span class='op'>)</span>
+
+<span class='co'>#import geocodes in table</span>
+<span class='va'>palaces</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/cbind.html'>cbind</a></span><span class='op'>(</span><span class='va'>palaces</span>,<span class='va'>geo</span><span class='op'>)</span>
+</code></pre>
+</div>
+</div>
+<p>Now that we have the coordinates of the palaces, we can easily place them on an interactive map with the package <code>leaflet</code>. The names of the palaces can be visualised by hovering over the markers.</p>
+<div class="layout-chunk" data-layout="l-body">
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span class='kw'><a href='https://rdrr.io/r/base/library.html'>library</a></span><span class='op'>(</span><span class='va'><a href='https://rstudio.github.io/leaflet/'>leaflet</a></span><span class='op'>)</span>
+
+<span class='fu'><a href='https://rdrr.io/pkg/leaflet/man/leaflet.html'>leaflet</a></span><span class='op'>(</span><span class='va'>palaces</span><span class='op'>)</span> <span class='op'><a href='https://rdrr.io/pkg/leaflet/man/leaflet-imports.html'>%&gt;%</a></span>
+  <span class='fu'><a href='https://rdrr.io/pkg/leaflet/man/map-layers.html'>addTiles</a></span><span class='op'>(</span><span class='op'>)</span> <span class='op'><a href='https://rdrr.io/pkg/leaflet/man/leaflet-imports.html'>%&gt;%</a></span>  
+  <span class='fu'><a href='https://rdrr.io/pkg/leaflet/man/map-layers.html'>addMarkers</a></span><span class='op'>(</span>lng<span class='op'>=</span> <span class='op'>~</span> <span class='va'>lon</span>, lat<span class='op'>=</span> <span class='op'>~</span> <span class='va'>lat</span>, label<span class='op'>=</span> <span class='op'>~</span> <span class='va'>Building</span><span class='op'>)</span>
+</code></pre>
+</div>
+<div id="htmlwidget-f735a6fb6d492038e021" style="width:624px;height:384px;" class="leaflet html-widget"></div>
+<script type="application/json" data-for="htmlwidget-f735a6fb6d492038e021">{"x":{"options":{"crs":{"crsClass":"L.CRS.EPSG3857","code":null,"proj4def":null,"projectedBounds":null,"options":{}}},"calls":[{"method":"addTiles","args":["https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",null,null,{"minZoom":0,"maxZoom":18,"tileSize":256,"subdomains":"abc","errorTileUrl":"","tms":false,"noWrap":false,"zoomOffset":0,"zoomReverse":false,"opacity":1,"zIndex":1,"detectRetina":false,"attribution":"&copy; <a href=\"https://openstreetmap.org\">OpenStreetMap<\/a> contributors, <a href=\"https://creativecommons.org/licenses/by-sa/2.0/\">CC-BY-SA<\/a>"}]},{"method":"addMarkers","args":[[36.7535686,6.3702928,-24.6521557,3.8480325,-4.2833186,5.3599517,6.8276228,11.5720765,30.0432148,30.0888643,30.09813,15.3355689,8.9806034,0.3921138,5.5797341,11.8638703,-1.282819,-19.0033026,-18.8791902,-13.9631425,12.6580318,18.0947803,-22.591141,9.0622697,-1.9393852,0.2602568,14.716677,2.041022,9.562389,-25.7378419,4.859363,15.5006544,36.844501,0.3208331,0.0511839,-15.428921,-17.8216288,-34.6080556,-34.515,13.1012,-16.4967711,-15.7990489,-33.4429091,4.5954066,9.9227382,23.1135925,23.1206272,15.414999,-0.219716,13.6851216,14.6426439,18.5430982,14.0887349,19.4324451,12.1149926,-25.2772267,-12.0448456,5.826814,10.677646,38.8976763,-34.9072255,-34.8601987,10.5080483,10.4878059,34.525212,40.1872023,40.4092617,23.7233727,39.904211,35.155663,-8.555501,28.6177247,17.5046669,31.1139028,-6.170131,-6.2087634,-6.7336086,-6.5980046,-7.8001506,-8.4149206,35.8161559,33.315241,31.7763078,51.1257401,37.5866076,39.1163434,39.063236,42.8772492,42.8822707,17.9624484,33.8417455,47.92075,19.7633057,27.7172453,33.732222,31.952162,14.5946001,1.3067039,7.263889,33.5176726,33.5188937,25.0399991,38.5766538,38.963745,37.9316011,41.2994958,40.116667,41.3583502,21.0392942,15.3694451,41.3189,48.2056578,53.9006011,43.8578928,42.6970493,45.837778,50.0910966,50.1239183,60.1683906,48.8697906,52.5175726,50.7227846,41.6956973,37.9727877,47.4978589,53.3596862,41.8996484,56.9509516,54.6832231,41.985771,35.8964431,35.8614473,47.0104529,52.243168,52.2131463,44.4345086,55.7505944,55.753038,44.8098391,48.149138,46.0490152,39.9308873,50.4483553],[3.0425182,2.3912362,25.9143093,11.5020752,15.2649343,-4.0082563,-5.2893433,43.1456475,31.247217,31.3193929,31.3041176,38.9308357,38.7577605,9.4426136,-0.1884806,-15.5849111,36.8000221,47.5285396,47.5079055,33.851701,-8.0112381,-15.9707222,17.100912,7.5185333,30.0836323,6.6210611,-17.4676861,45.336775,44.0770134,28.226743,31.57125,32.5598994,10.1993064,32.5804497,32.463708,28.3276983,31.0492259,-58.3702778,-58.483056,-59.5996,-68.1339357,-47.8607689,-70.6538699,-74.0775852,-84.0558275,-82.3665956,-82.38729,-61.370976,-78.5126074,-89.2398936,-90.5131097,-72.3388888,-87.1878363,-99.131193,-86.2361744,-57.6372439,-77.0297865,-55.151245,-61.511979,-77.0365298,-56.2001356,-56.1970177,-66.9193333,-66.8338841,69.1767397,44.515209,49.8670924,90.4180883,116.407395,33.3472557,125.5630338,77.1975612,78.5217595,77.2477895,106.8241607,106.845599,107.0410991,106.7974666,110.3637507,115.3109393,51.4240378,44.3660671,35.2128566,71.4463504,126.974811,125.8058622,125.7891197,74.6002389,74.5618441,102.6101184,35.5394954,106.917306,96.0785104,85.3239605,73.098333,35.233154,120.9946065,103.8431002,80.640278,36.2518981,36.2622372,121.5119507,68.7784685,35.243322,58.3841512,69.2400734,64.566667,69.3998445,105.834498,44.1910066,19.82,16.3647803,27.558972,18.4140776,23.3239639,15.958333,14.4016165,13.9562552,24.9563446,2.3164773,13.3527928,7.1172788,44.8110702,23.7408305,19.0380282,-6.3174136,12.4870235,24.1005816,25.2860246,21.4156881,14.4463108,14.4006292,28.8638103,21.0166125,21.0276429,26.0606683,37.615344,37.6190995,20.4632109,17.1077209,14.497814,32.7990765,30.5376094],null,null,null,{"interactive":true,"draggable":false,"keyboard":true,"title":"","alt":"","zIndexOffset":0,"opacity":1,"riseOnHover":false,"riseOffset":250},null,null,null,null,["El Mouradia, Algiers","Palais de la Marina, Cotonou","State House, Gaborone","The Unity Palace, Yaoundé","Palais du Peuple, Brazzaville","Presidential Palace, Abidjan","Presidential Palace, Yamoussoukro","Presidential Palace, Djibouti City","Abdeen Palace, Cairo","Heliopolis Palace, Cairo","Koubbeh Palace, Cairo","Asmara President's Office, Asmara","National Palace, Addis Ababa","Presidential Palace, Libreville","Jubilee House, Accra","Presidential Palace, Bissau","State House, Nairobi","Iavoloha Palace, Antananarivo","Ambohitsorohitra Palace, Antananarivo","Kamuzu Palace, Lilongwe","Presidential Palace, Bamako","Presidential Palace, Nouakchott","State House of Namibia, Windhoek","Nigerian Presidential Complex, Abuja","Urugwiro, Kigali","Presidential Palace, São Tomé","Presidential Palace, Dakar","Villa Somalia, Mogadishu","Presidential Palace, Hargeisa","Mahlamba Ndlopfu, Pretoria","Presidential Palace, Juba","Presidential Palace, Khartoum","Carthage Palace, Tunis","State House, Kampala","State House, Entebbe","State House, Lusaka","(former) Presidential Palace, Harare","Casa Rosada, Buenos Aires","Quinta de Olivos, Buenos Aires Province","State House, Bridgetown","Casa Grande del Pueblo, La Paz","Palácio do Planalto, Brasilia","La Moneda Palace, Santiago de Chile","Casa(Palacio) de Nariño, Bogotá","Casa Presidencial, San José","Presidential Palace (former), Havana","Palacio de la Revolucion, Havana","Government House, Roseau","Carondelet Palace, Quito","Casa Presidencial, San Salvador","National Palace, Guatemala City","National Palace, Port-au-Prince","Presidential Palace, Tegucigalpa","National Palace","Presidential Palace, Managua","Palacio de los López, Asunción","Government Palace, Lima","Gouvernementsgebouw, Paramaribo","President's House, Port of Spain","White House, Washington, D.C.","Executive Tower, Montevideo","Residencia de Suárez, Montevideo","Miraflores Palace, Caracas","La Casona","Arg, Kabul","President's House, Yerevan","Presidential Palace, Baku","Bangabhaban, Dhaka","Zhongnanhai, Beijing","Presidential Palace, Nicosia","Nicolau Lobato Presidential Palace, Dili","Rashtrapati Bhavan, New Delhi","Rashtrapati Nilayam, Hyderabad","The Retreat Building, Shimla","Istana Merdeka, Jakarta","Istana Negara, Jakarta","Istana Cipanas, Cipanas","Istana Bogor, Bogor","Gedung Agung, Yogyakarta","Istana Tampaksiring, Bali","Sa'dabad Palace, Tehran; Office of the Supreme Leader of Iran","Radwaniyah Palace, Baghdad","Beit HaNassi, Jerusalem","Ak Orda Presidential Palace, Nur-Sultan","Blue House, Seoul","Ryongsong Residence, Pyongyang","Kumsusan Palace of the Sun, Pyongyang","White House, Bishkek","Ala Archa State Residence, Bishkek","Presidential Palace, Vientiane","Baabda Palace, Beirut","Government Palace, Ulan Bator","Presidential Palace, Naypyidaw","Rastrapati Bhawan, Kathmandu","Aiwan-e-Sadr, Islamabad","Mukataa","Malacañang Palace, Manila","Istana, Singapore","President's Pavilion, Kandy","Presidential Palace, Damascus","Tishreen Palace, Damascus","Presidential Office Building, Taipei","Palace of Nations, Dushanbe","Presidential Compound (Turkey)","Oguzkhan Palace, Ashgabat","Ok Saroy Presidential Palace, Tashkent[22]","Durmen","Kuksaroy Presidential Palace, Tashkent","Presidential Palace, Hanoi","Presidential Palace, Sanaa","Presidential Palace of Tirana","Hofburg Palace, Vienna","Presidential Palace, Minsk","Presidency Building, Sarajevo","Presidential Palace, Sofia","Presidential Palace, Zagreb","Prague Castle, Prague","The Lány Chateau, Lány","Presidential Palace, Helsinki","Élysée Palace, Paris","Bellevue Palace, Berlin","Villa Hammerschmidt, Bonn","Orbeliani Presidental Palace, Tbilisi","Presidential Mansion, Athens","Sándor Palace, Buda","Áras an Uachtaráin, Dublin","Quirinal Palace, Rome","Riga Castle, Riga","Presidential Palace, Vilnius","Villa Vodno, Skopje","San Anton Palace, Attard","Verdala Palace, Siġġiewi","Presidential Palace, Chișinau","Presidential Palace, Warsaw","Belweder Palace, Warsaw","Cotroceni Palace, Bucharest","Grand Kremlin Palace, Moscow Kremlin","Kremlin Senate,\nMoscow Kremlin","Novi Dvor, Belgrade","Grassalkovich Palace, Bratislava","Presidential Palace, Ljubljana","Presidential Complex","Mariinskyi Palace, Kyiv"],{"interactive":false,"permanent":false,"direction":"auto","opacity":1,"offset":[0,0],"textsize":"10px","textOnly":false,"className":"","sticky":true},null]}],"limits":{"lat":[-34.9072255,60.1683906],"lng":[-99.131193,126.974811]}},"evals":[],"jsHooks":[]}</script>
+</div>
+<h2 id="how-to-find-out-information-on-flood-risk">How to find out information on flood risk</h2>
+<p>The goal of our analysis is to obtain information on the risk exposure of different assets. The easiest way to get it, is to refer to <strong>hazard maps</strong>. Hazard maps are maps which identify areas that are vulnerable to a particular hazard. They are built by experts based on geophysical modelling that incorporate all the main factors affecting hazard exposure. Many government agency across the world build hazard maps to manage risk in their countries. For instance, in the Unites States, the reference flood hazard map is the one from the Federal Emergency Management Agency (FEMA).</p>
+<h3 id="loading-hazard-maps">Loading hazard maps</h3>
+<p>In this example, we will use the <strong>riverine flood maps</strong> from <strong><a href="https://www.wri.org/data/aqueduct-floods-hazard-maps">Acqueduct</a></strong>, which have a resolution of 30 arc second (roughly 1km at the equator). Although higher granularity may be advisable for flood assessment, Acqueduct maps have the advantages of being publicly available, having a global coverage and having projections under different climate scenarios.</p>
+<p>Acqueduct flood maps are available for different <strong>return periods</strong> (2, 5, 10, 25, …, 1000 years). Return periods are the inverse of probabilities. For instance, a 1 in 100 year flood is a flood of such intensity that it will be equalled or exceeded on average once every 100 years, i.e. a flood which has a 1% probability of occurring in a given year.</p>
+<p>For each return period, Aqueduct’s flood map display the expected inundation depth (in meters). In other words, Aqueduct provides a set of flood map which give slices of the probability-depth joint distribution. The beautiful figure below illustrates how these maps look like. Lighter colours indicate inundated areas in the event of a 1 in 500 years flood. Understandibly, the map shows that areas around rivers are at higher risk of riverine floods and quantifies the severity of this risk in term of inundation depth.</p>
+<div class="layout-chunk" data-layout="l-screen">
+<div class="figure"><span style="display:block;" id="fig:unnamed-chunk-6"></span>
+<img src="rflood500.png" alt="Aqueduct riverine historical flood map - 500 year return period" width="1432" />
+<p class="caption">
+Figure 1: Aqueduct riverine historical flood map - 500 year return period
+</p>
+</div>
+</div>
+<p>Acqueduct flood maps come as raster files (<code>.tif</code>), in which each pixel encodes the expected inundation depth. We can use the package <code>terra</code> to work with this type of data in R. Let’s load the map with the following command</p>
+<div class="layout-chunk" data-layout="l-body">
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span class='kw'><a href='https://rdrr.io/r/base/library.html'>library</a></span><span class='op'>(</span><span class='va'><a href='https://rspatial.org/terra/'>terra</a></span><span class='op'>)</span>
+
+<span class='co'>#path to Aqueduct hazard map - riverine flooding (100 years return period) </span>
+<span class='va'>map_path</span> <span class='op'>&lt;-</span> <span class='st'>"http://wri-projects.s3.amazonaws.com/AqueductFloodTool/download/v2/inunriver_historical_000000000WATCH_1980_rp00100.tif"</span>
+
+<span class='co'>#load hazard map in R</span>
+<span class='va'>rflood100</span> <span class='op'>&lt;-</span> <span class='fu'>terra</span><span class='fu'>::</span><span class='fu'><a href='https://rdrr.io/pkg/terra/man/rast.html'>rast</a></span><span class='op'>(</span><span class='va'>map_path</span><span class='op'>)</span>
+</code></pre>
+</div>
+</div>
+<p>Notice that vector data (e.g. <code>.shp</code>, <code>GeoJSON</code>) are also a common formats for hazard maps. In vector formats the information is attached to polygons instead of pixels. For manipulating vector spatial data, the package <code>sf</code> is my favourite alternative. Vector data can be loaded with the functions <code>sf::read_sf()</code> or <code>terra::vect()</code>. Vector spatial data could be the subject of another post.</p>
+<h3 id="a-brief-note-on-coordinate-systems">A brief note on coordinate systems</h3>
+<p>Spatial data often comes with information on the underlying coordinate system and map projections. Computers programmes will often be able to read these information and automatically convert it as needed. However, it might occasionally be necessary to specify manually this information. For example, if we wish to indicate that our <code>lat</code> and <code>long</code> columns correspond to the latitude and longitude commonly used in the real world by GPS systems or to perform changes of coordinates for mapping.</p>
+<p>Therefire, it might be useful to know that latitude and longitude of points of assets and polygons are very often expressed in the <a href="https://en.wikipedia.org/wiki/World_Geodetic_System">World Geodesic System of 1984</a> (<strong>WGS84</strong>) and that rasterised maps normally use an <a href="https://en.wikipedia.org/wiki/Equirectangular_projection">equirectangular projection</a> because this projections maps the surface of the earth onto a grid, thus it can be easily linked to the pixels of an image.</p>
+<p>That being said, this topic is way to vast to fit in this article and my limited knowledge would not do justice to this fascinating corpus of scientific work. The issues associated with coordinate system, projections and their distortions kept bright human minds busy for centuries. I highly recommend <a href="https://www.icsm.gov.au/education/fundamentals-mapping/overview-fundamentals-mapping">this series of articles</a> from the Australian and New Zealand Spatial Information Council for a wonderfully written introduction on all these mapping topics.</p>
+<h2 id="extracting-flood-risk-information">Extracting flood risk information</h2>
+<p>Now that we have hazard maps with flood risk information and geocoded asset locations, all that is left to do is to extract information for our locations of interest.</p>
+<h3 id="intersecting-asset-location-with-hazard-maps">Intersecting asset location with hazard maps</h3>
+<p>We can use the same package, <code>terra</code>, to perform this operation with one line of code. First, we declare the columns <code>lon</code> and <code>lat</code> as coordinates for the palaces position. Then, we use the function <code>extract</code> to extract information from the flood map for our list of presidential palaces. Finally, we save the results in the palaces table.</p>
+<div class="layout-chunk" data-layout="l-body">
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span class='co'>#convert palaces into vector points</span>
+<span class='va'>palaces_vect</span> <span class='op'>&lt;-</span> <span class='fu'>terra</span><span class='fu'>::</span><span class='fu'><a href='https://rdrr.io/pkg/terra/man/vect.html'>vect</a></span><span class='op'>(</span><span class='va'>palaces</span>, geom<span class='op'>=</span><span class='fu'><a href='https://rdrr.io/pkg/terra/man/c.html'>c</a></span><span class='op'>(</span><span class='st'>"lon"</span>,<span class='st'>"lat"</span><span class='op'>)</span><span class='op'>)</span>
+
+<span class='co'>#extract information for palaces</span>
+<span class='va'>temp</span> <span class='op'>&lt;-</span> <span class='fu'>terra</span><span class='fu'>::</span><span class='fu'><a href='https://rdrr.io/pkg/terra/man/extract.html'>extract</a></span><span class='op'>(</span><span class='va'>rflood100</span>, <span class='va'>palaces_vect</span><span class='op'>)</span> 
+
+<span class='co'>#save extracted information in palaces table</span>
+<span class='va'>palaces</span><span class='op'>$</span><span class='va'>flood</span> <span class='op'>&lt;-</span> <span class='va'>temp</span><span class='op'>[</span>,<span class='fl'>2</span><span class='op'>]</span>
+</code></pre>
+</div>
+</div>
+<p>Citizens around the world will be pleased to hear that most palaces around the world are not at risk of getting flooded. In the following table we list the top ten palaces in which leaders are most likely to get their feet wet in case of a 1 in a 100 year flood. Only three palaces have a flooding depth higher than 1m, which could be considered as an extreme flood.</p>
+<div class="layout-chunk" data-layout="l-body">
+<table>
+<caption><span id="tab:unnamed-chunk-9">Table 1: </span>Ten worst flooded palaces in case of a 1 in 100 year flood</caption>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Country</th>
+<th style="text-align: left;">Building</th>
+<th style="text-align: center;">Flood depth (m)</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">Gabon</td>
+<td style="text-align: left;">Presidential Palace, Libreville</td>
+<td style="text-align: center;">3.4</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Sudan</td>
+<td style="text-align: left;">Presidential Palace, Khartoum</td>
+<td style="text-align: center;">2.4</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Germany</td>
+<td style="text-align: left;">Villa Hammerschmidt, Bonn</td>
+<td style="text-align: center;">2.3</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Tunisia</td>
+<td style="text-align: left;">Carthage Palace, Tunis</td>
+<td style="text-align: center;">0.9</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Philippines</td>
+<td style="text-align: left;">Malacañang Palace, Manila</td>
+<td style="text-align: center;">0.5</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Somalia</td>
+<td style="text-align: left;">Villa Somalia, Mogadishu</td>
+<td style="text-align: center;">0.3</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Kazakhstan</td>
+<td style="text-align: left;">Ak Orda Presidential Palace, Nur-Sultan</td>
+<td style="text-align: center;">0.3</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Germany</td>
+<td style="text-align: left;">Bellevue Palace, Berlin</td>
+<td style="text-align: center;">0.2</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">East Timor</td>
+<td style="text-align: left;">Nicolau Lobato Presidential Palace, Dili</td>
+<td style="text-align: center;">0.1</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Djibouti</td>
+<td style="text-align: left;">Presidential Palace, Djibouti City</td>
+<td style="text-align: center;">0.1</td>
+</tr>
+</tbody>
+</table>
+</div>
+<h3 id="extracting-flood-depth-for-multiple-return-periods">Extracting flood depth for multiple return periods</h3>
+<p>Now that we know how information can be extracted, we can repeat the procedure for different return periods so as to have a complete picture of the distribution for different flood severity. This is time-consuming step, hence, I already included the results in the <a href="https://fbellelli.com/posts/natural-hazard-risk-analysis-in-r/presidential-palaces_geocoded_with_risk.csv">example data</a>.</p>
+<div class="layout-chunk" data-layout="l-body">
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span class='co'>#convert palaces into vector points</span>
+<span class='va'>palaces_vect</span> <span class='op'>&lt;-</span> <span class='fu'>terra</span><span class='fu'>::</span><span class='fu'><a href='https://rdrr.io/pkg/terra/man/vect.html'>vect</a></span><span class='op'>(</span><span class='va'>palaces</span>, geom<span class='op'>=</span><span class='fu'><a href='https://rdrr.io/pkg/terra/man/c.html'>c</a></span><span class='op'>(</span><span class='st'>"lon"</span>,<span class='st'>"lat"</span><span class='op'>)</span><span class='op'>)</span>
+
+<span class='co'>#loop over all return periods</span>
+<span class='kw'>for</span> <span class='op'>(</span><span class='va'>i</span> <span class='kw'>in</span> <span class='fu'><a href='https://rdrr.io/pkg/terra/man/c.html'>c</a></span><span class='op'>(</span><span class='st'>"0002"</span>,<span class='st'>"0005"</span>,<span class='st'>"0010"</span>,<span class='st'>"0025"</span>,<span class='st'>"0050"</span>,<span class='st'>"0100"</span>,<span class='st'>"0250"</span>,<span class='st'>"0500"</span>,<span class='st'>"1000"</span><span class='op'>)</span><span class='op'>)</span><span class='op'>{</span>
+  
+  <span class='co'># prepare path to hazard map</span>
+  <span class='va'>map_path</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/paste.html'>paste0</a></span><span class='op'>(</span><span class='st'>"http://wri-projects.s3.amazonaws.com/AqueductFloodTool/download/v2/inunriver_historical_000000000WATCH_1980_rp0"</span>,<span class='va'>i</span>,<span class='st'>".tif"</span><span class='op'>)</span>
+
+  <span class='co'>#load map  </span>
+  <span class='va'>flood</span> <span class='op'>&lt;-</span> <span class='fu'>terra</span><span class='fu'>::</span><span class='fu'><a href='https://rdrr.io/pkg/terra/man/rast.html'>rast</a></span><span class='op'>(</span><span class='va'>map_path</span><span class='op'>)</span>
+  
+  <span class='co'>#extract information</span>
+  <span class='va'>temp</span> <span class='op'>&lt;-</span> <span class='fu'>terra</span><span class='fu'>::</span><span class='fu'><a href='https://rdrr.io/pkg/terra/man/extract.html'>extract</a></span><span class='op'>(</span><span class='va'>flood</span>, <span class='va'>palaces_vect</span><span class='op'>)</span>
+  
+  <span class='co'>#save information in palaces table</span>
+  <span class='va'>palaces</span><span class='op'>[</span>,<span class='fu'><a href='https://rdrr.io/r/base/paste.html'>paste0</a></span><span class='op'>(</span><span class='st'>"flood"</span>,<span class='va'>i</span><span class='op'>)</span><span class='op'>]</span> <span class='op'>&lt;-</span> <span class='va'>temp</span><span class='op'>[</span>,<span class='fl'>2</span><span class='op'>]</span>
+<span class='op'>}</span>
+</code></pre>
+</div>
+</div>
+<p>Having the full distribution of probability-depth of flooding allows to make some interesting comparisons. The next graph shows the risk profile of the three properties with the highest flooding risk.</p>
+<p>We can see that Villa Hammerschmidt (Bonn) has 10% (1/10 yr) probability of having a 1 meter flood, while the presidential palaces in Karthoum has around 3% (1/33 yr) of experiencing a flood with similar depth levels.</p>
+<p>Overall, it appears that Villa Hammerschmidt (Bonn) is more likely to get flooded regularly, while the presidential palace in Karthoum has lower flood probabilities, but it has higher expected flood depth in case of extreme floods (1 in 100 year or higher). Finally the presidential palace in Libreville has higher expected flooding levels for all return periods.</p>
+<div class="layout-chunk" data-layout="l-body">
+<div class="figure"><span style="display:block;" id="fig:unnamed-chunk-11"></span>
+<img src="natural-hazard-risk-analysis-in-r_files/figure-html5/unnamed-chunk-11-1.png" alt="Probability-depth distribution for the three most exposed palaces" width="624" />
+<p class="caption">
+Figure 2: Probability-depth distribution for the three most exposed palaces
+</p>
+</div>
+</div>
+<h3 id="expected-flooding-levels">Expected flooding levels</h3>
+<p>Having the full probability-severity distribution allows for a greater richness of details. However, sometimes it is handy to have a single metric that encapsulates the risk profile of an asset. To do this, we can calculate the annualised expected flood level by summing over the flood depths weighted by their probabilities (inverse of return period).</p>
+<p><span class="math display">\[ 
+E[\text{Flooding}]_i = \sum^{n}_{j=1}\frac{1}{RP_{j}}\cdot Depth_{ij}
+\]</span></p>
+<p>Where, <span class="math inline">\(i\)</span> is an index for the asset and <span class="math inline">\(j\)</span> an index for the <span class="math inline">\(n\)</span> available return periods. So that <span class="math inline">\(RP_{j}\)</span> indicates the return period associated with the <span class="math inline">\(j\)</span>-th index and <span class="math inline">\(Depth_{ij}\)</span> indicates the depth level expected for asset <span class="math inline">\(i\)</span> with return period <span class="math inline">\(RP_{j}\)</span>. We can implement this calculation in R by using the <code>dplyr</code>and <code>tidyr</code>packages.</p>
+<div class="layout-chunk" data-layout="l-body">
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span class='kw'><a href='https://rdrr.io/r/base/library.html'>library</a></span><span class='op'>(</span><span class='va'><a href='https://dplyr.tidyverse.org'>dplyr</a></span><span class='op'>)</span>
+<span class='kw'><a href='https://rdrr.io/r/base/library.html'>library</a></span><span class='op'>(</span><span class='va'><a href='https://tidyr.tidyverse.org'>tidyr</a></span><span class='op'>)</span>
+
+<span class='co'>#tidying up the table into a long format (this facilitates calculations in R)</span>
+<span class='va'>long_table</span> <span class='op'>&lt;-</span> <span class='va'>palaces</span> <span class='op'><a href='https://magrittr.tidyverse.org/reference/pipe.html'>%&gt;%</a></span>
+  <span class='fu'><a href='https://tidyr.tidyverse.org/reference/pivot_longer.html'>pivot_longer</a></span><span class='op'>(</span>cols<span class='op'>=</span><span class='fu'><a href='https://tidyselect.r-lib.org/reference/starts_with.html'>starts_with</a></span><span class='op'>(</span><span class='st'>"flood"</span><span class='op'>)</span>,
+               names_to <span class='op'>=</span> <span class='st'>"return_period"</span>,
+               values_to <span class='op'>=</span> <span class='st'>"flood_depth"</span><span class='op'>)</span> <span class='op'><a href='https://magrittr.tidyverse.org/reference/pipe.html'>%&gt;%</a></span>
+  <span class='fu'><a href='https://dplyr.tidyverse.org/reference/mutate.html'>mutate</a></span><span class='op'>(</span>return_period <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/pkg/terra/man/catalyze.html'>as.numeric</a></span><span class='op'>(</span><span class='fu'><a href='https://rdrr.io/r/base/substr.html'>substr</a></span><span class='op'>(</span><span class='va'>return_period</span>, <span class='fl'>6</span>,<span class='fl'>10</span><span class='op'>)</span><span class='op'>)</span><span class='op'>)</span>
+
+<span class='co'>#calculating the expected flood level</span>
+<span class='va'>risk_table</span> <span class='op'>&lt;-</span> <span class='va'>long_table</span> <span class='op'><a href='https://magrittr.tidyverse.org/reference/pipe.html'>%&gt;%</a></span>
+  <span class='fu'><a href='https://dplyr.tidyverse.org/reference/mutate.html'>mutate</a></span><span class='op'>(</span>probability <span class='op'>=</span> <span class='fl'>1</span><span class='op'>/</span><span class='va'>return_period</span>,
+         expected_flood <span class='op'>=</span> <span class='va'>probability</span> <span class='op'>*</span> <span class='va'>flood_depth</span><span class='op'>)</span> <span class='op'><a href='https://magrittr.tidyverse.org/reference/pipe.html'>%&gt;%</a></span>
+  <span class='fu'><a href='https://dplyr.tidyverse.org/reference/group_by.html'>group_by</a></span><span class='op'>(</span><span class='va'>Building</span><span class='op'>)</span> <span class='op'><a href='https://magrittr.tidyverse.org/reference/pipe.html'>%&gt;%</a></span>
+  <span class='fu'><a href='https://dplyr.tidyverse.org/reference/summarise.html'>summarise</a></span><span class='op'>(</span>expected_flood <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/pkg/terra/man/summarize-generics.html'>sum</a></span><span class='op'>(</span><span class='va'>expected_flood</span><span class='op'>)</span>, .groups<span class='op'>=</span><span class='st'>"drop"</span><span class='op'>)</span>
+</code></pre>
+</div>
+</div>
+<p>We can then rank the palaces according to this metric. We find that the Presidential palace in Libreville and the Villa Hammerschmidt (Bonn) are the palaces at greater risk of riverine flooding in our sample. It is plausible that these palaces are at high flood risk, the presidential palace in Libreville is located just next to the sea, and villa Hammerschmidt is built on the shores of the Rhine, as shown in the map below. However, the depth levels seems suspiciously high, it would be advisable to use alternative maps (possibly with higher granularity) to double-check these numbers. Perhaps the map used here do not take into account flood defences that were built to prevent regular flooding.</p>
+<div class="layout-chunk" data-layout="l-body">
+<table>
+<caption><span id="tab:unnamed-chunk-13">Table 2: </span>The ten palaces at highest flooding risk</caption>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Bulding</th>
+<th style="text-align: center;">Annualised expected flood level (cm)</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">Presidential Palace, Libreville</td>
+<td style="text-align: center;">53</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Villa Hammerschmidt, Bonn</td>
+<td style="text-align: center;">38</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Presidential Palace, Khartoum</td>
+<td style="text-align: center;">11</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Carthage Palace, Tunis</td>
+<td style="text-align: center;">10</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Villa Somalia, Mogadishu</td>
+<td style="text-align: center;">6</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Ak Orda Presidential Palace, Nur-Sultan</td>
+<td style="text-align: center;">5</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Malacañang Palace, Manila</td>
+<td style="text-align: center;">5</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Bellevue Palace, Berlin</td>
+<td style="text-align: center;">4</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Nicolau Lobato Presidential Palace, Dili</td>
+<td style="text-align: center;">2</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Presidential Palace, Djibouti City</td>
+<td style="text-align: center;">2</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="layout-chunk" data-layout="l-body">
+<div id="htmlwidget-bdee00b64d70a6819546" style="width:624px;height:384px;" class="leaflet html-widget"></div>
+<script type="application/json" data-for="htmlwidget-bdee00b64d70a6819546">{"x":{"options":{"crs":{"crsClass":"L.CRS.EPSG3857","code":null,"proj4def":null,"projectedBounds":null,"options":{}}},"calls":[{"method":"addTiles","args":["https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",null,null,{"minZoom":0,"maxZoom":18,"tileSize":256,"subdomains":"abc","errorTileUrl":"","tms":false,"noWrap":false,"zoomOffset":0,"zoomReverse":false,"opacity":1,"zIndex":1,"detectRetina":false,"attribution":"&copy; <a href=\"https://openstreetmap.org\">OpenStreetMap<\/a> contributors, <a href=\"https://creativecommons.org/licenses/by-sa/2.0/\">CC-BY-SA<\/a>"}]},{"method":"addMarkers","args":[50.7227846,7.1172788,null,null,null,{"interactive":true,"draggable":false,"keyboard":true,"title":"","alt":"","zIndexOffset":0,"opacity":1,"riseOnHover":false,"riseOffset":250},null,null,null,null,"Villa Hammerschmidt, Bonn",{"interactive":false,"permanent":false,"direction":"auto","opacity":1,"offset":[0,0],"textsize":"10px","textOnly":false,"className":"","sticky":true},null]}],"limits":{"lat":[50.7227846,50.7227846],"lng":[7.1172788,7.1172788]}},"evals":[],"jsHooks":[]}</script>
+</div>
+<h2 id="converting-hazard-distributions-into-expected-damages">Converting hazard distributions into expected damages</h2>
+<p>So far, the analysis has concentrated on quantifying the exposure to physical risks. Next, we might want to convert this exposure into expected damages to our assets. <strong>Damage curves</strong> are the standard tool applied to achieve this.</p>
+<h3 id="damage-curves">Damage curves</h3>
+<p>Damage curves, also vulnerability functions, are curves mapping the intensity of an hazard to the expected damage to an asset, which is typically expressed as a damage ratio — i.e. percentage of asset construction value that is lost. These curves are usually estimated from historical damage data.</p>
+<p>The actual damage incurred by an asset will depend on a multitude of factors. For example, in the case of a riverine flood, we can immagine that the presence of basement, the height of the house floor, number of floors, materials, construction methods, whether preventive measure have been taken, etc., are all factors that will modify the impact of flooding on the property.</p>
+<p>Therefore, <strong>there is no there is no universal damage curve that can be applied to all types of assets</strong>. Usually, different damage curves are devised according to key characteristics of the assets, such as material, construction techniques, positioning, orientation, shape, height, layout, number of windows, etc. This will allow to get a more accurate estimate of the effective hazard damages.</p>
+<p>Nevertheless, for the sake of this example, let’s keep things simple and assume a unique damage curve is representative for all presidential palaces. We will take an average damage curves without worrying too much about construction specifications. In the figure below, I plotted average damages curves developed in <a href="https://publications.jrc.ec.europa.eu/repository/handle/JRC105688">this research paper of the JRC (European Commission)</a> for different regions of the World. If you wish to download the curves used in this example, a cleaned version of the data is available<br />
+<a href="https://fbellelli.com/posts/natural-hazard-risk-analysis-in-r/flood_damage_curve_residential_buldings.csv">here</a>.</p>
+<div class="layout-chunk" data-layout="l-body">
+
+</div>
+<div class="layout-chunk" data-layout="l-body">
+<p><img src="natural-hazard-risk-analysis-in-r_files/figure-html5/unnamed-chunk-16-1.png" width="624" /></p>
+</div>
+<p>From the figure, it can be seen that on average building in Central and South America are more vulnerable than buildings in Asia. For the same inundation levels (x-axis), a higher damage ratio is expected (y-axis).</p>
+<p>In order to keep things simple, this example will only keep the European damage curve and apply it to all presidential palaces, irrespectively of their location. This choice is completely arbitrary. I chose to keep the European curve because it is the one which associates the lowest expected damages to floods. This selection is based on the criterion that presidential palaces are likely to be built with high specifications and usually undergo constant checks and maintenance. In any case, the purpose of this example is to illustrate to general process rather giving exact damage figures.</p>
+<div class="layout-chunk" data-layout="l-body">
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span class='co'>#load list of palaces</span>
+<span class='va'>damage_curve</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/utils/read.table.html'>read.csv</a></span><span class='op'>(</span><span class='st'>"flood_damage_curve_residential_buildings.csv"</span><span class='op'>)</span>
+
+<span class='co'>#Keep only the European curve and rename it</span>
+<span class='va'>damage_curve</span> <span class='op'>&lt;-</span> <span class='va'>damage_curve</span><span class='op'>[</span>,<span class='fu'><a href='https://rdrr.io/pkg/terra/man/c.html'>c</a></span><span class='op'>(</span><span class='st'>"FloodDepth"</span>,<span class='st'>"Europe"</span><span class='op'>)</span><span class='op'>]</span>
+<span class='fu'><a href='https://rdrr.io/r/base/colnames.html'>colnames</a></span><span class='op'>(</span><span class='va'>damage_curve</span><span class='op'>)</span><span class='op'>[</span><span class='fl'>2</span><span class='op'>]</span> <span class='op'>&lt;-</span> <span class='st'>"DamageRatio"</span>
+</code></pre>
+</div>
+</div>
+<h3 id="calculating-expected-damages">Calculating expected damages</h3>
+<p>The original damage curves in the JRC paper are defined by 9 flood depth points (0, 0.5, 1, …, 6). In order to get estimates for intermediate values (e.g. 0.3m of flooding) we can interpolate the damage ratios between these points. With the following code, I build a table that summarises the damage curve with a bit more granularity.</p>
+<div class="layout-chunk" data-layout="l-body">
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span class='va'>interpolated_damage_curve</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/data.frame.html'>data.frame</a></span><span class='op'>(</span>FloodDepth<span class='op'>=</span><span class='fu'><a href='https://rdrr.io/r/base/seq.html'>seq</a></span><span class='op'>(</span><span class='fl'>0</span>,<span class='fl'>6</span>,<span class='fl'>0.1</span><span class='op'>)</span><span class='op'>)</span>
+<span class='va'>interpolated_damage_curve</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://dplyr.tidyverse.org/reference/mutate-joins.html'>left_join</a></span><span class='op'>(</span><span class='va'>interpolated_damage_curve</span>, <span class='va'>damage_curve</span>, by<span class='op'>=</span><span class='st'>"FloodDepth"</span><span class='op'>)</span>
+
+<span class='kw'><a href='https://rdrr.io/r/base/library.html'>library</a></span><span class='op'>(</span><span class='va'><a href='https://zoo.R-Forge.R-project.org/'>zoo</a></span><span class='op'>)</span>
+<span class='va'>interpolated_damage_curve</span> <span class='op'>&lt;-</span> <span class='va'>interpolated_damage_curve</span> <span class='op'><a href='https://magrittr.tidyverse.org/reference/pipe.html'>%&gt;%</a></span>
+  <span class='fu'><a href='https://rdrr.io/pkg/zoo/man/zoo.html'>zoo</a></span><span class='op'>(</span><span class='va'>.</span><span class='op'>)</span><span class='op'><a href='https://magrittr.tidyverse.org/reference/pipe.html'>%&gt;%</a></span>
+  <span class='fu'><a href='https://rdrr.io/r/base/apply.html'>apply</a></span><span class='op'>(</span><span class='va'>.</span>, MARGIN <span class='op'>=</span> <span class='fl'>2</span>, FUN <span class='op'>=</span> <span class='fu'>zoo</span><span class='fu'>::</span><span class='va'><a href='https://rdrr.io/pkg/zoo/man/na.approx.html'>na.approx</a></span><span class='op'>)</span> <span class='op'><a href='https://magrittr.tidyverse.org/reference/pipe.html'>%&gt;%</a></span>
+  <span class='fu'><a href='https://rdrr.io/pkg/terra/man/as.data.frame.html'>as.data.frame</a></span><span class='op'>(</span><span class='op'>)</span>
+</code></pre>
+</div>
+</div>
+<p>Now that we have a nice summary table, we can easily import the expected damage ratio for each presidential palaces by matching the expected flooding level under different return periods with the ones in the interpolated damage curve table.</p>
+<div class="layout-chunk" data-layout="l-body">
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span class='co'>#In the data frame long table, each entry correspond to an asset-return period combination</span>
+
+<span class='co'>#merging is done on the rounded expected flood depth (converted to character to facilitate merging and avoid problems associated with floating point numbers)</span>
+<span class='va'>long_table</span><span class='op'>$</span><span class='va'>rounded_flood_depth</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/character.html'>as.character</a></span><span class='op'>(</span><span class='fu'><a href='https://rdrr.io/pkg/terra/man/math-generics.html'>round</a></span><span class='op'>(</span><span class='va'>long_table</span><span class='op'>$</span><span class='va'>flood_depth</span>,<span class='fl'>1</span><span class='op'>)</span><span class='op'>)</span>
+<span class='va'>interpolated_damage_curve</span><span class='op'>$</span><span class='va'>FloodDepth</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/character.html'>as.character</a></span><span class='op'>(</span><span class='va'>interpolated_damage_curve</span><span class='op'>$</span><span class='va'>FloodDepth</span><span class='op'>)</span>
+<span class='va'>long_table</span> <span class='op'>&lt;-</span> <span class='fu'>dplyr</span><span class='fu'>::</span><span class='fu'><a href='https://dplyr.tidyverse.org/reference/mutate-joins.html'>left_join</a></span><span class='op'>(</span><span class='va'>long_table</span>,<span class='va'>interpolated_damage_curve</span>,by<span class='op'>=</span><span class='fu'><a href='https://rdrr.io/pkg/terra/man/c.html'>c</a></span><span class='op'>(</span><span class='st'>"rounded_flood_depth"</span><span class='op'>=</span><span class='st'>"FloodDepth"</span><span class='op'>)</span><span class='op'>)</span>
+</code></pre>
+</div>
+</div>
+<p>Then, we can proceed to calculating the expected damage ratio for the presidential palaces by taking a weighted average of the damage ratios over each return period.</p>
+<p><span class="math display">\[ 
+E[\text{Damage}]_i = \sum^{n}_{j=1}\frac{1}{RP_{j}}\cdot Depth_{ij}\cdot DR_{ij}
+\]</span></p>
+<p>This formula is nearly identical to the one used for the average flood level, the only addition is the term <span class="math inline">\(DR_{ij}\)</span>, which indicates the damage ratio incurred by the palace <span class="math inline">\(i\)</span> in case of a flood with depth <span class="math inline">\(Depth_{ij}\)</span>. We can easily calculate this in R as follows:</p>
+<div class="layout-chunk" data-layout="l-body">
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span class='co'>#calculating the expected flood level</span>
+<span class='va'>damage_table</span> <span class='op'>&lt;-</span> <span class='va'>long_table</span> <span class='op'><a href='https://magrittr.tidyverse.org/reference/pipe.html'>%&gt;%</a></span>
+  <span class='fu'><a href='https://dplyr.tidyverse.org/reference/mutate.html'>mutate</a></span><span class='op'>(</span>probability <span class='op'>=</span> <span class='fl'>1</span><span class='op'>/</span><span class='va'>return_period</span>,
+         expected_flood_damage <span class='op'>=</span> <span class='va'>probability</span> <span class='op'>*</span> <span class='va'>flood_depth</span> <span class='op'>*</span> <span class='va'>DamageRatio</span><span class='op'>)</span> <span class='op'><a href='https://magrittr.tidyverse.org/reference/pipe.html'>%&gt;%</a></span>
+  <span class='fu'><a href='https://dplyr.tidyverse.org/reference/group_by.html'>group_by</a></span><span class='op'>(</span><span class='va'>Building</span><span class='op'>)</span> <span class='op'><a href='https://magrittr.tidyverse.org/reference/pipe.html'>%&gt;%</a></span>
+  <span class='fu'><a href='https://dplyr.tidyverse.org/reference/summarise.html'>summarise</a></span><span class='op'>(</span>expected_flood_damage <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/pkg/terra/man/summarize-generics.html'>sum</a></span><span class='op'>(</span><span class='va'>expected_flood_damage</span><span class='op'>)</span>, .groups<span class='op'>=</span><span class='st'>"drop"</span><span class='op'>)</span>
+</code></pre>
+</div>
+</div>
+<p>The table below lists the palaces that have the highest expected flood damage. As we already mentioned before, the results for the first three palaces seems suspiciously high — if the 28.3% expected annual damage from flood were an accurate figure, fisheries would be a more fitting allocation of the grounds of Gabon’s Presidential palaces. It would be advisable to use alternative maps (possibly with higher granularity) to double-check these numbers. Also, there might be preventive measures in place that the maps do not take into account (e.g. embankments) that can explain this resul.</p>
+<div class="layout-chunk" data-layout="l-body">
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span class='va'>damage_table</span> <span class='op'><a href='https://magrittr.tidyverse.org/reference/pipe.html'>%&gt;%</a></span> 
+  <span class='fu'><a href='https://dplyr.tidyverse.org/reference/arrange.html'>arrange</a></span><span class='op'>(</span><span class='fu'><a href='https://dplyr.tidyverse.org/reference/desc.html'>desc</a></span><span class='op'>(</span><span class='va'>expected_flood_damage</span><span class='op'>)</span><span class='op'>)</span><span class='op'><a href='https://magrittr.tidyverse.org/reference/pipe.html'>%&gt;%</a></span>
+  <span class='fu'><a href='https://rdrr.io/pkg/terra/man/headtail.html'>head</a></span><span class='op'>(</span><span class='fl'>10</span><span class='op'>)</span> <span class='op'><a href='https://magrittr.tidyverse.org/reference/pipe.html'>%&gt;%</a></span>
+  <span class='fu'><a href='https://dplyr.tidyverse.org/reference/mutate.html'>mutate</a></span><span class='op'>(</span>expected_flood_damage<span class='op'>=</span><span class='fl'>100</span><span class='op'>*</span><span class='va'>expected_flood_damage</span><span class='op'>)</span><span class='op'><a href='https://magrittr.tidyverse.org/reference/pipe.html'>%&gt;%</a></span>
+  <span class='fu'>knitr</span><span class='fu'>::</span><span class='fu'><a href='https://rdrr.io/pkg/knitr/man/kable.html'>kable</a></span><span class='op'>(</span><span class='va'>.</span>, 
+               caption<span class='op'>=</span><span class='st'>"The ten palaces with the highest expected flooding damages"</span>,
+               align<span class='op'>=</span><span class='fu'><a href='https://rdrr.io/pkg/terra/man/c.html'>c</a></span><span class='op'>(</span><span class='st'>"l"</span>,<span class='st'>"c"</span><span class='op'>)</span>,
+               col.names<span class='op'>=</span><span class='fu'><a href='https://rdrr.io/pkg/terra/man/c.html'>c</a></span><span class='op'>(</span><span class='st'>"Palace"</span>, <span class='st'>"Annualised expected damage (%)"</span><span class='op'>)</span>,
+               digits<span class='op'>=</span><span class='fl'>1</span><span class='op'>)</span>
+</code></pre>
+</div>
+<table>
+<caption><span id="tab:unnamed-chunk-21">Table 3: </span>The ten palaces with the highest expected flooding damages</caption>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Palace</th>
+<th style="text-align: center;">Annualised expected damage (%)</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">Presidential Palace, Libreville</td>
+<td style="text-align: center;">28.8</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Villa Hammerschmidt, Bonn</td>
+<td style="text-align: center;">16.6</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Presidential Palace, Khartoum</td>
+<td style="text-align: center;">6.2</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Carthage Palace, Tunis</td>
+<td style="text-align: center;">2.0</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Malacañang Palace, Manila</td>
+<td style="text-align: center;">0.7</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Villa Somalia, Mogadishu</td>
+<td style="text-align: center;">0.6</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Ak Orda Presidential Palace, Nur-Sultan</td>
+<td style="text-align: center;">0.4</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Bellevue Palace, Berlin</td>
+<td style="text-align: center;">0.2</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Nicolau Lobato Presidential Palace, Dili</td>
+<td style="text-align: center;">0.1</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Presidential Palace, Djibouti City</td>
+<td style="text-align: center;">0.1</td>
+</tr>
+</tbody>
+</table>
+</div>
+<h2 id="climate-change-the-elephant-in-the-room">Climate change: the elephant in the room</h2>
+<p>The entire analysis we conducted to this point ignores once crucial element: <strong>climate change</strong>. Because of it, extreme weather patterns are predicted to become more frequent and intense in most places around the globe. Hence, risk analyses should take this into account.</p>
+<p>Most hazard maps are based on historical data — they are <em>backward looking</em> by construction. The problem is that past occurrences might not be representative of future risk if the underlying climate is changing. The solution is using maps that incorporate the changes in risk due to climate change patterns. Climate models are used to predict how extreme weather events will change in the future under different emission scenarios.</p>
+<p>The problem of these climate models is that they have inherent uncertainty in predicting complex system over long horizon. Therefore, estimates may come with large uncertainty bands and vary between models. Moreover, Many of these models have low spatial granularity, therefore results may be too coarse to be translated into risk maps. Nevertheless, there is much research going on in this area and our understanding and tools will certainly get better in the near future.</p>
+<p>I would like to mention that the <strong><a href="https://www.wri.org/data/aqueduct-floods-hazard-maps">Acqueduct</a></strong> flood maps are available also under two different climate scenarios (RCP4.5 and RCP8.5) with prediction from four different climate models. Dear reader, a perfect exercise to test your understanding would be to replicate this analysis with one of the hazard maps under the RCP8.5 scenario (corresponding to a pessimistic, business as usual concentration pathway) and compare the results to the ones obtained here with historic data. How do results change for our list of presidential palaces? You should find an increase in flood risk and expected flood damages.</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r distill-force-highlighting-css"><code class="sourceCode r"></code></pre></div>
+<!--radix_placeholder_article_footer-->
+<div class="article-footer">
+  <p class="social_footer">
+    <span class="article-sharing">
+      Share: &nbsp;
+      <a href="https://twitter.com/share?text=A%20brief%20introduction%20to%20natural%20hazard%20risk%20analysis&amp;url=https%3A%2F%2Ffbellelli.com%2Fposts%2F2022-05-22-a-brief-introduction-to-natural-hazard-risk-analysis%2F">
+        <i class="fab fa-twitter"></i>
+      </a>
+      <a href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https%3A%2F%2Ffbellelli.com%2Fposts%2F2022-05-22-a-brief-introduction-to-natural-hazard-risk-analysis%2F&amp;title=A%20brief%20introduction%20to%20natural%20hazard%20risk%20analysis">
+        <i class="fab fa-linkedin"></i>
+      </a>
+      <a href="https://www.facebook.com/sharer/sharer.php?s=100&amp;p[url]=https%3A%2F%2Ffbellelli.com%2Fposts%2F2022-05-22-a-brief-introduction-to-natural-hazard-risk-analysis%2F">
+        <i class="fab fa-facebook"></i>
+      </a>
+    </span>
+  </p>
+</div>
+<!--/radix_placeholder_article_footer-->
+</div>
+
+<div class="d-appendix">
+</div>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src  = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+
+<!--radix_placeholder_site_after_body-->
+<!--/radix_placeholder_site_after_body-->
+<!--radix_placeholder_appendices-->
+<div class="appendix-bottom">
+  <h3 id="citation">Citation</h3>
+  <p>For attribution, please cite this work as</p>
+  <pre class="citation-appendix short">Bellelli (2022, May 22). F.S.Bellelli: A brief introduction to natural hazard risk analysis. Retrieved from https://fbellelli.com/posts/2022-05-22-a-brief-introduction-to-natural-hazard-risk-analysis/</pre>
+  <p>BibTeX citation</p>
+  <pre class="citation-appendix long">@misc{bellelli2022a,
+  author = {Bellelli, Francesco S.},
+  title = {F.S.Bellelli: A brief introduction to natural hazard risk analysis},
+  url = {https://fbellelli.com/posts/2022-05-22-a-brief-introduction-to-natural-hazard-risk-analysis/},
+  year = {2022}
+}</pre>
+</div>
+<!--/radix_placeholder_appendices-->
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN" "http://www.w3.org/TR/REC-html40/loose.dtd">
+<!--radix_placeholder_navigation_after_body--><html><body>
+<div class="distill-site-nav distill-site-footer">
+<p>Â© Copyright 2021 <strong><a href="https://fbellelli.com/about.html">Francesco S. Bellelli</a></strong></p>
+<p>All code, data, website content, and images are available under a <a href="https://creativecommons.org/licenses/by/4.0/">CC-BY 4.0 license</a>.</p>
+<div>
+        <a class=".plainlink" href="mailto:fsabellelli@gmail.com" title="Email me">
+          <span class="fa-stack fa-lg">
+            <i class="fas fa-envelope fa-stack-1x fa-inverse"></i>
+          </span>
+        </a>  
+        
+              <a class="plainlink" href="https://github.com/fbellelli" title="GitHub">
+        <span class="fa-stack fa-lg">
+          <i class="fab fa-github fa-stack-1x fa-inverse"></i>
+        </span>
+      </a>
+
+
+      <a class="plainlink" href="https://www.linkedin.com/in/francesco-saverio-bellelli-025852183/" title="Linkedin">
+        <span class="fa-stack fa-lg">
+          <i class="fab fa-linkedin fa-stack-1x fa-inverse"></i>
+        </span>
+      </a>
+
+    
+</div>
+</div>
+<!--/radix_placeholder_navigation_after_body-->
+</body></html>
+
+
+</body>
+
+</html>

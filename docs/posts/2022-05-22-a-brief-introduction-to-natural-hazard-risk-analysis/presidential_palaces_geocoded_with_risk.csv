@@ -1,0 +1,146 @@
+Country,Building,Notes,lon,lat,flood0002,flood0005,flood0010,flood0025,flood0050,flood0100,flood0250,flood0500,flood1000
+Algeria,"El Mouradia, Algiers","",3.0425182,36.7535686,0,0,0,0,0,0,0,0,0
+Benin,"Palais de la Marina, Cotonou","",2.3912362,6.3702928,0,0,0,0,0,0,0,0,0
+Botswana,"State House, Gaborone","",25.9143093,-24.6521557,0,0,0,0,0,0,0,0,0
+Cameroon,"The Unity Palace, Yaoundé","",11.5020752,3.8480325,0,0,0,0,0,0,0,0,0
+Republic of the Congo,"Palais du Peuple, Brazzaville","",15.2649343,-4.2833186,0,0,0,0,0,0,0,0,0
+Côte d'Ivoire,"Presidential Palace, Abidjan","",-4.0082563,5.3599517,0,0,0,0,0,0,0,0,0
+Côte d'Ivoire,"Presidential Palace, Yamoussoukro","",-5.2893433,6.8276228,0,0,0,0,0,0,0,0,0
+Djibouti,"Presidential Palace, Djibouti City","",43.1456475,11.5720765,0,0.0390175729990006,0.064745157957077,0.097156822681427,0.121197655797005,0.144992142915726,0.176221430301666,0.199765384197235,0.223201334476471
+Egypt,"Abdeen Palace, Cairo","",31.247217,30.0432148,0,0,0,0,0,0,0,0,0
+Egypt,"Heliopolis Palace, Cairo","",31.3193929,30.0888643,0,0,0,0,0,0,0,0,0
+Egypt,"Koubbeh Palace, Cairo","",31.3041176,30.09813,0,0,0,0,0,0,0,0,0
+Eritrea,"Asmara President's Office, Asmara","",38.9308357,15.3355689,0,0,0,0,0,0,0,0,0
+Ethiopia,"National Palace, Addis Ababa","",38.7577605,8.9806034,0,0,0,0,0,0,0,0,0
+Gabon,"Presidential Palace, Libreville","",9.4426136,0.3921138,0,0.822595953941345,1.51745545864105,2.31906342506409,2.87500548362732,3.4034469127655,4.06778526306152,4.54934597015381,5.01418209075928
+Ghana,"Jubilee House, Accra","",-0.1884806,5.5797341,0,0,0,0,0,0,0,0,0
+Guinea-Bissau,"Presidential Palace, Bissau","",-15.5849111,11.8638703,0,0,0,0,0,0,0,0,0
+Kenya,"State House, Nairobi","",36.8000221,-1.282819,0,0,0,0,0,0,0,0,0
+Madagascar,"Iavoloha Palace, Antananarivo","",47.5285396,-19.0033026,0,0,0,0,0,0,0,0,0
+Madagascar,"Ambohitsorohitra Palace, Antananarivo",Ceremonial residence,47.5079055,-18.8791902,0,0,0,0,0,0,0,0,0
+Malawi,"Kamuzu Palace, Lilongwe","",33.851701,-13.9631425,0,0,0,0,0,0,0,0,0
+Mali,"Presidential Palace, Bamako","",-8.0112381,12.6580318,0,0,0,0,0,0,0,0,0
+Mauritania,"Presidential Palace, Nouakchott","",-15.9707222,18.0947803,0,0,0,0,0,0,0,0,0
+Namibia,"State House of Namibia, Windhoek","",17.100912,-22.591141,0,0,0,0,0,0,0,0,0
+Nigeria,"Nigerian Presidential Complex, Abuja","",7.5185333,9.0622697,0,0,0,0,0,0,0,0,0
+Rwanda,"Urugwiro, Kigali","",30.0836323,-1.9393852,0,0.0190421901643276,0.0316497758030891,0.0475794896483421,0.0593970939517021,0.0711274147033691,0.0865722298622131,0.0982345789670944,0.109888240695
+São Tomé and Príncipe,"Presidential Palace, São Tomé","",6.6210611,0.2602568,0,0,0,0,0,0,0,0,0
+Senegal,"Presidential Palace, Dakar","",-17.4676861,14.716677,0,0,0,0,0,0,0,0,0
+Somalia,"Villa Somalia, Mogadishu","",45.336775,2.041022,0,0.0941378027200699,0.155700027942657,0.23263230919838,0.289112091064453,0.344724178314209,0.41730660200119,0.47158282995224,0.525436997413635
+Somaliland,"Presidential Palace, Hargeisa","",44.0770134,9.562389,0,0,0,0,0,0,0,0,0
+South Africa,"Mahlamba Ndlopfu, Pretoria","",28.226743,-25.7378419,0,0,0,0,0,0,0,0,0
+South Sudan,"Presidential Palace, Juba","",31.57125,4.859363,0,0,0,0,0,0,0,0,0
+Sudan,"Presidential Palace, Khartoum","",32.5598994,15.5006544,0,0,0,0.722564697265625,1.62152671813965,2.38503265380859,3.26209449768066,3.84800338745117,4.38951110839844
+Tunisia,"Carthage Palace, Tunis","",10.1993064,36.844501,0,0.106590047478676,0.243784993886948,0.485242187976837,0.671753168106079,0.863936543464661,1.11386322975159,1.29960894584656,1.48381423950195
+Uganda,"State House, Kampala","",32.5804497,0.3208331,0,0,0,0,0,0,0,0,0
+Uganda,"State House, Entebbe","",32.463708,0.0511839,0,0,0,0,0,0,0,0,0
+Zambia,"State House, Lusaka","",28.3276983,-15.428921,0,0,0,0,0,0,0,0,0
+Zimbabwe,"(former) Presidential Palace, Harare","",31.0492259,-17.8216288,0,0,0,0,0,0,0,0,0
+Argentina,"Casa Rosada, Buenos Aires",Government Office,-58.3702778,-34.6080556,0,0,0,0,0,0,0,0,0
+Argentina,"Quinta de Olivos, Buenos Aires Province",Official Residence,-58.483056,-34.515,0,0,0,0,0,0,0,0,0
+Barbados,"State House, Bridgetown",Official Residence,-59.5996,13.1012,0,0,0,0,0,0,0,0,0
+Bolivia,"Casa Grande del Pueblo, La Paz","",-68.1339357,-16.4967711,0,0,0,0,0,0,0,0,0
+Brazil,"Palácio do Planalto, Brasilia",Official workplace,-47.8607689,-15.7990489,0,0,0,0,0,0,0,0,0
+Chile,"La Moneda Palace, Santiago de Chile",Official office,-70.6538699,-33.4429091,0,0,0,0,0,0,0,0,0
+Colombia,"Casa(Palacio) de Nariño, Bogotá","",-74.0775852,4.5954066,0,0,0,0,0,0,0,0,0
+Costa Rica,"Casa Presidencial, San José","",-84.0558275,9.9227382,0,0,0,0,0,0,0,0,0
+Cuba,"Presidential Palace (former), Havana",Has been a museum since 1959,-82.3665956,23.1135925,0,0.0265826247632504,0.044102631509304,0.0661790519952774,0.0825101435184479,0.098675012588501,0.119912728667259,0.135875016450882,0.151777923107147
+Cuba,"Palacio de la Revolucion, Havana","",-82.38729,23.1206272,0,0.0265826247632504,0.044102631509304,0.0661790519952774,0.0825101435184479,0.098675012588501,0.119912728667259,0.135875016450882,0.151777923107147
+Dominica,"Government House, Roseau","",-61.370976,15.414999,0,0,0,0,0,0,0,0,0
+Ecuador,"Carondelet Palace, Quito","",-78.5126074,-0.219716,0,0,0,0,0,0,0,0,0
+El Salvador,"Casa Presidencial, San Salvador","",-89.2398936,13.6851216,0,0,0,0,0,0,0,0,0
+Guatemala,"National Palace, Guatemala City","",-90.5131097,14.6426439,0,0,0,0,0,0,0,0,0
+Haiti,"National Palace, Port-au-Prince","",-72.3388888,18.5430982,0,0,0,0,0,0,0,0,0
+Honduras,"Presidential Palace, Tegucigalpa","",-87.1878363,14.0887349,0,0,0,0,0,0,0,0,0
+Mexico,National Palace,Official office and official residence of the president,-99.131193,19.4324451,0,0,0,0,0,0,0,0,0
+Nicaragua,"Presidential Palace, Managua","",-86.2361744,12.1149926,0,0,0,0,0,0,0,0,0
+Paraguay,"Palacio de los López, Asunción","",-57.6372439,-25.2772267,0,0,0,0,0,0,0,0,0
+Peru,"Government Palace, Lima","",-77.0297865,-12.0448456,0,0.0165862403810024,0.0274738036096096,0.0412267372012138,0.0514247044920921,0.0615455061197281,0.0748699605464935,0.084930807352066,0.0949839949607849
+Suriname,"Gouvernementsgebouw, Paramaribo","",-55.151245,5.826814,0,0,0,0,0,0,0,0,0
+Trinidad and Tobago,"President's House, Port of Spain","",-61.511979,10.677646,0,0,0,0,0,0,0,0,0
+United States,"White House, Washington, D.C.",Official Residence,-77.0365298,38.8976763,0,0,0,0,0,0,0,0,0
+Uruguay,"Executive Tower, Montevideo",Government Office,-56.2001356,-34.9072255,0,0,0,0,0,0,0,0,0
+Uruguay,"Residencia de Suárez, Montevideo",Official Residence,-56.1970177,-34.8601987,0,0,0,0,0,0,0,0,0
+Venezuela,"Miraflores Palace, Caracas",Government Office,-66.9193333,10.5080483,0,0,0,0,0,0,0,0,0
+Venezuela,La Casona,Official Residence,-66.8338841,10.4878059,0,0,0,0,0,0,0,0,0
+Afghanistan,"Arg, Kabul",Meeting place of the Cabinet of Afghanistan[20],69.1767397,34.525212,0,0,0,0,0,0,0,0,0
+Armenia,"President's House, Yerevan","",44.515209,40.1872023,0,0,0,0,0,0,0,0,0
+Azerbaijan,"Presidential Palace, Baku",Built in 1970s,49.8670924,40.4092617,0,0,0,0,0,0,0,0,0
+Bangladesh,"Bangabhaban, Dhaka",Built in 1905,90.4180883,23.7233727,0,0,0,0,0,0,0,0,0
+People's Republic of China,"Zhongnanhai, Beijing","Headquarters of the Chinese Communist Party
+Government office",116.407395,39.904211,0,0,0,0,0,0,0,0,0
+Cyprus,"Presidential Palace, Nicosia","",33.3472557,35.155663,0,0,0,0,0,0,0,0,0
+East Timor,"Nicolau Lobato Presidential Palace, Dili","",125.5630338,-8.555501,0,0.0401532649993897,0.0666987597942352,0.10018852353096,0.125010818243027,0.149648636579514,0.182087421417236,0.206568866968155,0.230997353792191
+India,"Rashtrapati Bhavan, New Delhi","",77.1975612,28.6177247,0,0,0,0,0,0,0,0,0
+India,"Rashtrapati Nilayam, Hyderabad",Winter Retreat,78.5217595,17.5046669,0,0,0,0,0,0,0,0,0
+India,"The Retreat Building, Shimla",Summer Retreat,77.2477895,31.1139028,0,0,0,0,0,0,0,0,0
+Indonesia,"Istana Merdeka, Jakarta","",106.8241607,-6.170131,0,0.0283583663403988,0.0470834746956825,0.070650652050972,0.0880612283945084,0.105311095714569,0.127948522567749,0.144976079463959,0.161908179521561
+Indonesia,"Istana Negara, Jakarta","",106.845599,-6.2087634,0,0.0283583663403988,0.0470834746956825,0.070650652050972,0.0880612283945084,0.105311095714569,0.127948522567749,0.144976079463959,0.161908179521561
+Indonesia,"Istana Cipanas, Cipanas","",107.0410991,-6.7336086,0,0,0,0,0,0,0,0,0
+Indonesia,"Istana Bogor, Bogor","",106.7974666,-6.5980046,0,0,0,0,0,0,0,0,0
+Indonesia,"Gedung Agung, Yogyakarta","",110.3637507,-7.8001506,0,0,0,0,0,0,0,0,0
+Indonesia,"Istana Tampaksiring, Bali","",115.3109393,-8.4149206,0,0,0,0,0,0,0,0,0
+Iran,"Sa'dabad Palace, Tehran; Office of the Supreme Leader of Iran","",51.4240378,35.8161559,0,0,0,0,0,0,0,0,0
+Iraq,"Radwaniyah Palace, Baghdad","",44.3660671,33.315241,0,0,0,0,0,0,0,0,0
+Israel,"Beit HaNassi, Jerusalem","",35.2128566,31.7763078,0,0,0,0,0,0,0,0,0
+Kazakhstan,"Ak Orda Presidential Palace, Nur-Sultan","",71.4463504,51.1257401,0,0.0855895280838013,0.139708966016769,0.205867633223534,0.253224551677704,0.298970013856888,0.357546985149384,0.400458216667175,0.442432552576065
+South Korea,"Blue House, Seoul","",126.974811,37.5866076,0,0,0,0,0,0,0,0,0
+North Korea,"Ryongsong Residence, Pyongyang",Current residence,125.8058622,39.1163434,0,0,0,0,0,0,0,0,0
+North Korea,"Kumsusan Palace of the Sun, Pyongyang",Former residence,125.7891197,39.063236,0,0,0,0,0,0,0,0,0
+Kyrgyzstan,"White House, Bishkek",Former Residence,74.6002389,42.8772492,0,0,0,0,0,0,0,0,0
+Kyrgyzstan,"Ala Archa State Residence, Bishkek",Current residence,74.5618441,42.8822707,0,0,0,0,0,0,0,0,0
+Laos,"Presidential Palace, Vientiane","",102.6101184,17.9624484,0,0,0,0,0,0,0,0,0
+Lebanon,"Baabda Palace, Beirut","",35.5394954,33.8417455,0,0.00238540302962065,0.00396474543958902,0.015523356385529,0.0275152660906315,0.0394186079502106,0.0550790056586266,0.0668962001800537,0.0787045806646347
+Mongolia,"Government Palace, Ulan Bator",Also seat of government,106.917306,47.92075,0,0,0,0,0,0,0,0,0
+Myanmar,"Presidential Palace, Naypyidaw",Presidential Residence and Office,96.0785104,19.7633057,0,0,0,0,0,0,0,0,0
+Nepal,"Rastrapati Bhawan, Kathmandu","",85.3239605,27.7172453,0,0,0,0,0,0,0,0,0
+Pakistan,"Aiwan-e-Sadr, Islamabad","",73.098333,33.732222,0,0,0,0,0,0,0,0,0
+Palestine,Mukataa,Presidential Palace and Compound,35.233154,31.952162,0,0,0,0,0,0,0,0,0
+Philippines,"Malacañang Palace, Manila",Presidential Residence and Office,120.9946065,14.5946001,0,0.0197704136371613,0.143461257219315,0.294852465391159,0.403860181570053,0.508899092674255,0.689854264259338,0.854843735694885,1.01505863666534
+Singapore,"Istana, Singapore","",103.8431002,1.3067039,0,0,0,0,0,0,0,0,0
+Sri Lanka,"President's Pavilion, Kandy","",80.640278,7.263889,0,0,0,0,0,0,0,0,0
+Syria,"Presidential Palace, Damascus","",36.2518981,33.5176726,0,0.0193736739456654,0.0321871414780617,0.0481929555535317,0.0599963441491127,0.0716415494680405,0.0869743078947067,0.0985004901885986,0.109999895095825
+Syria,"Tishreen Palace, Damascus","",36.2622372,33.5188937,0,0,0,0,0,0,0,0,0
+Taiwan (Republic of China),"Presidential Office Building, Taipei","",121.5119507,25.0399991,0,0,0,0,0,0,0,0,0
+Tajikistan,"Palace of Nations, Dushanbe","",68.7784685,38.5766538,0,0,0,0,0,0,0,0,0
+Turkey,Presidential Compound (Turkey),"",35.243322,38.963745,0,0,0,0,0,0,0,0,0
+Turkmenistan,"Oguzkhan Palace, Ashgabat","",58.3841512,37.9316011,0,0,0,0,0,0,0,0,0
+Uzbekistan,"Ok Saroy Presidential Palace, Tashkent[22]",Former Residence,69.2400734,41.2994958,0,0,0,0,0,0,0,0,0
+Uzbekistan,Durmen,Former residence,64.566667,40.116667,0,0,0,0,0,0,0,0,0
+Uzbekistan,"Kuksaroy Presidential Palace, Tashkent",Current residence,69.3998445,41.3583502,0,0,0,0,0,0,0,0,0
+Vietnam,"Presidential Palace, Hanoi","",105.834498,21.0392942,0,0,0,0,0,0,0,0,0
+Yemen,"Presidential Palace, Sanaa","",44.1910066,15.3694451,0,0,0,0,0,0,0,0,0
+Albania,Presidential Palace of Tirana,"",19.82,41.3189,0,0,0,0,0,0,0,0,0
+Austria,"Hofburg Palace, Vienna","",16.3647803,48.2056578,0,0,0,0,0,0,0,0,0
+Belarus,"Presidential Palace, Minsk","",27.558972,53.9006011,0,0,0,0,0,0,0,0,0
+Bosnia and Herzegovina,"Presidency Building, Sarajevo","",18.4140776,43.8578928,0,0,0,0,0,0,0,0,0
+Bulgaria,"Presidential Palace, Sofia","",23.3239639,42.6970493,0,0,0,0,0,0,0,0,0
+Croatia,"Presidential Palace, Zagreb","",15.958333,45.837778,0,0,0,0,0,0,0,0,0
+Czech Republic,"Prague Castle, Prague",Main residence,14.4016165,50.0910966,0,0,0,0,0,0,0,0,0
+Czech Republic,"The Lány Chateau, Lány",Secondary residence,13.9562552,50.1239183,0,0,0,0,0,0,0,0,0
+Finland,"Presidential Palace, Helsinki","",24.9563446,60.1683906,0,0.00314289797097445,0.00522371660917997,0.00785281416028738,0.0098032308742404,0.011739238165319,0.0142882997170091,0.0162130855023861,0.0181364417076111
+France,"Élysée Palace, Paris","",2.3164773,48.8697906,0,0,0,0,0,0,0,0,0
+Germany,"Bellevue Palace, Berlin",Primary residence,13.3527928,52.5175726,0,0.0601148456335068,0.098132386803627,0.145276099443436,0.179812461137772,0.213547438383102,0.256879091262817,0.28896427154541,0.31987726688385
+Germany,"Villa Hammerschmidt, Bonn",Secondary residence,7.1172788,50.7227846,0,0.648381114006043,1.06456327438354,1.57206559181213,1.93816161155701,2.2885799407959,2.73439502716064,3.05430936813355,3.36718034744263
+Georgia,"Orbeliani Presidental Palace, Tbilisi","",44.8110702,41.6956973,0,0,0,0,0,0,0,0,0
+Greece,"Presidential Mansion, Athens","",23.7408305,37.9727877,0,0,0,0,0,0,0,0,0
+Hungary,"Sándor Palace, Buda","",19.0380282,47.4978589,0,0,0,0,0,0,0,0,0
+Ireland,"Áras an Uachtaráin, Dublin","",-6.3174136,53.3596862,0,0,0,0,0,0,0,0,0
+Italy,"Quirinal Palace, Rome","",12.4870235,41.8996484,0,0,0,0,0,0,0,0,0
+Latvia,"Riga Castle, Riga","",24.1005816,56.9509516,0,0,0,0,0,0,0,0,0
+Lithuania,"Presidential Palace, Vilnius","",25.2860246,54.6832231,0,0,0,0,0,0,0,0,0
+North Macedonia,"Villa Vodno, Skopje","",21.4156881,41.985771,0,0,0,0,0,0,0,0,0
+Malta,"San Anton Palace, Attard",Official residence,14.4463108,35.8964431,0,0,0,0,0,0,0,0,0
+Malta,"Verdala Palace, Siġġiewi",Summer residence,14.4006292,35.8614473,0,0,0,0,0,0,0,0,0
+Moldova,"Presidential Palace, Chișinau","",28.8638103,47.0104529,0,0,0,0,0,0,0,0,0
+Poland,"Presidential Palace, Warsaw",Official workplace,21.0166125,52.243168,0,0,0,0,0,0,0,0,0
+Poland,"Belweder Palace, Warsaw",Official residence,21.0276429,52.2131463,0,0,0,0,0,0,0,0,0
+Romania,"Cotroceni Palace, Bucharest","",26.0606683,44.4345086,0,0,0,0,0,0,0,0,0
+Russia,"Grand Kremlin Palace, Moscow Kremlin",Ceremonial residence,37.615344,55.7505944,0,0,0,0,0,0,0,0,0
+Russia,"Kremlin Senate,
+Moscow Kremlin",Working residence,37.6190995,55.753038,0,0,0,0,0,0,0,0,0
+Serbia,"Novi Dvor, Belgrade","",20.4632109,44.8098391,0,0,0,0,0,0,0,0,0
+Slovakia,"Grassalkovich Palace, Bratislava","",17.1077209,48.149138,0,0,0,0,0,0,0,0,0
+Slovenia,"Presidential Palace, Ljubljana",Also seat of government,14.497814,46.0490152,0,0,0,0,0,0,0,0,0
+Turkey,Presidential Complex,"",32.7990765,39.9308873,0,0,0,0,0,0,0,0,0
+Ukraine,"Mariinskyi Palace, Kyiv","",30.5376094,50.4483553,0,0,0,0,0,0,0,0,0
