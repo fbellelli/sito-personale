@@ -1,75 +1,75 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd" version="1.0">
   <url>
-    <loc>https://fbellelli.com/about.html</loc>
+    <loc>https://fbellelli.com/posts/about.html</loc>
     <lastmod>2022-03-20T13:21:54+01:00</lastmod>
   </url>
   <url>
-    <loc>https://fbellelli.com/EDB-data.html</loc>
+    <loc>https://fbellelli.com/posts/EDB-data.html</loc>
     <lastmod>2022-05-13T11:33:52+02:00</lastmod>
   </url>
   <url>
-    <loc>https://fbellelli.com/</loc>
+    <loc>https://fbellelli.com/posts/</loc>
     <lastmod>2021-10-22T13:55:27+02:00</lastmod>
   </url>
   <url>
-    <loc>https://fbellelli.com/projects.html</loc>
+    <loc>https://fbellelli.com/posts/projects.html</loc>
     <lastmod>2022-03-26T00:16:15+01:00</lastmod>
   </url>
   <url>
-    <loc>https://fbellelli.com/ratification-data.html</loc>
+    <loc>https://fbellelli.com/posts/ratification-data.html</loc>
     <lastmod>2021-10-22T13:55:28+02:00</lastmod>
   </url>
   <url>
-    <loc>https://fbellelli.com/research.html</loc>
+    <loc>https://fbellelli.com/posts/research.html</loc>
     <lastmod>2022-05-13T11:34:57+02:00</lastmod>
   </url>
   <url>
-    <loc>https://fbellelli.com/posts/2022-05-22-a-brief-introduction-to-natural-hazard-risk-analysis/</loc>
-    <lastmod>2022-05-22T11:45:28+02:00</lastmod>
+    <loc>https://fbellelli.com/posts/posts/2022-05-22-a-brief-introduction-to-natural-hazard-risk-analysis/</loc>
+    <lastmod>2022-05-22T11:45:30+02:00</lastmod>
   </url>
   <url>
-    <loc>https://fbellelli.com/posts/2022-02-27-first-version-of-countries/</loc>
+    <loc>https://fbellelli.com/posts/posts/2022-02-27-first-version-of-countries/</loc>
     <lastmod>2022-03-26T00:15:39+01:00</lastmod>
   </url>
   <url>
-    <loc>https://fbellelli.com/posts/2021-12-18-mishmash-of-charts/</loc>
-    <lastmod>2022-05-14T16:36:26+02:00</lastmod>
+    <loc>https://fbellelli.com/posts/posts/2021-12-18-mishmash-of-charts/</loc>
+    <lastmod>2022-05-14T16:36:32+02:00</lastmod>
   </url>
   <url>
-    <loc>https://fbellelli.com/posts/2021-11-16-the-world-trade-report-is-out/</loc>
-    <lastmod>2022-05-13T22:06:35+02:00</lastmod>
+    <loc>https://fbellelli.com/posts/posts/2021-11-16-the-world-trade-report-is-out/</loc>
+    <lastmod>2022-05-13T22:06:38+02:00</lastmod>
   </url>
   <url>
-    <loc>https://fbellelli.com/posts/2021-10-24-all-you-need-to-know-about-the-paris-agreement-ahead-of-cop26/</loc>
+    <loc>https://fbellelli.com/posts/posts/2021-10-24-all-you-need-to-know-about-the-paris-agreement-ahead-of-cop26/</loc>
     <lastmod>2021-12-18T22:44:50+01:00</lastmod>
   </url>
   <url>
-    <loc>https://fbellelli.com/posts/2021-08-15-pandemic-and-the-office-space-market/</loc>
+    <loc>https://fbellelli.com/posts/posts/2021-08-15-pandemic-and-the-office-space-market/</loc>
     <lastmod>2021-12-18T22:42:46+01:00</lastmod>
   </url>
   <url>
-    <loc>https://fbellelli.com/posts/2021-07-08-the-fascinating-world-of-voronoi-diagrams/</loc>
+    <loc>https://fbellelli.com/posts/posts/2021-07-08-the-fascinating-world-of-voronoi-diagrams/</loc>
     <lastmod>2021-12-18T22:38:50+01:00</lastmod>
   </url>
   <url>
-    <loc>https://fbellelli.com/posts/2021-06-20-a-package-for-country-data/</loc>
+    <loc>https://fbellelli.com/posts/posts/2021-06-20-a-package-for-country-data/</loc>
     <lastmod>2022-01-11T11:26:28+01:00</lastmod>
   </url>
   <url>
-    <loc>https://fbellelli.com/posts/2021-04-03-tilemaster-a-strategy-game-in-shiny/</loc>
+    <loc>https://fbellelli.com/posts/posts/2021-04-03-tilemaster-a-strategy-game-in-shiny/</loc>
     <lastmod>2022-01-11T11:53:14+01:00</lastmod>
   </url>
   <url>
-    <loc>https://fbellelli.com/posts/2021-03-20-how-to-increase-participation-in-environmental-agreements/</loc>
+    <loc>https://fbellelli.com/posts/posts/2021-03-20-how-to-increase-participation-in-environmental-agreements/</loc>
     <lastmod>2021-12-18T22:30:02+01:00</lastmod>
   </url>
   <url>
-    <loc>https://fbellelli.com/posts/2021-01-27-watercolours/</loc>
+    <loc>https://fbellelli.com/posts/posts/2021-01-27-watercolours/</loc>
     <lastmod>2021-12-18T22:27:35+01:00</lastmod>
   </url>
   <url>
-    <loc>https://fbellelli.com/posts/2021-01-20-mappa-licita-naturale/</loc>
+    <loc>https://fbellelli.com/posts/posts/2021-01-20-mappa-licita-naturale/</loc>
     <lastmod>2021-12-18T22:25:27+01:00</lastmod>
   </url>
 </urlset>

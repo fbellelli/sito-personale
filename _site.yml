@@ -2,10 +2,16 @@ name: "sito personale"
 title: "F.S.Bellelli"
 theme: my-theme.css
 description: |
-    This is the personal website of Francesco. S. Bellelli. From time to time, I post about things that I find interesting or about some recent work I have been doing. 
+    This is the personal website of Francesco Saverio Bellelli. From time to time, I post about things that I find interesting or about some recent work I have been doing. 
 output_dir: "docs"
 favicon: images/favicon feather.ico
-base_url: https://fbellelli.com/
+base_url: https://fbellelli.com/posts/
+rss:
+  full_content: true
+  categories:
+    - environment
+    - economics
+    - coding
 collections:
   posts:
     share: [twitter, linkedin, facebook]
