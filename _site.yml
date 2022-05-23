@@ -5,7 +5,7 @@ description: |
     This is the personal website of Francesco Saverio Bellelli. From time to time, I post about things that I find interesting or about some recent work I have been doing. 
 output_dir: "docs"
 favicon: images/favicon feather.ico
-base_url: https://fbellelli.com/posts/
+base_url: https://fbellelli.com/
 rss:
   full_content: true
   categories:
