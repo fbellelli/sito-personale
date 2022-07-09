@@ -172,7 +172,7 @@ palaces %>%
 
 ### Extracting flood depth for multiple return periods
 
-Now that we know how information can be extracted, we can repeat the procedure for different return periods so as to have a complete picture of the distribution for different flood severity. This is time-consuming step, hence, I already included the results in the [example data](https://fbellelli.com/posts/natural-hazard-risk-analysis-in-r/presidential-palaces_geocoded_with_risk.csv).
+Now that we know how information can be extracted, we can repeat the procedure for different return periods so as to have a complete picture of the distribution for different flood severity. This is time-consuming step, hence, I already included the results in the [example data](https://fbellelli.com/posts/2022-05-22-a-brief-introduction-to-natural-hazard-risk-analysis/presidential_palaces_geocoded_with_risk.csv).
 
 
 ```{r eval=FALSE}

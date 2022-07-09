@@ -22,7 +22,7 @@ navbar:
       href: index.html
     - text: "About"
       href: about.html
-    - text: "Research"
+    - text: "Publications"
       href: research.html
     - text: "Data"
       menu:
