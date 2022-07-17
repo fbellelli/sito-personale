@@ -49,10 +49,10 @@ div.blue { background-color:#e6f0ff; border-radius: 5px; padding: 20px;}
 - Data [grouped by measure - country](data files/Extended EDB by measure-country.zip) (good for merging with country data)
 - Data [grouped by measure - country - HS chaper](data files/Extended EDB by measure-country.zip) (good for merging with trade data)
 
-*Last update: 04.01.2022 --- EDB version 2020*
+*Last update: 17.07.2022 --- EDB version 2021*
 
 **Please reference as:** <br>
-[Bellelli, F.S. and Xu, A. (2022) How do environmental policies affects green innovation and trade? Evidence from the WTO environmental database (EDB). *WTO Staff Working Paper, ERSD-2022-23*.](https://www.wto.org/english/res_e/reser_e/ersd202203_e.pdf)
+[Bellelli, F.S. and Xu, A. (2022) How do environmental policies affects green innovation and trade? Evidence from the WTO environmental database (EDB), *WTO Staff Working Paper, ERSD-2022-23*.](https://www.wto.org/english/res_e/reser_e/ersd202203_e.pdf)
 </div>
 
 
@@ -168,7 +168,7 @@ knitr::include_graphics("images/EDB score diagram.png")
 
 ## EDB extension updates
 
-The EDB notification dataset gets updated annually by the WTO secretariat. As a new version comes out, we will update the EDB extension to provide information on the latest measures in the database. We designate EDB's version by the latest notification year included in their data. For example, the latest release (EDB v.2019) includes measures notified up to 2019.
+The EDB notification dataset gets updated annually by the WTO secretariat. As a new version comes out, we will update the EDB extension to provide information on the latest measures in the database. We designate EDB's version by the latest notification year included in their data. For example, the release (EDB version 2019) includes measures notified up to 2019.
 
 
 
