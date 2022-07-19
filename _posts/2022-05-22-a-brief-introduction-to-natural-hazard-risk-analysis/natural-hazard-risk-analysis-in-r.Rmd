@@ -226,10 +226,30 @@ ggplot(temp, aes(x=`Return period (yr)`, y=`Flood depth (m)`, group= Building, c
 
 ### Expected flooding levels
 
-Having the full probability-severity distribution allows for a greater richness of details. However, sometimes it is handy to have a single metric that encapsulates the risk profile of an asset. To do this, we can calculate the annualised expected flood level by summing over the flood depths weighted by their probabilities (inverse of return period).
+Having the full probability-severity distribution allows for a greater richness of details. However, sometimes it is handy to have a single metric that encapsulates the risk profile of an asset. To do this, we can calculate the annualised expected flood level by summing over the flood depths weighted by their probabilities (inverse of return period). One important thing to keep in mind when aggregating multiple return periods is that flood maps provide the **exceedance probability** corresponding to flood levels. For instance, if the 100yr flood map indicates 1m flooding for a property, then it means that there is a 1% probability of flooding with a depth of *at least 1m*. In the figure below, I drew the exceedance curve for the top 3 properties at risk. This curve depicts the flood distribution of the properties and it is constructed by plotting the flood depth associated with each exceedance probability ($1/Return\;period$). 
+
+```{r, echo=FALSE, fig.cap="Non-exceedance curve for the three most exposed palaces"}
+temp$prob_exceedance <- 1/as.numeric(as.character(temp$`Return period (yr)`))
+temp$prob_nonexceedance <- 1 - temp$prob_exceedance
+
+ggplot(temp, aes(x=`Flood depth (m)`, y=prob_exceedance, colour=Building))+
+  geom_point(size=2.5)+
+  geom_line(linetype=3)+
+  scale_y_continuous("Probability of exceedance (1/RP)",limits=c(0,1))+
+  theme_bw()+
+  theme(legend.position=c(0.8,0.8),
+        legend.background = element_rect(fill = "white", color = "black"))+
+  geom_hline(yintercept = 1, linetype=2)+
+  geom_hline(yintercept = 0, linetype=2)
+
+
+```
+
+Then, we can approximate the expected flood level by computing the area under the exceedance curve, which can be interpreted as a probability-weighted sum of all flood depths. We do not observe the full curve, but ony a few scattered points corresponding to the return period maps. So, for the purpose of the expected value calculations, we will assume that the curve is linear between the observed points, this will facilitate calculations and should be more realistic than a stepwise function. From the formula of trapezoid's area, the area under the curve can be written as: 
+
 
 $$ 
-E[\text{Flooding}]_i = \sum^{n}_{j=1}\frac{1}{RP_{j}}\cdot Depth_{ij}
+E[\text{Flooding}]_i = \sum^{n-1}_{j=1}\frac{1}{2}\left(\frac{1}{RP_{j}} + \frac{1}{RP_{j+1}}\right)\cdot \left(Depth_{i,j+1} - Depth_{i,j}\right) 
 $$
 
 Where, $i$ is an index for the asset and $j$ an index for the $n$ available return periods. So that $RP_{j}$ indicates the return period associated with the $j$-th index and $Depth_{ij}$ indicates the depth level expected for asset $i$ with return period $RP_{j}$. We can implement this calculation in R by using the `dplyr`and `tidyr`packages.
@@ -247,10 +267,12 @@ long_table <- palaces %>%
 
 #calculating the expected flood level
 risk_table <- long_table %>%
-  mutate(probability = 1/return_period,
-         expected_flood = probability * flood_depth) %>%
+  mutate(prob_exceedance = 1/return_period) %>%
   group_by(Building) %>%
-  summarise(expected_flood = sum(expected_flood), .groups="drop")
+  arrange(return_period) %>%
+  summarise(expected_flood = sum(ifelse(return_period == max(return_period), 
+                                    0, 
+                                    0.5*(prob_exceedance + lead(prob_exceedance))*(lead(flood_depth)-flood_depth))), .groups="drop")
 
 
 ```
@@ -363,24 +385,26 @@ long_table <- dplyr::left_join(long_table,interpolated_damage_curve,by=c("rounde
 Then, we can proceed to calculating the expected damage ratio for the presidential palaces by taking a weighted average of the damage ratios over each return period. 
 
 $$ 
-E[\text{Damage}]_i = \sum^{n}_{j=1}\frac{1}{RP_{j}}\cdot Depth_{ij}\cdot DR_{ij}
+E[\text{Flooding}]_i = \sum^{n-1}_{j=1}\frac{1}{2}\left(\frac{1}{RP_{j}} + \frac{1}{RP_{j+1}}\right)\cdot \left[D_i(Depth_{i,j+1}) - D_i(Depth_{i,j})\right] 
 $$
 
-This formula is nearly identical to the one used for the average flood level, the only addition is the term $DR_{ij}$, which indicates the damage ratio incurred by the palace $i$ in case of a flood with depth $Depth_{ij}$. We can easily calculate this in R as follows:
+This formula is nearly identical to the one used for the average flood level, the only addition is the function $D_{i}$, which transforms the input --- flood depth --- into a damage ratio based on the vulnerability curve for the property. We can easily calculate this in R as follows:
 
 
 ```{r}
 
 #calculating the expected flood level
 damage_table <- long_table %>%
-  mutate(probability = 1/return_period,
-         expected_flood_damage = probability * flood_depth * DamageRatio) %>%
+  mutate(prob_exceedance = 1/return_period) %>%
   group_by(Building) %>%
-  summarise(expected_flood_damage = sum(expected_flood_damage), .groups="drop")
+  arrange(return_period) %>%
+  summarise(expected_flood_damage = sum(ifelse(return_period == max(return_period), 
+                                    0, 
+                                    0.5*(prob_exceedance + lead(prob_exceedance))*(lead(DamageRatio)-DamageRatio))), .groups="drop")
 ```
 
 
-The table below lists the palaces that have the highest expected flood damage. As we already mentioned before, the results for the first three palaces seems suspiciously high --- if the 28.3% expected annual damage from flood were an accurate figure, fisheries would be a more fitting allocation of the grounds of Gabon's Presidential palaces. It would be advisable to use alternative maps (possibly with higher granularity) to double-check these numbers. Also, there might be preventive measures in place that the maps do not take into account (e.g. embankments) that can explain this resul.   
+The table below lists the palaces that have the highest expected flood damage. As we already mentioned before, the results for the first two palaces seems suspiciously high --- if the 15.7% expected annual damage from flood were an accurate figure, fisheries would be a more fitting allocation of the grounds of Gabon's Presidential palaces. It would be advisable to use alternative maps (possibly with higher granularity) to double-check these numbers. Also, there might be preventive measures in place that the maps do not take into account (e.g. embankments) that can explain this result.   
 
 ```{r}
 damage_table %>% 

@@ -15,7 +15,7 @@
     <lastBuildDate>Sat, 21 May 2022 00:00:00 +0000</lastBuildDate>
     <item>
       <title>A brief introduction to natural hazard risk analysis</title>
-      <dc:creator>Francesco S. Bellelli</dc:creator>
+      <dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Francesco S. Bellelli</dc:creator>
       <link>https://fbellelli.com/posts/2022-05-22-a-brief-introduction-to-natural-hazard-risk-analysis</link>
       <description>
 
@@ -381,130 +381,35 @@ damage_table &amp;lt;- long_table %&amp;gt;%
 &lt;p&gt;The problem of these climate models is that they have inherent uncertainty in predicting complex system over long horizon. Therefore, estimates may come with large uncertainty bands and vary between models. Moreover, Many of these models have low spatial granularity, therefore results may be too coarse to be translated into risk maps. Nevertheless, there is much research going on in this area and our understanding and tools will certainly get better in the near future.&lt;/p&gt;
 &lt;p&gt;I would like to mention that the &lt;strong&gt;&lt;a href="https://www.wri.org/data/aqueduct-floods-hazard-maps"&gt;Acqueduct&lt;/a&gt;&lt;/strong&gt; flood maps are available also under two different climate scenarios (RCP4.5 and RCP8.5) with prediction from four different climate models. Dear reader, a perfect exercise to test your understanding would be to replicate this analysis with one of the hazard maps under the RCP8.5 scenario (corresponding to a pessimistic, business as usual concentration pathway) and compare the results to the ones obtained here with historic data. How do results change for our list of presidential palaces? You should find an increase in flood risk and expected flood damages.&lt;/p&gt;
 &lt;pre class="r distill-force-highlighting-css"&gt;&lt;code&gt;&lt;/code&gt;&lt;/pre&gt;</description>
-      <distill:md5>46210a8a71d53691a1cc750c85c1d659</distill:md5>
+      <distill:md5 xmlns:distill="https://distill.pub/journal/">46210a8a71d53691a1cc750c85c1d659</distill:md5>
       <category>risk</category>
       <category>coding</category>
       <category>environment</category>
       <category>other</category>
       <guid>https://fbellelli.com/posts/2022-05-22-a-brief-introduction-to-natural-hazard-risk-analysis</guid>
       <pubDate>Sat, 21 May 2022 00:00:00 +0000</pubDate>
-      <media:content url="https://fbellelli.com/posts/2022-05-22-a-brief-introduction-to-natural-hazard-risk-analysis/flood.jpg" medium="image" type="image/jpeg"/>
-    </item>
-    <item>
-      <title>First version of countries</title>
-      <dc:creator>Francesco S. Bellelli</dc:creator>
-      <link>https://fbellelli.com/posts/2022-02-27-first-version-of-countries</link>
-      <description>The first development version of the package countries is now available on Github. This post looks at how the package can be used to work with country names.</description>
-      <category>coding</category>
-      <guid>https://fbellelli.com/posts/2022-02-27-first-version-of-countries</guid>
-      <pubDate>Sun, 27 Feb 2022 00:00:00 +0000</pubDate>
-      <media:content url="https://fbellelli.com/posts/2022-02-27-first-version-of-countries/../../images/Countries_logo.png" medium="image" type="image/png" width="864" height="1000"/>
-    </item>
-    <item>
-      <title>Mishmash of charts</title>
-      <dc:creator>Francesco S. Bellelli</dc:creator>
-      <link>https://fbellelli.com/posts/2021-12-18-mishmash-of-charts</link>
-      <description>This article is a selection of charts that I prepared over the last three years.</description>
-      <category>economics</category>
-      <category>other</category>
-      <guid>https://fbellelli.com/posts/2021-12-18-mishmash-of-charts</guid>
-      <pubDate>Sat, 18 Dec 2021 00:00:00 +0000</pubDate>
-      <media:content url="https://fbellelli.com/posts/2021-12-18-mishmash-of-charts/../../papers/map pictet.gif" medium="image" type="image/gif"/>
-    </item>
-    <item>
-      <title>The 2021 World Trade Report is out</title>
-      <dc:creator>Francesco S. Bellelli</dc:creator>
-      <link>https://fbellelli.com/posts/2021-11-16-the-world-trade-report-is-out</link>
-      <description>I had the honour to contribute to the writing of this year's edition of the World Trade Report, the flagship economic publication of the World Trade Organization.  The report explores the role of trade, trade policy and international cooperation in building economic resilience in a world marked by increasing risks. In this article, I briefly outline my contributions on risk trends and policy responses to shocks.</description>
-      <category>economics</category>
-      <category>trade</category>
-      <category>risk</category>
-      <guid>https://fbellelli.com/posts/2021-11-16-the-world-trade-report-is-out</guid>
-      <pubDate>Tue, 16 Nov 2021 00:00:00 +0000</pubDate>
-      <media:content url="https://www.wto.org/images/img_bkshop/wtr21_e.jpg" medium="image" type="image/jpeg"/>
+      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://fbellelli.com/posts/2022-05-22-a-brief-introduction-to-natural-hazard-risk-analysis/flood.jpg" medium="image" type="image/jpeg"/>
     </item>
     <item>
       <title>All you need to know about the Paris Agreement ahead of COP26</title>
-      <dc:creator>Francesco S. Bellelli</dc:creator>
+      <dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Francesco S. Bellelli</dc:creator>
       <link>https://fbellelli.com/posts/2021-10-24-all-you-need-to-know-about-the-paris-agreement-ahead-of-cop26</link>
       <description>Only one week left to the official start of the COP26 in Glasgow, in which global leaders will meet to take crucial decisions on climate change. Scientific evidence shows that we are running out of time. If we wish to avoid the worst scenario, it's now or never. What will come out of the summit? Will it be a flop or a success? We don't know yet, but this article will quickly get you up to speed with climate talks.</description>
       <category>environment</category>
       <guid>https://fbellelli.com/posts/2021-10-24-all-you-need-to-know-about-the-paris-agreement-ahead-of-cop26</guid>
       <pubDate>Sun, 24 Oct 2021 00:00:00 +0000</pubDate>
-      <media:content url="https://fbellelli.com/posts/2021-10-24-all-you-need-to-know-about-the-paris-agreement-ahead-of-cop26/pexels-pixabay-221012.jpg" medium="image" type="image/jpeg"/>
-    </item>
-    <item>
-      <title>How has the pandemic affected the office space market?</title>
-      <dc:creator>Francesco S. Bellelli</dc:creator>
-      <link>https://fbellelli.com/posts/2021-08-15-pandemic-and-the-office-space-market</link>
-      <description>In this post I have a look at data from the City of London to understand how the pandemic has impacted the office market.</description>
-      <category>economics</category>
-      <guid>https://fbellelli.com/posts/2021-08-15-pandemic-and-the-office-space-market</guid>
-      <pubDate>Sun, 15 Aug 2021 00:00:00 +0000</pubDate>
-      <media:content url="https://fbellelli.com/posts/2021-08-15-pandemic-and-the-office-space-market/city2_preview.jpg" medium="image" type="image/jpeg"/>
-    </item>
-    <item>
-      <title>The fascinating world of Voronoi diagrams</title>
-      <dc:creator>Francesco S. Bellelli</dc:creator>
-      <link>https://fbellelli.com/posts/2021-07-08-the-fascinating-world-of-voronoi-diagrams</link>
-      <description>In this article I explain what is a Voronoi diagram and why they are amazing</description>
-      <category>maths</category>
-      <category>other</category>
-      <guid>https://fbellelli.com/posts/2021-07-08-the-fascinating-world-of-voronoi-diagrams</guid>
-      <pubDate>Thu, 08 Jul 2021 00:00:00 +0000</pubDate>
-      <media:content url="https://fbellelli.com/posts/2021-07-08-the-fascinating-world-of-voronoi-diagrams/voronoi_animation2.gif" medium="image" type="image/gif"/>
-    </item>
-    <item>
-      <title>A package for country data</title>
-      <dc:creator>Francesco S. Bellelli</dc:creator>
-      <link>https://fbellelli.com/posts/2021-06-20-a-package-for-country-data</link>
-      <description>I am working on an R package designed to quickly wrangle, merge and explore country data</description>
-      <category>coding</category>
-      <guid>https://fbellelli.com/posts/2021-06-20-a-package-for-country-data</guid>
-      <pubDate>Sun, 20 Jun 2021 00:00:00 +0000</pubDate>
-      <media:content url="https://cdn.britannica.com/13/129613-131-30279F20/Flags-world-flags-Country-history-blog-travel-2009.jpg" medium="image" type="image/jpeg"/>
-    </item>
-    <item>
-      <title>TileMaster: a strategy game in Shiny</title>
-      <dc:creator>Francesco S. Bellelli</dc:creator>
-      <link>https://fbellelli.com/posts/2021-04-03-tilemaster-a-strategy-game-in-shiny</link>
-      <description>I created a small strategy game with RStudios' Shiny platform. If it can run a data dashboard, why not a strategy game?</description>
-      <category>coding</category>
-      <guid>https://fbellelli.com/posts/2021-04-03-tilemaster-a-strategy-game-in-shiny</guid>
-      <pubDate>Sat, 03 Apr 2021 00:00:00 +0000</pubDate>
-      <media:content url="https://fbellelli.com/posts/2021-04-03-tilemaster-a-strategy-game-in-shiny/../../images/tilemaster_screenshot.png" medium="image" type="image/png" width="1599" height="1531"/>
+      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://fbellelli.com/posts/2021-10-24-all-you-need-to-know-about-the-paris-agreement-ahead-of-cop26/pexels-pixabay-221012.jpg" medium="image" type="image/jpeg"/>
     </item>
     <item>
       <title>How to increase participation in environmental agreements?</title>
-      <dc:creator>Francesco S. Bellelli</dc:creator>
+      <dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Francesco S. Bellelli</dc:creator>
       <link>https://fbellelli.com/posts/2021-03-20-how-to-increase-participation-in-environmental-agreements</link>
       <description>Understanding the determinants of participation in environmental agreements can help us frame more successful agreements. In this article, I discuss the economic theory and empirical evidence on this topic.</description>
       <category>environment</category>
       <category>economics</category>
       <guid>https://fbellelli.com/posts/2021-03-20-how-to-increase-participation-in-environmental-agreements</guid>
       <pubDate>Sat, 20 Mar 2021 00:00:00 +0000</pubDate>
-      <media:content url="https://fbellelli.com/posts/2021-03-20-how-to-increase-participation-in-environmental-agreements/map-number-ratifications.png" medium="image" type="image/png" width="7017" height="4209"/>
-    </item>
-    <item>
-      <title>Watercolours</title>
-      <dc:creator>Francesco S. Bellelli</dc:creator>
-      <dc:creator>Lily Runkun Tian</dc:creator>
-      <link>https://fbellelli.com/posts/2021-01-27-watercolours</link>
-      <description>A gallery displaying some of the artistic creations of Francesco and Lily</description>
-      <category>other</category>
-      <guid>https://fbellelli.com/posts/2021-01-27-watercolours</guid>
-      <pubDate>Wed, 27 Jan 2021 00:00:00 +0000</pubDate>
-      <media:content url="https://fbellelli.com/posts/2021-01-27-watercolours/paintings/squirrel.jpeg" medium="image" type="image/jpeg"/>
-    </item>
-    <item>
-      <title>Mappa licita naturale</title>
-      <dc:creator>Francesco S. Bellelli</dc:creator>
-      <link>https://fbellelli.com/posts/2021-01-20-mappa-licita-naturale</link>
-      <description>Mappa di un sistema di licita naturale lungo-corto a bridge</description>
-      <category>other</category>
-      <guid>https://fbellelli.com/posts/2021-01-20-mappa-licita-naturale</guid>
-      <pubDate>Wed, 20 Jan 2021 00:00:00 +0000</pubDate>
-      <media:content url="https://fbellelli.com/posts/2021-01-20-mappa-licita-naturale/BRIDGE sistema naturale.svg" medium="image" type="image/svg+xml"/>
+      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://fbellelli.com/posts/2021-03-20-how-to-increase-participation-in-environmental-agreements/map-number-ratifications.png" medium="image" type="image/png" width="7017" height="4209"/>
     </item>
   </channel>
 </rss>
