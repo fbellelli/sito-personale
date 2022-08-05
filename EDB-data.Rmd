@@ -47,7 +47,7 @@ div.blue { background-color:#e6f0ff; border-radius: 5px; padding: 20px;}
 
 - Data [grouped by measure](data files/Extended EDB by measure.zip) (good for analysing measures)
 - Data [grouped by measure - country](data files/Extended EDB by measure-country.zip) (good for merging with country data)
-- Data [grouped by measure - country - HS chaper](data files/Extended EDB by measure-country.zip) (good for merging with trade data)
+- Data [grouped by measure - country - HS chaper](data files/Extended EDB by measure-country-HS chapter.zip) (good for merging with trade data)
 
 *Last update: 17.07.2022 --- EDB version 2021*
 
