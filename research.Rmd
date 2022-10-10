@@ -29,7 +29,7 @@ Xu, A.,  Tresa, E., Bacchetta, **Bellelli, F.S.**, M., Monteiro, J.A. (2021) Car
 
 Xu, A., Tresa, E., **Bellelli, F.S.**, Bacchetta, M., Monteiro, J.A.. Trade and the transfer of climate-related technologies. *World Trade Organization, Trade and climate change information brief* (*Under internal review*).
 
-**Bellelli, F.S.**, Scarpa, R. and Aftab, A. An empirical analysis of participation in environemntal agreements. *Working paper*. (*Under review at the Journal of Environemntal Economics and Management*)
+**Bellelli, F.S.**, Scarpa, R. and Aftab, A. An empirical analysis of participation in environmental agreements. *Working paper*. (*Under review at the Journal of Environemntal Economics and Management*)
 <a href="papers/Ratification_paper.pdf"><button>PDF</button></a>
 <a href="papers/ratification paper appendix.zip"><button>Appendix</button></a>
 <a href="ratification-data.html"><button>Data</button></a>
@@ -40,7 +40,7 @@ Xu, A., Tresa, E., **Bellelli, F.S.**, Bacchetta, M., Monteiro, J.A.. Trade and 
 
 **Bellelli, F.S.**, Monteiro, J.A. and Xu, A. Assessing the environmental effectiveness of environmental provisions in Regional Trade Agreements. *(Drafting in progress)*
 
-**Bellelli, F.S.**, Scarpa, R. and Aftab, A. (2021) The joining dilemma: A survey of the empirical literature on environmental treaty participation. *Review of Environmental Economics and Policy*. *(Forthcoming)*
+**Bellelli, F.S.**, Scarpa, R. and Aftab, A. (2023) The participation dilemma: A survey of the empirical literature on international environmental agreement ratification, *Review of Environmental Economics and Policy*. *(Forthcoming)*
 <a href="papers/Survey_of_empirical_ratification_literature.pdf"><button>PDF</button></a>
 <a href="papers/Survey_of_empirical_ratification_literature_appendix.pdf"><button>Appendix</button></a>
 
