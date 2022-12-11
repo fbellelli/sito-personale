@@ -56,8 +56,8 @@ masonry_grid(
   masonry_item(
     src = "images/stop_funding_overfishing.jpg",
     title = "Fisheries subsidies agreement",
-    description = "In 2020, I have been following closely negotiations of the WTO agreement on fisheries subsidies. This is our best shot at ending overfishing, overcapacity and IUU fishing!",
-    url = "https://www.wto.org/english/news_e/news21_e/fish_30aug21_e.htm"
+    description = "After 20 years of negotiations, a historic agreement was reached in 2022! At my time at WTO, I have been following closely negotiations. This is our best shot at ending overfishing, overcapacity and IUU fishing!",
+    url = "https://www.wto.org/english/tratop_e/rulesneg_e/fish_e/fish_e.htm"
   ),
   masonry_item(
     src = "posts/2021-01-27-watercolours/paintings/portico.jpeg",
@@ -76,6 +76,11 @@ masonry_grid(
     title = "countries",
     description = 'I am working on an R package designed to quickly wrangle, merge and explore country data',
     url = "https://fbellelli.github.io/countries/"
+  ),
+  masonry_item(
+    src = "https://cdn-images-1.medium.com/max/1600/1*J-PcIDrkewUmwrTZuJIIJA.jpeg",
+    title = "Check out my posts on Medium / Towards Data Science",
+    url = "https://medium.com/@fsabellelli"
   )
 )
 ```

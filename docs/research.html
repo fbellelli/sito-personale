@@ -50,16 +50,17 @@ pre.numberSource code > span > a:first-child::before
   }
 pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
 div.sourceCode
-  {   }
+  { color: #00769e; background-color: #f1f3f5; }
 @media screen {
 pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
+code span { color: #00769e; } /* Normal */
 code span.al { color: #ad0000; } /* Alert */
 code span.an { color: #5e5e5e; } /* Annotation */
-code span.at { } /* Attribute */
+code span.at { color: #657422; } /* Attribute */
 code span.bn { color: #ad0000; } /* BaseN */
 code span.bu { } /* BuiltIn */
-code span.cf { color: #007ba5; } /* ControlFlow */
+code span.cf { color: #00769e; } /* ControlFlow */
 code span.ch { color: #20794d; } /* Char */
 code span.cn { color: #8f5902; } /* Constant */
 code span.co { color: #5e5e5e; } /* Comment */
@@ -73,9 +74,9 @@ code span.fl { color: #ad0000; } /* Float */
 code span.fu { color: #4758ab; } /* Function */
 code span.im { } /* Import */
 code span.in { color: #5e5e5e; } /* Information */
-code span.kw { color: #007ba5; } /* Keyword */
+code span.kw { color: #00769e; } /* Keyword */
 code span.op { color: #5e5e5e; } /* Operator */
-code span.ot { color: #007ba5; } /* Other */
+code span.ot { color: #00769e; } /* Other */
 code span.pp { color: #ad0000; } /* Preprocessor */
 code span.sc { color: #5e5e5e; } /* SpecialChar */
 code span.ss { color: #20794d; } /* SpecialString */
@@ -788,6 +789,7 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
   d-article table.gt_table td,
   d-article table.gt_table th {
     border-bottom: none;
+    font-size: 100%;
   }
 
   .html-widget {
@@ -1029,10 +1031,6 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
     position: relative;
     margin-bottom: 2.5em;
     margin-top: 1.5em;
-  }
-
-  .figure img {
-    width: 100%;
   }
 
   .figure .caption {
@@ -1864,9 +1862,21 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 
       // hoverable references
       $('span.citation[data-cites]').each(function() {
+        const citeChild = $(this).children()[0]
+        // Do not process if @xyz has been used without escaping and without bibliography activated
+        // https://github.com/rstudio/distill/issues/466
+        if (citeChild === undefined) return true
+
+        if (citeChild.nodeName == "D-FOOTNOTE") {
+          var fn = citeChild
+          $(this).html(fn.shadowRoot.querySelector("sup"))
+          $(this).id = fn.id
+          fn.remove()
+        }
         var refs = $(this).attr('data-cites').split(" ");
         var refHtml = refs.map(function(ref) {
-          return "<p>" + $('#ref-' + ref).html() + "</p>";
+          // Could use CSS.escape too here, we insure backward compatibility in navigator
+          return "<p>" + $('div[id="ref-' + ref + '"]').html() + "</p>";
         }).join("\n");
         window.tippy(this, {
           allowHTML: true,
@@ -1878,6 +1888,31 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
           placement: 'bottom-start'
         });
       });
+
+      // fix footnotes in tables (#411)
+      // replacing broken distill.pub feature
+      $('table d-footnote').each(function() {
+        // we replace internal showAtNode methode which is triggered when hovering a footnote
+        this.hoverBox.showAtNode = function(node) {
+          // ported from https://github.com/distillpub/template/pull/105/files
+          calcOffset = function(elem) {
+              let x = elem.offsetLeft;
+              let y = elem.offsetTop;
+              // Traverse upwards until an `absolute` element is found or `elem`
+              // becomes null.
+              while (elem = elem.offsetParent && elem.style.position != 'absolute') {
+                  x += elem.offsetLeft;
+                  y += elem.offsetTop;
+              }
+
+              return { left: x, top: y };
+          }
+          // https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/offsetTop
+          const bbox = node.getBoundingClientRect();
+          const offset = calcOffset(node);
+          this.show([offset.left + bbox.width, offset.top + bbox.height]);
+        }
+      })
 
       // clear polling timer
       clearInterval(tid);
@@ -1977,6 +2012,8 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
     // mark non-body figures created by knitr chunks as 100% width
     $('.layout-chunk').each(function(i, val) {
       var figures = $(this).find('img, .html-widget');
+      // ignore leaflet img layers (#106)
+      figures = figures.filter(':not(img[class*="leaflet"])')
       if ($(this).attr('data-layout') !== "l-body") {
         figures.css('width', '100%');
       } else {
@@ -1999,7 +2036,7 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
     // get rid of index.html references in header
     if (window.location.protocol !== "file:") {
       $('.distill-site-header a[href]').each(function(i,val) {
-        $(this).attr('href', $(this).attr('href').replace("index.html", "./"));
+        $(this).attr('href', $(this).attr('href').replace(/^index[.]html/, "./"));
       });
     }
 
@@ -2393,7 +2430,7 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
     color: var(--hover-color, white);
   }</style>
   <!--/radix_placeholder_distill-->
-  <script src="site_libs/header-attrs-2.11/header-attrs.js"></script>
+  <script src="site_libs/header-attrs-2.17/header-attrs.js"></script>
   <script src="site_libs/popper-2.6.0/popper.min.js"></script>
   <link href="site_libs/tippy-6.2.7/tippy.css" rel="stylesheet" />
   <link href="site_libs/tippy-6.2.7/tippy-light-border.css" rel="stylesheet" />
@@ -2463,27 +2500,50 @@ Data
 <p>I am currently working in the credit risk methodology team of UBS as a specialist for climate change risk. As such, I am investigating approaches to quantify and incorporate climate-related risks in the banks’ models.</p>
 <p>In addition to the above, I am also fascinated by recent developments in AI and its applications to macroeconomic forecasting and issues in international and environmental economics.</p>
 <h2 id="notes-and-scientific-papers">Notes and scientific papers</h2>
-<p><strong>Bellelli, F.S.</strong> and Xu, A. (2022) How do environmental policies affects green innovation and trade? Evidence from the WTO environmental database (EDB), <em>WTO Staff Working Paper, ERSD-2022-23</em>. <a href="https://www.wto.org/english/res_e/reser_e/ersd202203_e.pdf"><button>PDF</button></a> <a href="EDB-data.html"><button>Data</button></a> <a href="https://drive.google.com/file/d/1sbHv8yDAyec4_CG1PPOh_RNbqLRqPNZb/view?usp=sharing"><button>Replication files</button></a> <a href="papers/slides EAERE - Francesco Bellelli.pdf"><button>Slides</button></a></p>
-<p>Xu, A., Tresa, E., Bacchetta, <strong>Bellelli, F.S.</strong>, M., Monteiro, J.A. (2021) Carbon content of international trade. <em>World Trade Organization, Trade and climate change information brief</em>, n°4. Available online at: <a href="https://www.wto.org/english/news_e/news21_e/clim_03nov21-4_e.pdf" class="uri">https://www.wto.org/english/news_e/news21_e/clim_03nov21-4_e.pdf</a>. <a href="papers/WTO note trade carbon content.pdf"><button>PDF</button></a></p>
 <p>Xu, A., Tresa, E., <strong>Bellelli, F.S.</strong>, Bacchetta, M., Monteiro, J.A.. Trade and the transfer of climate-related technologies. <em>World Trade Organization, Trade and climate change information brief</em> (<em>Under internal review</em>).</p>
-<p><strong>Bellelli, F.S.</strong>, Scarpa, R. and Aftab, A. An empirical analysis of participation in environmental agreements. <em>Working paper</em>. (<em>Under review at the Journal of Environemntal Economics and Management</em>) <a href="papers/Ratification_paper.pdf"><button>PDF</button></a> <a href="papers/ratification paper appendix.zip"><button>Appendix</button></a> <a href="ratification-data.html"><button>Data</button></a> <a href="https://drive.google.com/file/d/1b_4h66745Hk7M_SR5JPXaB8ViJ-GMRRH/view?usp=sharing"><button>Replication files</button></a></p>
 <p><strong>Bellelli, F.S.</strong>, Xu, A. Why should we fish for an agreement? An economic analysis of fisheries subsidies. <em>(to be published as WTO discussion paper)</em></p>
 <p><strong>Bellelli, F.S.</strong>, Monteiro, J.A. and Xu, A. Assessing the environmental effectiveness of environmental provisions in Regional Trade Agreements. <em>(Drafting in progress)</em></p>
-<p><strong>Bellelli, F.S.</strong>, Scarpa, R. and Aftab, A. (2023) The participation dilemma: A survey of the empirical literature on international environmental agreement ratification, <em>Review of Environmental Economics and Policy</em>. <em>(Forthcoming)</em> <a href="papers/Survey_of_empirical_ratification_literature.pdf"><button>PDF</button></a> <a href="papers/Survey_of_empirical_ratification_literature_appendix.pdf"><button>Appendix</button></a></p>
-<p><strong>Bellelli, F.S.</strong> (2019) An overview of the main climate change agreements and the process that led to their formation. <em>The Foundation Journal</em>, Vol.XI, pp 1–15. <a href="papers/articolo foundation published.pdf"><button>PDF</button></a></p>
-<p><strong>Bellelli, F.S.</strong> (2019) Understanding climate change. <em>New Vision</em>. April 11. Available online at: <a href="https://www.newvision.co.ug/new_vision/news/1498270/understanding-climate-change" class="uri">https://www.newvision.co.ug/new_vision/news/1498270/understanding-climate-change</a>. <a href="papers/climate change article new vision.pdf"><button>PDF</button></a></p>
+<p><strong>Bellelli, F.S.</strong>, Scarpa, R. and Aftab, A. (Forthcoming) An empirical analysis of participation in environmental agreements. <em>Journal of Environmental Economics and Management</em>.
+<a href="papers/Ratification_paper.pdf"><button>PDF</button></a>
+<a href="papers/ratification paper appendix.zip"><button>Appendix</button></a>
+<a href="ratification-data.html"><button>Data</button></a>
+<a href="https://drive.google.com/file/d/1b_4h66745Hk7M_SR5JPXaB8ViJ-GMRRH/view?usp=sharing"><button>Replication files</button></a></p>
+<p><strong>Bellelli, F.S.</strong>, Scarpa, R. and Aftab, A. (2023) The participation dilemma: A survey of the empirical literature on international environmental agreement ratification, <em>Review of Environmental Economics and Policy</em>, 17(1). <a href="https://www.journals.uchicago.edu/doi/10.1086/722906" class="uri">https://www.journals.uchicago.edu/doi/10.1086/722906</a>.
+<a href="https://www.journals.uchicago.edu/doi/10.1086/722906"><button>Publication</button></a>
+<a href="papers/Survey_of_empirical_ratification_literature.pdf"><button>PDF</button></a>
+<a href="papers/Survey_of_empirical_ratification_literature_appendix.pdf"><button>Appendix</button></a></p>
+<p><strong>Bellelli, F.S.</strong> and Xu, A. (2022) How do environmental policies affects green innovation and trade? Evidence from the WTO environmental database (EDB), <em>WTO Staff Working Paper, ERSD-2022-23</em>.
+<a href="https://www.wto.org/english/res_e/reser_e/ersd202203_e.pdf"><button>PDF</button></a>
+<a href="EDB-data.html"><button>Data</button></a>
+<a href="https://drive.google.com/file/d/1sbHv8yDAyec4_CG1PPOh_RNbqLRqPNZb/view?usp=sharing"><button>Replication files</button></a>
+<a href="papers/slides EAERE - Francesco Bellelli.pdf"><button>Slides</button></a></p>
+<p>Xu, A., Tresa, E., Bacchetta, <strong>Bellelli, F.S.</strong>, M., Monteiro, J.A. (2021) Carbon content of international trade. <em>World Trade Organization, Trade and climate change information brief</em>, n°4. Available online at: <a href="https://www.wto.org/english/news_e/news21_e/clim_03nov21-4_e.pdf" class="uri">https://www.wto.org/english/news_e/news21_e/clim_03nov21-4_e.pdf</a>. <a href="papers/WTO note trade carbon content.pdf"><button>PDF</button></a></p>
+<p><strong>Bellelli, F.S.</strong> (2019) An overview of the main climate change agreements and the process that led to their formation. <em>The Foundation Journal</em>, Vol.XI, pp 1–15.
+<a href="papers/articolo foundation published.pdf"><button>PDF</button></a></p>
 <h2 id="contribution-to-books-and-reports">Contribution to books and reports</h2>
-<p>WTO (<em>Forthcoming</em>) World Trade Report 2022</p>
+<p>WTO (2022) World Trade Report 2022; Cliamte change and international trade. World Trade Organization. Available at: <a href="https://www.wto.org/english/res_e/publications_e/wtr22_e.htm" class="uri">https://www.wto.org/english/res_e/publications_e/wtr22_e.htm</a>.
+<a href="https://www.wto.org/english/res_e/booksp_e/wtr22_e/wtr22_e.pdf"><button>PDF</button></a></p>
 <p>Bellelli, F.S. (2022) <em>The Determinants of Environmental Policy and Diplomacy: An Analysis of Participation in Environmental Treaties</em>, Elivia Press. <a href="https://www.amazon.com/dp/9994980432" class="uri">https://www.amazon.com/dp/9994980432</a></p>
-<p>WTO (2021) <em>World Trade Report 2021; Economic resilience and trade</em>. World Trade organization. Available at: <a href="https://www.wto.org/english/res_e/publications_e/wtr21_e.htm" class="uri">https://www.wto.org/english/res_e/publications_e/wtr21_e.htm</a>. <a href="https://www.wto.org/english/res_e/booksp_e/wtr21_e/00_wtr21_e.pdf"><button>PDF</button></a></p>
+<p>WTO (2021) <em>World Trade Report 2021; Economic resilience and trade</em>. World Trade organization. Geneva, Switzerland. Available at: <a href="https://www.wto.org/english/res_e/publications_e/wtr21_e.htm" class="uri">https://www.wto.org/english/res_e/publications_e/wtr21_e.htm</a>.
+<a href="https://www.wto.org/english/res_e/booksp_e/wtr21_e/00_wtr21_e.pdf"><button>PDF</button></a></p>
 <!-- Pictet (2020)  *Horizon 2020: Long-term investing in a world marked by pandemic*. Pictet WM, AA\&MR. Geneva, Switzerland. -->
 <h2 id="other-publications">Other publications</h2>
 <p><strong>Bellelli, F.S.</strong> (2022) The fascinating world of Voronoi diagrams. <em>Towards Data Science</em>. April 2. Available at: <a href="https://towardsdatascience.com/the-fascinating-world-of-voronoi-diagrams-da8fc700fa1b" class="uri">https://towardsdatascience.com/the-fascinating-world-of-voronoi-diagrams-da8fc700fa1b</a></p>
-<p><em>Data visualisation selected for:</em> Smith, A. (2019) Ten charts that tell the story of 2019. <em>Financial Times</em>. December 29. Available at: <a href="https://www.ft.com/content/62fbf660-2651-11ea-9a4f-963f0ec7e134" class="uri">https://www.ft.com/content/62fbf660-2651-11ea-9a4f-963f0ec7e134</a>. <a href="papers/The great haul of China.pdf"><button>PDF</button></a> <a href="papers/map pictet.gif"><button>GIF</button></a></p>
-<p><em>Data visualisation for:</em> Johnson, S. (2019) The great haul of China, illustrated. <em>Financial Times</em>. November 19. Available online at: <a href="https://www.ft.com/content/4975eb8a-0ab6-11ea-bb52-34c8d9dc6d84" class="uri">https://www.ft.com/content/4975eb8a-0ab6-11ea-bb52-34c8d9dc6d84</a>. <a href="papers/Ten charts that tell the story of 2019.pdf"><button>PDF</button></a> <a href="papers/map pictet.gif"><button>GIF</button></a></p>
-<p><strong>Bellelli, F.S.</strong> (2019) The determinants of environmental policy and diplomacy; An empirical investigation of participation in environmental treaties and the influence of domestic groups. <em>Doctoral thesis, Durham University</em>. Available at: <a href="http://etheses.dur.ac.uk/13328/" class="uri">http://etheses.dur.ac.uk/13328/</a>. <a href="papers/PhD thesis - Francesco S Bellelli.pdf"><button>PDF</button></a> <a href="ratification-data.html"><button>Data</button></a></p>
-<p><strong>Bellelli, F.S.</strong> (2015) The dynamic relationship of income with health and education spending. <em>Theses, Oxford Brooks University</em>. Available at: <a href="https://radar.brookes.ac.uk/radar/items/8e1f4895-c565-4228-9eec-65a13e87f634/1/" class="uri">https://radar.brookes.ac.uk/radar/items/8e1f4895-c565-4228-9eec-65a13e87f634/1/</a>. <a href="papers/Tesi di laurea magistrale.pdf"><button>PDF</button></a></p>
-<p><strong>Bellelli, F.S.</strong> (2014) Del principio della domanda effettiva in Keynes e Kalecki. <em>Tesi, Università degli Studi di Roma Tre</em>. <a href="papers/Tesi di laurea triennale.pdf"><button>PDF</button></a></p>
+<p><em>Data visualisation selected for:</em> Smith, A. (2019) Ten charts that tell the story of 2019. <em>Financial Times</em>. December 29. Available at: <a href="https://www.ft.com/content/62fbf660-2651-11ea-9a4f-963f0ec7e134" class="uri">https://www.ft.com/content/62fbf660-2651-11ea-9a4f-963f0ec7e134</a>.
+<a href="papers/The great haul of China.pdf"><button>PDF</button></a>
+<a href="papers/map pictet.gif"><button>GIF</button></a></p>
+<p><em>Data visualisation for:</em> Johnson, S. (2019) The great haul of China, illustrated. <em>Financial Times</em>. November 19. Available online at: <a href="https://www.ft.com/content/4975eb8a-0ab6-11ea-bb52-34c8d9dc6d84" class="uri">https://www.ft.com/content/4975eb8a-0ab6-11ea-bb52-34c8d9dc6d84</a>.
+<a href="papers/Ten charts that tell the story of 2019.pdf"><button>PDF</button></a>
+<a href="papers/map pictet.gif"><button>GIF</button></a></p>
+<p><strong>Bellelli, F.S.</strong> (2019) Understanding climate change. <em>New Vision</em>. April 11. Available online at: <a href="https://www.newvision.co.ug/new_vision/news/1498270/understanding-climate-change" class="uri">https://www.newvision.co.ug/new_vision/news/1498270/understanding-climate-change</a>.
+<a href="papers/climate change article new vision.pdf"><button>PDF</button></a></p>
+<p><strong>Bellelli, F.S.</strong> (2019) The determinants of environmental policy and diplomacy; An empirical investigation of participation in environmental treaties and the influence of domestic groups. <em>Doctoral thesis, Durham University</em>. Available at: <a href="http://etheses.dur.ac.uk/13328/" class="uri">http://etheses.dur.ac.uk/13328/</a>.
+<a href="papers/PhD thesis - Francesco S Bellelli.pdf"><button>PDF</button></a>
+<a href="ratification-data.html"><button>Data</button></a></p>
+<p><strong>Bellelli, F.S.</strong> (2015) The dynamic relationship of income with health and education spending. <em>Theses, Oxford Brooks University</em>. Available at: <a href="https://radar.brookes.ac.uk/radar/items/8e1f4895-c565-4228-9eec-65a13e87f634/1/" class="uri">https://radar.brookes.ac.uk/radar/items/8e1f4895-c565-4228-9eec-65a13e87f634/1/</a>.
+<a href="papers/Tesi di laurea magistrale.pdf"><button>PDF</button></a></p>
+<p><strong>Bellelli, F.S.</strong> (2014) Del principio della domanda effettiva in Keynes e Kalecki. <em>Tesi, Università degli Studi di Roma Tre</em>.
+<a href="papers/Tesi di laurea triennale.pdf"><button>PDF</button></a></p>
 <div class="sourceCode" id="cb1"><pre class="sourceCode r distill-force-highlighting-css"><code class="sourceCode r"></code></pre></div>
 <!--radix_placeholder_article_footer-->
 <!--/radix_placeholder_article_footer-->
