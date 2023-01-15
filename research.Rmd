@@ -27,7 +27,7 @@ Xu, A., Tresa, E., **Bellelli, F.S.**, Bacchetta, M., Monteiro, J.A.. Trade and 
 **Bellelli, F.S.**, Monteiro, J.A. and Xu, A. Assessing the environmental effectiveness of environmental provisions in Regional Trade Agreements. *(Drafting in progress)*
 
 
-**Bellelli, F.S.**, Scarpa, R. and Aftab, A. (Forthcoming) An empirical analysis of participation in environmental agreements. *Journal of Environmental Economics and Management*.
+**Bellelli, F.S.**, Scarpa, R. and Aftab, A. (Forthcoming) An empirical analysis of participation in environmental agreements. *Journal of Environmental Economics and Management*. https://www.sciencedirect.com/science/article/abs/pii/S0095069623000013.
 <a href="papers/Ratification_paper.pdf"><button>PDF</button></a>
 <a href="papers/ratification paper appendix.zip"><button>Appendix</button></a>
 <a href="ratification-data.html"><button>Data</button></a>
