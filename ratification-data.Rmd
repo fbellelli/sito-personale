@@ -1,7 +1,7 @@
 ---
 title: "IEA ratification dataset"
 description: |
-  This dataset collects information on the potential ratifiers and the ratification status of 263 international environmental agreements (IEA) 
+  This dataset collects information on the potential ratifiers and the ratification status for 263 international environmental agreements (IEA) 
 bibliography: references.bib
 ---
 
