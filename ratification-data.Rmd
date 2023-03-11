@@ -15,7 +15,9 @@ div.blue { background-color:#e6f0ff; border-radius: 5px; padding: 20px;}
 A version of this data set is available for download [here](data files/ratification data.zip)
 
 **Please reference as:** <br>
-[Bellelli, F.S., Scarpa, R. and Aftab, A. (2021) Interest groups and participation in international environmental agreements. *Working paper. Available from https://fbellelli.com/ratification-data.html.*](papers/Ratification_paper.pdf)
+[**Bellelli, F.S.**, Scarpa, R. and Aftab, A. (2023) An empirical analysis of participation in environmental agreements. *Journal of Environmental Economics and Management*, 118, 102783.](https://www.sciencedirect.com/science/article/abs/pii/S0095069623000013)
+
+<a href="papers/Ratification_paper.pdf"><button>PDF</button></a>
 </div>
 
 

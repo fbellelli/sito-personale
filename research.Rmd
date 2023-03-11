@@ -19,6 +19,8 @@ In addition to the above, I am also fascinated by recent developments in AI and 
 
 ## Notes and scientific papers
 
+**Bellelli, F.S.** and Xu, A. (2023) From Policy to Progress: The Impact of Environmental Measures on Trade and Innovation, (Currently under review at  *Environmental and Resource Economics*).
+
 Xu, A., Tresa, E., **Bellelli, F.S.**, Bacchetta, M., Monteiro, J.A.. Trade and the transfer of climate-related technologies. *World Trade Organization, Trade and climate change information brief* (*Under internal review*).
 
 
@@ -68,7 +70,7 @@ WTO (2021) *World Trade Report 2021; Economic resilience and trade*. World Trade
 
 ## Other publications
 
-**Bellelli, F.S.** (2022) The fascinating world of Voronoi diagrams. *Towards Data Science*. April 2. Available at: https://towardsdatascience.com/the-fascinating-world-of-voronoi-diagrams-da8fc700fa1b
+**Bellelli, F.S.** (2022) The fascinating world of Voronoi diagrams. *Built in*. April 2. Available at: https://builtin.com/data-science/voronoi-diagram. Previous version featured in *Towards Data Science*, available at: https://towardsdatascience.com/the-fascinating-world-of-voronoi-diagrams-da8fc700fa1b.
 
 *Data visualisation selected for:* Smith, A. (2019) Ten charts that tell the story of 2019. *Financial Times*. December 29. Available at: https://www.ft.com/content/62fbf660-2651-11ea-9a4f-963f0ec7e134.
 <a href="papers/The great haul of China.pdf"><button>PDF</button></a>
