@@ -6,6 +6,13 @@ description: |
 output_dir: "docs"
 favicon: images/favicon feather.ico
 base_url: https://fbellelli.com/
+google_analytics: "G-3HR0Z037ZB"
+# cookie_consent:
+#   style: simple
+#   type: express
+#   palette: light
+#   lang: en
+#   cookies_policy: url
 rss:
   full_content: true
   categories:
