@@ -118,7 +118,7 @@ Again, you will find long queues here. My advice is to buy the tickets at the en
 According to legend, the capitol hill is where Rome was founded. It has a special place in Roman history and it hosts the townhall of Rome since 1144 (obviously, this is where the name Washington's capitol comes from). The square on top was designed by Michelangelo. On top of the hill there is also a nice church (Ara Cealis) and the Musei Capitolini. This is the oldest public museum in the world. It houses some famous Roman statues (e.g. Roman bronze statue of the she wolf feeding Romulus and Remus).
 
 #### Altare della patria 
-You won’t miss it, it’s the big white building next to the square Piazza Venezia with italian flags on tip. The building was built by Mussolini to celebrate soldiers who died in WWI. Piazza Venezia is also the place where Mussolini was giving public speeches.
+You won’t miss it, it’s the big white building next to the square Piazza Venezia with Italian flags on tip. The building was built by Mussolini to celebrate soldiers who died in WWI. Piazza Venezia is also the place where Mussolini was giving public speeches.
 
 
 
@@ -150,7 +150,7 @@ knitr::include_graphics("san_paolo.jpg")
 
 * Basilica di San Giovanni (Sanctum sanctorum) - This is actually the real headquarters of the Roman Chatolic church. The obelisk in front of the church is the tallest in the world.
 * Basilica di Santa Maria Maggiore 
-* Chiesa cappuccini - This church has crypt full of monk’s skulls (like the one in Paris)
+* Chiesa cappuccini - This church has a crypt full of monk’s skulls (like the one in Paris)
 * Santa Maria in Cosmedin (Bocca della verità)
 * San Luigi dei Francesi
 * Santa Maria Trastevere
@@ -178,9 +178,9 @@ knitr::include_graphics("piramide.jpg")
 
 #### Other famous sites
 * Quirinale - the palace of the president. It is 30 times larger than the white house and a lot older and nicer inside! You can only visit with guided tours. Requires booking in advance.
-* Terme di Caracalla - Ruins of ancient bathouse
+* Terme di Caracalla - Ruins of an ancient bathhouse
 * Ara Pacis - Shrine to peace constructed by emperor Augustus. It’s beautifully preserved, very nice carvings. It’s normally not too crowded because it requires a ticket to enter. In my opinion it is worth a quick stop if you are nearby.
-* Via Appia - Roman cobblestone road lined with ancient tombs. Good for hiking. Also goes next to some ancient Roman aqueducts
+* Via Appia - Roman cobblestone road lined with ancient tombs. Good for hiking. Passes next to some an ancient Roman aqueduct.
 * Piramide - A marble pyramid built by a Roman general. Just next to it, there is the protestant cemetery of Rome, where you can find the famous [Angel of grief](https://en.wikipedia.org/wiki/Angel_of_Grief) statue.
 * Catacombs - underground network of tunnels used by Christian when they were persecuted by Roman emperors
 * Villa Borghese - LArge park in the city centre of Rome. As the name suggests, It used to be part of the Borghese’s family villa. Now it’s public.
@@ -233,7 +233,7 @@ Rome has many typical dishes. It’s culinary tradition comes from poor shepherd
 
 
 #### Starters
-* Supply - fried rice ball with cheese
+* Suppli - fried rice ball with cheese
 * Fiori di zucca - Fried courgette flowers filled with anchovies and cheese
 
 
@@ -261,6 +261,8 @@ I am not very good because I have been away for a while, but here a few I can re
 These are popular places, they will require booking in advance
 [Luciano cucina italiana](https://goo.gl/maps/WRwMEd3vPTxCckd47), [Sora Lella](https://goo.gl/maps/j4A2w5nBagemBBiAA), [Armando al Pantheon](https://goo.gl/maps/xLk4FJYVC4wxchMD6), [Osteria al Grappolo d’oro](https://goo.gl/maps/qiGRHLGiDf2uhbU78), [Osteria della trippa](https://goo.gl/maps/4kkG6MBBRWhgv2w16), [Poldo e Gianna](https://goo.gl/maps/35K1i8BMiddhL8P56).
 
+#### Best espresso in Rome (supposedly)
+[Caffè Sant'Eustachio](https://goo.gl/maps/pdxExweUSQAjK5QF9)
 
 
 
