@@ -46,7 +46,7 @@ The Vatican is the smallest country in the world (44 sq km). It is entirely encl
 
 ## The most popular sites
 
-I don't know why, but most of the travellers to Rome tend to book only three days. That is much less than what is actually needed to tour the city: you will be rushing around all day and still miss so many great things! Needless to say — if you booked less than three days in Rome, then you are a fool! I think at least five days are required, but since three days is the norm, I split the most famous attractions in three days (the ones every tourist goes to) and listed the other attractions, less touristic but equally nice, and which you will probably not have the time to visit, in the next section. For your reference, I added a map at the end of this section.  
+I don't know why, but most of the travellers to Rome tend to book only three days. That is much less than what is actually needed to tour the city: you will be rushing around all day and still miss so many great things! I think at least five days are required, but since three days is the norm, I split the most famous attractions in three days (the ones every tourist goes to) and listed the other attractions, less touristic but equally nice, and which you will probably not have the time to visit, in the next section. For your reference, I added a map at the end of this section.  
 
 
 ```{r, fig.align="center", fig.cap="The school of Athens (Raphael)"}
@@ -118,7 +118,7 @@ Again, you will find long queues here. My advice is to buy the tickets at the en
 According to legend, the capitol hill is where Rome was founded. It has a special place in Roman history and it hosts the townhall of Rome since 1144 (obviously, this is where the name Washington's capitol comes from). The square on top was designed by Michelangelo. On top of the hill there is also a nice church (Ara Cealis) and the Musei Capitolini. This is the oldest public museum in the world. It houses some famous Roman statues (e.g. Roman bronze statue of the she wolf feeding Romulus and Remus).
 
 #### Altare della patria 
-You won’t miss it, it’s the big white building next to the square Piazza Venezia with Italian flags on tip. The building was built by Mussolini to celebrate soldiers who died in WWI. Piazza Venezia is also the place where Mussolini was giving public speeches.
+You won’t miss it, it’s the big white building next to the square Piazza Venezia with a large Italian flags on top. The building was built by Mussolini to celebrate soldiers who died in WWI. Piazza Venezia is also the place where Mussolini was giving public speeches.
 
 
 
