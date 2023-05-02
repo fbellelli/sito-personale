@@ -74,7 +74,7 @@ The castle of the Popes. It only served a couple of times for defence. In case o
 
 
 
-```{r, fig.align="center", fig.cap="Piazza Navona<br>Source: [Pexels](https://www.pexels.com/photo/sculptures-on-a-water-fountain-in-front-of-a-building-7355954/)"}
+```{r, fig.align="center", fig.cap="Fontana di Trevi<br>Source: [Pexels](https://www.pexels.com/photo/sculptures-on-a-water-fountain-in-front-of-a-building-7355954/)"}
 knitr::include_graphics("fontana_trevi.jpg")
 ```
 
