@@ -1,0 +1,265 @@
+---
+title: "Automatic sorting of pictures by location"
+description: |
+  I like to make a backup of my pictures on an external drive and keep them tidy by sorting them in a separate folder for each country. In this post I share a small script to automate this process and showcase how to do reverse geocoding offline.
+author:
+  - name: Francesco S. Bellelli
+date: 2023-04-20
+categories: 
+  - coding
+output:
+  distill::distill_article:
+    toc: true
+    toc_depth: 3
+    self_contained: false
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+
+library(htmltools)
+```
+
+```{r, echo=FALSE, fig.cap="image from Caterina Sousa (Pexels)", fig.align='center'}
+knitr::include_graphics("pexels-catarina-sousa-68704.jpg")
+```
+
+## Introduction
+
+Most of our photo devices save information on the location in which pictures were shot. This allows your phone gallery to create those nice maps with all your pictures scattered around the globe. So, can we access this information and use it to sort the pictures in an external hard disk? Yes, we can absolutely can do that!
+
+Broadly speaking we can divide our task in 3 fundamental steps:
+
+1)  Extracting geographic information from the picture files
+2)  Finding in which country the picture was taken (if you wish to sort by state/province/city this can also be done)
+3)  Copying the pictures in a tidy folder structure
+
+In this tutorial, I will walk you through each step, showing you how to use R to perform each task and automate the sorting of your pictures by location.
+
+## Extracting EXIF information
+
+The first step is to extract the precious geographic information from the picture files. It turns our these are stored in a standardised way in something called **EXIF**.
+
+### What is EXIF data?
+
+EXIF (Exchangeable Image File Format) is a standard format for storing metadata in image files used by all digital cameras and smartphones. The EXIF information in a picture file typically includes data about the camera used to take the picture, the date and time the picture was taken, the shutter speed, aperture, ISO, focal length, and other camera settings. Additionally, it can include information about the location where the picture was taken, including the **GPS coordinates** and altitude. It is precisely these GPS coordinates that we will be using to sort our pictures.
+
+### Extracting EXIF data from pictures
+
+The package `exifr` can be used to extract EXIF data from the picture files with one line of code. Just a small caveat: in order to work the package requires an installation of *perl* (a programming language). If you don't have *perl* already installed, [follow the instructions here to get the latest version](https://github.com/paleolimbot/exifr). This quite simple to do, it will just require one or two clicks.
+
+```{r, eval=FALSE}
+library(exifr)
+
+# folder where pictures are located
+path_orig <- "C:/Users/me/EXAMPLE_PICTURE_FOLDER/"
+
+# extract GPS coordinates
+info <- read_exif(path = path_orig,
+                  tags = c("GPSLatitude", "GPSLongitude"),
+                  recursive = T) # If TRUE, this will loop through all the subdirectories in the path
+  
+```
+
+The command above extract the latitude and longitude information for all the pictures in the folder and conveniently return it in a table. If you wish to check what other picture information is stored in the EXIF data, just drop the `tags` line to see all the 180+ fields available.
+
+```{r, echo = FALSE}
+info <- read.csv("map_info_2023_04_29.csv", stringsAsFactors = FALSE)
+```
+
+### Visualising extracted coordinates
+
+Now that we have the latitude and longitude of our pictures' locations, we can place them on a map to get a bird eye view of the results. The package `leaflet` provides an easy and interactive maps. Zoom in the map below to see the exact location of my last 2444 photos.
+
+```{r layout = "l-page"}
+library(leaflet)
+
+leaflet(info) %>%
+      addTiles() %>%  # This will add a base layer map from OpenStreetMap
+      addCircleMarkers(lng= ~GPSLongitude, lat=~GPSLatitude, # add markers for your photo's location
+                       clusterOptions = markerClusterOptions()) # Groups markers together when zooming out 
+```
+
+## Reverse geocoding
+
+**Reverse geocoding** is the process of finding a location or an address from geographic coordinates (latitude and longitude) on a map. It is the inverse of geocoding, which transforms an address into geographic coordinates.
+
+If you are interested in precise addresses (e.g. street level), then the best approach is to use a reverse geocoding API such as the one offered by Google Maps or OpenStreetMap (check out the packages `ggmaps` and `tidygeocoder` if you are interested in these solutions). Be aware that these services often require setting up an account and might involve a cap on the free number of API calls (i.e. a limit on the free number of addresses you can get).
+
+Since we are only interested in knowing the country in which pictures are taken we will take a different approach: we will perform the reverse geocoding offline by levaraging R's GIS packages. Essentially, this will happen in two steps: **Step 1)** Load geospatial information on country borders, and **Step 2)** check in which country the coordinates fall.
+
+Notice that this approach could potentially be extended also to more precise geographic information (e.g. finding out states, counties, provinces) by swapping the data in **Step 1** with more granular datasets.
+
+### Loading country border informations
+
+Geospatial data on international borders can be downloaded from [Natural Earth](https://www.naturalearthdata.com/), a free repository of GIS data. I would recommend going for the 10m country country polygons, which you can download by clicking [here](https://www.naturalearthdata.com/http//www.naturalearthdata.com/download/10m/cultural/ne_10m_admin_0_countries.zip). The download will contain a folder with multiple GIS data files. I will now show you how to read this information in R.
+
+In case you wish to retrieve more precise location information from the pictures, you could consider downloading states or even county polygons ([data can be found on this page](%5Bhttps://www.naturalearthdata.com/downloads/10m-cultural-vectors/%5D)).
+
+The easiest way of loading the country information in R is with the package `sf`, which provides an easy way of manipulating GIS data. You can load the country polygons in R with the commands below.
+
+In the first line I define the path to the shapefile (the one with the extension **.shp**). In the second line I read it in R by using the package `sf`. If you check the object, you will see that it is organised in a table format. Each row corresponds to a country; each column provides information on the country (e.g. population, GDP, different names, etc.). The last column, `geometry`, contains the actual geospatial information. It is the list of vertices of the polygons describing each country. In the third line of code, I keep only the information on country names and geometries (this will keep it simpler and make the next plot faster).
+
+```{r, eval = FALSE}
+library(sf)
+
+# path to the shapefile (.shp) containing country borders
+path_country_shapefile <- "EXAMPLE/ne_10m_admin_0_countries/ne_10m_admin_0_countries.shp" 
+
+# load shapefiles countries
+countries <- read_sf(path_country_shapefile)
+  
+# keep only info on country name and borders
+countries <- countries[,c("NAME_LONG","geometry")]
+
+# Now you can easily plot a world map (this might be a bit slow):
+plot(countries)
+
+```
+
+### Converting coordinates to countries
+
+Now that we have border information, we just need to check in which country our pictures were taken.
+
+The first command specifies that our latitude and longitude columns are geographic coordinates in the [World Geodetic System (WGS84)](https://en.wikipedia.org/wiki/World_Geodetic_System): this is the coordinates and earth representation used by GPS. All that is left to do is check in which country polygon these coordinates are. We can perform this operation with the command `st_intersects`, which returns the number of the country in which the photo was taken. Finally, we can use this index to import the country name in our info table.
+
+```{r eval = FALSE}
+
+# convert info into vector points
+points <- st_as_sf(info[!is.na(info$GPSLatitude),], coords = c("GPSLongitude", "GPSLatitude"), crs = "WGS84")
+  
+# intersect points with countries
+countries_noegypt <- countries[-162,] #there seem to be issues with the shape of Egypt, so I will drop it from this demo
+country_match <- as.data.frame(st_intersects(points, countries_noegypt))
+
+# add country name to our table of information
+info$country[!is.na(info$GPSLatitude)][country_match$row.id] <- countries_noegypt$NAME_LONG[country_match$col.id]
+  
+
+```
+
+In this specific example we had to drop Egypt because there seems to be an issue with its polygon. This could be solved by replacing the border information with data from an alternative source. A quick search reveals many alternative sources (e.g. [World Bank](https://datacatalog.worldbank.org/search/dataset/0038272), [geoBoundaries](https://www.geoboundaries.org/), [University of Pennsylvania](https://guides.library.upenn.edu/globalgis), [ArcGIS](https://hub.arcgis.com/datasets/esri::world-countries-generalized/explore?location=30.840711%2C29.884200%2C8.49), [DIVA-GIS](https://www.diva-gis.org/gdata), [IPUS](https://international.ipums.org/international/gis.shtml), [Opendatasoft](https://public.opendatasoft.com/explore/dataset/world-administrative-boundaries/table/), [IGISMAP](https://www.igismap.com/download-world-shapefile-free-country-borders-continents/)). Potentially, one could download just the shapefile for Egypt and intersect the photo location with this file.
+
+## Copying files
+
+If everything worked fine, you should now have a table looking like the one below. All we are left to do is save it in a tidy folder structure.
+
+```{r echo = FALSE}
+knitr::kable(info[c(100, 1000, 2200),c(1:3,5)])
+```
+
+The code below creates a separate folder for each country and copies the photos in the corresponding folder. For countries for which no country was found, a special folder "unknown country" is created. This could happen mainly for two reasons: **1)** there is no geospatial coordinates in the EXIF data. **2)** When we intersect the coordinate with the country polygon, the point landed outside the country polygon. This may occur next to the sea or large water bodies because the polygons are only a rough representation of a country land outline. If this is the case you may try using the command ´sf_distance´ to find the closest country polygon.
+
+Moreover, if you are close to the poles, a certain degree of distortion is created when the polygons are projected on a flat surface. The intersection operation carried out by ´sf´ are done on a planar projection; the default projection (equirectangular) tends to introduce distortion closer to the poles. You may mitigate this problem by choosing a more suitable projection and applying it to the photo's coordinates and country polygons with the command `st_transform`. This is a complex topic: if you want to learn more and understand which projection might serve you best, I highly recommend [this FANTASTIC series of articles from the ANZLIC Committee on Surveying and Mapping (ACSM)](https://www.icsm.gov.au/education/fundamentals-mapping/projections).
+
+```{r, eval = F}
+  
+  # path of the folder where you want to save the pictures
+  path_dest <- "C:/Users/me/EXAMPLE_SORTED/"
+
+  # if there is any photo for which we did not manage to identify the country, tag it as "unknown country"
+  info$country <- ifelse(is.na(info$country), "unknown country", info$country)
+  
+  #make list of all countries (this is used to create folders for each countries)
+  countries_photos <- unique(info$country)
+  
+  # copy the pictures in the the destination directory
+  for (i in countries_photos){
+    
+    cat(paste0("\rCopying pictures for country ", match(i, countries_photos), "/", length(countries_photos), ": ", i, paste0(rep(" ",30), collapse = "")))
+    
+    # create a directory for each country for which there are pictures
+    if (!dir.exists(paste0(path_dest, i))){
+      dir.create(paste0(path_dest, i))
+    }
+    
+    # copy the picture in the destination directory
+    temp <- info[info$country == i, ]
+    file.copy(from= temp$SourceFile, to= paste0(path_dest, i), 
+              overwrite = FALSE, recursive = FALSE, 
+              copy.date = TRUE)
+    
+  }
+  
+```
+
+## Conclusion
+
+Now you know how to sort you pictures based on the location information saved by our devices. Hopefully, this post has shown you that you can easily automate the process in R. So, whether you have a large collection of travel photos or just want to organize your everyday pictures, this could be an efficient way to do so. If you wish, you can even place the code in a function and add a few status messages to make it more reusable! (to reveal the code click on *show code*)
+
+```{r eval = FALSE, code_folding = TRUE}
+photo_countries <- function(
+    path_orig, # path where pictures are located: "example/"
+    path_dest,   # path where pictures are to be copied to: e.g. "example_sorted/" 
+    path_country_shapefile, # path to the shapefile containing country borders
+    plot_map = TRUE){ # Logical indicating whether to plot a map with all the picture locations (may be slow with many pictures)
+  
+  library(sf)
+  library(leaflet)
+  library(exifr)
+  
+  cat(paste0("\rExtracting coordinates information from the picures"))
+  
+  # extract info from all files
+  info <- read_exif(path = path_orig, tags = c("GPSLatitude", "GPSLongitude", "DateTimeOriginal"), recursive = T)
+  
+  # plot photo location on map
+  if (plot_map){
+    leaflet(info) %>%
+      addTiles() %>%  
+      addCircleMarkers(lng= ~GPSLongitude, lat=~GPSLatitude, clusterOptions = markerClusterOptions())
+  }
+  
+  # load shapefiles countries
+  countries <- read_sf(path_country_shapefile)
+  
+  # just keep info on country name
+  countries <- countries[,c("NAME_LONG","geometry")]
+  
+  # info message
+  cat(paste0("\rFinding countries for ", nrow(info), " pictures"))
+  
+  # convert info into vector points
+  points <- st_as_sf(info[!is.na(info$GPSLatitude),], coords = c("GPSLongitude", "GPSLatitude"), crs = 4326)
+  
+  # intersect points with countries
+  countries_noegypt <- countries[-162,] #there seem to be issues with the shape of Egypt
+  country_match <- as.data.frame(st_intersects(points, countries_noegypt))
+  
+  # keep only first match if multiple
+  country_match <- country_match[!duplicated(country_match$row.id),]
+  
+  # add country name to table
+  info$country[!is.na(info$GPSLatitude)][country_match$row.id] <- countries_noegypt$NAME_LONG[country_match$col.id]
+  
+  # save info extracted
+  write.csv(info, "info.csv", row.names = FALSE)
+  
+  # make list of all countries 
+  info$country <- ifelse(is.na(info$country), "unknown country", info$country)
+  countries_photos <- unique(info$country)
+  
+  # copy the pictures in the the destination directory
+  for (i in countries_photos){
+    
+    cat(paste0("\rCopying pictures for country ", match(i, countries_photos), "/", length(countries_photos), ": ", i, paste0(rep(" ",30), collapse = "")))
+    
+    # create a directory for each country for which there are pictures
+    if (!dir.exists(paste0(path_dest, i))){
+      dir.create(paste0(path_dest, i))
+    }
+    
+    # copy the picture in the destination directory
+    temp <- info[info$country == i, ]
+    file.copy(from= temp$SourceFile, to= paste0(path_dest, i), 
+              overwrite = FALSE, recursive = FALSE, 
+              copy.date = TRUE)
+    
+  }
+  
+  # message info
+  cat(paste0("\rDONE! ;-)\n\n"))
+  sort(table(info$country), decreasing = TRUE)
+  
+}
+```
