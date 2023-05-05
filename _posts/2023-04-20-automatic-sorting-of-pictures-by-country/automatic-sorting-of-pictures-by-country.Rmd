@@ -12,6 +12,7 @@ output:
     toc: true
     toc_depth: 3
     self_contained: false
+preview: thumbnail.jpg
 ---
 
 ```{r setup, include=FALSE}
@@ -20,7 +21,7 @@ knitr::opts_chunk$set(echo = TRUE)
 library(htmltools)
 ```
 
-```{r, echo=FALSE, fig.cap="image from Caterina Sousa (Pexels)", fig.align='center', preview=TRUE}
+```{r, echo=FALSE, fig.cap="image from Caterina Sousa (Pexels)", fig.align='center'}
 knitr::include_graphics("pexels-catarina-sousa-68704.jpg")
 ```
 
