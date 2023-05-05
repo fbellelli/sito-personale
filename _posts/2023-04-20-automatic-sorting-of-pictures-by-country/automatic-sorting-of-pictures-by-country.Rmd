@@ -20,7 +20,7 @@ knitr::opts_chunk$set(echo = TRUE)
 library(htmltools)
 ```
 
-```{r, echo=FALSE, fig.cap="image from Caterina Sousa (Pexels)", fig.align='center'}
+```{r, echo=FALSE, fig.cap="image from Caterina Sousa (Pexels)", fig.align='center', preview=TRUE}
 knitr::include_graphics("pexels-catarina-sousa-68704.jpg")
 ```
 
