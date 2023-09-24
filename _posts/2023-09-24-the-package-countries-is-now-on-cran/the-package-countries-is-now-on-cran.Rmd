@@ -1,0 +1,44 @@
+---
+title: "The package countries is now on CRAN"
+description: |
+  After a year of development, I am happy to annouce that my package can now be downloaded directly from R's official repository. And it has some cool new functionalities!
+author:
+  - name: Francesco S. Bellelli
+date: 2023-09-24
+categories: 
+  - finance
+output:
+  distill::distill_article:
+    toc: true
+    toc_depth: 3
+    self_contained: false
+preview: R_logo.png
+---
+
+```{r, include = FALSE}
+library(countries)
+```
+
+
+
+In practical terms, it means that you can now download and load the package `countries` simply with the commands:
+
+
+```{r, eval = FALSE}
+install.packages("countries")
+library(countries)
+```
+
+This official release also coincides with some major additions to the package. For example, the function `country_info` allows to download information from the [countries REST API](https://restcountries.com/) and the function `quick_map` makes it super easy to produce [country chloropleth maps](https://en.wikipedia.org/wiki/Choropleth_map) thanks to fuzzy matching of country names. Here, have a look at how easy is to get information on which side of the road people drive in every country, and plot it on a map:
+
+
+```{r, dpi = 700, warning = FALSE, message = FALSE, fig.asp=0.5}
+# downloading information on driving side
+example_data <- country_info(fields = c("car"))
+
+# make a map
+quick_map(example_data, plot_col = "car.side")
+```
+
+
+For more information on the package and the new functionalities, consult the [website of the package](https://fbellelli.github.io/countries/).
