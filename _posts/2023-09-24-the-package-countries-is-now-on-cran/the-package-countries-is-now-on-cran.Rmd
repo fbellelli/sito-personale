@@ -6,7 +6,7 @@ author:
   - name: Francesco S. Bellelli
 date: 2023-09-24
 categories: 
-  - finance
+  - coding
 output:
   distill::distill_article:
     toc: true

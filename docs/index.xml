@@ -38,13 +38,13 @@ example_data &amp;lt;- country_info(fields = c(&amp;quot;car&amp;quot;))
 
 # make a map
 quick_map(example_data, plot_col = &amp;quot;car.side&amp;quot;)&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;&lt;img src="file56142d68453c_files/figure-html/unnamed-chunk-3-1.png" width="4900" /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src="file35b0474c80_files/figure-html/unnamed-chunk-3-1.png" width="4900" /&gt;&lt;/p&gt;
 &lt;p&gt;For more information on the package and the new functionalities,
 consult the &lt;a href="https://fbellelli.github.io/countries/"&gt;website of
 the package&lt;/a&gt;.&lt;/p&gt;
 &lt;pre class="r distill-force-highlighting-css"&gt;&lt;code&gt;&lt;/code&gt;&lt;/pre&gt;</description>
       <distill:md5>334dc6f514cbcede7addbb3c0622c30e</distill:md5>
-      <category>finance</category>
+      <category>coding</category>
       <guid>https://fbellelli.com/posts/2023-09-24-the-package-countries-is-now-on-cran</guid>
       <pubDate>2023-09-23</pubDate>
       <media:content url="https://fbellelli.com/posts/2023-09-24-the-package-countries-is-now-on-cran/R_logo.png" medium="image" type="image/png" width="1920" height="1488"/>

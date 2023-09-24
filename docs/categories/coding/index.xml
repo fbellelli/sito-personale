@@ -14,6 +14,42 @@
     <generator>Distill</generator>
     <lastBuildDate>2023-09-23</lastBuildDate>
     <item>
+      <title>The package countries is now on CRAN</title>
+      <dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Francesco S. Bellelli</dc:creator>
+      <link>https://fbellelli.com/posts/2023-09-24-the-package-countries-is-now-on-cran</link>
+      <description>
+
+
+&lt;p&gt;In practical terms, it means that you can now download and load the
+package &lt;code&gt;countries&lt;/code&gt; simply with the commands:&lt;/p&gt;
+&lt;pre class="r"&gt;&lt;code&gt;install.packages(&amp;quot;countries&amp;quot;)
+library(countries)&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;This official release also coincides with some major additions to the
+package. For example, the function &lt;code&gt;country_info&lt;/code&gt; allows to
+download information from the &lt;a
+href="https://restcountries.com/"&gt;countries REST API&lt;/a&gt; and the
+function &lt;code&gt;quick_map&lt;/code&gt; makes it super easy to produce &lt;a
+href="https://en.wikipedia.org/wiki/Choropleth_map"&gt;country chloropleth
+maps&lt;/a&gt; thanks to fuzzy matching of country names. Here, have a look at
+how easy is to get information on which side of the road people drive in
+every country, and plot it on a map:&lt;/p&gt;
+&lt;pre class="r"&gt;&lt;code&gt;# downloading information on driving side
+example_data &amp;lt;- country_info(fields = c(&amp;quot;car&amp;quot;))
+
+# make a map
+quick_map(example_data, plot_col = &amp;quot;car.side&amp;quot;)&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;img src="file35b0474c80_files/figure-html/unnamed-chunk-3-1.png" width="4900" /&gt;&lt;/p&gt;
+&lt;p&gt;For more information on the package and the new functionalities,
+consult the &lt;a href="https://fbellelli.github.io/countries/"&gt;website of
+the package&lt;/a&gt;.&lt;/p&gt;
+&lt;pre class="r distill-force-highlighting-css"&gt;&lt;code&gt;&lt;/code&gt;&lt;/pre&gt;</description>
+      <distill:md5 xmlns:distill="https://distill.pub/journal/">334dc6f514cbcede7addbb3c0622c30e</distill:md5>
+      <category>coding</category>
+      <guid>https://fbellelli.com/posts/2023-09-24-the-package-countries-is-now-on-cran</guid>
+      <pubDate>2023-09-23</pubDate>
+      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://fbellelli.com/posts/2023-09-24-the-package-countries-is-now-on-cran/R_logo.png" medium="image" type="image/png" width="1920" height="1488"/>
+    </item>
+    <item>
       <title>Automatic sorting of pictures by location</title>
       <dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Francesco S. Bellelli</dc:creator>
       <link>https://fbellelli.com/posts/2023-04-20-automatic-sorting-of-pictures-by-country</link>
