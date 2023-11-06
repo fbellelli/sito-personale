@@ -49,7 +49,7 @@ div.blue { background-color:#e6f0ff; border-radius: 5px; padding: 20px;}
 - Data [grouped by measure - country](data files/Extended EDB by measure-country.zip) (good for merging with country data)
 - Data [grouped by measure - country - HS chaper](data files/Extended EDB by measure-country-HS chapter.zip) (good for merging with trade data)
 
-*Last update: 17.07.2022 --- EDB version 2021*
+*Last update: 05.11.2023 --- EDB version 2023*
 
 **Please reference as:** <br>
 [Bellelli, F.S. and Xu, A. (2022) How do environmental policies affects green innovation and trade? Evidence from the WTO environmental database (EDB), *WTO Staff Working Paper, ERSD-2022-23*.](https://www.wto.org/english/res_e/reser_e/ersd202203_e.pdf)
@@ -86,7 +86,7 @@ xaringanExtra::use_panelset()
 ### Implementation years {.panel-name}
 
 <div class="column-left55">
-```{r echo=FALSE, fig.cap="Measures in force vs notified (EDB v.2018)"}
+```{r echo=FALSE, fig.cap="Measures in force vs notified"}
 knitr::include_graphics("images/detected active measures.png")
 ```
 </div>
@@ -108,6 +108,9 @@ Since the reporting obligations are not uniform across WTO agreements, the struc
 
 **Our EDB extension identifies possible 2-digits HS codes for 90% of the measures in the database.** We use natural language processing techniques to parse the description of the measures and identify potential links with HS codes. The linkage is based on how well the wording in the description matches the products listed in HS chapters. We then use information on economic sector and environmental goals of the measure to narrow down the potential matches.
 
+```{r echo=FALSE, fig.cap="HS codes matched to meaasures in the EDB policies"}
+knitr::include_graphics("images/detected_HS_all_active_measures.png")
+```
 
 
 :::
@@ -121,8 +124,8 @@ Moreover, our data extension is available in three formats: measure, country-mea
 
 
 
-```{r echo=FALSE, fig.cap="Number of environment-related measures by country (EDB v.2018)"}
-knitr::include_graphics("images/map EDB measures.png")
+```{r echo=FALSE, fig.cap="Number of environment-related measures by country"}
+knitr::include_graphics("images/map_n_measures.jpg")
 ```
 
 

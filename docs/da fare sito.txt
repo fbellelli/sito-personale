@@ -1,0 +1,79 @@
+COSE DA FARE:
+- aggiungere tracking a sito internet. 
+- modificare fonts/colori in my-theme.css
+- creare effetto parallasse. vedi: https://holtzy.github.io/Pimp-my-rmd/
+- aggiungere favicon a sito -> stemma?
+- aggiungere pagina con aforismi
+- rileggere tutte le pagine e controllare tutti i link
+- Scrivere regole BBBB o fare tutorial. aggiornare articolo (e app?)
+- aggiustare footer
+- SEO / google analytics
+- aggiungere altre immagini a pagina data EDB
+- fare un'altro articolo:
+	. EDB basandomi su materiale paper e scarti
+	. fisheries
+	. RTA
+	. nowcast
+	. BBBB
+	. pathfinding
+	. string distance
+	. goal based investment
+	. qualche altro tema finanza
+	. random forest algorithm	
+	. gravity models
+	. numerai model
+	> post pubblicità WTR
+	> fare articolo che rimandi a nota carbon embodied in trade
+	> fare pagina o articolo con data visualisation scartate. mettere cose fatte per ECB / WTO / mappa Pictet
+	> kaplan meiers usando dati survival ratification
+
+
+
+The COVID-19 pandemic
+and the prospect of increasingly frequent and more intense natural and man-made
+disasters raise important questions about the resilience of the global economy
+to such shocks. The World Trade Report 2021 explores the role of trade,
+trade policy and international cooperation in building and supporting economic
+resilience.
+
+
+
+
+PER PRENDERE SPUNTO E MIGLIORARE SITO:
+
+- https://www.jhelvy.com/publications.html     ---> vedi tab "projects"
+					       ---> tab publication con diversi pulsanti & "Haiku" sulla destra
+					       ---> logo nei pulsanti (linkeidn, Github, email)
+
+---> lista blogs con Distill: https://github.com/jhelvy/distillery
+
+---> aggiungere toc
+	
+---> cambiare theme / colours/ FOOTER
+
+---> far fare icona da stemma di famiglia
+
+
+MATERIALE UTILE: 
+
+Floating images wrapped by text: https://www.jhelvy.com/posts/2021-03-25-customizing-distill-with-htmltools-and-css/
+
+Pimp my RMD (https://holtzy.github.io/Pimp-my-rmd/) ---> vedi effetto parallasse e altri trucchetti
+
+reactable  ---> per fare belle tabelle reattive
+
+Per fare pagina About: (in alternativa usare sistema descritto da pimp my RMD per dividere in colonne)
+ - https://github.com/seankross/postcards#the-templates
+
+Presentazione generica:
+ - https://aosmith16.github.io/spring-r-topics/slides/week02_distill_websites.html#1
+ - https://yuzar-blog.netlify.app/posts/2020-12-26-how-to-create-a-blog-or-a-website-in-r-with-distill-package/#d-footnote-1
+
+Bottoni:
+ - https://rdrr.io/cran/bsplus/man/bs_button.html
+ - https://fmmattioni.github.io/downloadthis/
+
+Per aggiungere iframe a Shiny:
+```{r, layout="l-screen-inset shaded", height="500px"}
+knitr::include_app("https://fbellelli.shinyapps.io/TileMaster/")
+```

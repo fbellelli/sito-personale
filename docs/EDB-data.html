@@ -130,7 +130,7 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 
   <!--/radix_placeholder_meta_tags-->
   
-  <meta name="citation_reference" content="citation_title=How do environmental policies affect green innovation and trade? Evidence from the WTO environmental database (EDB);citation_author=Francesco Saverio Bellelli;citation_author=Ankai Xu"/>
+  <meta name="citation_reference" content="citation_title=How do environmental policies affect green innovation and trade? Evidence from the WTO environmental database (EDB);citation_volume=ERSD-2022-23;citation_author=Francesco Saverio Bellelli;citation_author=Ankai Xu"/>
   <!--radix_placeholder_rmarkdown_metadata-->
 
   <script type="text/json" id="radix-rmarkdown-metadata">
@@ -2570,7 +2570,7 @@ div.blue { background-color:#e6f0ff; border-radius: 5px; padding: 20px;}
 <li>Data <a href="data%20files/Extended%20EDB%20by%20measure-country.zip">grouped by measure - country</a> (good for merging with country data)</li>
 <li>Data <a href="data%20files/Extended%20EDB%20by%20measure-country-HS%20chapter.zip">grouped by measure - country - HS chaper</a> (good for merging with trade data)</li>
 </ul>
-<p><em>Last update: 17.07.2022 — EDB version 2021</em></p>
+<p><em>Last update: 05.11.2023 — EDB version 2023</em></p>
 <p><strong>Please reference as:</strong> <br>
 <a href="https://www.wto.org/english/res_e/reser_e/ersd202203_e.pdf">Bellelli, F.S. and Xu, A. (2022) How do environmental policies affects green innovation and trade? Evidence from the WTO environmental database (EDB), <em>WTO Staff Working Paper, ERSD-2022-23</em>.</a></p>
 </div>
@@ -2591,9 +2591,9 @@ div.blue { background-color:#e6f0ff; border-radius: 5px; padding: 20px;}
 <div class="column-left55">
 <div class="layout-chunk" data-layout="l-body">
 <div class="figure"><span style="display:block;" id="fig:unnamed-chunk-1"></span>
-<img src="images/detected%20active%20measures.png" alt="Measures in force vs notified (EDB v.2018)" width="1181" />
+<img src="images/detected%20active%20measures.png" alt="Measures in force vs notified" width="944" />
 <p class="caption">
-Figure 1: Measures in force vs notified (EDB v.2018)
+Figure 1: Measures in force vs notified
 </p>
 </div>
 </div>
@@ -2608,16 +2608,24 @@ In its current form, the EDB notification dataset is organised along the year of
 <h3 class="panel-name">HS chapters</h3>
 <p>Since the reporting obligations are not uniform across WTO agreements, the structure of notifications and the set of information provided vary according to the agreement under which the measure was notified. Only about a quarter of the notified measures report an <a href="https://en.wikipedia.org/wiki/Harmonized_System">HS</a> or <a href="https://en.wikipedia.org/wiki/International_Classification_for_Standards">ICS</a> code describing the goods to which it relates. Having an idea of the goods affected by the other measures could be useful for trade related research.</p>
 <p><strong>Our EDB extension identifies possible 2-digits HS codes for 90% of the measures in the database.</strong> We use natural language processing techniques to parse the description of the measures and identify potential links with HS codes. The linkage is based on how well the wording in the description matches the products listed in HS chapters. We then use information on economic sector and environmental goals of the measure to narrow down the potential matches.</p>
+<div class="layout-chunk" data-layout="l-body">
+<div class="figure"><span style="display:block;" id="fig:unnamed-chunk-2"></span>
+<img src="images/detected_HS_all_active_measures.png" alt="HS codes matched to meaasures in the EDB policies" width="1574" />
+<p class="caption">
+Figure 2: HS codes matched to meaasures in the EDB policies
+</p>
+</div>
+</div>
 </section>
 <section id="countries" class="panel-name panel">
 <h3 class="panel-name">Countries</h3>
 <p><strong>For multi-state Members (e.g. European Union), we identify all countries affected by the policy measure.</strong> This should make it easier to merge the database with country-level economic data or plot maps.</p>
 <p>Moreover, our data extension is available in three formats: measure, country-measure, country-measure-HS chapter. In the first, each line of the dataset corresponds to a notified environment-related policy (just like the original EDB). In the second one, entries are also split according to the countries they affect: Every line corresponds to a country-measure combination. Finally, the last format is also split for the <a href="https://en.wikipedia.org/wiki/Harmonized_System">2-digits HS codes</a> affected by the policy.</p>
 <div class="layout-chunk" data-layout="l-body">
-<div class="figure"><span style="display:block;" id="fig:unnamed-chunk-2"></span>
-<img src="images/map%20EDB%20measures.png" alt="Number of environment-related measures by country (EDB v.2018)" width="1328" />
+<div class="figure"><span style="display:block;" id="fig:unnamed-chunk-3"></span>
+<img src="images/map_n_measures.jpg" alt="Number of environment-related measures by country"  />
 <p class="caption">
-Figure 2: Number of environment-related measures by country (EDB v.2018)
+Figure 3: Number of environment-related measures by country
 </p>
 </div>
 </div>
@@ -2635,10 +2643,10 @@ Figure 2: Number of environment-related measures by country (EDB v.2018)
 <h3 class="panel-name">Policy score</h3>
 <div class="column-left60">
 <div class="layout-chunk" data-layout="l-body">
-<div class="figure"><span style="display:block;" id="fig:unnamed-chunk-3"></span>
+<div class="figure"><span style="display:block;" id="fig:unnamed-chunk-4"></span>
 <img src="images/EDB%20score%20diagram.png" alt="Policy score components" width="680" />
 <p class="caption">
-Figure 3: Policy score components
+Figure 4: Policy score components
 </p>
 </div>
 </div>
@@ -2655,7 +2663,7 @@ Figure 3: Policy score components
 <div class="sourceCode" id="cb1"><pre class="sourceCode r distill-force-highlighting-css"><code class="sourceCode r"></code></pre></div>
 <div id="refs" class="references csl-bib-body hanging-indent" role="doc-bibliography">
 <div id="ref-EDB_paper" class="csl-entry" role="doc-biblioentry">
-Bellelli, Francesco Saverio, and Ankai Xu. 2022. <span>“<span class="nocase">How do environmental policies affect green innovation and trade? Evidence from the WTO environmental database (EDB)</span>.”</span> <em>WTO Staff Working Paper (Forthcoming)</em>.
+Bellelli, Francesco Saverio, and Ankai Xu. 2022. <span>“<span class="nocase">How do environmental policies affect green innovation and trade? Evidence from the WTO environmental database (EDB)</span>.”</span> <em>WTO Staff Working Paper</em> ERSD-2022-23.
 </div>
 </div>
 <!--radix_placeholder_article_footer-->
