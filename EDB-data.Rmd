@@ -49,7 +49,7 @@ div.blue { background-color:#e6f0ff; border-radius: 5px; padding: 20px;}
 - Data [grouped by measure - country](data files/Extended EDB by measure-country.zip) (good for merging with country data)
 - Data [grouped by measure - country - HS chaper](data files/Extended EDB by measure-country-HS chapter.zip) (good for merging with trade data)
 
-*Last update: 05.11.2023 --- EDB version 2023*
+*Last update: 05.11.2023 --- EDB version 2022*
 
 **Please reference as:** <br>
 [Bellelli, F.S. and Xu, A. (2022) How do environmental policies affects green innovation and trade? Evidence from the WTO environmental database (EDB), *WTO Staff Working Paper, ERSD-2022-23*.](https://www.wto.org/english/res_e/reser_e/ersd202203_e.pdf)
