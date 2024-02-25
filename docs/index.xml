@@ -12,7 +12,7 @@
       <link>https://fbellelli.com/</link>
     </image>
     <generator>Distill</generator>
-    <lastBuildDate>2023-11-05</lastBuildDate>
+    <lastBuildDate>Sun, 05 Nov 2023 00:00:00 +0000</lastBuildDate>
     <item>
       <title>New EDB extension release</title>
       <dc:creator>Francesco S. Bellelli</dc:creator>
@@ -21,7 +21,7 @@
       <category>environment</category>
       <category>economics</category>
       <guid>https://fbellelli.com/posts/2023-11-06-new-edb-extension-release</guid>
-      <pubDate>2023-11-05</pubDate>
+      <pubDate>Sun, 05 Nov 2023 00:00:00 +0000</pubDate>
       <media:content url="https://fbellelli.com/posts/2023-11-06-new-edb-extension-release/detected_HS_last_notification_year.png" medium="image" type="image/png" width="3149" height="1574"/>
     </item>
     <item>
@@ -31,7 +31,7 @@
       <description>After a year of development, I am happy to annouce that my package can now be downloaded directly from R's official repository. And it has some cool new functionalities!</description>
       <category>coding</category>
       <guid>https://fbellelli.com/posts/2023-09-24-the-package-countries-is-now-on-cran</guid>
-      <pubDate>2023-09-24</pubDate>
+      <pubDate>Sun, 24 Sep 2023 00:00:00 +0000</pubDate>
       <media:content url="https://fbellelli.com/posts/2023-09-24-the-package-countries-is-now-on-cran/R_logo.png" medium="image" type="image/png" width="1920" height="1488"/>
     </item>
     <item>
@@ -41,7 +41,7 @@
       <description>Portfolio optimization based on Modern Portfolio Theory (MPT) offers investors a framework to maximize returns while minimizing risk by diversifying their investments across different asset classes. In this post, I give a practical demonstration of how simulation can be used to find an efficient portfolio.</description>
       <category>finance</category>
       <guid>https://fbellelli.com/posts/2023-06-06-mpt-portfolio-optimization</guid>
-      <pubDate>2023-06-07</pubDate>
+      <pubDate>Wed, 07 Jun 2023 00:00:00 +0000</pubDate>
       <media:content url="https://fbellelli.com/posts/2023-06-06-mpt-portfolio-optimization/efficient_frontier.png" medium="image" type="image/png" width="1671" height="1438"/>
     </item>
     <item>
@@ -51,7 +51,7 @@
       <description>I like to make a backup of my pictures on an external drive and keep them tidy by sorting them in a separate folder for each country. In this post I share a small script to automate this process and showcase how to do reverse geocoding offline.</description>
       <category>coding</category>
       <guid>https://fbellelli.com/posts/2023-04-20-automatic-sorting-of-pictures-by-country</guid>
-      <pubDate>2023-04-20</pubDate>
+      <pubDate>Thu, 20 Apr 2023 00:00:00 +0000</pubDate>
       <media:content url="https://fbellelli.com/posts/2023-04-20-automatic-sorting-of-pictures-by-country/thumbnail.jpg" medium="image" type="image/jpeg"/>
     </item>
     <item>
@@ -61,7 +61,7 @@
       <description>I often get asked what to visit in Rome by friends and colleagues planning a trip. In this post I summarise my recommendations and share a few tips for the aspiring tourists.</description>
       <category>other</category>
       <guid>https://fbellelli.com/posts/2022-12-20-what-to-visit-in-rome</guid>
-      <pubDate>2022-12-20</pubDate>
+      <pubDate>Tue, 20 Dec 2022 00:00:00 +0000</pubDate>
       <media:content url="https://fbellelli.com/posts/2022-12-20-what-to-visit-in-rome/cupolone.jpg" medium="image" type="image/jpeg"/>
     </item>
     <item>
@@ -71,7 +71,7 @@
       <description>Version 0.2 of package countries is out. This article is a short description of some of the new functions.</description>
       <category>coding</category>
       <guid>https://fbellelli.com/posts/2022-08-07-updates-to-package-countries</guid>
-      <pubDate>2022-08-07</pubDate>
+      <pubDate>Sun, 07 Aug 2022 00:00:00 +0000</pubDate>
       <media:content url="https://fbellelli.com/posts/2022-08-07-updates-to-package-countries/../../images/Countries_logo.png" medium="image" type="image/png" width="864" height="1000"/>
     </item>
     <item>
@@ -84,7 +84,7 @@
       <category>environment</category>
       <category>other</category>
       <guid>https://fbellelli.com/posts/2022-05-22-a-brief-introduction-to-natural-hazard-risk-analysis</guid>
-      <pubDate>2022-05-22</pubDate>
+      <pubDate>Sun, 22 May 2022 00:00:00 +0000</pubDate>
       <media:content url="https://fbellelli.com/posts/2022-05-22-a-brief-introduction-to-natural-hazard-risk-analysis/flood.jpg" medium="image" type="image/jpeg"/>
     </item>
     <item>
@@ -94,7 +94,7 @@
       <description>The first development version of the package countries is now available on Github. This post looks at how the package can be used to work with country names.</description>
       <category>coding</category>
       <guid>https://fbellelli.com/posts/2022-02-27-first-version-of-countries</guid>
-      <pubDate>2022-02-27</pubDate>
+      <pubDate>Sun, 27 Feb 2022 00:00:00 +0000</pubDate>
       <media:content url="https://fbellelli.com/posts/2022-02-27-first-version-of-countries/../../images/Countries_logo.png" medium="image" type="image/png" width="864" height="1000"/>
     </item>
     <item>
@@ -105,7 +105,7 @@
       <category>economics</category>
       <category>other</category>
       <guid>https://fbellelli.com/posts/2021-12-18-mishmash-of-charts</guid>
-      <pubDate>2021-12-18</pubDate>
+      <pubDate>Sat, 18 Dec 2021 00:00:00 +0000</pubDate>
       <media:content url="https://fbellelli.com/posts/2021-12-18-mishmash-of-charts/../../papers/map pictet.gif" medium="image" type="image/gif"/>
     </item>
     <item>
@@ -117,7 +117,7 @@
       <category>trade</category>
       <category>risk</category>
       <guid>https://fbellelli.com/posts/2021-11-16-the-world-trade-report-is-out</guid>
-      <pubDate>2021-11-16</pubDate>
+      <pubDate>Tue, 16 Nov 2021 00:00:00 +0000</pubDate>
       <media:content url="https://www.wto.org/images/img_bkshop/wtr21_e.jpg" medium="image" type="image/jpeg"/>
     </item>
     <item>
@@ -127,7 +127,7 @@
       <description>Only one week left to the official start of the COP26 in Glasgow, in which global leaders will meet to take crucial decisions on climate change. Scientific evidence shows that we are running out of time. If we wish to avoid the worst scenario, it's now or never. What will come out of the summit? Will it be a flop or a success? We don't know yet, but this article will quickly get you up to speed with climate talks.</description>
       <category>environment</category>
       <guid>https://fbellelli.com/posts/2021-10-24-all-you-need-to-know-about-the-paris-agreement-ahead-of-cop26</guid>
-      <pubDate>2021-10-24</pubDate>
+      <pubDate>Sun, 24 Oct 2021 00:00:00 +0000</pubDate>
       <media:content url="https://fbellelli.com/posts/2021-10-24-all-you-need-to-know-about-the-paris-agreement-ahead-of-cop26/pexels-pixabay-221012.jpg" medium="image" type="image/jpeg"/>
     </item>
     <item>
@@ -137,7 +137,7 @@
       <description>In this post I have a look at data from the City of London to understand how the pandemic has impacted the office market.</description>
       <category>economics</category>
       <guid>https://fbellelli.com/posts/2021-08-15-pandemic-and-the-office-space-market</guid>
-      <pubDate>2021-08-15</pubDate>
+      <pubDate>Sun, 15 Aug 2021 00:00:00 +0000</pubDate>
       <media:content url="https://fbellelli.com/posts/2021-08-15-pandemic-and-the-office-space-market/city2_preview.jpg" medium="image" type="image/jpeg"/>
     </item>
     <item>
@@ -148,7 +148,7 @@
       <category>maths</category>
       <category>other</category>
       <guid>https://fbellelli.com/posts/2021-07-08-the-fascinating-world-of-voronoi-diagrams</guid>
-      <pubDate>2021-07-08</pubDate>
+      <pubDate>Thu, 08 Jul 2021 00:00:00 +0000</pubDate>
       <media:content url="https://fbellelli.com/posts/2021-07-08-the-fascinating-world-of-voronoi-diagrams/voronoi_animation2.gif" medium="image" type="image/gif"/>
     </item>
     <item>
@@ -158,7 +158,7 @@
       <description>I am working on an R package designed to quickly wrangle, merge and explore country data</description>
       <category>coding</category>
       <guid>https://fbellelli.com/posts/2021-06-20-a-package-for-country-data</guid>
-      <pubDate>2021-06-20</pubDate>
+      <pubDate>Sun, 20 Jun 2021 00:00:00 +0000</pubDate>
       <media:content url="https://cdn.britannica.com/13/129613-131-30279F20/Flags-world-flags-Country-history-blog-travel-2009.jpg" medium="image" type="image/jpeg"/>
     </item>
     <item>
@@ -168,7 +168,7 @@
       <description>I created a small strategy game with RStudios' Shiny platform. If it can run a data dashboard, why not a strategy game?</description>
       <category>coding</category>
       <guid>https://fbellelli.com/posts/2021-04-03-tilemaster-a-strategy-game-in-shiny</guid>
-      <pubDate>2021-04-03</pubDate>
+      <pubDate>Sat, 03 Apr 2021 00:00:00 +0000</pubDate>
       <media:content url="https://fbellelli.com/posts/2021-04-03-tilemaster-a-strategy-game-in-shiny/../../images/tilemaster_screenshot.png" medium="image" type="image/png" width="1599" height="1531"/>
     </item>
     <item>
@@ -179,7 +179,7 @@
       <category>environment</category>
       <category>economics</category>
       <guid>https://fbellelli.com/posts/2021-03-20-how-to-increase-participation-in-environmental-agreements</guid>
-      <pubDate>2021-03-20</pubDate>
+      <pubDate>Sat, 20 Mar 2021 00:00:00 +0000</pubDate>
       <media:content url="https://fbellelli.com/posts/2021-03-20-how-to-increase-participation-in-environmental-agreements/map-number-ratifications.png" medium="image" type="image/png" width="7017" height="4209"/>
     </item>
     <item>
@@ -190,7 +190,7 @@
       <description>A gallery displaying some of the artistic creations of Francesco and Lily</description>
       <category>other</category>
       <guid>https://fbellelli.com/posts/2021-01-27-watercolours</guid>
-      <pubDate>2021-01-27</pubDate>
+      <pubDate>Wed, 27 Jan 2021 00:00:00 +0000</pubDate>
       <media:content url="https://fbellelli.com/posts/2021-01-27-watercolours/paintings/squirrel.jpeg" medium="image" type="image/jpeg"/>
     </item>
     <item>
@@ -200,7 +200,7 @@
       <description>Mappa di un sistema di licita naturale lungo-corto a bridge</description>
       <category>other</category>
       <guid>https://fbellelli.com/posts/2021-01-20-mappa-licita-naturale</guid>
-      <pubDate>2021-01-20</pubDate>
+      <pubDate>Wed, 20 Jan 2021 00:00:00 +0000</pubDate>
       <media:content url="https://fbellelli.com/posts/2021-01-20-mappa-licita-naturale/BRIDGE sistema naturale.svg" medium="image" type="image/svg+xml"/>
     </item>
   </channel>
