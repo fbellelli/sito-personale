@@ -66,7 +66,7 @@ ggplot(points,aes(x,y)) +
 
 ### Voronoi patterns in nature
 
-The pattern created by Voronoi diagrams is a common one in nature. In Figure 3, I made a small collage of some naturally occurring Voronoi-like patterns. From microscopic cells in onion skins, to the shell of jackfruits and the coat of giraffes. These patterns are everywhere! 
+The pattern created by Voronoi diagrams is a common one in nature. In Figure 3, I made a small collage of some naturally occurring *Voronoi-like* patterns. From microscopic cells in onion skins, to the shell of jackfruits and the coat of giraffes. These patterns are everywhere! 
 
 A first reason for their omnipresence is that they form efficient shapes. As we mentioned earlier, Voronoi diagram completely tessellates the plan: hence, all space is used. This is very convenient if you are trying to squeeze as much as possible in a limited space --- such as in muscle fibres or bee hives. Secondly, Voronoi diagrams are a spontaneous pattern whenever something is growing at a uniform growth rate from separate points (see Figure 2). For instance, this explains giraffe exhibit such patterns. Giraffe embryos have a scattered distribution of melanin-secreting cells, which is responsible for the dark pigmentation of the giraffe's spots. Over the course of the gestation these cells release melanin --- hence spots radiate outward. Interested reader may refer to [this paper](https://www.iro.umontreal.ca/~poulin/fournier/papers/Walter-2001-ISP/Walter-2001-ISP.pdf), in which the authors use Voronoi diagrams to model computer rendering of spots on animals coats.
 
@@ -93,7 +93,8 @@ Perhaps because of their spontaneous "natural" look, or simply because of their 
 knitr::include_graphics("water cube2.png")
 ```
 
-But Chinese appreciation of Voronoi pattern is surely older than this building. [Guan](https://en.wikipedia.org/wiki/Guan_ware) and  [Ge](https://en.wikipedia.org/wiki/Ge_ware) ware from the Song dynasty have a distinctive crackled glaze. Ceramics can easily crack during the cooling process, however the crackles from the Guan and Ge ware are different --- they are intentional. They are sought after because of their aesthetic qualities. Thanks to the Voronoi-like patterns on their surface, each piece is unique. To date, this is one of the most imitated styles of porcelain (Figure 5).  
+But Chinese appreciation of Voronoi pattern is surely older than this building. [Guan](https://en.wikipedia.org/wiki/Guan_ware) and  [Ge](https://en.wikipedia.org/wiki/Ge_ware) ware from the Song dynasty have a distinctive crackled glaze. Ceramics can easily crack during the cooling process, however the crackles from the Guan and Ge ware are different --- they are intentional. They are sought after because of their aesthetic qualities, which makes each piece is unique. The forming of these patterns on the glaze is usually understood as a sequence of cracks affecting successively smaller subsets of the material's surface. This process, known as hierarchical cracking, often yields patches of patterns similar to Voronoi diagrams. Hence, Voronoi diagram have commonly been used to [model these cracking behaviours](https://arxiv.org/pdf/2305.01991.pdf). To date, this Voronoi-like pattern is one of the most imitated styles in porcelain (Figure 5). 
+
 
 
 ```{r, fig.cap="Guan and Ge wares", fig.align='center'}
@@ -166,10 +167,6 @@ magick::image_resize(prova,geometry_size_pixels(width = 700, preserve_aspect = T
 
 These properties make it very useful in modelling surfaces and objects from a set of points. For instance, the Delaunay triangulation is used to generate meshes for the [finite element method](https://people.eecs.berkeley.edu/~jrs/meshpapers/delnotes.pdf) and in facial recognition, construct 3D models for computer animations and model terrain in GIS analysis. 
 
-
-```{r, fig.align='center',fig.cap="Delaunay triangulation is used to produce meshes for facial recognition<br>Source: [Learn OpenCV](https://learnopencv.com/delaunay-triangulation-and-voronoi-diagram-using-opencv-c-python/)"}
-knitr::include_graphics("https://learnopencv.com/wp-content/uploads/2015/11/opencv-delaunay-Voronoi-subdiv-example.jpg")
-```
 
 
 
