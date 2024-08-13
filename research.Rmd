@@ -19,15 +19,13 @@ In addition to the above, I am also fascinated by recent developments in AI and 
 
 ## Notes and scientific papers
 
-**Bellelli, F.S.** and Xu, A. (2023) From Policy to Progress: The Impact of Environmental Measures on Trade and Innovation, (Currently under review at  *Environmental and Resource Economics*).
-
-Xu, A., Tresa, E., **Bellelli, F.S.**, Bacchetta, M., Monteiro, J.A.. Trade and the transfer of climate-related technologies. *World Trade Organization, Trade and climate change information brief* (*Under internal review*).
-
 
 **Bellelli, F.S.**, Xu, A. Why should we fish for an agreement? An economic analysis of fisheries subsidies. *(to be published as WTO discussion paper)*
 
-**Bellelli, F.S.**, Monteiro, J.A. and Xu, A. Assessing the environmental effectiveness of environmental provisions in Regional Trade Agreements. *(Drafting in progress)*
+**Bellelli, F.S.** and Xu, A. (2024) The Impact of Environmental Measures on Trade and Innovation: Evidence from the WTO Environmental Database (EDB), *Environmental and Resource Economics*. https://doi.org/10.1007/s10640-024-00898-3. <a href="papers/Draft_EDB_paper_ERE.pdf"><button>PDF</button></a>
+<a href="EDB-data.html"><button>Data</button></a>
 
+Xu, A., Tresa, E., **Bellelli, F.S.**, Bacchetta, M., Monteiro, J.A. (2023). Trade and the transfer of climate-related technologies. *World Trade Organization, Trade and climate change information brief*.
 
 **Bellelli, F.S.**, Scarpa, R. and Aftab, A. (2023) An empirical analysis of participation in environmental agreements. *Journal of Environmental Economics and Management*, 118, 102783. https://www.sciencedirect.com/science/article/abs/pii/S0095069623000013.
 <a href="papers/Ratification_paper.pdf"><button>PDF</button></a>
