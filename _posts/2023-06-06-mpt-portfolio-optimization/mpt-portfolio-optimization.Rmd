@@ -120,7 +120,7 @@ dygraph(data = temp, xlab = "Year") %>%
 
 The key assumption when we are performing this optimization exercise is that we assume future performance of an asset to be like it's past performance, at least in the long run. So, for instance, if a stock has been delivering a 2% annual growth over the last ten years, we will assume this trend will continue in the future. 
 
-Hence, our first step is to summarise past performance of our candidate funds. *There are three metrics which we need to derive: 1) the average returns, 2) the variance of the returns, and 3) the covariance matrix*. The average returns is a measure of the fund's long term trend, the variance measures how frequently/strongly the returns fluctuate around this trend, and the covariance matrix captures how different funds tend to move together (their correlation). We will assume these measures will stay fixed in the future. 
+Hence, our first step is to summarise past performance of our candidate funds. *There are three metrics which we need to derive: 1) the average returns, 2) the variance of the returns, and 3) the covariance matrix*. The average returns is a measure of the fund's long term trend, the variance measures how strongly the returns fluctuate around this trend, and the covariance matrix captures how different funds tend to move together (their correlation). We will assume these measures will stay fixed in the future. 
 
 #### Calculating the mean, variance and covariance matrix
 
@@ -145,10 +145,20 @@ for (i in funds$ISIN){
 ```
 
 
-Now let's calculate the mean, variance and covariance matrix. This is straightforward in R. Note that we have different data points for each fund. So, some values are calculated over longer periods than others. In the case of the covariance matrix, we use all the data points available for each pair of funds. This may result in a covariance matrix that is not positive semidefinite (which could be an issue for some optimization techniques).
+Now let's calculate the mean, variance and covariance matrix. This is straightforward in R. Note that we have different data points for each fund. So, some values are calculated over longer periods than others. In the case of the covariance matrix, we use all the data points available for each pair of funds. This may result in a covariance matrix that is not positive semidefinite, which we will see can be an issue for some optimization techniques.
 
 
-```{r}
+```{r echo = TRUE, eval = FALSE}
+
+# compute the average daily log returns for every fund and save them in a column vector
+x <- matrix(sapply(returns[, colnames(returns) != "Date"], mean, na.rm = T), ncol = 1, nrow = ncol(returns) - 1)
+
+# compute covariance (with pairwise deletion)
+covar <- cov(returns[, !(colnames(returns) %in% c("Date", "year"))], use = "pairwise.complete.obs")
+```
+
+
+```{r, echo = FALSE}
 # CALCULATE RETURNS' MEAN AND VARIANCE
 
 # for each security calculate the mean, the variance and also store the number of data points (n)
@@ -170,7 +180,7 @@ covar <- cov(returns[, !(colnames(returns) %in% c("Date", "year"))], use = "pair
 ```
 
 
-The plot below summarises the mean/standard deviation for all the funds in our list. It shows the return and volatility we would expect if we were to invest entirely in one asset. However, when creating a portfolio we can combine multiple assets to create a "blend" of returns and risk profiles. In other words, we can position ourselves anywhere between these dots. Moreover, we can use diversification of the portfolio to reduce the risk while keeping the expected return constant. Let's see a technique to find an efficient portfolio now.
+The plot below summarises the mean/standard deviation for all the funds in our list. It shows the return and volatility we would expect if we were to invest entirely in one asset. However, when creating a portfolio we can combine multiple assets to create a "blend" of returns and risk profiles. In other words, we can position ourselves anywhere between these dots. Moreover, we can use diversification of the portfolio to reduce the risk while keeping the expected return constant. Let's see how to find an efficient portfolio now.
 
 
 ```{r, echo = FALSE, fig.cap= "Risk/return plot for the funds in the example list", fig.align='center'}
@@ -188,12 +198,28 @@ p <- ggplot(temp, aes(y = exp_return, x = exp_volatility, text = name, label2 = 
 ggplotly(p)
 ```
 
+#### Building an optimal portfolio
 
-#### Simulating random portfolios
+We can form a portfolio by assigning a weight comprised between 0 and 1 to each asset, such that the sum of all weights add up to 1. Finding the optimal portfolio corresponds to solving a constrained optimization problem, in which we are minimizing variance for any fixed level of return by tuning the weights of each assets (the parameters of the problem). Or equivalently, we can maximize the returns for any given level of variance. The two approaches lead to the same solution. The optimisation problem is further complicated by the addition of limitations on the weights. For instance we might impose that the weights need to be non-negative (i.e. we only allow long positions). A mathematical formulation of our problem would resemble something like this:
 
-We can form a portfolio by assigning a weight comprised between 0 and 1 to each asset, such that the sum of all weights add up to 1. Finding the optimal portfolio corresponds to solving a convex optimization problem, in which we are minimizing variance for any fixed level of return by tuning the weights of each assets (the parameters of the problem). An exact solution exists for such a problem, however in practice it is often hard to find the optimal weights if there are hundreds of assets in the portfolio. The optimisation problem is further complicated by the addition of limitations on the weights. For instance we might impose that **1)** weights need to be non-negative (i.e. we only allow long positions), and that **2)** we wish only a limited number of non-zero weights because of the potentially higher transaction costs involved in having many assets in the portfolio. Finally, the optimal solution might also be very sensitive to small changes in the inputs. Therefore, a common approach is to use a simulation to approximate the optimal portfolio. While such an approach might not yield THE EXACT optimal portfolio, it gets close enough and the calculations are simpler to implement.
 
-The following graph shows the expected volatility and returns from 200'000 random portfolios in which we fix the maximum number of assets to 10 and only allow long positions (no negative asset weights). The edge of the cloud of simulated portfolio reminds us of the efficient frontier we introduced at the beginning of the post — this is no accident. Below you will find the code to replicate such an experiment.
+$$\begin{aligned}
+\min_{w} \quad & w^T \mathbf{\Sigma} w\\
+\textrm{subject to} \quad & w\mu = \text{r}\\
+ & w_i \geq 0 \quad \forall i \in \{1, 2, \ldots, n\}\\
+ & \sum_{i=1}^n w_i = 1 
+\end{aligned}$$
+
+Where $w$ is the n-vector of fund weights that we are trying to optimize, $\mathbf{\Sigma}$ is the covariance matrix  we just calculated (`covar`) and $\mu$ is the n-vector of average fund daily returns (the `x` variable in the code snippet of the previous section). The first constraint requires the expected returns from the portfolio to be equal to a desired level $r$. Finally, the last two lines are just formulating the constraint that the fund weights need to be non-negative and add up to 1.
+
+
+We will now try three ways of solving this problem: 1) random portfolio simulation. 2) An improved simulation approach. 3) Deriving the solution with convex optimization algorithms. 
+
+##### 1) Simulating a large number of random portfolios
+
+An exact solution to the optimization should exist for the problem formulated in this article because it fall neatly into a convex optimization problem (more on this when we describe the 3rd approach). However, in practice, the objective function might not always be convex and it may be hard to find the optimal weights if there are hundreds of assets in the portfolio or if complicated constraints are added to the weights. Also, the optimal solution might be very sensitive to small changes in the inputs. Therefore, a simple approach is to use a simulation to approximate the optimal portfolio. While such an approach might not yield THE EXACT optimal portfolio, it can get close enough and the calculations are straightforward to implement: we just need to calculate the expected portfolio returns and variance for a large number of portfolio combinations.
+
+Here we will try the dumbest possible simulation to see how close we can get: we pick the portfolio weights completely at random.  The following graph shows the expected volatility and returns from 200'000 random portfolios in which we fix the maximum number of assets to 10 and only allow long positions (no negative asset weights). The edge of the cloud of simulated portfolio reminds us of the efficient frontier we introduced at the beginning of the post — this is no accident. Below you will find the code to replicate such an experiment.
 
 
 ```{r echo = FALSE, fig.cap = "Return/Volatility of 200'000 randomly generated portfolios", fig.align = "center", out.width = "90%"}
@@ -238,7 +264,7 @@ sim_random_portfolios <- function(x, # column vector of returns
     weights[[i]] <- w
     
     # calculate returns and volatility of portfolio
-    portfolio_sd <- t(w) %*% covar %*% w 
+    portfolio_sd <- sqrt(t(w) %*% covar %*% w) 
     portfolio_returns <- t(w) %*% x
 
     # save results in summary table
@@ -257,9 +283,9 @@ sim_random_portfolios <- function(x, # column vector of returns
 
 
 
-#### A more efficient simulation 
+##### 2) A more efficient simulation 
 
-The brute-force approach we just presented is not very efficient: we are simulating a very large number of portfolios (200000), but most of them are not very good choices, many yield negative expected returns! We can try to concentrate our simulations on portfolios which we think can yield superior return/risk profiles, we will do this by:
+The simmulation approach we just presented is not very efficient: we are simulating a very large number of portfolios (200000), but most of them are not very good choices, many yield negative expected returns! We can try to concentrate our simulations on portfolios which we think can yield superior return/risk profiles, we will do this by:
 
 1) Instead of picking asset allocations at random, we will give a higher chance to assets that were present in simulated portfolios with higher sharp ratio (the ratio of returns to volatility). This will slowly push the simulation towards better portfolios.
 
@@ -279,7 +305,7 @@ knitr::include_graphics("simulated_portfolios_optim_1000.png")
 
 
 ```{r echo=TRUE, eval = FALSE}
-sim_optim <- function(x, # vector of returns
+sim_improved <- function(x, # vector of returns
                        covar, # covariance matrix
                        n = 10000, #number of simulations
                        n_securities = 6, # number of securities in portfolio
@@ -336,14 +362,14 @@ sim_optim <- function(x, # vector of returns
     weights[[i]] <- w
     
     # calculate returns and volatility of portfolio
-    portfolio_sd <- t(w) %*% covar %*% w 
+    portfolio_sd <- sqrt(t(w) %*% covar %*% w) 
     portfolio_returns <- t(w) %*% x
 
     # save results in summary table
     tab[i,] <- c(portfolio_returns, portfolio_sd)
     
     # store adjusted sharpe ratio of current portfolio
-    sharpe <- portfolio_returns/portfolio_w_obs
+    sharpe <- portfolio_returns/portfolio_sd
     hist_sharpe[i] <- sharpe
     
     # update sampling probability vector if it is the best portfolio
@@ -370,9 +396,7 @@ sim_optim <- function(x, # vector of returns
 ```
 
 
-### Conclusion: picking a portfolio
-
-Now that we have simulated a very large number of combinations, all that is left to do is pick the portfolio that best satisfies our return/risk preference. In the figure below, I have plotted a cloud of 10000 simulated portfolios and highlighted in red the portfolios with the highest sharp ratio offering respectively at least: 1%, 2%, ... and 8% annual return. You may think of these as options from which a potential investor could pick from.
+In the figure below, I have plotted a cloud of 10000 simulated portfolios and highlighted in red the portfolios with the highest sharp ratio offering respectively at least: 1%, 2%, ... and 8% annual return. You may think of these as options from which a potential investor could pick from.
 
 
 ```{r echo = FALSE, fig.cap = "A selection of the most efficient portfolios", fig.align = "center", out.width = "90%"}
@@ -392,5 +416,95 @@ paged_table(temp, options = list(cols.min.print = 3))
 ```
 
 
-In conclusion, portfolio optimization based on MPT remains a valuable tool for investors, helping them make informed decisions and achieve a balance between returns and risk in their investment strategies. However, it is important for investors to consider other factors and seek professional advice to make well-rounded investment decisions.
+
+##### 3) Solving with convex optimization algorithms
+
+Finally, we can try to find the exact optimal solution to our problem. Here I will show you how this can be implemented in R using the package `CVXR`, a package specifically designed to solve convex optimization problems.
+
+We start by cleaning up a bit the data. We will remove from the list of funds the ones which have too few observations. That's because we wish to use only complete observations to calculate the covariance matrix. When complete observations are used the covariance matrix will be symmetric and positive semi-definite. This will ensure that our optimization problem is indeed convex and has a solution. Note that the covariance matrix is not necessarily positive semi-definite when it is constructed from pairwise complete observations like we did for the simulation approaches. Finally, we also want to make sure that the returns of the funds are not strictly collinear, which could mess up the calculations.
+
+
+```{r echo = TRUE, eval = FALSE}
+
+# create a table which will hold the daily returns for every fund we wish to keep in the analysis
+X <- returns[, colnames(returns) != "Date"]
+
+# exclude funds with too little data 
+for (i in colnames(X)){
+  if (sum(is.na(X[,i])) > 0.5*nrow(X)){ # check that the number of missing observations does not exceed 50%
+    X[,i] <- NULL
+  }
+}
+
+# exclude collinear funds (if any)
+temp <- cor(X, use = "pairwise") # calculate the correlation between every pair of funds
+for (i in colnames(X)){
+  # remove the fund if it has a correlation of 1 / -1 with any other fund and update the correlation table
+  if (any(abs(temp[-which(colnames(X) == i), i]) == 1)){ 
+    X[,i] <- NULL
+    temp <- cor(X, use = "pairwise")
+  }
+}
+
+```
+
+
+Let's now compute the covariance matrix and the average daily returns for every candidate fund. Note that we need to use `"complete.obs"` when computing the covariance here. This will compute the covariance only from the days for which we possess data for all the funds.
+
+```{r echo = TRUE, eval = FALSE}
+
+# compute the average daily log returns and save them in a column vector
+x <- matrix(sapply(X, mean, na.rm = T), ncol = 1, nrow = ncol(X))
+
+# compute covariance
+covar <- cov(X, use = "complete.obs")
+```
+
+
+
+Now we have all that is needed to set up and solve the optimization problem with the `CVXR` package. The code is a one-to-one translation of the mathematical notation for the constrained optimization problem that we introduced earlier.
+
+```{r echo = TRUE, eval = FALSE}
+
+library(CVXR)
+
+# define the parameters to be optimised (w are the weights for every fund in the matrix X)
+w <- Variable(ncol(X))
+
+# set the objective of the optimization problem: minimize the variance of the portfolio
+# quad_form(w, covar) is just a way of computing the portfolio variance given the fund weights. It is equivalent to: t(w) %*% covar %*% w
+objective <- Minimize(quad_form(w, covar))
+
+# set the constrains of the optimization problem
+c_positive <- w >= 0  # weights need to be positive
+c_sum1 <- sum(w) == 1 # weights need to add up to 1
+c_return <-  t(w) %*% x  == desired_daily_return # constrain the returns 
+
+# define the problem and ask CVXR to solve it
+problem <- Problem(objective, constraints = list(c_return, c_positive, c_sum1))
+result <- solve(problem)
+```
+
+
+The solution to this constrained optimiazation allows us to find the point on the efficient frontier corresponding to the desired return level ($r$ in the formulas) that we fix as constraint. If we were to repeat this process for multiple values of $r$ we would end up drawing the efficient frontier. In the figure below, every red dot is a solution obtained for a different value of $r$. The line connecting them corresponds to the efficient frontier drawn at the beginning of this article. The blue dots are the original funds from which the efficient portfolios are constructed.    
+
+```{r echo = FALSE, fig.cap = "Optimal portfolios for different return levels", fig.align = "center", out.width = "90%"}
+knitr::include_graphics("efficient_portfolios_example.png")
+```
+
+
+
+
+
+### Conclusion: picking a portfolio
+
+Now all that is left to do is pick the portfolio that best satisfies our return/risk preference. We have seen three approaches to derive or approximate an efficient portfolio. How much do they differ in terms of results? The table below compares the best portfolio standard deviation offered for any given level of expected returns. The lower the standard deviation the better (less volatile portfolio). Surprisingly, no single approach did significantly better than the others. The simulations yielded superior sets of portfolios for lower desired returns. This could be because we only used a subset of all the funds when solving with the convex optimization algorithm. The "improved" simulation approach fared slightly worse than the random one in two our of three cases. Perhaps, longer iterations are needed to compensate for the occasional "lucky strikes". However, this shows that even the random approach is not too far off from the more complex mathematical optimization approach.   
+
+```{r echo = FALSE}
+temp <-read.csv("comparison_table.csv")
+colnames(temp) <- c("Desired return (%)", "SD of convex optimization", "SD of random simulation", "SD of improved simulation")
+knitr::kable(temp, digits = 4)
+```
+
+Portfolio optimization based on MPT remains a valuable tool for investors, helping them make informed decisions and achieve a balance between returns and risk in their investment strategies. However, I reiterate that it is important for investors to consider other factors and seek professional advice to make well-rounded investment decisions. 
 
