@@ -21,7 +21,7 @@
 <style type="text/css">code{white-space: pre;}</style>
 <style type="text/css" data-origin="pandoc">
 pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span { line-height: 1.25; }
 pre > code.sourceCode > span:empty { height: 1.2em; }
 .sourceCode { overflow: visible; }
 code.sourceCode > span { color: inherit; text-decoration: inherit; }
@@ -32,7 +32,7 @@ div.sourceCode { overflow: auto; }
 }
 @media print {
 pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
 }
 pre.numberSource code
   { counter-reset: source-line 0; }
@@ -90,6 +90,7 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
   div.csl-bib-body { }
   div.csl-entry {
     clear: both;
+      margin-bottom: 0em;
     }
   .hanging div.csl-entry {
     margin-left:2em;
@@ -2478,7 +2479,7 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
     color: var(--hover-color, white);
   }</style>
   <!--/radix_placeholder_distill-->
-  <script src="site_libs/header-attrs-2.25/header-attrs.js"></script>
+  <script src="site_libs/header-attrs-2.26/header-attrs.js"></script>
   <link href="site_libs/panelset-0.2.6/panelset.css" rel="stylesheet" />
   <script src="site_libs/panelset-0.2.6/panelset.js"></script>
   <script src="site_libs/popper-2.6.0/popper.min.js"></script>
@@ -2649,7 +2650,7 @@ Figure 2: HS codes matched to meaasures in the EDB policies
 <p>Moreover, our data extension is available in three formats: measure, country-measure, country-measure-HS chapter. In the first, each line of the dataset corresponds to a notified environment-related policy (just like the original EDB). In the second one, entries are also split according to the countries they affect: Every line corresponds to a country-measure combination. Finally, the last format is also split for the <a href="https://en.wikipedia.org/wiki/Harmonized_System">2-digits HS codes</a> affected by the policy.</p>
 <div class="layout-chunk" data-layout="l-body">
 <div class="figure"><span style="display:block;" id="fig:unnamed-chunk-3"></span>
-<img src="images/map_n_measures.jpg" alt="Number of environment-related measures by country"  />
+<img src="images/map_n_measures.jpg" alt="Number of environment-related measures by country" width="5906" />
 <p class="caption">
 Figure 3: Number of environment-related measures by country
 </p>
@@ -2687,7 +2688,7 @@ Figure 4: Policy score components
 <h2 id="edb-extension-updates">EDB extension updates</h2>
 <p>The EDB notification dataset gets updated annually by the WTO secretariat. As a new version comes out, we will update the EDB extension to provide information on the latest measures in the database. We designate EDB’s version by the latest notification year included in their data. For example, the release (EDB version 2019) includes measures notified up to 2019.</p>
 <div class="sourceCode" id="cb1"><pre class="sourceCode r distill-force-highlighting-css"><code class="sourceCode r"></code></pre></div>
-<div id="refs" class="references csl-bib-body hanging-indent" role="list">
+<div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list">
 <div id="ref-EDB_paper" class="csl-entry" role="listitem">
 Bellelli, Francesco Saverio, and Ankai Xu. 2022. <span>“<span class="nocase">How do environmental policies affect green innovation and trade? Evidence from the WTO environmental database (EDB)</span>.”</span> <em>WTO Staff Working Paper</em> ERSD-2022-23.
 </div>
