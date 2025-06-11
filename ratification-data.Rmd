@@ -46,9 +46,9 @@ Our dataset contains only agreements and protocols to the agreements are taken i
 
 ## Potential ratifiers
 
-We define as *potential ratifier* any country that could ratify a given agreement. This includes any nation for which the treaty is open to ratification and that is affected by the environmental issues tackled by the agreement. The 
+We define as *potential ratifier* any country that could ratify a given agreement. This includes any nation for which the treaty is open to ratification and that is affected by the environmental issues tackled by the agreement. 
 
-Studies looking a treaty design and membership have traditionally assumed that all countries could ratify international agreements. However, this is clearly not the case. Most of the environmental agreements are regional --- they tackle localised environmental issues, such as the protection of a specific ecosystem or species, or are initiated by regional organisations (e.g. European Union, the African Uniopn, or the Caribbean and Pacific group of States). This leads to biased estimates and erroneous conclusions in studies including regional agreements in their sample. Identifying potential ratifiers can solve this problem and allow researchers to study regional agreements.
+Studies looking a treaty design and membership have traditionally assumed that all countries could ratify international agreements. However, this is clearly not the case. Most of the environmental agreements are regional --- they tackle localised environmental issues, such as the protection of a specific ecosystem or species, or are initiated by regional organisations (e.g. European Union, the African Union, or the Caribbean and Pacific group of States). This leads to biased estimates and erroneous conclusions in studies including regional agreements in their sample. Identifying potential ratifiers can solve this problem and allow researchers to study regional agreements.
 
 Knowing which country can ratify an agreement also allows to build a ratification rate indicator, which is a better indicator of international environmental cooperation than simple count of treaty membership. As shown in the image below, not all countries have access to the same number of agreements. Hence, the number of memberships in international agreements is driven by the number of agreements they can potentially ratify.
 
